@@ -23,6 +23,12 @@ int main(int argc, char* argv[])
 {
     int i;
     hbar = NALLA_520nmx_Open(0,NALLA_OPEN_520nmx_INGRESS_CH0);
+    if(hbar == NULL)
+	{
+		printf("Error opening card %d.\n", 0);
+		return 1;
+	}
+    
     uint32_t *writebuffer;
     //uint32_t *readbuffer;
     int buffer_size = 4;
@@ -36,6 +42,9 @@ int main(int argc, char* argv[])
     int numbytes = 4,numbyteswritten=0;
     numbyteswritten = NALLA_520nmx_Write(hbar, writebuffer, ESRAM_CHANNEL0, numbytes, NALLA_MMAP_WRITE);
     printf("%d", numbyteswritten);
-    NALLA_520nmx_Close(hbar);
+    if(hbar!=0)
+	{
+		NALLA_520nmx_Close(hbar);
+	}
     return 0;
 }
