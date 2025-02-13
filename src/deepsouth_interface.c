@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <inttypes.h>
+#include <time.h>
+#include <unistd.h>
 #include "nalla520nmxlib.h"
 #include "520nmx_bist_bar0_mmap.h"
 
@@ -21,30 +24,61 @@ NALLA_HANDLE hbar;
 
 int main(int argc, char* argv[])
 {
+    
     int i;
-    hbar = NALLA_520nmx_Open(0,NALLA_OPEN_520nmx_INGRESS_CH0);
+    hbar = NALLA_520nmx_Open(0,NALLA_OPEN_520nmx_BAR_CSR);
     if(hbar == NULL)
 	{
 		printf("Error opening card %d.\n", 0);
 		return 1;
 	}
-    
+
     uint32_t *writebuffer;
-    //uint32_t *readbuffer;
-    int buffer_size = 4;
+    uint32_t *readbuffer;
+   
+    int buffer_size = ESRAM_CHANNEL7 - ESRAM_CHANNEL0;
     int dword_buffer_size = buffer_size /4;
     writebuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
+    readbuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
     // Set up count data
 	for(i=0; i<dword_buffer_size; i++)
 	{
 		writebuffer[i] = i;
 	}
-    int numbytes = 4,numbyteswritten=0;
+
+    int numbyteswritten=0, numbytesread=0, numbytes=0;
+    numbytes = buffer_size;
+    clock_t begin_writing = clock();
     numbyteswritten = NALLA_520nmx_Write(hbar, writebuffer, ESRAM_CHANNEL0, numbytes, NALLA_MMAP_WRITE);
-    printf("%d", numbyteswritten);
+    if(numbyteswritten != numbytes)
+    {
+        printf("Mismatch: Number of bytes written %d, number of bytes requested %d\n",numbyteswritten, numbytes);
+        free(writebuffer);
+        free(readbuffer);
+        return 1;
+    }
+    clock_t end_writing = clock();
+    double time_spent_writing = (double)(end_writing - begin_writing) / CLOCKS_PER_SEC;
+    printf("Time spent writing %d bytes of data %fs\n", numbyteswritten,time_spent_writing);
+
+    clock_t begin_reading = clock();
+    numbytesread = NALLA_520nmx_Read(hbar, readbuffer, ESRAM_CHANNEL0, numbytes, NALLA_MMAP_READ);
+    if(numbytesread != numbytes)
+    {
+            printf("Mismatch: Number of bytes received %d, number of bytes requested %d\n",numbytesread, numbytes);
+            free(writebuffer);
+            free(readbuffer);
+            return 1;
+    }
+    clock_t end_reading = clock();
+    double time_spent_reading = (double)(end_reading - begin_reading) / CLOCKS_PER_SEC;
+    printf("Time spent reading %d bytes of data %fs\n", numbytesread,time_spent_reading);
+    
+
     if(hbar!=0)
 	{
 		NALLA_520nmx_Close(hbar);
 	}
+
     return 0;
 }

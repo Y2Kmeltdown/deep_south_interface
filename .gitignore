@@ -1,2 +1,5 @@
 build
 .vscode
+ds_test_env_transfer.sh
+ds_test_env_run.sh
+compile_and_run.sh
