@@ -1,5 +1,6 @@
 build
 .vscode
-ds_test_env_transfer.sh
-ds_test_env_run.sh
-compile_and_run.sh
+scripts
+src/test.c
+Minimum_BIST/output_files
+Minimum_BIST.zip

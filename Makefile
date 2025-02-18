@@ -10,7 +10,7 @@ endif
 
 # Source files
 SOURCEDIR = src
-CSRCS = $(wildcard $(SOURCEDIR)/*.c)
+CSRCS = $(wildcard $(SOURCEDIR)/deepsouth_interface.c)
 
 
 # Flags
