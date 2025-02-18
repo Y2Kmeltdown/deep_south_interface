@@ -1,0 +1,23 @@
+	component system_manager_system_manager_if_0 is
+		port (
+			clk                    : in    std_logic                     := 'X';             -- clk
+			rst                    : in    std_logic                     := 'X';             -- reset
+			pll_clk                : in    std_logic                     := 'X';             -- clk
+			conf_d                 : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- conf_d
+			soft_reconfigure_req_n : out   std_logic;                                        -- soft_reconfigure_req_n
+			d_address              : out   std_logic_vector(9 downto 0);                     -- address
+			d_read                 : out   std_logic;                                        -- read
+			d_write                : out   std_logic;                                        -- write
+			d_readdata             : in    std_logic_vector(15 downto 0) := (others => 'X'); -- readdata
+			d_writedata            : out   std_logic_vector(15 downto 0);                    -- writedata
+			d_waitrequest          : in    std_logic                     := 'X';             -- waitrequest
+			c_address              : in    std_logic_vector(7 downto 0)  := (others => 'X'); -- address
+			c_read                 : in    std_logic                     := 'X';             -- read
+			c_write                : in    std_logic                     := 'X';             -- write
+			c_readdata             : out   std_logic_vector(31 downto 0);                    -- readdata
+			c_writedata            : in    std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			conf_c_out             : out   std_logic_vector(3 downto 0);                     -- conf_c_out
+			conf_c_in              : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- conf_c_in
+		);
+	end component system_manager_system_manager_if_0;
+

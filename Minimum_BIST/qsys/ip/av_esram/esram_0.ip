@@ -1,0 +1,1053 @@
+<?xml version="1.0" ?>
+<ipxact:component xmlns:altera="http://www.altera.com/XMLSchema/IPXact2014/extensions" xmlns:ipxact="http://www.accellera.org/XMLSchema/IPXACT/1685-2014">
+  <ipxact:vendor>Intel Corporation</ipxact:vendor>
+  <ipxact:library>esram_0</ipxact:library>
+  <ipxact:name>esram_0</ipxact:name>
+  <ipxact:version>19.1.3</ipxact:version>
+  <ipxact:busInterfaces>
+    <ipxact:busInterface>
+      <ipxact:name>ram_output</ipxact:name>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.4"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.4"></ipxact:abstractionRef>
+          <ipxact:portMaps>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>s2c0_qb_0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>c0_q_0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>esram2f_clk</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>esram2f_clk</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>iopll_lock2core</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>iopll_lock2core</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+          </ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:slave></ipxact:slave>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="associatedClock" type="string">
+          <ipxact:name>associatedClock</ipxact:name>
+          <ipxact:displayName>associatedClock</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="associatedReset" type="string">
+          <ipxact:name>associatedReset</ipxact:name>
+          <ipxact:displayName>associatedReset</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="prSafe" type="bit">
+          <ipxact:name>prSafe</ipxact:name>
+          <ipxact:displayName>Partial Reconfiguration Safe</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+      <ipxact:vendorExtensions>
+        <altera:altera_assignments>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="ui.blockdiagram.direction" type="string">
+              <ipxact:name>ui.blockdiagram.direction</ipxact:name>
+              <ipxact:value>output</ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_assignments>
+      </ipxact:vendorExtensions>
+    </ipxact:busInterface>
+    <ipxact:busInterface>
+      <ipxact:name>ram_input</ipxact:name>
+      <ipxact:busType vendor="altera" library="altera" name="conduit" version="19.4"></ipxact:busType>
+      <ipxact:abstractionTypes>
+        <ipxact:abstractionType>
+          <ipxact:abstractionRef vendor="altera" library="altera" name="conduit" version="19.4"></ipxact:abstractionRef>
+          <ipxact:portMaps>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>s2c0_da_0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>c0_data_0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>s2c0_adrb_0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>c0_rdaddress_0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>s2c0_meb_n_0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>c0_rden_n_0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>s2c0_sd_n_0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>c0_sd_n_0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>s2c0_adra_0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>c0_wraddress_0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>s2c0_mea_n_0</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>c0_wren_n_0</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+            <ipxact:portMap>
+              <ipxact:logicalPort>
+                <ipxact:name>clock</ipxact:name>
+              </ipxact:logicalPort>
+              <ipxact:physicalPort>
+                <ipxact:name>refclk</ipxact:name>
+              </ipxact:physicalPort>
+            </ipxact:portMap>
+          </ipxact:portMaps>
+        </ipxact:abstractionType>
+      </ipxact:abstractionTypes>
+      <ipxact:slave></ipxact:slave>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="associatedClock" type="string">
+          <ipxact:name>associatedClock</ipxact:name>
+          <ipxact:displayName>associatedClock</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="associatedReset" type="string">
+          <ipxact:name>associatedReset</ipxact:name>
+          <ipxact:displayName>associatedReset</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="prSafe" type="bit">
+          <ipxact:name>prSafe</ipxact:name>
+          <ipxact:displayName>Partial Reconfiguration Safe</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+      <ipxact:vendorExtensions>
+        <altera:altera_assignments>
+          <ipxact:parameters>
+            <ipxact:parameter parameterId="ui.blockdiagram.direction" type="string">
+              <ipxact:name>ui.blockdiagram.direction</ipxact:name>
+              <ipxact:value>input</ipxact:value>
+            </ipxact:parameter>
+          </ipxact:parameters>
+        </altera:altera_assignments>
+      </ipxact:vendorExtensions>
+    </ipxact:busInterface>
+  </ipxact:busInterfaces>
+  <ipxact:model>
+    <ipxact:views>
+      <ipxact:view>
+        <ipxact:name>QUARTUS_SYNTH</ipxact:name>
+        <ipxact:envIdentifier>:quartus.altera.com:</ipxact:envIdentifier>
+        <ipxact:componentInstantiationRef>QUARTUS_SYNTH</ipxact:componentInstantiationRef>
+      </ipxact:view>
+    </ipxact:views>
+    <ipxact:instantiations>
+      <ipxact:componentInstantiation>
+        <ipxact:name>QUARTUS_SYNTH</ipxact:name>
+        <ipxact:moduleName>esram</ipxact:moduleName>
+        <ipxact:fileSetRef>
+          <ipxact:localName>QUARTUS_SYNTH</ipxact:localName>
+        </ipxact:fileSetRef>
+      </ipxact:componentInstantiation>
+    </ipxact:instantiations>
+    <ipxact:ports>
+      <ipxact:port>
+        <ipxact:name>c0_q_0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:vectors>
+            <ipxact:vector>
+              <ipxact:left>0</ipxact:left>
+              <ipxact:right>31</ipxact:right>
+            </ipxact:vector>
+          </ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC_VECTOR</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>esram2f_clk</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>iopll_lock2core</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>out</ipxact:direction>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>c0_data_0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors>
+            <ipxact:vector>
+              <ipxact:left>0</ipxact:left>
+              <ipxact:right>31</ipxact:right>
+            </ipxact:vector>
+          </ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC_VECTOR</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>c0_rdaddress_0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors>
+            <ipxact:vector>
+              <ipxact:left>0</ipxact:left>
+              <ipxact:right>10</ipxact:right>
+            </ipxact:vector>
+          </ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC_VECTOR</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>c0_rden_n_0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>c0_sd_n_0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>c0_wraddress_0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:vectors>
+            <ipxact:vector>
+              <ipxact:left>0</ipxact:left>
+              <ipxact:right>10</ipxact:right>
+            </ipxact:vector>
+          </ipxact:vectors>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC_VECTOR</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>c0_wren_n_0</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+      <ipxact:port>
+        <ipxact:name>refclk</ipxact:name>
+        <ipxact:wire>
+          <ipxact:direction>in</ipxact:direction>
+          <ipxact:wireTypeDefs>
+            <ipxact:wireTypeDef>
+              <ipxact:typeName>STD_LOGIC</ipxact:typeName>
+              <ipxact:viewRef>QUARTUS_SYNTH</ipxact:viewRef>
+            </ipxact:wireTypeDef>
+          </ipxact:wireTypeDefs>
+        </ipxact:wire>
+      </ipxact:port>
+    </ipxact:ports>
+  </ipxact:model>
+  <ipxact:vendorExtensions>
+    <altera:entity_info>
+      <ipxact:vendor>Intel Corporation</ipxact:vendor>
+      <ipxact:library>esram_0</ipxact:library>
+      <ipxact:name>esram</ipxact:name>
+      <ipxact:version>19.1.3</ipxact:version>
+    </altera:entity_info>
+    <altera:altera_module_parameters>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="device_family" type="string">
+          <ipxact:name>device_family</ipxact:name>
+          <ipxact:displayName>device_family</ipxact:displayName>
+          <ipxact:value>Stratix 10</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="device_part" type="string">
+          <ipxact:name>device_part</ipxact:name>
+          <ipxact:displayName>device_part</ipxact:displayName>
+          <ipxact:value>1SM21CHU2F53E2VG</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="device_speedgrade" type="string">
+          <ipxact:name>device_speedgrade</ipxact:name>
+          <ipxact:displayName>device_speedgrade</ipxact:displayName>
+          <ipxact:value>2</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c0_enable" type="bit">
+          <ipxact:name>gui_c0_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 0</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c1_enable" type="bit">
+          <ipxact:name>gui_c1_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 1</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c2_enable" type="bit">
+          <ipxact:name>gui_c2_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 2</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c3_enable" type="bit">
+          <ipxact:name>gui_c3_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 3</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c4_enable" type="bit">
+          <ipxact:name>gui_c4_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 4</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c5_enable" type="bit">
+          <ipxact:name>gui_c5_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 5</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c6_enable" type="bit">
+          <ipxact:name>gui_c6_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 6</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c7_enable" type="bit">
+          <ipxact:name>gui_c7_enable</ipxact:name>
+          <ipxact:displayName>Enable Channel 7</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c0_ecc_enable" type="bit">
+          <ipxact:name>gui_c0_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c1_ecc_enable" type="bit">
+          <ipxact:name>gui_c1_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c2_ecc_enable" type="bit">
+          <ipxact:name>gui_c2_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c3_ecc_enable" type="bit">
+          <ipxact:name>gui_c3_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c4_ecc_enable" type="bit">
+          <ipxact:name>gui_c4_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c5_ecc_enable" type="bit">
+          <ipxact:name>gui_c5_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c6_ecc_enable" type="bit">
+          <ipxact:name>gui_c6_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c7_ecc_enable" type="bit">
+          <ipxact:name>gui_c7_ecc_enable</ipxact:name>
+          <ipxact:displayName>Enable ECC Encoder &amp; Decoder</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c0_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c0_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c1_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c1_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c2_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c2_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c3_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c3_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c4_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c4_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c5_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c5_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c6_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c6_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c7_ecc_byp_enable" type="bit">
+          <ipxact:name>gui_c7_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>Enable Dynamic ECC Encoder &amp; Decoder bypass</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c0_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c0_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c1_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c1_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c2_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c2_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c3_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c3_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c4_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c4_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c5_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c5_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c6_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c6_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c7_wr_fwd_enable" type="bit">
+          <ipxact:name>gui_c7_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>Enable Write Forwarding</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c0_lpmode_enable" type="bit">
+          <ipxact:name>gui_c0_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c1_lpmode_enable" type="bit">
+          <ipxact:name>gui_c1_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c2_lpmode_enable" type="bit">
+          <ipxact:name>gui_c2_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c3_lpmode_enable" type="bit">
+          <ipxact:name>gui_c3_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c4_lpmode_enable" type="bit">
+          <ipxact:name>gui_c4_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c5_lpmode_enable" type="bit">
+          <ipxact:name>gui_c5_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c6_lpmode_enable" type="bit">
+          <ipxact:name>gui_c6_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_c7_lpmode_enable" type="bit">
+          <ipxact:name>gui_c7_lpmode_enable</ipxact:name>
+          <ipxact:displayName>Enable Low Power Mode</ipxact:displayName>
+          <ipxact:value>false</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_refclk_freq" type="real">
+          <ipxact:name>gui_refclk_freq</ipxact:name>
+          <ipxact:displayName>PLL Reference Clock Frequency:</ipxact:displayName>
+          <ipxact:value>200.0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_desired_freq" type="real">
+          <ipxact:name>gui_desired_freq</ipxact:name>
+          <ipxact:displayName>PLL Desired Clock Frequency:</ipxact:displayName>
+          <ipxact:value>200.0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c0" type="int">
+          <ipxact:name>gui_width_c0</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>32</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c1" type="int">
+          <ipxact:name>gui_width_c1</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c2" type="int">
+          <ipxact:name>gui_width_c2</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c3" type="int">
+          <ipxact:name>gui_width_c3</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c4" type="int">
+          <ipxact:name>gui_width_c4</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c5" type="int">
+          <ipxact:name>gui_width_c5</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c6" type="int">
+          <ipxact:name>gui_width_c6</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_width_c7" type="int">
+          <ipxact:name>gui_width_c7</ipxact:name>
+          <ipxact:displayName>How wide should the data bus be?</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c0" type="string">
+          <ipxact:name>gui_numwords_c0</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c1" type="string">
+          <ipxact:name>gui_numwords_c1</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c2" type="string">
+          <ipxact:name>gui_numwords_c2</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c3" type="string">
+          <ipxact:name>gui_numwords_c3</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c4" type="string">
+          <ipxact:name>gui_numwords_c4</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c5" type="string">
+          <ipxact:name>gui_numwords_c5</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c6" type="string">
+          <ipxact:name>gui_numwords_c6</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_numwords_c7" type="string">
+          <ipxact:name>gui_numwords_c7</ipxact:name>
+          <ipxact:displayName>How many words of memory?</ipxact:displayName>
+          <ipxact:value>2048</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="gui_module_name" type="string">
+          <ipxact:name>gui_module_name</ipxact:name>
+          <ipxact:displayName>gui_module_name</ipxact:displayName>
+          <ipxact:value>fourteennm_esram</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_address_width" type="int">
+          <ipxact:name>c0_address_width</ipxact:name>
+          <ipxact:displayName>c0_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_address_width" type="int">
+          <ipxact:name>c1_address_width</ipxact:name>
+          <ipxact:displayName>c1_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_address_width" type="int">
+          <ipxact:name>c2_address_width</ipxact:name>
+          <ipxact:displayName>c2_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_address_width" type="int">
+          <ipxact:name>c3_address_width</ipxact:name>
+          <ipxact:displayName>c3_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_address_width" type="int">
+          <ipxact:name>c4_address_width</ipxact:name>
+          <ipxact:displayName>c4_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_address_width" type="int">
+          <ipxact:name>c5_address_width</ipxact:name>
+          <ipxact:displayName>c5_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_address_width" type="int">
+          <ipxact:name>c6_address_width</ipxact:name>
+          <ipxact:displayName>c6_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_address_width" type="int">
+          <ipxact:name>c7_address_width</ipxact:name>
+          <ipxact:displayName>c7_address_width</ipxact:displayName>
+          <ipxact:value>11</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_data_width" type="int">
+          <ipxact:name>c0_data_width</ipxact:name>
+          <ipxact:displayName>c0_data_width</ipxact:displayName>
+          <ipxact:value>32</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_data_width" type="int">
+          <ipxact:name>c1_data_width</ipxact:name>
+          <ipxact:displayName>c1_data_width</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_data_width" type="int">
+          <ipxact:name>c2_data_width</ipxact:name>
+          <ipxact:displayName>c2_data_width</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_data_width" type="int">
+          <ipxact:name>c3_data_width</ipxact:name>
+          <ipxact:displayName>c3_data_width</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_data_width" type="int">
+          <ipxact:name>c4_data_width</ipxact:name>
+          <ipxact:displayName>c4_data_width</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_data_width" type="int">
+          <ipxact:name>c5_data_width</ipxact:name>
+          <ipxact:displayName>c5_data_width</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_data_width" type="int">
+          <ipxact:name>c6_data_width</ipxact:name>
+          <ipxact:displayName>c6_data_width</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_data_width" type="int">
+          <ipxact:name>c7_data_width</ipxact:name>
+          <ipxact:displayName>c7_data_width</ipxact:displayName>
+          <ipxact:value>72</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_disable" type="string">
+          <ipxact:name>c0_disable</ipxact:name>
+          <ipxact:displayName>c0_disable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_disable" type="string">
+          <ipxact:name>c1_disable</ipxact:name>
+          <ipxact:displayName>c1_disable</ipxact:displayName>
+          <ipxact:value>TRUE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_disable" type="string">
+          <ipxact:name>c2_disable</ipxact:name>
+          <ipxact:displayName>c2_disable</ipxact:displayName>
+          <ipxact:value>TRUE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_disable" type="string">
+          <ipxact:name>c3_disable</ipxact:name>
+          <ipxact:displayName>c3_disable</ipxact:displayName>
+          <ipxact:value>TRUE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_disable" type="string">
+          <ipxact:name>c4_disable</ipxact:name>
+          <ipxact:displayName>c4_disable</ipxact:displayName>
+          <ipxact:value>TRUE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_disable" type="string">
+          <ipxact:name>c5_disable</ipxact:name>
+          <ipxact:displayName>c5_disable</ipxact:displayName>
+          <ipxact:value>TRUE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_disable" type="string">
+          <ipxact:name>c6_disable</ipxact:name>
+          <ipxact:displayName>c6_disable</ipxact:displayName>
+          <ipxact:value>TRUE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_disable" type="string">
+          <ipxact:name>c7_disable</ipxact:name>
+          <ipxact:displayName>c7_disable</ipxact:displayName>
+          <ipxact:value>TRUE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_bank_enable" type="string">
+          <ipxact:name>c0_bank_enable</ipxact:name>
+          <ipxact:displayName>c0_bank_enable</ipxact:displayName>
+          <ipxact:value>C0_EN_1BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_bank_enable" type="string">
+          <ipxact:name>c1_bank_enable</ipxact:name>
+          <ipxact:displayName>c1_bank_enable</ipxact:displayName>
+          <ipxact:value>C1_EN_0BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_bank_enable" type="string">
+          <ipxact:name>c2_bank_enable</ipxact:name>
+          <ipxact:displayName>c2_bank_enable</ipxact:displayName>
+          <ipxact:value>C2_EN_0BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_bank_enable" type="string">
+          <ipxact:name>c3_bank_enable</ipxact:name>
+          <ipxact:displayName>c3_bank_enable</ipxact:displayName>
+          <ipxact:value>C3_EN_0BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_bank_enable" type="string">
+          <ipxact:name>c4_bank_enable</ipxact:name>
+          <ipxact:displayName>c4_bank_enable</ipxact:displayName>
+          <ipxact:value>C4_EN_0BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_bank_enable" type="string">
+          <ipxact:name>c5_bank_enable</ipxact:name>
+          <ipxact:displayName>c5_bank_enable</ipxact:displayName>
+          <ipxact:value>C5_EN_0BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_bank_enable" type="string">
+          <ipxact:name>c6_bank_enable</ipxact:name>
+          <ipxact:displayName>c6_bank_enable</ipxact:displayName>
+          <ipxact:value>C6_EN_0BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_bank_enable" type="string">
+          <ipxact:name>c7_bank_enable</ipxact:name>
+          <ipxact:displayName>c7_bank_enable</ipxact:displayName>
+          <ipxact:value>C7_EN_0BANK</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_ecc_enable" type="string">
+          <ipxact:name>c0_ecc_enable</ipxact:name>
+          <ipxact:displayName>c0_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_ecc_enable" type="string">
+          <ipxact:name>c1_ecc_enable</ipxact:name>
+          <ipxact:displayName>c1_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_ecc_enable" type="string">
+          <ipxact:name>c2_ecc_enable</ipxact:name>
+          <ipxact:displayName>c2_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_ecc_enable" type="string">
+          <ipxact:name>c3_ecc_enable</ipxact:name>
+          <ipxact:displayName>c3_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_ecc_enable" type="string">
+          <ipxact:name>c4_ecc_enable</ipxact:name>
+          <ipxact:displayName>c4_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_ecc_enable" type="string">
+          <ipxact:name>c5_ecc_enable</ipxact:name>
+          <ipxact:displayName>c5_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_ecc_enable" type="string">
+          <ipxact:name>c6_ecc_enable</ipxact:name>
+          <ipxact:displayName>c6_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_ecc_enable" type="string">
+          <ipxact:name>c7_ecc_enable</ipxact:name>
+          <ipxact:displayName>c7_ecc_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_ecc_byp_enable" type="string">
+          <ipxact:name>c0_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c0_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_ecc_byp_enable" type="string">
+          <ipxact:name>c1_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c1_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_ecc_byp_enable" type="string">
+          <ipxact:name>c2_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c2_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_ecc_byp_enable" type="string">
+          <ipxact:name>c3_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c3_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_ecc_byp_enable" type="string">
+          <ipxact:name>c4_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c4_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_ecc_byp_enable" type="string">
+          <ipxact:name>c5_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c5_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_ecc_byp_enable" type="string">
+          <ipxact:name>c6_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c6_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_ecc_byp_enable" type="string">
+          <ipxact:name>c7_ecc_byp_enable</ipxact:name>
+          <ipxact:displayName>c7_ecc_byp_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_wr_fwd_enable" type="string">
+          <ipxact:name>c0_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c0_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_wr_fwd_enable" type="string">
+          <ipxact:name>c1_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c1_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_wr_fwd_enable" type="string">
+          <ipxact:name>c2_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c2_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_wr_fwd_enable" type="string">
+          <ipxact:name>c3_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c3_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_wr_fwd_enable" type="string">
+          <ipxact:name>c4_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c4_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_wr_fwd_enable" type="string">
+          <ipxact:name>c5_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c5_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_wr_fwd_enable" type="string">
+          <ipxact:name>c6_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c6_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_wr_fwd_enable" type="string">
+          <ipxact:name>c7_wr_fwd_enable</ipxact:name>
+          <ipxact:displayName>c7_wr_fwd_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c0_lpmode_enable" type="string">
+          <ipxact:name>c0_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c0_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c1_lpmode_enable" type="string">
+          <ipxact:name>c1_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c1_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c2_lpmode_enable" type="string">
+          <ipxact:name>c2_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c2_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c3_lpmode_enable" type="string">
+          <ipxact:name>c3_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c3_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c4_lpmode_enable" type="string">
+          <ipxact:name>c4_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c4_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c5_lpmode_enable" type="string">
+          <ipxact:name>c5_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c5_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c6_lpmode_enable" type="string">
+          <ipxact:name>c6_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c6_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="c7_lpmode_enable" type="string">
+          <ipxact:name>c7_lpmode_enable</ipxact:name>
+          <ipxact:displayName>c7_lpmode_enable</ipxact:displayName>
+          <ipxact:value>FALSE</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="clock_rate" type="string">
+          <ipxact:name>clock_rate</ipxact:name>
+          <ipxact:displayName>Clock rate</ipxact:displayName>
+          <ipxact:value>FULLRATE</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+    </altera:altera_module_parameters>
+    <altera:altera_system_parameters>
+      <ipxact:parameters>
+        <ipxact:parameter parameterId="device" type="string">
+          <ipxact:name>device</ipxact:name>
+          <ipxact:displayName>Device</ipxact:displayName>
+          <ipxact:value>1SM21CHU2F53E2VG</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="deviceFamily" type="string">
+          <ipxact:name>deviceFamily</ipxact:name>
+          <ipxact:displayName>Device family</ipxact:displayName>
+          <ipxact:value>Stratix 10</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="deviceSpeedGrade" type="string">
+          <ipxact:name>deviceSpeedGrade</ipxact:name>
+          <ipxact:displayName>Device Speed Grade</ipxact:displayName>
+          <ipxact:value>2</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="generationId" type="int">
+          <ipxact:name>generationId</ipxact:name>
+          <ipxact:displayName>Generation Id</ipxact:displayName>
+          <ipxact:value>0</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="bonusData" type="string">
+          <ipxact:name>bonusData</ipxact:name>
+          <ipxact:displayName>bonusData</ipxact:displayName>
+          <ipxact:value>bonusData 
+{
+   element esram_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="hideFromIPCatalog" type="bit">
+          <ipxact:name>hideFromIPCatalog</ipxact:name>
+          <ipxact:displayName>Hide from IP Catalog</ipxact:displayName>
+          <ipxact:value>true</ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="lockedInterfaceDefinition" type="string">
+          <ipxact:name>lockedInterfaceDefinition</ipxact:name>
+          <ipxact:displayName>lockedInterfaceDefinition</ipxact:displayName>
+          <ipxact:value></ipxact:value>
+        </ipxact:parameter>
+        <ipxact:parameter parameterId="systemInfos" type="string">
+          <ipxact:name>systemInfos</ipxact:name>
+          <ipxact:displayName>systemInfos</ipxact:displayName>
+          <ipxact:value>&lt;systemInfosDefinition&gt;
+    &lt;connPtSystemInfos/&gt;
+&lt;/systemInfosDefinition&gt;</ipxact:value>
+        </ipxact:parameter>
+      </ipxact:parameters>
+    </altera:altera_system_parameters>
+    <altera:altera_interface_boundary>
+      <altera:interface_mapping altera:name="ram_input" altera:internal="esram_0.ram_input" altera:type="conduit" altera:dir="end">
+        <altera:port_mapping altera:name="c0_data_0" altera:internal="c0_data_0"></altera:port_mapping>
+        <altera:port_mapping altera:name="c0_rdaddress_0" altera:internal="c0_rdaddress_0"></altera:port_mapping>
+        <altera:port_mapping altera:name="c0_rden_n_0" altera:internal="c0_rden_n_0"></altera:port_mapping>
+        <altera:port_mapping altera:name="c0_sd_n_0" altera:internal="c0_sd_n_0"></altera:port_mapping>
+        <altera:port_mapping altera:name="c0_wraddress_0" altera:internal="c0_wraddress_0"></altera:port_mapping>
+        <altera:port_mapping altera:name="c0_wren_n_0" altera:internal="c0_wren_n_0"></altera:port_mapping>
+        <altera:port_mapping altera:name="refclk" altera:internal="refclk"></altera:port_mapping>
+      </altera:interface_mapping>
+      <altera:interface_mapping altera:name="ram_output" altera:internal="esram_0.ram_output" altera:type="conduit" altera:dir="end">
+        <altera:port_mapping altera:name="c0_q_0" altera:internal="c0_q_0"></altera:port_mapping>
+        <altera:port_mapping altera:name="esram2f_clk" altera:internal="esram2f_clk"></altera:port_mapping>
+        <altera:port_mapping altera:name="iopll_lock2core" altera:internal="iopll_lock2core"></altera:port_mapping>
+      </altera:interface_mapping>
+    </altera:altera_interface_boundary>
+    <altera:altera_has_warnings>false</altera:altera_has_warnings>
+    <altera:altera_has_errors>false</altera:altera_has_errors>
+  </ipxact:vendorExtensions>
+</ipxact:component>

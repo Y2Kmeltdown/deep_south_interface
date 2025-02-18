@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<node xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altera="http://www.altera.com/XMLSchema/Qsys/SystemTree">
+  <instanceKey xsi:type="xs:string">qsys_top_spi_slave_to_avmm_master_bridge</instanceKey>
+  <instanceData xsi:type="data">
+    <parameters></parameters>
+    <interconnectAssignments></interconnectAssignments>
+    <className>qsys_top_spi_slave_to_avmm_master_bridge</className>
+    <version>1.0</version>
+    <name>qsys_top_spi_slave_to_avmm_master_bridge</name>
+    <uniqueName>qsys_top_spi_slave_to_avmm_master_bridge</uniqueName>
+    <nonce>0</nonce>
+    <incidentConnections></incidentConnections>
+  </instanceData>
+  <children>
+    <node>
+      <instanceKey xsi:type="xs:string">qsys_top_spi_slave_to_avmm_master_bridge</instanceKey>
+      <instanceData xsi:type="data">
+        <parameters></parameters>
+        <interconnectAssignments></interconnectAssignments>
+        <className>spi_slave_to_avalon_mm_master_bridge</className>
+        <version>19.1.1</version>
+        <name>qsys_top_spi_slave_to_avmm_master_bridge</name>
+        <uniqueName>SPISlaveToAvalonMasterBridge</uniqueName>
+        <fixedName>SPISlaveToAvalonMasterBridge</fixedName>
+        <nonce>0</nonce>
+        <incidentConnections></incidentConnections>
+        <path>qsys_top_spi_slave_to_avmm_master_bridge.qsys_top_spi_slave_to_avmm_master_bridge</path>
+      </instanceData>
+      <children></children>
+    </node>
+  </children>
+</node>

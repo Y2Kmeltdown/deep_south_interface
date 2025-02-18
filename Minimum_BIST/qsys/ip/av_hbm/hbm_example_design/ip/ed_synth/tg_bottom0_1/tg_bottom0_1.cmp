@@ -1,0 +1,50 @@
+	component tg_bottom0_1 is
+		port (
+			wmc_clk_in          : in  std_logic                      := 'X';             -- clk
+			wmcrst_n_in         : in  std_logic                      := 'X';             -- reset_n
+			ninit_done          : in  std_logic                      := 'X';             -- ninit_done
+			awid                : out std_logic_vector(8 downto 0);                      -- awid
+			awaddr              : out std_logic_vector(28 downto 0);                     -- awaddr
+			awlen               : out std_logic_vector(7 downto 0);                      -- awlen
+			awsize              : out std_logic_vector(2 downto 0);                      -- awsize
+			awburst             : out std_logic_vector(1 downto 0);                      -- awburst
+			awprot              : out std_logic_vector(2 downto 0);                      -- awprot
+			awqos               : out std_logic_vector(3 downto 0);                      -- awqos
+			awuser_ap           : out std_logic_vector(0 downto 0);                      -- awuser
+			awvalid             : out std_logic;                                         -- awvalid
+			awready             : in  std_logic                      := 'X';             -- awready
+			wdata               : out std_logic_vector(255 downto 0);                    -- wdata
+			wstrb               : out std_logic_vector(31 downto 0);                     -- wstrb
+			wlast               : out std_logic;                                         -- wlast
+			wvalid              : out std_logic;                                         -- wvalid
+			wready              : in  std_logic                      := 'X';             -- wready
+			bid                 : in  std_logic_vector(8 downto 0)   := (others => 'X'); -- bid
+			bresp               : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- bresp
+			bvalid              : in  std_logic                      := 'X';             -- bvalid
+			bready              : out std_logic;                                         -- bready
+			arid                : out std_logic_vector(8 downto 0);                      -- arid
+			araddr              : out std_logic_vector(28 downto 0);                     -- araddr
+			arlen               : out std_logic_vector(7 downto 0);                      -- arlen
+			arsize              : out std_logic_vector(2 downto 0);                      -- arsize
+			arburst             : out std_logic_vector(1 downto 0);                      -- arburst
+			arprot              : out std_logic_vector(2 downto 0);                      -- arprot
+			arqos               : out std_logic_vector(3 downto 0);                      -- arqos
+			aruser_ap           : out std_logic_vector(0 downto 0);                      -- aruser
+			arvalid             : out std_logic;                                         -- arvalid
+			arready             : in  std_logic                      := 'X';             -- arready
+			rid                 : in  std_logic_vector(8 downto 0)   := (others => 'X'); -- rid
+			rdata               : in  std_logic_vector(255 downto 0) := (others => 'X'); -- rdata
+			rresp               : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rresp
+			rlast               : in  std_logic                      := 'X';             -- rlast
+			rvalid              : in  std_logic                      := 'X';             -- rvalid
+			rready              : out std_logic;                                         -- rready
+			ruser_err_dbe       : in  std_logic                      := 'X';             -- ruser_err_dbe
+			ruser_data          : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- ruser_data
+			wuser_data          : out std_logic_vector(31 downto 0);                     -- wuser_data
+			wuser_strb          : out std_logic_vector(3 downto 0);                      -- wuser_strb
+			traffic_gen_pass    : out std_logic;                                         -- traffic_gen_pass
+			traffic_gen_fail    : out std_logic;                                         -- traffic_gen_fail
+			traffic_gen_timeout : out std_logic                                          -- traffic_gen_timeout
+		);
+	end component tg_bottom0_1;
+

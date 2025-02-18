@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <window width="1562" height="800" x="70" y="27" />
+ <systemtable filter="All Interfaces" />
+ <library expandedCategories="Library,Existing IP Variants,Project" />
+</preferences>

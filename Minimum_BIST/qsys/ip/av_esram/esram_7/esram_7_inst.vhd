@@ -1,0 +1,29 @@
+	component esram_7 is
+		port (
+			c7_q_0          : out std_logic_vector(31 downto 0);                    -- s2c7_qb_0
+			esram2f_clk     : out std_logic;                                        -- esram2f_clk
+			iopll_lock2core : out std_logic;                                        -- iopll_lock2core
+			c7_data_0       : in  std_logic_vector(31 downto 0) := (others => 'X'); -- s2c7_da_0
+			c7_rdaddress_0  : in  std_logic_vector(10 downto 0) := (others => 'X'); -- s2c7_adrb_0
+			c7_rden_n_0     : in  std_logic                     := 'X';             -- s2c7_meb_n_0
+			c7_sd_n_0       : in  std_logic                     := 'X';             -- s2c7_sd_n_0
+			c7_wraddress_0  : in  std_logic_vector(10 downto 0) := (others => 'X'); -- s2c7_adra_0
+			c7_wren_n_0     : in  std_logic                     := 'X';             -- s2c7_mea_n_0
+			refclk          : in  std_logic                     := 'X'              -- clock
+		);
+	end component esram_7;
+
+	u0 : component esram_7
+		port map (
+			c7_q_0          => CONNECTED_TO_c7_q_0,          -- ram_output.s2c7_qb_0
+			esram2f_clk     => CONNECTED_TO_esram2f_clk,     --           .esram2f_clk
+			iopll_lock2core => CONNECTED_TO_iopll_lock2core, --           .iopll_lock2core
+			c7_data_0       => CONNECTED_TO_c7_data_0,       --  ram_input.s2c7_da_0
+			c7_rdaddress_0  => CONNECTED_TO_c7_rdaddress_0,  --           .s2c7_adrb_0
+			c7_rden_n_0     => CONNECTED_TO_c7_rden_n_0,     --           .s2c7_meb_n_0
+			c7_sd_n_0       => CONNECTED_TO_c7_sd_n_0,       --           .s2c7_sd_n_0
+			c7_wraddress_0  => CONNECTED_TO_c7_wraddress_0,  --           .s2c7_adra_0
+			c7_wren_n_0     => CONNECTED_TO_c7_wren_n_0,     --           .s2c7_mea_n_0
+			refclk          => CONNECTED_TO_refclk           --           .clock
+		);
+

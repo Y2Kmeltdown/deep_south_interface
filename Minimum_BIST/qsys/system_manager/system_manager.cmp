@@ -1,0 +1,23 @@
+	component system_manager is
+		port (
+			config_clk_clk                          : in    std_logic                     := 'X';             -- clk
+			config_rstn_reset_n                     : in    std_logic                     := 'X';             -- reset_n
+			system_mm_waitrequest                   : out   std_logic;                                        -- waitrequest
+			system_mm_readdata                      : out   std_logic_vector(31 downto 0);                    -- readdata
+			system_mm_readdatavalid                 : out   std_logic;                                        -- readdatavalid
+			system_mm_burstcount                    : in    std_logic_vector(0 downto 0)  := (others => 'X'); -- burstcount
+			system_mm_writedata                     : in    std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			system_mm_address                       : in    std_logic_vector(10 downto 0) := (others => 'X'); -- address
+			system_mm_write                         : in    std_logic                     := 'X';             -- write
+			system_mm_read                          : in    std_logic                     := 'X';             -- read
+			system_mm_byteenable                    : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
+			system_mm_debugaccess                   : in    std_logic                     := 'X';             -- debugaccess
+			conf_d_conf_d                           : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- conf_d
+			soft_recfg_req_n_soft_reconfigure_req_n : out   std_logic;                                        -- soft_reconfigure_req_n
+			conf_c_out_conf_c_out                   : out   std_logic_vector(3 downto 0);                     -- conf_c_out
+			conf_c_in_conf_c_in                     : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- conf_c_in
+			user_clk_clk                            : in    std_logic                     := 'X';             -- clk
+			user_rstn_reset_n                       : in    std_logic                     := 'X'              -- reset_n
+		);
+	end component system_manager;
+

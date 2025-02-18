@@ -1,0 +1,49 @@
+	component ed_synth is
+		port (
+			bottom_core_clk_iopll_reset_reset       : in  std_logic                    := 'X';             -- reset
+			bottom_core_clk_iopll_refclk_clk        : in  std_logic                    := 'X';             -- clk
+			bottom_pll_ref_clk_clk                  : in  std_logic                    := 'X';             -- clk
+			bottom_wmcrst_n_in_reset_n              : in  std_logic                    := 'X';             -- reset_n
+			bottom_only_reset_in_reset              : in  std_logic                    := 'X';             -- reset
+			bottom_m2u_bridge_cattrip               : in  std_logic                    := 'X';             -- cattrip
+			bottom_m2u_bridge_temp                  : in  std_logic_vector(2 downto 0) := (others => 'X'); -- temp
+			bottom_m2u_bridge_wso                   : in  std_logic_vector(7 downto 0) := (others => 'X'); -- wso
+			bottom_m2u_bridge_reset_n               : out std_logic;                                       -- reset_n
+			bottom_m2u_bridge_wrst_n                : out std_logic;                                       -- wrst_n
+			bottom_m2u_bridge_wrck                  : out std_logic;                                       -- wrck
+			bottom_m2u_bridge_shiftwr               : out std_logic;                                       -- shiftwr
+			bottom_m2u_bridge_capturewr             : out std_logic;                                       -- capturewr
+			bottom_m2u_bridge_updatewr              : out std_logic;                                       -- updatewr
+			bottom_m2u_bridge_selectwir             : out std_logic;                                       -- selectwir
+			bottom_m2u_bridge_wsi                   : out std_logic;                                       -- wsi
+			top_pll_ref_clk_clk                     : in  std_logic                    := 'X';             -- clk
+			top_wmcrst_n_in_reset_n                 : in  std_logic                    := 'X';             -- reset_n
+			top_only_reset_in_reset                 : in  std_logic                    := 'X';             -- reset
+			top_m2u_bridge_cattrip                  : in  std_logic                    := 'X';             -- cattrip
+			top_m2u_bridge_temp                     : in  std_logic_vector(2 downto 0) := (others => 'X'); -- temp
+			top_m2u_bridge_wso                      : in  std_logic_vector(7 downto 0) := (others => 'X'); -- wso
+			top_m2u_bridge_reset_n                  : out std_logic;                                       -- reset_n
+			top_m2u_bridge_wrst_n                   : out std_logic;                                       -- wrst_n
+			top_m2u_bridge_wrck                     : out std_logic;                                       -- wrck
+			top_m2u_bridge_shiftwr                  : out std_logic;                                       -- shiftwr
+			top_m2u_bridge_capturewr                : out std_logic;                                       -- capturewr
+			top_m2u_bridge_updatewr                 : out std_logic;                                       -- updatewr
+			top_m2u_bridge_selectwir                : out std_logic;                                       -- selectwir
+			top_m2u_bridge_wsi                      : out std_logic;                                       -- wsi
+			tg_bottom0_0_status_traffic_gen_pass    : out std_logic;                                       -- traffic_gen_pass
+			tg_bottom0_0_status_traffic_gen_fail    : out std_logic;                                       -- traffic_gen_fail
+			tg_bottom0_0_status_traffic_gen_timeout : out std_logic;                                       -- traffic_gen_timeout
+			tg_bottom0_1_status_traffic_gen_pass    : out std_logic;                                       -- traffic_gen_pass
+			tg_bottom0_1_status_traffic_gen_fail    : out std_logic;                                       -- traffic_gen_fail
+			tg_bottom0_1_status_traffic_gen_timeout : out std_logic;                                       -- traffic_gen_timeout
+			tg_top0_0_status_traffic_gen_pass       : out std_logic;                                       -- traffic_gen_pass
+			tg_top0_0_status_traffic_gen_fail       : out std_logic;                                       -- traffic_gen_fail
+			tg_top0_0_status_traffic_gen_timeout    : out std_logic;                                       -- traffic_gen_timeout
+			tg_top0_1_status_traffic_gen_pass       : out std_logic;                                       -- traffic_gen_pass
+			tg_top0_1_status_traffic_gen_fail       : out std_logic;                                       -- traffic_gen_fail
+			tg_top0_1_status_traffic_gen_timeout    : out std_logic;                                       -- traffic_gen_timeout
+			top_core_clk_iopll_reset_reset          : in  std_logic                    := 'X';             -- reset
+			top_core_clk_iopll_ref_clk_clk          : in  std_logic                    := 'X'              -- clk
+		);
+	end component ed_synth;
+
