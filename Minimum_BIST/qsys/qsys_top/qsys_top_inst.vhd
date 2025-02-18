@@ -1,9 +1,21 @@
 	component qsys_top is
 		port (
-			bmc_to_pcie_irq_generator_0_ext_irq_interface_irq_in                  : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
-			pcie_irq_irq                                                          : out   std_logic;                                        -- irq
-			pcie_to_bmc_irq_generator_0_ext_irq_interface_irq_in                  : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
-			bmc_irq_irq                                                           : out   std_logic;                                        -- irq
+			bmc_to_pcie_irq_generator_0_ext_irq_interface_irq                     : out   std_logic;                                        -- irq
+			pcie_irq_irq_in                                                       : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
+			pcie_to_bmc_irq_generator_0_ext_irq_interface_irq                     : out   std_logic;                                        -- irq
+			bmc_irq_irq_in                                                        : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
+			pcie_to_avmm_clk_clk                                                  : in    std_logic                     := 'X';             -- clk
+			pcie_to_avmm_rst_reset                                                : in    std_logic                     := 'X';             -- reset
+			pcie_to_avmm_bus_waitrequest                                          : in    std_logic                     := 'X';             -- waitrequest
+			pcie_to_avmm_bus_readdata                                             : in    std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			pcie_to_avmm_bus_readdatavalid                                        : in    std_logic                     := 'X';             -- readdatavalid
+			pcie_to_avmm_bus_burstcount                                           : out   std_logic_vector(0 downto 0);                     -- burstcount
+			pcie_to_avmm_bus_writedata                                            : out   std_logic_vector(31 downto 0);                    -- writedata
+			pcie_to_avmm_bus_address                                              : out   std_logic_vector(18 downto 0);                    -- address
+			pcie_to_avmm_bus_write                                                : out   std_logic;                                        -- write
+			pcie_to_avmm_bus_read                                                 : out   std_logic;                                        -- read
+			pcie_to_avmm_bus_byteenable                                           : out   std_logic_vector(3 downto 0);                     -- byteenable
+			pcie_to_avmm_bus_debugaccess                                          : out   std_logic;                                        -- debugaccess
 			pcie_user_clk_clk                                                     : out   std_logic;                                        -- clk
 			config_clk_clk                                                        : in    std_logic                     := 'X';             -- clk
 			config_rstn_reset_n                                                   : in    std_logic                     := 'X';             -- reset_n
@@ -530,8 +542,8 @@
 			spi_sclk_to_the_spislave_inst_for_spichain                            : in    std_logic                     := 'X';             -- sclk_to_the_spislave_inst_for_spichain
 			spi_miso_to_and_from_the_spislave_inst_for_spichain                   : inout std_logic                     := 'X';             -- miso_to_and_from_the_spislave_inst_for_spichain
 			pcie_user_rst_reset                                                   : out   std_logic;                                        -- reset
-			system_arbiter_0_hps_gp_if_gp_out                                     : in    std_logic_vector(31 downto 0) := (others => 'X'); -- gp_out
-			system_arbiter_0_hps_gp_if_gp_in                                      : out   std_logic_vector(31 downto 0);                    -- gp_in
+			system_arbiter_1_hps_gp_if_gp_out                                     : in    std_logic_vector(31 downto 0) := (others => 'X'); -- gp_out
+			system_arbiter_1_hps_gp_if_gp_in                                      : out   std_logic_vector(31 downto 0);                    -- gp_in
 			conf_d_conf_d                                                         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- conf_d
 			soft_recfg_req_n_soft_reconfigure_req_n                               : out   std_logic;                                        -- soft_reconfigure_req_n
 			conf_c_out_conf_c_out                                                 : out   std_logic_vector(3 downto 0);                     -- conf_c_out
@@ -541,10 +553,22 @@
 
 	u0 : component qsys_top
 		port map (
-			bmc_to_pcie_irq_generator_0_ext_irq_interface_irq_in                  => CONNECTED_TO_bmc_to_pcie_irq_generator_0_ext_irq_interface_irq_in,                  -- bmc_to_pcie_irq_generator_0_ext_irq_interface.irq_in
-			pcie_irq_irq                                                          => CONNECTED_TO_pcie_irq_irq,                                                          --                                      pcie_irq.irq
-			pcie_to_bmc_irq_generator_0_ext_irq_interface_irq_in                  => CONNECTED_TO_pcie_to_bmc_irq_generator_0_ext_irq_interface_irq_in,                  -- pcie_to_bmc_irq_generator_0_ext_irq_interface.irq_in
-			bmc_irq_irq                                                           => CONNECTED_TO_bmc_irq_irq,                                                           --                                       bmc_irq.irq
+			bmc_to_pcie_irq_generator_0_ext_irq_interface_irq                     => CONNECTED_TO_bmc_to_pcie_irq_generator_0_ext_irq_interface_irq,                     -- bmc_to_pcie_irq_generator_0_ext_irq_interface.irq
+			pcie_irq_irq_in                                                       => CONNECTED_TO_pcie_irq_irq_in,                                                       --                                      pcie_irq.irq_in
+			pcie_to_bmc_irq_generator_0_ext_irq_interface_irq                     => CONNECTED_TO_pcie_to_bmc_irq_generator_0_ext_irq_interface_irq,                     -- pcie_to_bmc_irq_generator_0_ext_irq_interface.irq
+			bmc_irq_irq_in                                                        => CONNECTED_TO_bmc_irq_irq_in,                                                        --                                       bmc_irq.irq_in
+			pcie_to_avmm_clk_clk                                                  => CONNECTED_TO_pcie_to_avmm_clk_clk,                                                  --                              pcie_to_avmm_clk.clk
+			pcie_to_avmm_rst_reset                                                => CONNECTED_TO_pcie_to_avmm_rst_reset,                                                --                              pcie_to_avmm_rst.reset
+			pcie_to_avmm_bus_waitrequest                                          => CONNECTED_TO_pcie_to_avmm_bus_waitrequest,                                          --                              pcie_to_avmm_bus.waitrequest
+			pcie_to_avmm_bus_readdata                                             => CONNECTED_TO_pcie_to_avmm_bus_readdata,                                             --                                              .readdata
+			pcie_to_avmm_bus_readdatavalid                                        => CONNECTED_TO_pcie_to_avmm_bus_readdatavalid,                                        --                                              .readdatavalid
+			pcie_to_avmm_bus_burstcount                                           => CONNECTED_TO_pcie_to_avmm_bus_burstcount,                                           --                                              .burstcount
+			pcie_to_avmm_bus_writedata                                            => CONNECTED_TO_pcie_to_avmm_bus_writedata,                                            --                                              .writedata
+			pcie_to_avmm_bus_address                                              => CONNECTED_TO_pcie_to_avmm_bus_address,                                              --                                              .address
+			pcie_to_avmm_bus_write                                                => CONNECTED_TO_pcie_to_avmm_bus_write,                                                --                                              .write
+			pcie_to_avmm_bus_read                                                 => CONNECTED_TO_pcie_to_avmm_bus_read,                                                 --                                              .read
+			pcie_to_avmm_bus_byteenable                                           => CONNECTED_TO_pcie_to_avmm_bus_byteenable,                                           --                                              .byteenable
+			pcie_to_avmm_bus_debugaccess                                          => CONNECTED_TO_pcie_to_avmm_bus_debugaccess,                                          --                                              .debugaccess
 			pcie_user_clk_clk                                                     => CONNECTED_TO_pcie_user_clk_clk,                                                     --                                 pcie_user_clk.clk
 			config_clk_clk                                                        => CONNECTED_TO_config_clk_clk,                                                        --                                    config_clk.clk
 			config_rstn_reset_n                                                   => CONNECTED_TO_config_rstn_reset_n,                                                   --                                   config_rstn.reset_n
@@ -1071,8 +1095,8 @@
 			spi_sclk_to_the_spislave_inst_for_spichain                            => CONNECTED_TO_spi_sclk_to_the_spislave_inst_for_spichain,                            --                                              .sclk_to_the_spislave_inst_for_spichain
 			spi_miso_to_and_from_the_spislave_inst_for_spichain                   => CONNECTED_TO_spi_miso_to_and_from_the_spislave_inst_for_spichain,                   --                                              .miso_to_and_from_the_spislave_inst_for_spichain
 			pcie_user_rst_reset                                                   => CONNECTED_TO_pcie_user_rst_reset,                                                   --                                 pcie_user_rst.reset
-			system_arbiter_0_hps_gp_if_gp_out                                     => CONNECTED_TO_system_arbiter_0_hps_gp_if_gp_out,                                     --                    system_arbiter_0_hps_gp_if.gp_out
-			system_arbiter_0_hps_gp_if_gp_in                                      => CONNECTED_TO_system_arbiter_0_hps_gp_if_gp_in,                                      --                                              .gp_in
+			system_arbiter_1_hps_gp_if_gp_out                                     => CONNECTED_TO_system_arbiter_1_hps_gp_if_gp_out,                                     --                    system_arbiter_1_hps_gp_if.gp_out
+			system_arbiter_1_hps_gp_if_gp_in                                      => CONNECTED_TO_system_arbiter_1_hps_gp_if_gp_in,                                      --                                              .gp_in
 			conf_d_conf_d                                                         => CONNECTED_TO_conf_d_conf_d,                                                         --                                        conf_d.conf_d
 			soft_recfg_req_n_soft_reconfigure_req_n                               => CONNECTED_TO_soft_recfg_req_n_soft_reconfigure_req_n,                               --                              soft_recfg_req_n.soft_reconfigure_req_n
 			conf_c_out_conf_c_out                                                 => CONNECTED_TO_conf_c_out_conf_c_out,                                                 --                                    conf_c_out.conf_c_out

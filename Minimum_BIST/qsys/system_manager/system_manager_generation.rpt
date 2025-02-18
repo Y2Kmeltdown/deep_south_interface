@@ -98,5 +98,5 @@ Info: system_manager: Done "system_manager" with 37 modules, 55 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis
 Info: Starting: Generate IP Core Documentation
-Info: No documentation filesets were found for components in system_manager. No files generated.
+Info: No documentation filesets were found for components in qsys_sys_mgr. No files generated.
 Info: Finished: Generate IP Core Documentation

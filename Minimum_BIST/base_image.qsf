@@ -7,7 +7,6 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
 set_global_assignment -name DEVICE 1SM21CHU2F53E2VG
 set_global_assignment -name FAMILY "Stratix 10"
-set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
@@ -1410,7 +1409,6 @@ set_global_assignment -name QSYS_FILE qsys/qsys_top.qsys
 set_global_assignment -name VERILOG_FILE bittware_520nmx.v
 set_global_assignment -name IP_FILE qsys/ip/system_manager/system_manager_mm_bridge_0.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/qsys_top_spi_slave_to_avmm_master_bridge.ip
-set_global_assignment -name IP_FILE qsys/ip/qsys_top/system_arbiter_0.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/qsys_top_mm_clock_crossing_bridge_0.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/ocmem.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/spi_pb_0.ip
@@ -1423,11 +1421,9 @@ set_global_assignment -name IP_FILE qsys/ip/qsys_top/qsys_top_clk_1.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/qsys_top_clk_0.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/rst_pcie_user_bridge.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/qsys_top_master_0.ip
-set_global_assignment -name IP_FILE qsys/ip/qsys_top/PCIe_to_BMC_IRQ_Generator_0.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/qsys_top_mm_bridge_0.ip
 set_global_assignment -name IP_FILE qsys/ip/system_manager/system_manager_reg_bridge0.ip
 set_global_assignment -name IP_FILE qsys/ip/qsys_top/qsys_top_clock_bridge_0.ip
-set_global_assignment -name IP_FILE qsys/ip/qsys_top/BMC_to_PCIe_IRQ_Generator_0.ip
 set_global_assignment -name VHDL_FILE qsys/ip/common_cores/heartbeat/rtl/heartbeat_50m.vhd
 set_global_assignment -name IP_FILE qsys/ip/reset_release.ip
 set_global_assignment -name VERILOG_FILE qsys/ip/common_cores/Reset/reset_filter.v
@@ -1435,3 +1431,7 @@ set_global_assignment -name VHDL_FILE qsys/ip/common_cores/Reset/pwr_on_rst_init
 set_global_assignment -name VHDL_FILE qsys/ip/common_cores/retime/rtl/bretime_async_rst.vhd
 set_global_assignment -name IP_FILE qsys/ip/system_manager/system_manager_system_manager_if_0.ip
 set_global_assignment -name QSYS_FILE qsys/system_manager.qsys
+set_global_assignment -name IP_FILE qsys/ip/qsys_top/system_arbiter_1.ip
+set_global_assignment -name IP_FILE qsys/ip/qsys_top/BMC_to_PCIe_IRQ_Generator.ip
+set_global_assignment -name IP_FILE qsys/ip/qsys_top/PCIe_to_BMC_IRQ_Generator_1.ip
+set_global_assignment -name IP_FILE qsys/ip/qsys_top/PCIe_to_avmm_0.ip

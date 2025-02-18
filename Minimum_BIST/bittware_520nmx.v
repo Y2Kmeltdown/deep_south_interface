@@ -185,14 +185,29 @@ module bittware_520nmx #(
 
 
     qsys_top u0 (
-        .pcie_irq_irq                                                          (),                                                          //  output,   width = 1,                                      pcie_irq.irq
-        .bmc_irq_irq                                                           (bmc_irq),                                                           //  output,   width = 1,                                       bmc_irq.irq
+        .pcie_irq_irq_in                                                       (),                                                          //  output,   width = 1,                                      pcie_irq.irq
+        .bmc_irq_irq_in                                                        (bmc_irq),                                                           //  output,   width = 1,                                       bmc_irq.irq
+
+		  //PCIE avalon master interface 19bit address USE THIS AS THE INTERFACE FOR COMMUNICATION VIA PCIE
+		  .pcie_to_avmm_clk_clk                                                  (),                                                  //   input,    width = 1,                              pcie_to_avmm_clk.clk
+        .pcie_to_avmm_rst_reset                                                (),                                                //   input,    width = 1,                              pcie_to_avmm_rst.reset
+        .pcie_to_avmm_bus_waitrequest                                          (),                                          //   input,    width = 1,                              pcie_to_avmm_bus.waitrequest
+        .pcie_to_avmm_bus_readdata                                             (),                                             //   input,  width = 32,                                              .readdata
+        .pcie_to_avmm_bus_readdatavalid                                        (),                                        //   input,    width = 1,                                              .readdatavalid
+        .pcie_to_avmm_bus_burstcount                                           (),                                           //  output,    width = 1,                                              .burstcount
+        .pcie_to_avmm_bus_writedata                                            (),                                            //  output,  width = 32,                                              .writedata
+        .pcie_to_avmm_bus_address                                              (),                                              //  output,   width = 19,                                              .address
+        .pcie_to_avmm_bus_write                                                (),                                                //  output,    width = 1,                                              .write
+        .pcie_to_avmm_bus_read                                                 (),                                                 //  output,    width = 1,                                              .read
+        .pcie_to_avmm_bus_byteenable                                           (),                                           //  output,   width = 64,                                              .byteenable
+        .pcie_to_avmm_bus_debugaccess														 (),
 
         .pcie_user_clk_clk                                                     (pcie_user_clk),                                                     //  output,   width = 1,                                 pcie_user_clk.clk
 
         .config_clk_clk                                                        (config_clk),                                                        //   input,   width = 1,                                    config_clk.clk
         .config_rstn_reset_n                                                   (config_rstn[1]),                                                   //   input,   width = 1,                                   config_rstn.reset_n
 
+		  // SPI/JTAG/PCIE accessible master interface
         .avmm_master_waitrequest                                               (),                                               //   input,   width = 1,                                   avmm_master.waitrequest
         .avmm_master_readdata                                                  (),                                                  //   input,  width = 32,                                              .readdata
         .avmm_master_readdatavalid                                             (),                                             //   input,   width = 1,                                              .readdatavalid

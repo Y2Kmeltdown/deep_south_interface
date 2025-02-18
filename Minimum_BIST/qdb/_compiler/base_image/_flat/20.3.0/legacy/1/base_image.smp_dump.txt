@@ -1,12 +1,56 @@
 
 State Machine - Summary
 
-State Machine - u0|qsys_top_pcie_s10_hip_avmm_gen3x16|avmm_bridge_512_0|hip|altera_pcie_s10_hip_ast_pipen1b_inst|exprom_auto_resp_inst|rom_state
-Name rom_state.ROM_SEND_CPL rom_state.ROM_BACK_PRESSURE_APP rom_state.ROM_LATCH_TLP rom_state.ROM_IDLE 
-rom_state.ROM_IDLE 0 0 0 0 
-rom_state.ROM_LATCH_TLP 0 0 1 1 
-rom_state.ROM_BACK_PRESSURE_APP 0 1 0 1 
-rom_state.ROM_SEND_CPL 1 0 0 1 
+State Machine - u0|qsys_top_master_0|qsys_top_master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|write_state
+Name write_state.ST_WRITE_DATA write_state.ST_HEADER_2 write_state.ST_HEADER_1 write_state.ST_BYPASS 
+write_state.ST_BYPASS 0 0 0 0 
+write_state.ST_HEADER_1 0 0 1 1 
+write_state.ST_HEADER_2 0 1 0 1 
+write_state.ST_WRITE_DATA 1 0 0 1 
+
+State Machine - u0|qsys_top_master_0|qsys_top_master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|read_state
+Name read_state.ST_HEADER read_state.ST_READ_DATA read_state.ST_PADDED 
+read_state.ST_HEADER 0 0 0 
+read_state.ST_READ_DATA 1 1 0 
+read_state.ST_PADDED 1 0 1 
+
+State Machine - u0|qsys_top_master_0|qsys_top_master_0|transacto|p2m|state
+Name state.READ_SEND_WAIT state.READ_DATA_WAIT state.READ_SEND_ISSUE state.READ_CMD_WAIT state.WRITE_WAIT state.RETURN_PACKET state.READ_ASSERT state.GET_WRITE_DATA state.GET_ADDR4 state.GET_ADDR3 state.GET_ADDR2 state.GET_ADDR1 state.GET_SIZE2 state.GET_SIZE1 state.GET_EXTRA state.READY 
+state.READY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.GET_EXTRA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.GET_SIZE1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.GET_SIZE2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.GET_ADDR1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.GET_ADDR2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.GET_ADDR3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.GET_ADDR4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.GET_WRITE_DATA 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.READ_ASSERT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.RETURN_PACKET 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_WAIT 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_CMD_WAIT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_ISSUE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_DATA_WAIT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - u0|qsys_top_spi_slave_to_avmm_master_bridge|qsys_top_spi_slave_to_avmm_master_bridge|the_altera_avalon_packets_to_master_inst_for_spichain|the_altera_avalon_packets_to_master|p2m|state
+Name state.READ_SEND_WAIT state.READ_DATA_WAIT state.READ_SEND_ISSUE state.READ_CMD_WAIT state.WRITE_WAIT state.RETURN_PACKET state.READ_ASSERT state.GET_WRITE_DATA state.GET_ADDR4 state.GET_ADDR3 state.GET_ADDR2 state.GET_ADDR1 state.GET_SIZE2 state.GET_SIZE1 state.GET_EXTRA state.READY 
+state.READY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.GET_EXTRA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.GET_SIZE1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.GET_SIZE2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.GET_ADDR1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.GET_ADDR2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.GET_ADDR3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.GET_ADDR4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.GET_WRITE_DATA 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.READ_ASSERT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.RETURN_PACKET 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.WRITE_WAIT 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_CMD_WAIT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_ISSUE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_DATA_WAIT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.READ_SEND_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - u0|mm_interconnect_1|qsys_top_mm_clock_crossing_bridge_0_s0_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
@@ -16,6 +60,13 @@ state.ST_COMP_TRANS 1 0 0 1
 state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
 
 State Machine - u0|mm_interconnect_1|arbiter_bridge_s0_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - u0|mm_interconnect_1|pcie_to_avmm_0_s0_burst_adapter|altera_merlin_burst_adapter_13_1.burst_adapter|state
 Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
 state.ST_IDLE 0 0 0 0 
 state.ST_UNCOMP_TRANS 1 0 1 0 
@@ -71,53 +122,9 @@ rxm_state.RXM_POP_CMD 0 0 1 1
 rxm_state.RXM_WR 0 1 0 1 
 rxm_state.RXM_RD 1 0 0 1 
 
-State Machine - u0|qsys_top_master_0|qsys_top_master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|write_state
-Name write_state.ST_WRITE_DATA write_state.ST_HEADER_2 write_state.ST_HEADER_1 write_state.ST_BYPASS 
-write_state.ST_BYPASS 0 0 0 0 
-write_state.ST_HEADER_1 0 0 1 1 
-write_state.ST_HEADER_2 0 1 0 1 
-write_state.ST_WRITE_DATA 1 0 0 1 
-
-State Machine - u0|qsys_top_master_0|qsys_top_master_0|jtag_phy_embedded_in_jtag_master|normal.jtag_dc_streaming|jtag_streaming|read_state
-Name read_state.ST_HEADER read_state.ST_READ_DATA read_state.ST_PADDED 
-read_state.ST_HEADER 0 0 0 
-read_state.ST_READ_DATA 1 1 0 
-read_state.ST_PADDED 1 0 1 
-
-State Machine - u0|qsys_top_master_0|qsys_top_master_0|transacto|p2m|state
-Name state.READ_SEND_WAIT state.READ_DATA_WAIT state.READ_SEND_ISSUE state.READ_CMD_WAIT state.WRITE_WAIT state.RETURN_PACKET state.READ_ASSERT state.GET_WRITE_DATA state.GET_ADDR4 state.GET_ADDR3 state.GET_ADDR2 state.GET_ADDR1 state.GET_SIZE2 state.GET_SIZE1 state.GET_EXTRA state.READY 
-state.READY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.GET_EXTRA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.GET_SIZE1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.GET_SIZE2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.GET_ADDR1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.GET_ADDR2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.GET_ADDR3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.GET_ADDR4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.GET_WRITE_DATA 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.READ_ASSERT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.RETURN_PACKET 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.WRITE_WAIT 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_CMD_WAIT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_SEND_ISSUE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_DATA_WAIT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_SEND_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-
-State Machine - u0|qsys_top_spi_slave_to_avmm_master_bridge|qsys_top_spi_slave_to_avmm_master_bridge|the_altera_avalon_packets_to_master_inst_for_spichain|the_altera_avalon_packets_to_master|p2m|state
-Name state.READ_SEND_WAIT state.READ_DATA_WAIT state.READ_SEND_ISSUE state.READ_CMD_WAIT state.WRITE_WAIT state.RETURN_PACKET state.READ_ASSERT state.GET_WRITE_DATA state.GET_ADDR4 state.GET_ADDR3 state.GET_ADDR2 state.GET_ADDR1 state.GET_SIZE2 state.GET_SIZE1 state.GET_EXTRA state.READY 
-state.READY 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.GET_EXTRA 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.GET_SIZE1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.GET_SIZE2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.GET_ADDR1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.GET_ADDR2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.GET_ADDR3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.GET_ADDR4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.GET_WRITE_DATA 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.READ_ASSERT 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.RETURN_PACKET 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.WRITE_WAIT 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_CMD_WAIT 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_SEND_ISSUE 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_DATA_WAIT 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
-state.READ_SEND_WAIT 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+State Machine - u0|qsys_top_pcie_s10_hip_avmm_gen3x16|avmm_bridge_512_0|hip|altera_pcie_s10_hip_ast_pipen1b_inst|exprom_auto_resp_inst|rom_state
+Name rom_state.ROM_SEND_CPL rom_state.ROM_BACK_PRESSURE_APP rom_state.ROM_LATCH_TLP rom_state.ROM_IDLE 
+rom_state.ROM_IDLE 0 0 0 0 
+rom_state.ROM_LATCH_TLP 0 0 1 1 
+rom_state.ROM_BACK_PRESSURE_APP 0 1 0 1 
+rom_state.ROM_SEND_CPL 1 0 0 1 

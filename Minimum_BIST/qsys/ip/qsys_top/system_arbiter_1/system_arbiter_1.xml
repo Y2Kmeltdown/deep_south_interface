@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.02.18.17:13:18"
+ outputDirectory="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clock" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="s0" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="16" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="avs_s0_address" direction="input" role="address" width="2" />
+   <port name="avs_s0_read" direction="input" role="read" width="1" />
+   <port name="avs_s0_readdata" direction="output" role="readdata" width="32" />
+   <port name="avs_s0_write" direction="input" role="write" width="1" />
+   <port name="avs_s0_writedata" direction="input" role="writedata" width="32" />
+   <port
+       name="avs_s0_waitrequest"
+       direction="output"
+       role="waitrequest"
+       width="1" />
+  </interface>
+  <interface name="hps_gp_if" kind="conduit" start="0">
+   <property name="associatedClock" value="clock" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="hps_gp_o" direction="input" role="gp_out" width="32" />
+   <port name="hps_gp_i" direction="output" role="gp_in" width="32" />
+  </interface>
+ </perimeter>
+ <entity kind="system_arbiter_1" version="1.0" name="system_arbiter_1">
+  <parameter name="AUTO_CLOCK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/synth/system_arbiter_1.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/synth/system_arbiter_1.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/system_arbiter_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="system_arbiter_1">"Generating: system_arbiter_1"</message>
+   <message level="Info" culprit="system_arbiter_1">"Generating: arbiter"</message>
+  </messages>
+ </entity>
+ <entity kind="system_arbiter" version="1.0" name="arbiter">
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/system_arbiter_10/synth/arbiter.vhd"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/system_arbiter_10/synth/arbiter_frr.vhd"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/system_arbiter_10/synth/pkg_global.vhd"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/system_arbiter_10/synth/arbiter.vhd"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/system_arbiter_10/synth/arbiter_frr.vhd"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/ip/qsys_top/system_arbiter_1/system_arbiter_10/synth/pkg_global.vhd"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Minimum_BIST/qsys/system_arbiter_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="system_arbiter_1" as="system_arbiter_1" />
+  <messages>
+   <message level="Info" culprit="system_arbiter_1">"Generating: arbiter"</message>
+  </messages>
+ </entity>
+</deploy>

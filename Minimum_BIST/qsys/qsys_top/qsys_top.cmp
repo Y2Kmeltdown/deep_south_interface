@@ -1,9 +1,21 @@
 	component qsys_top is
 		port (
-			bmc_to_pcie_irq_generator_0_ext_irq_interface_irq_in                  : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
-			pcie_irq_irq                                                          : out   std_logic;                                        -- irq
-			pcie_to_bmc_irq_generator_0_ext_irq_interface_irq_in                  : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
-			bmc_irq_irq                                                           : out   std_logic;                                        -- irq
+			bmc_to_pcie_irq_generator_0_ext_irq_interface_irq                     : out   std_logic;                                        -- irq
+			pcie_irq_irq_in                                                       : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
+			pcie_to_bmc_irq_generator_0_ext_irq_interface_irq                     : out   std_logic;                                        -- irq
+			bmc_irq_irq_in                                                        : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
+			pcie_to_avmm_clk_clk                                                  : in    std_logic                     := 'X';             -- clk
+			pcie_to_avmm_rst_reset                                                : in    std_logic                     := 'X';             -- reset
+			pcie_to_avmm_bus_waitrequest                                          : in    std_logic                     := 'X';             -- waitrequest
+			pcie_to_avmm_bus_readdata                                             : in    std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			pcie_to_avmm_bus_readdatavalid                                        : in    std_logic                     := 'X';             -- readdatavalid
+			pcie_to_avmm_bus_burstcount                                           : out   std_logic_vector(0 downto 0);                     -- burstcount
+			pcie_to_avmm_bus_writedata                                            : out   std_logic_vector(31 downto 0);                    -- writedata
+			pcie_to_avmm_bus_address                                              : out   std_logic_vector(18 downto 0);                    -- address
+			pcie_to_avmm_bus_write                                                : out   std_logic;                                        -- write
+			pcie_to_avmm_bus_read                                                 : out   std_logic;                                        -- read
+			pcie_to_avmm_bus_byteenable                                           : out   std_logic_vector(3 downto 0);                     -- byteenable
+			pcie_to_avmm_bus_debugaccess                                          : out   std_logic;                                        -- debugaccess
 			pcie_user_clk_clk                                                     : out   std_logic;                                        -- clk
 			config_clk_clk                                                        : in    std_logic                     := 'X';             -- clk
 			config_rstn_reset_n                                                   : in    std_logic                     := 'X';             -- reset_n
@@ -530,8 +542,8 @@
 			spi_sclk_to_the_spislave_inst_for_spichain                            : in    std_logic                     := 'X';             -- sclk_to_the_spislave_inst_for_spichain
 			spi_miso_to_and_from_the_spislave_inst_for_spichain                   : inout std_logic                     := 'X';             -- miso_to_and_from_the_spislave_inst_for_spichain
 			pcie_user_rst_reset                                                   : out   std_logic;                                        -- reset
-			system_arbiter_0_hps_gp_if_gp_out                                     : in    std_logic_vector(31 downto 0) := (others => 'X'); -- gp_out
-			system_arbiter_0_hps_gp_if_gp_in                                      : out   std_logic_vector(31 downto 0);                    -- gp_in
+			system_arbiter_1_hps_gp_if_gp_out                                     : in    std_logic_vector(31 downto 0) := (others => 'X'); -- gp_out
+			system_arbiter_1_hps_gp_if_gp_in                                      : out   std_logic_vector(31 downto 0);                    -- gp_in
 			conf_d_conf_d                                                         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- conf_d
 			soft_recfg_req_n_soft_reconfigure_req_n                               : out   std_logic;                                        -- soft_reconfigure_req_n
 			conf_c_out_conf_c_out                                                 : out   std_logic_vector(3 downto 0);                     -- conf_c_out

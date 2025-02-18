@@ -1,8 +1,20 @@
 module qsys_top (
-		input  wire [1:0]  bmc_to_pcie_irq_generator_0_ext_irq_interface_irq_in,                  // bmc_to_pcie_irq_generator_0_ext_irq_interface.irq_in
-		output wire        pcie_irq_irq,                                                          //                                      pcie_irq.irq
-		input  wire [1:0]  pcie_to_bmc_irq_generator_0_ext_irq_interface_irq_in,                  // pcie_to_bmc_irq_generator_0_ext_irq_interface.irq_in
-		output wire        bmc_irq_irq,                                                           //                                       bmc_irq.irq
+		output wire        bmc_to_pcie_irq_generator_0_ext_irq_interface_irq,                     // bmc_to_pcie_irq_generator_0_ext_irq_interface.irq
+		input  wire [1:0]  pcie_irq_irq_in,                                                       //                                      pcie_irq.irq_in
+		output wire        pcie_to_bmc_irq_generator_0_ext_irq_interface_irq,                     // pcie_to_bmc_irq_generator_0_ext_irq_interface.irq
+		input  wire [1:0]  bmc_irq_irq_in,                                                        //                                       bmc_irq.irq_in
+		input  wire        pcie_to_avmm_clk_clk,                                                  //                              pcie_to_avmm_clk.clk
+		input  wire        pcie_to_avmm_rst_reset,                                                //                              pcie_to_avmm_rst.reset
+		input  wire        pcie_to_avmm_bus_waitrequest,                                          //                              pcie_to_avmm_bus.waitrequest
+		input  wire [31:0] pcie_to_avmm_bus_readdata,                                             //                                              .readdata
+		input  wire        pcie_to_avmm_bus_readdatavalid,                                        //                                              .readdatavalid
+		output wire [0:0]  pcie_to_avmm_bus_burstcount,                                           //                                              .burstcount
+		output wire [31:0] pcie_to_avmm_bus_writedata,                                            //                                              .writedata
+		output wire [18:0] pcie_to_avmm_bus_address,                                              //                                              .address
+		output wire        pcie_to_avmm_bus_write,                                                //                                              .write
+		output wire        pcie_to_avmm_bus_read,                                                 //                                              .read
+		output wire [3:0]  pcie_to_avmm_bus_byteenable,                                           //                                              .byteenable
+		output wire        pcie_to_avmm_bus_debugaccess,                                          //                                              .debugaccess
 		output wire        pcie_user_clk_clk,                                                     //                                 pcie_user_clk.clk
 		input  wire        config_clk_clk,                                                        //                                    config_clk.clk
 		input  wire        config_rstn_reset_n,                                                   //                                   config_rstn.reset_n
@@ -529,8 +541,8 @@ module qsys_top (
 		input  wire        spi_sclk_to_the_spislave_inst_for_spichain,                            //                                              .sclk_to_the_spislave_inst_for_spichain
 		inout  wire        spi_miso_to_and_from_the_spislave_inst_for_spichain,                   //                                              .miso_to_and_from_the_spislave_inst_for_spichain
 		output wire        pcie_user_rst_reset,                                                   //                                 pcie_user_rst.reset
-		input  wire [31:0] system_arbiter_0_hps_gp_if_gp_out,                                     //                    system_arbiter_0_hps_gp_if.gp_out
-		output wire [31:0] system_arbiter_0_hps_gp_if_gp_in,                                      //                                              .gp_in
+		input  wire [31:0] system_arbiter_1_hps_gp_if_gp_out,                                     //                    system_arbiter_1_hps_gp_if.gp_out
+		output wire [31:0] system_arbiter_1_hps_gp_if_gp_in,                                      //                                              .gp_in
 		inout  wire [7:0]  conf_d_conf_d,                                                         //                                        conf_d.conf_d
 		output wire        soft_recfg_req_n_soft_reconfigure_req_n,                               //                              soft_recfg_req_n.soft_reconfigure_req_n
 		output wire [3:0]  conf_c_out_conf_c_out,                                                 //                                    conf_c_out.conf_c_out

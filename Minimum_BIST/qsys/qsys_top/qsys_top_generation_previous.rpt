@@ -7,6 +7,8 @@ Progress: Adding BMC_to_PCIe_IRQ_Generator_0 [altera_generic_component 1.0]
 Progress: Parameterizing module BMC_to_PCIe_IRQ_Generator_0
 Progress: Adding PCIe_to_BMC_IRQ_Generator_0 [altera_generic_component 1.0]
 Progress: Parameterizing module PCIe_to_BMC_IRQ_Generator_0
+Progress: Adding PCIe_to_avmm_0 [altera_generic_component 1.0]
+Progress: Parameterizing module PCIe_to_avmm_0
 Progress: Adding arbiter_bridge [altera_generic_component 1.0]
 Progress: Parameterizing module arbiter_bridge
 Progress: Adding clk_pcie_user_bridge [altera_generic_component 1.0]
@@ -48,6 +50,8 @@ Progress: Adding BMC_to_PCIe_IRQ_Generator_0 [altera_generic_component 1.0]
 Progress: Parameterizing module BMC_to_PCIe_IRQ_Generator_0
 Progress: Adding PCIe_to_BMC_IRQ_Generator_0 [altera_generic_component 1.0]
 Progress: Parameterizing module PCIe_to_BMC_IRQ_Generator_0
+Progress: Adding PCIe_to_avmm_0 [altera_generic_component 1.0]
+Progress: Parameterizing module PCIe_to_avmm_0
 Progress: Adding arbiter_bridge [altera_generic_component 1.0]
 Progress: Parameterizing module arbiter_bridge
 Progress: Adding clk_pcie_user_bridge [altera_generic_component 1.0]
@@ -82,21 +86,22 @@ Info: qsys_top: "Transforming system: qsys_top"
 Info: Interconnect is inserted between master qsys_top_spi_slave_to_avmm_master_bridge.avalon_master and slave spi_pb_0.s0 because the master has address signal 32 bit wide, but the slave is 15 bit wide.
 Info: Inserting clock-crossing logic between cmd_demux_001.src0 and cmd_mux.sink1
 Info: Inserting clock-crossing logic between cmd_demux_001.src1 and cmd_mux_001.sink1
-Info: Inserting clock-crossing logic between cmd_demux_001.src2 and cmd_mux_002.sink1
-Info: Inserting clock-crossing logic between cmd_demux_001.src3 and cmd_mux_003.sink1
+Info: Inserting clock-crossing logic between cmd_demux_001.src2 and cmd_mux_003.sink1
+Info: Inserting clock-crossing logic between cmd_demux_001.src3 and cmd_mux_004.sink1
 Info: Inserting clock-crossing logic between cmd_demux_002.src0 and cmd_mux.sink2
-Info: Inserting clock-crossing logic between cmd_demux_002.src1 and cmd_mux_003.sink2
+Info: Inserting clock-crossing logic between cmd_demux_002.src1 and cmd_mux_004.sink2
 Info: Inserting clock-crossing logic between rsp_demux.src1 and rsp_mux_001.sink0
 Info: Inserting clock-crossing logic between rsp_demux.src2 and rsp_mux_002.sink0
 Info: Inserting clock-crossing logic between rsp_demux_001.src1 and rsp_mux_001.sink1
-Info: Inserting clock-crossing logic between rsp_demux_002.src1 and rsp_mux_001.sink2
-Info: Inserting clock-crossing logic between rsp_demux_003.src1 and rsp_mux_001.sink3
-Info: Inserting clock-crossing logic between rsp_demux_003.src2 and rsp_mux_002.sink1
+Info: Inserting clock-crossing logic between rsp_demux_003.src1 and rsp_mux_001.sink2
+Info: Inserting clock-crossing logic between rsp_demux_004.src1 and rsp_mux_001.sink3
+Info: Inserting clock-crossing logic between rsp_demux_004.src2 and rsp_mux_002.sink1
 Info: qsys_top: "Naming system components in system: qsys_top"
 Info: qsys_top: "Processing generation queue"
 Info: qsys_top: "Generating: qsys_top"
-Info: qsys_top: "Generating: BMC_to_PCIe_IRQ_Generator_0"
-Info: qsys_top: "Generating: PCIe_to_BMC_IRQ_Generator_0"
+Info: qsys_top: "Generating: BMC_to_PCIe_IRQ_Generator"
+Info: qsys_top: "Generating: PCIe_to_BMC_IRQ_Generator_1"
+Info: qsys_top: "Generating: PCIe_to_avmm_0"
 Info: qsys_top: "Generating: qsys_top_mm_bridge_0"
 Info: qsys_top: "Generating: qsys_top_clock_bridge_0"
 Info: qsys_top: "Generating: ocmem"
@@ -108,10 +113,10 @@ Info: qsys_top: "Generating: qsys_top_avmm_bridge_512_0"
 Info: qsys_top: "Generating: qsys_top_spi_slave_to_avmm_master_bridge"
 Info: qsys_top: "Generating: rst_pcie_user_bridge"
 Info: qsys_top: "Generating: spi_pb_0"
-Info: qsys_top: "Generating: system_arbiter_0"
+Info: qsys_top: "Generating: system_arbiter_1"
 Info: qsys_top: "Generating: qsys_top_altera_mm_interconnect_1920_kwnluhq"
-Info: qsys_top: "Generating: qsys_top_altera_mm_interconnect_1920_ue4w4vy"
-Info: qsys_top: "Generating: qsys_top_altera_mm_interconnect_1920_fglobwy"
+Info: qsys_top: "Generating: qsys_top_altera_mm_interconnect_1920_lathdgq"
+Info: qsys_top: "Generating: qsys_top_altera_mm_interconnect_1920_kphv77y"
 Info: qsys_top: "Generating: altera_reset_controller"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_master_translator_191_g7h47bq"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_slave_translator_191_x56fcki"
@@ -119,38 +124,45 @@ Info: qsys_top: "Generating: qsys_top_altera_merlin_master_translator_191_ppvxbn
 Info: qsys_top: "Generating: qsys_top_altera_merlin_master_agent_191_mpbm6tq"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_slave_agent_191_ncfkfri"
 Info: qsys_top: "Generating: qsys_top_altera_avalon_sc_fifo_1930_pqv24kq"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_bawcwqy"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_xyb4b4q"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_ogf3v7y"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_kmoqcuq"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_oceob2q"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_xeqmyuq"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_sp6ej7y"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_uiit2jy"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_v2z3uta"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_4hge7iq"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_5yk4a4a"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_traffic_limiter_191_kcba44q"
 Info: my_altera_avalon_sc_fifo_dest_id_fifo: "Generating: my_altera_avalon_sc_fifo_dest_id_fifo"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_burst_adapter_1920_zj4cw3i"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_burst_adapter_1920_nqsp4yq"
 Info: my_altera_avalon_st_pipeline_stage: "Generating: my_altera_avalon_st_pipeline_stage"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_lxptvga"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_msq57ay"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_csz6d7q"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_6tdbr2i"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_wfv6mqq"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_myybjuq"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_6ntswkq"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_45pqgty"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_z2mjk3a"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_width_adapter_1920_xbngrwq"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_width_adapter_1920_6otaysi"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_burst_adapter_1920_lqfmovy"
+Info: my_altera_avalon_st_pipeline_stage: "Generating: my_altera_avalon_st_pipeline_stage"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_7dcfnya"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_hi7mora"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_6ofqb2a"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_r4uam4y"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_wk4dnvi"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_xfk7t2q"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_uawfxmy"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_atklsvy"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_edy347i"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_cghty7a"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_otolx4y"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_l3embyy"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_width_adapter_1920_3rwmrgy"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_width_adapter_1920_b6zigwa"
 Info: qsys_top: "Generating: altera_merlin_waitrequest_adapter"
-Info: qsys_top: "Generating: qsys_top_altera_avalon_st_handshake_clock_crosser_1930_gojx3va"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_eoz34ta"
+Info: qsys_top: "Generating: qsys_top_altera_avalon_st_handshake_clock_crosser_1930_kklrpbi"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_3et2vdi"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_router_1920_cdaumuq"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_gdm3usq"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_odfiodi"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_demultiplexer_1920_ykntzea"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_multiplexer_1920_it464ma"
 Info: qsys_top: "Generating: qsys_top_altera_merlin_traffic_limiter_altera_avalon_sc_fifo_191_lql4xty"
-Info: qsys_top: "Generating: qsys_top_altera_merlin_burst_adapter_altera_avalon_st_pipeline_stage_1920_5ttfmnq"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_burst_adapter_altera_avalon_st_pipeline_stage_1920_maalyoy"
+Info: qsys_top: "Generating: qsys_top_altera_merlin_burst_adapter_altera_avalon_st_pipeline_stage_1920_lax5oca"
 Info: qsys_top: "Generating: qsys_top_altera_avalon_st_pipeline_stage_1920_zterisq"
-Info: qsys_top: Done "qsys_top" with 55 modules, 68 files
+Info: qsys_top: Done "qsys_top" with 62 modules, 83 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis
 Info: Starting: Generate IP Core Documentation
