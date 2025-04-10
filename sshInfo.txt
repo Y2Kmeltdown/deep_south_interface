@@ -1,0 +1,12 @@
+ssh -J damien.rice@deepsouth.westernsydney.edu.au damien.rice@xcs-node-23
+ssh -J damien.rice@deepsouth.westernsydney.edu.au damien.rice@xcs-master-vm
+ssh damien.rice@137.154.50.2
+
+CHECK POWER STATUS
+sudo docker exec -it admin-rdp ipmitool -I lanplus -H 172.0.3.123 -U root -P DeepSouth chassis power status
+
+GRACEFUL SHUTDOWN
+sudo docker exec -it admin-rdp ipmitool -I lanplus -H 172.0.3.123 -U root -P DeepSouth chassis power soft
+
+FORCE POWER CYCLE
+sudo docker exec -it admin-rdp ipmitool -I lanplus -H 172.0.3.123 -U root -P DeepSouth chassis power cycle

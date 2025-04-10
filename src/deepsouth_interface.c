@@ -6,6 +6,8 @@
 #include "nalla520nmxlib.h"
 #include "520nmx_bist_bar0_mmap.h"
 
+//#define ESRAM_TEST_CHANNEL0 = 0x10000
+//#define ESRAM_TEST_CHANNEL7 = 0x12000
 /*
 #define NALLA_OPEN_520nmx_MAINTENANCE      (0x00000001)
 #define NALLA_OPEN_520nmx_MONITOR          (0x00000002)
@@ -26,10 +28,10 @@ int main(int argc, char* argv[])
 {
     
     int i;
-    hbar = NALLA_520nmx_Open(0,NALLA_OPEN_520nmx_BAR_CSR);
+    hbar = NALLA_520nmx_Open(1,NALLA_OPEN_520nmx_BAR_CSR);
     if(hbar == NULL)
 	{
-		printf("Error opening card %d.\n", 0);
+		printf("Error opening card %d.\n", 1);
 		return 1;
 	}
 
@@ -37,6 +39,7 @@ int main(int argc, char* argv[])
     uint32_t *readbuffer;
    
     int buffer_size = ESRAM_CHANNEL7 - ESRAM_CHANNEL0;
+    //int buffer_size = 0x12000 - 0x10000;
     int dword_buffer_size = buffer_size /4;
     writebuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
     readbuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
@@ -73,6 +76,14 @@ int main(int argc, char* argv[])
     clock_t end_reading = clock();
     double time_spent_reading = (double)(end_reading - begin_reading) / CLOCKS_PER_SEC;
     printf("Time spent reading %d bytes of data %fs\n", numbytesread,time_spent_reading);
+
+    
+
+    // for(i=0; i<dword_buffer_size; i++)
+	// {
+    //     printf("The data in memory is %d\n", readbuffer[i]);
+		
+	// }
     
 
     if(hbar!=0)
