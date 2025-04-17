@@ -6,8 +6,8 @@
 #include "nalla520nmxlib.h"
 #include "520nmx_bist_bar0_mmap.h"
 
-//#define ESRAM_TEST_CHANNEL0 = 0x10000
-//#define ESRAM_TEST_CHANNEL7 = 0x12000
+#define ESRAM_START_ADDRESS 0x40000
+#define ESRAM_END_ADDRESS 0x80000
 /*
 #define NALLA_OPEN_520nmx_MAINTENANCE      (0x00000001)
 #define NALLA_OPEN_520nmx_MONITOR          (0x00000002)
@@ -21,12 +21,11 @@
 */
 
 NALLA_HANDLE hbar;
-
+FILE *fptr;
 
 
 int main(int argc, char* argv[])
 {
-    
     int i;
     hbar = NALLA_520nmx_Open(1,NALLA_OPEN_520nmx_BAR_CSR);
     if(hbar == NULL)
@@ -38,8 +37,8 @@ int main(int argc, char* argv[])
     uint32_t *writebuffer;
     uint32_t *readbuffer;
    
-    int buffer_size = ESRAM_CHANNEL7 - ESRAM_CHANNEL0;
-    //int buffer_size = 0x12000 - 0x10000;
+    int buffer_size = ESRAM_END_ADDRESS - ESRAM_START_ADDRESS;
+    //int buffer_size = 0x80000 - 0x40000;
     int dword_buffer_size = buffer_size /4;
     writebuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
     readbuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
@@ -52,7 +51,7 @@ int main(int argc, char* argv[])
     int numbyteswritten=0, numbytesread=0, numbytes=0;
     numbytes = buffer_size;
     clock_t begin_writing = clock();
-    numbyteswritten = NALLA_520nmx_Write(hbar, writebuffer, ESRAM_CHANNEL0, numbytes, NALLA_MMAP_WRITE);
+    numbyteswritten = NALLA_520nmx_Write(hbar, writebuffer, ESRAM_START_ADDRESS, numbytes, NALLA_MMAP_WRITE);
     if(numbyteswritten != numbytes)
     {
         printf("Mismatch: Number of bytes written %d, number of bytes requested %d\n",numbyteswritten, numbytes);
@@ -65,7 +64,7 @@ int main(int argc, char* argv[])
     printf("Time spent writing %d bytes of data %fs\n", numbyteswritten,time_spent_writing);
 
     clock_t begin_reading = clock();
-    numbytesread = NALLA_520nmx_Read(hbar, readbuffer, ESRAM_CHANNEL0, numbytes, NALLA_MMAP_READ);
+    numbytesread = NALLA_520nmx_Read(hbar, readbuffer, ESRAM_START_ADDRESS, numbytes, NALLA_MMAP_READ);
     if(numbytesread != numbytes)
     {
             printf("Mismatch: Number of bytes received %d, number of bytes requested %d\n",numbytesread, numbytes);
@@ -78,14 +77,14 @@ int main(int argc, char* argv[])
     printf("Time spent reading %d bytes of data %fs\n", numbytesread,time_spent_reading);
 
     
-
-    // for(i=0; i<dword_buffer_size; i++)
-	// {
-    //     printf("The data in memory is %d\n", readbuffer[i]);
-		
-	// }
+    fptr = fopen("memory.log", "w");
+    for(i=0; i<dword_buffer_size; i++)
+	{
+        fprintf(fptr, "The data in memory is %d\n", readbuffer[i]);
+        //printf("The data in memory is %d\n", readbuffer[i]);
+	}
+    fclose(fptr);
     
-
     if(hbar!=0)
 	{
 		NALLA_520nmx_Close(hbar);
