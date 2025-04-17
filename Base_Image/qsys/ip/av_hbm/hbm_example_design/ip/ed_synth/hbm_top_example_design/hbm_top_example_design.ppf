@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="hbm_0_example_design"
+ megafunction_name="ALTERA_HBM"
+ intended_family="Stratix 10"
+ specifies="all_ports">
+ <global>
+  <pin name="pll_ref_clk" direction="input" scope="external" />
+  <pin name="ext_core_clk" direction="input" scope="external" />
+  <pin name="ext_core_clk_locked" direction="input" scope="external" />
+  <pin name="wmcrst_n_in" direction="input" scope="external" />
+  <pin name="hbm_only_reset_in" direction="input" scope="external" />
+  <pin name="local_cal_success" direction="output" scope="external" />
+  <pin name="local_cal_fail" direction="output" scope="external" />
+  <pin name="cal_lat[2..0]" direction="output" scope="external" />
+  <pin name="ck_t_0" direction="output" scope="external" />
+  <pin name="ck_c_0" direction="output" scope="external" />
+  <pin name="cke_0" direction="output" scope="external" />
+  <pin name="c_0[7..0]" direction="output" scope="external" />
+  <pin name="r_0[5..0]" direction="output" scope="external" />
+  <pin name="dq_0[127..0]" direction="bidir" scope="external" />
+  <pin name="dm_0[15..0]" direction="bidir" scope="external" />
+  <pin name="dbi_0[15..0]" direction="bidir" scope="external" />
+  <pin name="par_0[3..0]" direction="bidir" scope="external" />
+  <pin name="derr_0[3..0]" direction="bidir" scope="external" />
+  <pin name="rdqs_t_0[3..0]" direction="input" scope="external" />
+  <pin name="rdqs_c_0[3..0]" direction="input" scope="external" />
+  <pin name="wdqs_t_0[3..0]" direction="output" scope="external" />
+  <pin name="wdqs_c_0[3..0]" direction="output" scope="external" />
+  <pin name="rd_0[7..0]" direction="bidir" scope="external" />
+  <pin name="rr_0" direction="output" scope="external" />
+  <pin name="rc_0" direction="output" scope="external" />
+  <pin name="aerr_0" direction="input" scope="external" />
+  <pin name="cattrip" direction="input" scope="external" />
+  <pin name="temp[2..0]" direction="input" scope="external" />
+  <pin name="wso[7..0]" direction="input" scope="external" />
+  <pin name="reset_n" direction="output" scope="external" />
+  <pin name="wrst_n" direction="output" scope="external" />
+  <pin name="wrck" direction="output" scope="external" />
+  <pin name="shiftwr" direction="output" scope="external" />
+  <pin name="capturewr" direction="output" scope="external" />
+  <pin name="updatewr" direction="output" scope="external" />
+  <pin name="selectwir" direction="output" scope="external" />
+  <pin name="wsi" direction="output" scope="external" />
+  <pin name="wmc_clk_0_clk" direction="output" scope="external" />
+  <pin name="phy_clk_0_clk" direction="output" scope="external" />
+  <pin name="wmcrst_n_0_reset_n" direction="output" scope="external" />
+  <pin name="axi_0_1_awid[8..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_awaddr[28..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_awlen[7..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_awsize[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_awburst[1..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_awprot[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_awqos[3..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_awuser" direction="input" scope="external" />
+  <pin name="axi_0_1_awvalid" direction="input" scope="external" />
+  <pin name="axi_0_1_awready" direction="output" scope="external" />
+  <pin name="axi_0_1_wdata[255..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_wstrb[31..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_wlast" direction="input" scope="external" />
+  <pin name="axi_0_1_wvalid" direction="input" scope="external" />
+  <pin name="axi_0_1_wready" direction="output" scope="external" />
+  <pin name="axi_0_1_bid[8..0]" direction="output" scope="external" />
+  <pin name="axi_0_1_bresp[1..0]" direction="output" scope="external" />
+  <pin name="axi_0_1_bvalid" direction="output" scope="external" />
+  <pin name="axi_0_1_bready" direction="input" scope="external" />
+  <pin name="axi_0_1_arid[8..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_araddr[28..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_arlen[7..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_arsize[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_arburst[1..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_arprot[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_arqos[3..0]" direction="input" scope="external" />
+  <pin name="axi_0_1_aruser" direction="input" scope="external" />
+  <pin name="axi_0_1_arvalid" direction="input" scope="external" />
+  <pin name="axi_0_1_arready" direction="output" scope="external" />
+  <pin name="axi_0_1_rid[8..0]" direction="output" scope="external" />
+  <pin name="axi_0_1_rdata[255..0]" direction="output" scope="external" />
+  <pin name="axi_0_1_rresp[1..0]" direction="output" scope="external" />
+  <pin name="axi_0_1_rlast" direction="output" scope="external" />
+  <pin name="axi_0_1_rvalid" direction="output" scope="external" />
+  <pin name="axi_0_1_rready" direction="input" scope="external" />
+  <pin name="axi_0_0_awid[8..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_awaddr[28..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_awlen[7..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_awsize[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_awburst[1..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_awprot[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_awqos[3..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_awuser" direction="input" scope="external" />
+  <pin name="axi_0_0_awvalid" direction="input" scope="external" />
+  <pin name="axi_0_0_awready" direction="output" scope="external" />
+  <pin name="axi_0_0_wdata[255..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_wstrb[31..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_wlast" direction="input" scope="external" />
+  <pin name="axi_0_0_wvalid" direction="input" scope="external" />
+  <pin name="axi_0_0_wready" direction="output" scope="external" />
+  <pin name="axi_0_0_bid[8..0]" direction="output" scope="external" />
+  <pin name="axi_0_0_bresp[1..0]" direction="output" scope="external" />
+  <pin name="axi_0_0_bvalid" direction="output" scope="external" />
+  <pin name="axi_0_0_bready" direction="input" scope="external" />
+  <pin name="axi_0_0_arid[8..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_araddr[28..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_arlen[7..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_arsize[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_arburst[1..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_arprot[2..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_arqos[3..0]" direction="input" scope="external" />
+  <pin name="axi_0_0_aruser" direction="input" scope="external" />
+  <pin name="axi_0_0_arvalid" direction="input" scope="external" />
+  <pin name="axi_0_0_arready" direction="output" scope="external" />
+  <pin name="axi_0_0_rid[8..0]" direction="output" scope="external" />
+  <pin name="axi_0_0_rdata[255..0]" direction="output" scope="external" />
+  <pin name="axi_0_0_rresp[1..0]" direction="output" scope="external" />
+  <pin name="axi_0_0_rlast" direction="output" scope="external" />
+  <pin name="axi_0_0_rvalid" direction="output" scope="external" />
+  <pin name="axi_0_0_rready" direction="input" scope="external" />
+  <pin
+     name="axi_extra_0_1_ruser_err_dbe"
+     direction="output"
+     scope="external" />
+  <pin
+     name="axi_extra_0_1_ruser_data[31..0]"
+     direction="output"
+     scope="external" />
+  <pin
+     name="axi_extra_0_1_wuser_data[31..0]"
+     direction="input"
+     scope="external" />
+  <pin
+     name="axi_extra_0_1_wuser_strb[3..0]"
+     direction="input"
+     scope="external" />
+  <pin
+     name="axi_extra_0_0_ruser_err_dbe"
+     direction="output"
+     scope="external" />
+  <pin
+     name="axi_extra_0_0_ruser_data[31..0]"
+     direction="output"
+     scope="external" />
+  <pin
+     name="axi_extra_0_0_wuser_data[31..0]"
+     direction="input"
+     scope="external" />
+  <pin
+     name="axi_extra_0_0_wuser_strb[3..0]"
+     direction="input"
+     scope="external" />
+  <pin name="apb_0_ur_paddr[15..0]" direction="input" scope="external" />
+  <pin name="apb_0_ur_psel" direction="input" scope="external" />
+  <pin name="apb_0_ur_penable" direction="input" scope="external" />
+  <pin name="apb_0_ur_pwrite" direction="input" scope="external" />
+  <pin name="apb_0_ur_pwdata[15..0]" direction="input" scope="external" />
+  <pin name="apb_0_ur_pstrb[1..0]" direction="input" scope="external" />
+  <pin name="apb_0_ur_prready" direction="output" scope="external" />
+  <pin name="apb_0_ur_prdata[15..0]" direction="output" scope="external" />
+ </global>
+</pinplan>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="tg0_1"
+ megafunction_name="ALTERA_HBM_TG_AXI"
+ specifies="all_ports">
+ <global>
+  <pin name="wmc_clk_in" direction="input" scope="external" />
+  <pin name="wmcrst_n_in" direction="input" scope="external" />
+  <pin name="ninit_done" direction="input" scope="external" />
+  <pin name="awid[8..0]" direction="output" scope="external" />
+  <pin name="awaddr[28..0]" direction="output" scope="external" />
+  <pin name="awlen[7..0]" direction="output" scope="external" />
+  <pin name="awsize[2..0]" direction="output" scope="external" />
+  <pin name="awburst[1..0]" direction="output" scope="external" />
+  <pin name="awprot[2..0]" direction="output" scope="external" />
+  <pin name="awqos[3..0]" direction="output" scope="external" />
+  <pin name="awuser_ap" direction="output" scope="external" />
+  <pin name="awvalid" direction="output" scope="external" />
+  <pin name="awready" direction="input" scope="external" />
+  <pin name="wdata[255..0]" direction="output" scope="external" />
+  <pin name="wstrb[31..0]" direction="output" scope="external" />
+  <pin name="wlast" direction="output" scope="external" />
+  <pin name="wvalid" direction="output" scope="external" />
+  <pin name="wready" direction="input" scope="external" />
+  <pin name="bid[8..0]" direction="input" scope="external" />
+  <pin name="bresp[1..0]" direction="input" scope="external" />
+  <pin name="bvalid" direction="input" scope="external" />
+  <pin name="bready" direction="output" scope="external" />
+  <pin name="arid[8..0]" direction="output" scope="external" />
+  <pin name="araddr[28..0]" direction="output" scope="external" />
+  <pin name="arlen[7..0]" direction="output" scope="external" />
+  <pin name="arsize[2..0]" direction="output" scope="external" />
+  <pin name="arburst[1..0]" direction="output" scope="external" />
+  <pin name="arprot[2..0]" direction="output" scope="external" />
+  <pin name="arqos[3..0]" direction="output" scope="external" />
+  <pin name="aruser_ap" direction="output" scope="external" />
+  <pin name="arvalid" direction="output" scope="external" />
+  <pin name="arready" direction="input" scope="external" />
+  <pin name="rid[8..0]" direction="input" scope="external" />
+  <pin name="rdata[255..0]" direction="input" scope="external" />
+  <pin name="rresp[1..0]" direction="input" scope="external" />
+  <pin name="rlast" direction="input" scope="external" />
+  <pin name="rvalid" direction="input" scope="external" />
+  <pin name="rready" direction="output" scope="external" />
+  <pin name="ruser_err_dbe" direction="input" scope="external" />
+  <pin name="ruser_data[31..0]" direction="input" scope="external" />
+  <pin name="wuser_data[31..0]" direction="output" scope="external" />
+  <pin name="wuser_strb[3..0]" direction="output" scope="external" />
+  <pin name="traffic_gen_pass" direction="output" scope="external" />
+  <pin name="traffic_gen_fail" direction="output" scope="external" />
+  <pin name="traffic_gen_timeout" direction="output" scope="external" />
+ </global>
+</pinplan>

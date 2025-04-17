@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.03.03.19:27:18"
+ outputDirectory="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_PLL_REFCLK0_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_PLL_REFCLK0_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_PLL_REFCLK0_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="pll_refclk0" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="pll_refclk0" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="tx_serial_clk_gxt" kind="hssi_serial_clock" start="1">
+   <property name="clockRate" value="0" />
+   <port name="tx_serial_clk_gxt" direction="output" role="clk" width="1" />
+  </interface>
+  <interface name="pll_locked" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="pll_locked" direction="output" role="pll_locked" width="1" />
+  </interface>
+  <interface name="pll_cal_busy" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="pll_cal_busy" direction="output" role="pll_cal_busy" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="xcvr_atxpll_prod" version="1.0" name="xcvr_atxpll_prod">
+  <parameter name="AUTO_PLL_REFCLK0_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_PLL_REFCLK0_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_PLL_REFCLK0_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/synth/xcvr_atxpll_prod.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/synth/xcvr_atxpll_prod.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/alt_xcvr/altera_xcvr_pll/altera_xcvr_atx_pll_s10_htile/tcl/altera_xcvr_atx_pll_s10_htile_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="xcvr_atxpll_prod">"Generating: xcvr_atxpll_prod"</message>
+   <message level="Info" culprit="xcvr_atxpll_prod">"Generating: xcvr_atxpll_prod_altera_xcvr_atx_pll_s10_htile_1911_bcgy6la"</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./altera_std_synchronizer_nocut.v VERILOG PATH ../../../../primitives/altera_std_synchronizer/altera_std_synchronizer_nocut.v</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_resync.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_resync.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_arbiter.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_arbiter.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./s10_avmm_h.sv SYSTEM_VERILOG PATH ../../../altera_xcvr_native_phy/altera_xcvr_native_s10/source/s10_avmm_h.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./altera_xcvr_native_s10_functions_h.sv SYSTEM_VERILOG PATH ../../../altera_xcvr_native_phy/altera_xcvr_native_s10/source/altera_xcvr_native_s10_functions_h.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_native_anlg_reset_seq.sv SYSTEM_VERILOG PATH ../../../altera_xcvr_native_phy/altera_xcvr_native_s10/source/alt_xcvr_native_anlg_reset_seq.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_pll_rcfg_arb.sv SYSTEM_VERILOG PATH ../../common/alt_xcvr_pll_rcfg_arb.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_pll_embedded_debug.sv SYSTEM_VERILOG PATH ../../common/alt_xcvr_pll_embedded_debug.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_pll_avmm_csr.sv SYSTEM_VERILOG PATH ../../common/alt_xcvr_pll_avmm_csr.sv</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_xcvr_atx_pll_s10_htile"
+   version="19.1.1"
+   name="xcvr_atxpll_prod_altera_xcvr_atx_pll_s10_htile_1911_bcgy6la">
+  <parameter name="device_die_types" value="HSSI_CRETE2E,MAIN_ND4H,UIB_HBM" />
+  <parameter name="enable_atx_to_fpll_cascade_out" value="0" />
+  <parameter name="hssi_pma_cgb_master_input_select" value="lcpll_top" />
+  <parameter name="refclk_cnt" value="1" />
+  <parameter name="hssi_pma_lc_refclk_select_mux_powerdown_mode" value="powerup" />
+  <parameter name="manual_list" value="" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_iq_scratch0_src"
+     value="scratch0_power_down" />
+  <parameter name="output_clock_frequency" value="12890.625 MHz" />
+  <parameter name="atx_pll_datarate_bps" value="25781250000" />
+  <parameter name="prot_mode" value="Basic" />
+  <parameter name="enable_analog_resets" value="0" />
+  <parameter name="atx_pll_lc_vreg1_boost" value="lc_vreg1_off" />
+  <parameter name="atx_pll_bcm_silicon_rev" value="rev_off" />
+  <parameter name="atx_pll_direct_fb" value="direct_fb" />
+  <parameter name="device_revision" value="14nm4acr2eb" />
+  <parameter name="atx_pll_primary_use" value="hssi_hf" />
+  <parameter name="fb_select_fnl" value="direct_fb" />
+  <parameter name="set_l_cascade_counter" value="4" />
+  <parameter name="atx_pll_xatb_lccmu_atb" value="atb_selectdisable" />
+  <parameter name="refclk_index" value="0" />
+  <parameter name="atx_pll_lf_cbig_size" value="lf_cbig_setting4" />
+  <parameter
+     name="rcfg_param_labels"
+     value="rcfg_debug,Enable dynamic reconfiguration,Enable Native PHY Debug Master Endpoint,Separate reconfig_waitrequest from the status of AVMM arbitration with PreSICE,Enable avmm_busy port,Enable capability registers,Set user-defined IP identifier,Enable control and status registers,enable_pld_atx_cal_busy_port,Support mode,Protocol mode,Bandwidth,Number of PLL reference clocks,Selected reference clock source,Primary PLL clock output buffer,Enable GX clock output port (tx_serial_clk),Enable GXT clock output port to above ATX PLL (gxt_output_to_abv_atx),Enable GXT clock output port to below ATX PLL (gxt_output_to_blw_atx),Enable GXT local clock output port (tx_serial_clk_gxt),Enable GXT clock input port from above ATX PLL (gxt_input_from_abv_atx),Enable GXT clock input port from below ATX PLL (gxt_input_from_blw_atx),Enable GXT clock buffer to above ATX PLL,Enable GXT clock buffer to below ATX PLL,GXT output clock source,Enable PCIe clock output port,Enable cascade clock output port,Enable calibration status ports for HIP,Enable PCIe hard IP calibration,PLL output frequency,PLL auto mode reference clock frequency (Integer),PLL manual mode reference clock frequency,PLL auto mode reference clock frequency (Fractional),Multiply factor (M-Counter),Divide factor (N-Counter),Divide factor (L-Counter),Divide factor (L-Cascade Counter),Divide factor (L-Cascade-Predivider),Fractional multiply factor (K),Include Master Clock Generation Block,Clock division factor,Enable x24 non-bonded high-speed clock output port,Enable PCIe clock switch interface,Enable mcgb_rst and mcgb_rst_stat ports,Number of auxiliary MCGB clock input ports.,Enable bonding clock output ports,Enable feedback compensation bonding,PMA interface width,enable_pld_mcgb_cal_busy_port" />
+  <parameter name="atx_pll_initial_settings" value="true" />
+  <parameter name="l_cascade_predivider" value="1" />
+  <parameter
+     name="atx_pll_pm_dprio_lc_dprio_status_select"
+     value="dprio_normal_status" />
+  <parameter name="atx_pll_chgpmp_current_setting" value="cp_current_setting22" />
+  <parameter name="atx_pll_n_counter" value="8" />
+  <parameter name="hssi_avmm2_if_pcs_cal_done" value="avmm2_cal_done_deassert" />
+  <parameter
+     name="auto_list"
+     value="61.974159 {m 104 effective_m 104 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 62.575850 {m 103 effective_m 103 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 63.189338 {m 102 effective_m 102 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 63.814975 {m 101 effective_m 101 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 64.453125 {m 100 effective_m 100 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 65.104167 {m 99 effective_m 99 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 65.768495 {m 98 effective_m 98 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 66.446521 {m 97 effective_m 97 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 67.138672 {m 96 effective_m 96 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 67.845395 {m 95 effective_m 95 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 68.567154 {m 94 effective_m 94 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 69.304435 {m 93 effective_m 93 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 70.057745 {m 92 effective_m 92 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 70.827610 {m 91 effective_m 91 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 71.614583 {m 90 effective_m 90 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 72.419242 {m 89 effective_m 89 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 73.242188 {m 88 effective_m 88 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 74.084052 {m 87 effective_m 87 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 74.945494 {m 86 effective_m 86 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 75.827206 {m 85 effective_m 85 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 76.729911 {m 84 effective_m 84 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 77.654367 {m 83 effective_m 83 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 78.601372 {m 82 effective_m 82 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 79.571759 {m 81 effective_m 81 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 80.566406 {m 80 effective_m 80 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 81.586234 {m 79 effective_m 79 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 82.632212 {m 78 effective_m 78 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 83.705357 {m 77 effective_m 77 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 84.806743 {m 76 effective_m 76 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 85.937500 {m 75 effective_m 75 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 87.098818 {m 74 effective_m 74 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 88.291952 {m 73 effective_m 73 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 89.518229 {m 72 effective_m 72 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 90.779049 {m 71 effective_m 71 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 92.075893 {m 70 effective_m 70 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 93.410326 {m 69 effective_m 69 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 94.784007 {m 68 effective_m 68 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 96.198694 {m 67 effective_m 67 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 97.656250 {m 66 effective_m 66 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 99.158654 {m 65 effective_m 65 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 100.708008 {m 64 effective_m 64 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 102.306548 {m 63 effective_m 63 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 103.956653 {m 62 effective_m 62 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 105.660861 {m 61 effective_m 61 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 107.421875 {m 60 effective_m 60 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 109.242585 {m 59 effective_m 59 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 111.126078 {m 58 effective_m 58 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 113.075658 {m 57 effective_m 57 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 115.094866 {m 56 effective_m 56 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 117.187500 {m 55 effective_m 55 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 119.357639 {m 54 effective_m 54 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 121.609670 {m 53 effective_m 53 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 123.948317 {m 52 effective_m 52 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 125.151699 {m 103 effective_m 103 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 126.378676 {m 51 effective_m 51 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 127.629950 {m 101 effective_m 101 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 128.906250 {m 50 effective_m 50 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 130.208333 {m 99 effective_m 99 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 131.536990 {m 49 effective_m 49 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 132.893041 {m 97 effective_m 97 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 134.277344 {m 48 effective_m 48 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 135.690789 {m 95 effective_m 95 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 137.134309 {m 47 effective_m 47 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 138.608871 {m 93 effective_m 93 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 140.115489 {m 46 effective_m 46 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 141.655220 {m 91 effective_m 91 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 143.229167 {m 45 effective_m 45 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 144.838483 {m 89 effective_m 89 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 146.484375 {m 44 effective_m 44 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 148.168103 {m 87 effective_m 87 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 149.890988 {m 43 effective_m 43 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 151.654412 {m 85 effective_m 85 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 153.459821 {m 42 effective_m 42 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 155.308735 {m 83 effective_m 83 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 157.202744 {m 41 effective_m 41 n 1 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 159.143519 {m 81 effective_m 81 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 161.132812 {m 80 effective_m 80 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 163.172468 {m 79 effective_m 79 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 165.264423 {m 78 effective_m 78 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 167.410714 {m 77 effective_m 77 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 169.613487 {m 76 effective_m 76 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 171.875000 {m 75 effective_m 75 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 174.197635 {m 74 effective_m 74 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 176.583904 {m 73 effective_m 73 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 179.036458 {m 72 effective_m 72 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 181.558099 {m 71 effective_m 71 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 184.151786 {m 70 effective_m 70 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 186.820652 {m 69 effective_m 69 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 189.568015 {m 68 effective_m 68 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 192.397388 {m 67 effective_m 67 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 195.312500 {m 66 effective_m 66 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 198.317308 {m 65 effective_m 65 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 201.416016 {m 64 effective_m 64 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 204.613095 {m 63 effective_m 63 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 207.913306 {m 62 effective_m 62 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 211.321721 {m 61 effective_m 61 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 214.843750 {m 60 effective_m 60 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 218.485169 {m 59 effective_m 59 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 222.252155 {m 58 effective_m 58 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 226.151316 {m 57 effective_m 57 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 230.189732 {m 56 effective_m 56 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 234.375000 {m 55 effective_m 55 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 238.715278 {m 54 effective_m 54 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 243.219340 {m 53 effective_m 53 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 247.896635 {m 52 effective_m 52 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 250.303398 {m 103 effective_m 103 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 252.757353 {m 51 effective_m 51 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 255.259901 {m 101 effective_m 101 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 257.812500 {m 50 effective_m 50 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 260.416667 {m 99 effective_m 99 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 263.073980 {m 49 effective_m 49 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 265.786082 {m 97 effective_m 97 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 268.554688 {m 48 effective_m 48 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 271.381579 {m 95 effective_m 95 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 274.268617 {m 47 effective_m 47 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 277.217742 {m 93 effective_m 93 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 280.230978 {m 46 effective_m 46 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 283.310440 {m 91 effective_m 91 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 286.458333 {m 45 effective_m 45 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 289.676966 {m 89 effective_m 89 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 292.968750 {m 44 effective_m 44 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 296.336207 {m 87 effective_m 87 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 299.781977 {m 43 effective_m 43 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 303.308824 {m 85 effective_m 85 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 306.919643 {m 42 effective_m 42 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 310.617470 {m 83 effective_m 83 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 314.405488 {m 41 effective_m 41 n 2 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 318.287037 {m 81 effective_m 81 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 322.265625 {m 80 effective_m 80 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 326.344937 {m 79 effective_m 79 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 330.528846 {m 78 effective_m 78 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 334.821429 {m 77 effective_m 77 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 339.226974 {m 76 effective_m 76 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 343.750000 {m 75 effective_m 75 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 348.395270 {m 74 effective_m 74 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 353.167808 {m 73 effective_m 73 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 358.072917 {m 72 effective_m 72 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 363.116197 {m 71 effective_m 71 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 368.303571 {m 70 effective_m 70 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 373.641304 {m 69 effective_m 69 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 379.136029 {m 68 effective_m 68 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 384.794776 {m 67 effective_m 67 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 390.625000 {m 66 effective_m 66 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 396.634615 {m 65 effective_m 65 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 402.832031 {m 64 effective_m 64 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 409.226190 {m 63 effective_m 63 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 415.826613 {m 62 effective_m 62 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 422.643443 {m 61 effective_m 61 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 429.687500 {m 60 effective_m 60 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 436.970339 {m 59 effective_m 59 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 444.504310 {m 58 effective_m 58 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 452.302632 {m 57 effective_m 57 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 460.379464 {m 56 effective_m 56 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 468.750000 {m 55 effective_m 55 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 477.430556 {m 54 effective_m 54 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 486.438679 {m 53 effective_m 53 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 495.793269 {m 52 effective_m 52 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 500.606796 {m 103 effective_m 103 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 505.514706 {m 51 effective_m 51 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 510.519802 {m 101 effective_m 101 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 515.625000 {m 50 effective_m 50 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 520.833333 {m 99 effective_m 99 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 526.147959 {m 49 effective_m 49 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 531.572165 {m 97 effective_m 97 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 537.109375 {m 48 effective_m 48 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 542.763158 {m 95 effective_m 95 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 548.537234 {m 47 effective_m 47 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 554.435484 {m 93 effective_m 93 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 560.461957 {m 46 effective_m 46 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 566.620879 {m 91 effective_m 91 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 572.916667 {m 45 effective_m 45 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 579.353933 {m 89 effective_m 89 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 585.937500 {m 44 effective_m 44 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 592.672414 {m 87 effective_m 87 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 599.563953 {m 43 effective_m 43 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 606.617647 {m 85 effective_m 85 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 613.839286 {m 42 effective_m 42 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 621.234940 {m 83 effective_m 83 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 628.810976 {m 41 effective_m 41 n 4 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 636.574074 {m 81 effective_m 81 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 644.531250 {m 80 effective_m 80 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 652.689873 {m 79 effective_m 79 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 661.057692 {m 78 effective_m 78 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 669.642857 {m 77 effective_m 77 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 678.453947 {m 76 effective_m 76 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 687.500000 {m 75 effective_m 75 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 696.790541 {m 74 effective_m 74 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 706.335616 {m 73 effective_m 73 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 716.145833 {m 72 effective_m 72 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 726.232394 {m 71 effective_m 71 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 736.607143 {m 70 effective_m 70 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 747.282609 {m 69 effective_m 69 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 758.272059 {m 68 effective_m 68 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 769.589552 {m 67 effective_m 67 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 781.250000 {m 66 effective_m 66 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0} 793.269231 {m 65 effective_m 65 n 8 l 1 l_cascade 0 l_cascade_predivider 1 k 1 tank_sel lctank0 tank_band lc_band0}" />
+  <parameter name="enable_28G_buffer_fnl" value="true" />
+  <parameter name="atx_pll_is_cascaded_pll" value="false" />
+  <parameter name="hssi_avmm2_if_hssiadapt_avmm_clk_scg_en" value="disable" />
+  <parameter name="atx_pll_is_otn" value="false" />
+  <parameter name="atx_pll_dsm_fractional_division" value="1" />
+  <parameter name="hssi_refclk_divider_iostandard" value="io_off" />
+  <parameter name="enable_ext_lockdetect_ports" value="0" />
+  <parameter name="hssi_avmm2_if_pcs_arbiter_ctrl" value="avmm2_arbiter_uc_sel" />
+  <parameter name="enable_hip_cal_done_port" value="0" />
+  <parameter name="atx_pll_lcpll_lckdet_sel" value="lc_lckdet_sel0" />
+  <parameter name="atx_pll_lcpll_gt_out_left_enb" value="lcpll_gt_out_left_dis" />
+  <parameter name="enable_debug_ports_parameters" value="0" />
+  <parameter name="device" value="1SM21CHU2F53E2VG" />
+  <parameter name="atx_pll_device_variant" value="device_off" />
+  <parameter name="ref_clk_div" value="8" />
+  <parameter name="set_l_cascade_predivider" value="1" />
+  <parameter name="hssi_avmm2_if_pldadapt_avmm_clk_scg_en" value="disable" />
+  <parameter
+     name="hssi_avmm2_if_hssiadapt_avmm_osc_clock_setting"
+     value="osc_clk_div_by1" />
+  <parameter name="atx_pll_f_min_tank_2" value="11400000000" />
+  <parameter name="atx_pll_f_min_tank_1" value="8800000000" />
+  <parameter name="set_output_clock_frequency" value="12890.625" />
+  <parameter name="atx_pll_f_min_tank_0" value="6500000000" />
+  <parameter name="mcgb_aux_clkin_cnt" value="0" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk2_logical_to_physical_mapping"
+     value="power_down" />
+  <parameter name="device_family" value="Stratix 10" />
+  <parameter name="base_device" value="Unknown" />
+  <parameter name="hssi_avmm2_if_pcs_hip_cal_en" value="disable" />
+  <parameter name="iqclk_sel" value="iqtxrxclk0" />
+  <parameter name="atx_pll_lc_cal_status" value="lc_status_notdone" />
+  <parameter name="atx_pll_lc_calibration" value="lc_cal_on" />
+  <parameter name="rcfg_sdc_derived_profile_data6" value="" />
+  <parameter name="rcfg_sdc_derived_profile_data7" value="" />
+  <parameter name="rcfg_sdc_derived_profile_data4" value="" />
+  <parameter name="rcfg_sdc_derived_profile_data5" value="" />
+  <parameter name="enable_multi_profile" value="1" />
+  <parameter name="atx_pll_power_mode" value="high_perf" />
+  <parameter name="feedback_clock_frequency_fnl" value="156.25" />
+  <parameter name="generate_add_hdl_instance_example" value="0" />
+  <parameter name="output_clock_datarate" value="25781.25" />
+  <parameter name="enable_28G_output_frm_abv_atx" value="0" />
+  <parameter name="rcfg_sdc_derived_profile_data2" value="" />
+  <parameter name="rcfg_sdc_derived_profile_data3" value="" />
+  <parameter name="rcfg_sdc_derived_profile_data0" value="" />
+  <parameter name="atx_pll_f_max_pfd_fractional" value="1" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_iq_scratch3_src"
+     value="scratch3_power_down" />
+  <parameter name="rcfg_sdc_derived_profile_data1" value="" />
+  <parameter name="enable_28G_input_frm_abv_atx" value="0" />
+  <parameter name="set_capability_reg_enable" value="0" />
+  <parameter name="atx_pll_regulator_bypass" value="reg_enable" />
+  <parameter name="k_counter" value="1" />
+  <parameter name="rcfg_multi_enable" value="0" />
+  <parameter name="mapped_hip_cal_done_port" value="0" />
+  <parameter name="set_csr_soft_logic_enable" value="0" />
+  <parameter name="atx_pll_f_max_ref" value="800000000" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_scratch2_src"
+     value="scratch2_src_lvpecl" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_xmux_refclk_src"
+     value="src_coreclk" />
+  <parameter name="enable_GXT_out_buffer_blw" value="0" />
+  <parameter name="message_level" value="error" />
+  <parameter name="hssi_refclk_divider_sup_mode" value="sup_off" />
+  <parameter name="hssi_refclk_divider_clkbuf_sel" value="high_vcm" />
+  <parameter name="enable_fb_comp_bonding_fnl" value="0" />
+  <parameter name="atx_pll_analog_mode" value="user_custom" />
+  <parameter name="atx_pll_lc_vreg_boost" value="lc_vreg_off" />
+  <parameter name="atx_pll_lcnt_divide" value="1" />
+  <parameter name="hssi_refclk_divider_enable_lvpecl" value="lvpecl_enable" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_scratch1_src"
+     value="scratch1_src_lvpecl" />
+  <parameter name="bw_sel" value="low" />
+  <parameter
+     name="rcfg_params"
+     value="rcfg_debug,rcfg_enable,rcfg_jtag_enable,rcfg_separate_avmm_busy,rcfg_enable_avmm_busy_port,set_capability_reg_enable,set_user_identifier,set_csr_soft_logic_enable,enable_pld_atx_cal_busy_port,support_mode,prot_mode,bw_sel,refclk_cnt,refclk_index,primary_pll_buffer,enable_8G_path,enable_28G_output_frm_abv_atx,enable_28G_output_frm_blw_atx,enable_28G_local_atx_path,enable_28G_input_frm_abv_atx,enable_28G_input_frm_blw_atx,enable_GXT_out_buffer_abv,enable_GXT_out_buffer_blw,enable_GXT_clock_source,enable_pcie_clk,enable_cascade_out,enable_hip_cal_done_port,set_hip_cal_en,set_output_clock_frequency,set_auto_reference_clock_frequency,set_manual_reference_clock_frequency,set_fref_clock_frequency,set_m_counter,set_ref_clk_div,set_l_counter,set_l_cascade_counter,set_l_cascade_predivider,set_k_counter,enable_mcgb,mcgb_div,enable_hfreq_clk,enable_mcgb_pcie_clksw,enable_mcgb_reset,mcgb_aux_clkin_cnt,enable_bonding_clks,enable_fb_comp_bonding,pma_width,enable_pld_mcgb_cal_busy_port" />
+  <parameter name="rcfg_param_vals7" value="" />
+  <parameter name="atx_pll_lcnt_bypass" value="lcnt_no_bypass" />
+  <parameter name="rcfg_param_vals5" value="" />
+  <parameter name="rcfg_param_vals6" value="" />
+  <parameter name="rcfg_param_vals3" value="" />
+  <parameter name="rcfg_param_vals4" value="" />
+  <parameter name="rcfg_param_vals1" value="" />
+  <parameter name="rcfg_param_vals2" value="" />
+  <parameter name="rcfg_enable" value="0" />
+  <parameter name="atx_pll_clk_vreg_boost_scratch" value="0" />
+  <parameter name="hssi_avmm2_if_pcs_cal_reserved" value="0" />
+  <parameter name="atx_pll_f_min_vco" value="7200000000" />
+  <parameter name="test_mode" value="0" />
+  <parameter name="atx_pll_underrange_voltage" value="under_setting4" />
+  <parameter name="hssi_refclk_divider_vcm_pup" value="pup_on" />
+  <parameter name="atx_pll_chgpmp_testmode" value="cp_normal" />
+  <parameter name="atx_pll_output_regulator_supply" value="vreg1v_setting0" />
+  <parameter name="vco_freq" value="12890.625 MHz" />
+  <parameter name="atx_pll_f_max_lcnt_fpll_cascading" value="1200000000" />
+  <parameter name="atx_pll_powerdown_mode" value="powerup_off" />
+  <parameter name="set_manual_reference_clock_frequency" value="200.0" />
+  <parameter name="atx_pll_l_counter" value="1" />
+  <parameter name="set_fref_clock_frequency" value="156.25" />
+  <parameter name="rcfg_profile_cnt" value="2" />
+  <parameter name="atx_pll_power_rail_et" value="1120" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk4_logical_to_physical_mapping"
+     value="power_down" />
+  <parameter name="enable_GXT_clock_source" value="atx_lcl" />
+  <parameter name="dbg_embedded_debug_enable" value="0" />
+  <parameter name="atx_pll_cal_status" value="cal_in_progress" />
+  <parameter name="is_protocol_PCIe" value="0" />
+  <parameter name="enable_8G_path" value="0" />
+  <parameter
+     name="rcfg_sdc_derived_params"
+     value="enable_multi_profile,dbg_embedded_debug_enable,dbg_capability_reg_enable,dbg_user_identifier,dbg_stat_soft_logic_enable,dbg_ctrl_soft_logic_enable,atx_pll_lcpll_gt_in_sel,atx_pll_lcpll_gt_out_left_enb,atx_pll_lcpll_gt_out_mid_enb,atx_pll_lcpll_gt_out_right_enb,enable_atx_to_fpll_cascade_out,output_clock_datarate,datarate,enable_fractional" />
+  <parameter name="atx_pll_cgb_div" value="1" />
+  <parameter name="atx_pll_vreg_boost_step_size" value="0" />
+  <parameter name="prot_mode_fnl" value="basic_tx" />
+  <parameter
+     name="hssi_avmm2_if_hssiadapt_avmm_testbus_sel"
+     value="avmm1_transfer_testbus" />
+  <parameter name="in_pcie_hip_mode" value="0" />
+  <parameter name="enable_hfreq_clk" value="0" />
+  <parameter name="atx_pll_clk_high_perf_voltage" value="0" />
+  <parameter name="atx_pll_silicon_rev" value="14nm4acr2eb" />
+  <parameter name="atx_pll_mcgb_vreg_boost_scratch" value="0" />
+  <parameter name="enable_mcgb_reset" value="0" />
+  <parameter
+     name="hssi_avmm2_if_pldadapt_avmm_testbus_sel"
+     value="avmm1_transfer_testbus" />
+  <parameter
+     name="hssi_pma_cgb_master_tx_ucontrol_reset_pcie"
+     value="pcscorehip_controls_mcgb" />
+  <parameter name="rcfg_reduced_files_enable" value="0" />
+  <parameter name="enable_pld_atx_cal_busy_port" value="1" />
+  <parameter name="rcfg_separate_avmm_busy" value="0" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_iq_scratch4_src"
+     value="scratch4_power_down" />
+  <parameter name="enable_vco_bypass" value="0" />
+  <parameter name="atx_pll_lc_vreg_boost_scratch" value="0" />
+  <parameter name="hssi_avmm2_if_hssiadapt_avmm_clk_dcg_en" value="disable" />
+  <parameter name="set_l_counter" value="4" />
+  <parameter name="power_mode" value="high_perf" />
+  <parameter name="atx_pll_lccmu_mode" value="lccmu_normal" />
+  <parameter name="atx_pll_lc_tank_voltage_fine" value="vreg_setting5" />
+  <parameter name="atx_pll_top_or_bottom" value="top_or_bot_off" />
+  <parameter name="atx_pll_lc_dyn_reconfig" value="lc_dyn_reconfig_off" />
+  <parameter name="atx_pll_f_min_pfd" value="61440000" />
+  <parameter name="hssi_refclk_divider_clk_divider" value="div2_off" />
+  <parameter name="m_counter" value="80" />
+  <parameter name="atx_pll_ref_clk_div" value="8" />
+  <parameter name="atx_pll_powermode_dc_lc_gtpath" value="powerdown_lc_gt" />
+  <parameter name="enable_pld_mcgb_cal_busy_port" value="0" />
+  <parameter name="hssi_avmm2_if_func_mode" value="c3adpt_pmadir" />
+  <parameter name="rcfg_param_vals0" value="" />
+  <parameter name="hssi_avmm2_if_calibration_type" value="one_time" />
+  <parameter name="atx_pll_lcpll_gt_out_right_enb" value="lcpll_gt_out_right_dis" />
+  <parameter name="atx_pll_pfd_pulse_width" value="pulse_width_setting0" />
+  <parameter name="atx_pll_expected_lc_boost_voltage" value="0" />
+  <parameter name="rcfg_sv_file_enable" value="0" />
+  <parameter name="primary_pll_buffer" value="GXT clock output buffer" />
+  <parameter name="hssi_avmm2_if_silicon_rev" value="14nm4acr2eb" />
+  <parameter name="rcfg_h_file_enable" value="0" />
+  <parameter name="atx_pll_powermode_dc_lc" value="lc2_dc_div1" />
+  <parameter name="atx_pll_lc_reg_status" value="lc_reg_sta_off" />
+  <parameter name="rcfg_txt_file_enable" value="0" />
+  <parameter name="atx_pll_xd2a_lc_d2a_voltage" value="d2a_setting_4" />
+  <parameter name="calibration_en" value="enable" />
+  <parameter name="enable_mcgb" value="0" />
+  <parameter name="rcfg_profile_data4" value="" />
+  <parameter name="rcfg_sdc_derived_param_vals4" value="" />
+  <parameter name="rcfg_profile_data3" value="" />
+  <parameter name="rcfg_sdc_derived_param_vals5" value="" />
+  <parameter name="rcfg_profile_data2" value="" />
+  <parameter name="rcfg_sdc_derived_param_vals6" value="" />
+  <parameter name="rcfg_profile_data1" value="" />
+  <parameter name="rcfg_sdc_derived_param_vals7" value="" />
+  <parameter name="atx_pll_calibration_mode" value="cal_off" />
+  <parameter name="rcfg_profile_data0" value="" />
+  <parameter name="rcfg_sdc_derived_param_vals0" value="" />
+  <parameter name="rcfg_sdc_derived_param_vals1" value="" />
+  <parameter name="atx_pll_is_sdi" value="false" />
+  <parameter name="usr_analog_voltage" value="1_1V" />
+  <parameter
+     name="gui_parameter_values"
+     value="select_vco_output,1,0,80,1,8,12890.625 MHz,12890.625 MHz,25781.25 Mbps" />
+  <parameter name="rcfg_sdc_derived_param_vals2" value="" />
+  <parameter name="atx_pll_lf_3rd_pole_freq" value="lf_3rd_pole_setting3" />
+  <parameter name="rcfg_sdc_derived_param_vals3" value="" />
+  <parameter name="atx_pll_reference_clock_frequency" value="644531250" />
+  <parameter name="rcfg_profile_data7" value="" />
+  <parameter name="rcfg_profile_data6" value="" />
+  <parameter name="rcfg_profile_data5" value="" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_xpll_lccmu_mode"
+     value="lccmu_normal" />
+  <parameter name="set_m_counter" value="24" />
+  <parameter name="pma_speedgrade" value="e2" />
+  <parameter name="enable_fractional" value="0" />
+  <parameter name="atx_pll_lf_order" value="lf_3rd_order" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk1_logical_to_physical_mapping"
+     value="power_down" />
+  <parameter name="enable_pcie_hip_connectivity" value="0" />
+  <parameter name="rcfg_files_as_common_package" value="0" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_scratch0_src"
+     value="scratch0_src_lvpecl" />
+  <parameter name="atx_pll_pll_fractional_value_ready" value="pll_k_ready" />
+  <parameter name="atx_pll_chgpmp_compensation" value="cp_mode_enable" />
+  <parameter name="atx_pll_clk_low_power_voltage" value="0" />
+  <parameter name="atx_pll_vccdreg_clk" value="vreg_clk5" />
+  <parameter name="atx_pll_lc_sel_tank" value="lctank2" />
+  <parameter name="hssi_avmm2_if_pldadapt_gate_dis" value="disable" />
+  <parameter name="hssi_refclk_divider_optimal" value="true" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_xpm_iqref_mux_iqclk_sel"
+     value="iqtxrxclk0" />
+  <parameter
+     name="hssi_pma_cgb_master_cgb_enable_iqtxrxclk"
+     value="disable_iqtxrxclk" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_iq_scratch2_src"
+     value="scratch2_power_down" />
+  <parameter name="pma_width" value="64" />
+  <parameter name="atx_pll_clk_mid_power_voltage" value="0" />
+  <parameter name="hssi_avmm2_if_hssiadapt_hip_mode" value="disable_hip" />
+  <parameter name="reference_clock_frequency_fnl" value="644.531250" />
+  <parameter name="enable_debug_options" value="0" />
+  <parameter name="rcfg_emb_strm_enable" value="0" />
+  <parameter
+     name="hssi_avmm2_if_pcs_calibration_feature_en"
+     value="avmm2_pcs_calibration_en" />
+  <parameter name="atx_pll_lc_vreg1_boost_expected_voltage" value="0" />
+  <parameter name="bw_sel_fnl" value="low_bw" />
+  <parameter name="enable_cascade_out" value="0" />
+  <parameter name="enable_mcgb_debug_ports_parameters" value="0" />
+  <parameter name="datarate" value="25781.25 Mbps" />
+  <parameter name="mapped_primary_pll_buffer" value="GXT clock output buffer" />
+  <parameter name="hip_cal_en" value="disable" />
+  <parameter name="atx_pll_min_fractional_percentage" value="0" />
+  <parameter name="enable_hip_options" value="0" />
+  <parameter name="mcgb_in_clk_freq" value="12890.625" />
+  <parameter name="effective_m_counter" value="1" />
+  <parameter name="mapped_output_clock_frequency" value="12890.625 MHz" />
+  <parameter name="atx_pll_bandwidth_range_low" value="1" />
+  <parameter name="atx_pll_f_max_vco" value="14400000000" />
+  <parameter
+     name="hssi_avmm2_if_pldadapt_avmm_osc_clock_setting"
+     value="osc_clk_div_by1" />
+  <parameter name="atx_pll_f_min_ref" value="61440000" />
+  <parameter name="hssi_avmm2_if_topology" value="disabled_block" />
+  <parameter name="atx_pll_bandwidth_range_high" value="1" />
+  <parameter name="check_output_ports_pll" value="0" />
+  <parameter name="enable_28G_input_frm_blw_atx" value="0" />
+  <parameter name="hssi_pma_cgb_master_silicon_rev" value="14nm4acr2eb" />
+  <parameter name="dsm_mode" value="dsm_mode_integer" />
+  <parameter name="atx_pll_overrange_voltage" value="over_setting0" />
+  <parameter name="atx_pll_lc_vreg_boost_expected_voltage" value="0" />
+  <parameter name="enable_28G_output_frm_blw_atx" value="0" />
+  <parameter name="hssi_pma_cgb_master_prot_mode" value="basic_tx" />
+  <parameter name="set_rcfg_emb_strm_enable" value="0" />
+  <parameter name="atx_pll_cascadeclk_test" value="cascadetest_off" />
+  <parameter name="atx_pll_lc_reg_calibration" value="lc_uccal_reg_off" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_scratch4_src"
+     value="scratch4_src_lvpecl" />
+  <parameter name="hssi_avmm2_if_pldadapt_osc_clk_scg_en" value="disable" />
+  <parameter name="hssi_pma_lc_refclk_select_mux_refclk_select" value="ref_iqclk0" />
+  <parameter name="enable_advanced_avmm_options" value="0" />
+  <parameter name="atx_pll_lcnt_off" value="lcnt_off" />
+  <parameter name="rcfg_file_prefix" value="altera_xcvr_atx_pll_s10" />
+  <parameter name="set_hip_cal_en" value="0" />
+  <parameter name="enable_mcgb_pcie_clksw" value="0" />
+  <parameter name="mcgb_enable_iqtxrxclk" value="disable_iqtxrxclk" />
+  <parameter name="check_output_ports_mcgb" value="0" />
+  <parameter name="enable_advanced_options" value="0" />
+  <parameter name="atx_pll_pll_dsm_out_sel" value="pll_dsm_disable" />
+  <parameter name="atx_pll_bonding" value="cpri_bonding" />
+  <parameter name="atx_pll_hclk_en" value="hclk_disabled" />
+  <parameter name="atx_pll_enable_hclk" value="false" />
+  <parameter name="silicon_rev" value="false" />
+  <parameter name="hssi_pma_cgb_master_x1_div_m_sel" value="divbypass" />
+  <parameter name="atx_pll_pll_ecn_bypass" value="pll_ecn_bypass_disable" />
+  <parameter name="set_altera_xcvr_atx_pll_s10_calibration_en" value="1" />
+  <parameter name="atx_pll_sup_mode" value="user_mode" />
+  <parameter name="set_auto_reference_clock_frequency" value="644.53125" />
+  <parameter name="atx_pll_bw_mode" value="low_bw" />
+  <parameter name="atx_pll_lc_to_fpll_l_counter_scratch" value="0" />
+  <parameter name="atx_pll_cp_current_boost" value="normal_setting" />
+  <parameter name="atx_pll_vco_freq" value="12890625000" />
+  <parameter name="enable_bonding_clks" value="0" />
+  <parameter name="enable_GXT_out_buffer_abv" value="0" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk3_logical_to_physical_mapping"
+     value="power_down" />
+  <parameter name="mcgb_div" value="1" />
+  <parameter name="hssi_pma_cgb_master_datarate_bps" value="25781250000" />
+  <parameter name="atx_pll_lc_tank_band" value="lc_band5" />
+  <parameter name="enable_28G_local_atx_path" value="1" />
+  <parameter name="mcgb_div_fnl" value="1" />
+  <parameter name="hssi_pma_cgb_master_cgb_power_down" value="normal_cgb" />
+  <parameter name="atx_pll_side" value="side_off" />
+  <parameter name="atx_pll_clk_vreg_boost_expected_voltage" value="0" />
+  <parameter name="atx_pll_lcpll_gt_in_sel" value="lc_gt_in_sel0" />
+  <parameter name="hssi_refclk_divider_powerdown_mode" value="power_off" />
+  <parameter name="primary_use" value="hssi_hf" />
+  <parameter name="atx_pll_out_freq" value="12890625000" />
+  <parameter name="dbg_ctrl_soft_logic_enable" value="0" />
+  <parameter name="atx_pll_lc_cal_reserved" value="lc_cal_reserved_off" />
+  <parameter name="set_ref_clk_div" value="1" />
+  <parameter name="atx_pll_pfd_delay_compensation" value="normal_delay" />
+  <parameter name="set_user_identifier" value="0" />
+  <parameter name="hssi_pma_cgb_master_ser_mode" value="sixty_four_bit" />
+  <parameter name="atx_pll_iqclk_sel" value="iqtxrxclk0" />
+  <parameter name="atx_pll_f_max_pfd" value="160000000" />
+  <parameter name="atx_pll_powermode_ac_lc" value="lc2_ac_div1" />
+  <parameter name="atx_pll_pll_ecn_test_en" value="pll_ecn_test_disable" />
+  <parameter name="atx_pll_lcpll_gt_out_mid_enb" value="lcpll_gt_out_mid_en" />
+  <parameter name="mcgb_out_datarate" value="25781.25" />
+  <parameter
+     name="device_die_revisions"
+     value="HSSI_CRETE2E_REVB,MAIN_ND4H_REVB,UIB_HBM_REVB" />
+  <parameter name="set_k_counter" value="1" />
+  <parameter name="rcfg_profile_select" value="1" />
+  <parameter name="l_cascade_counter" value="0" />
+  <parameter name="atx_pll_f_max_x1" value="8700000000" />
+  <parameter name="atx_pll_mcnt_divide" value="80" />
+  <parameter name="hssi_refclk_divider_sel_pldclk" value="iqclk_sel_lvpecl" />
+  <parameter name="atx_pll_max_fractional_percentage" value="100" />
+  <parameter name="atx_pll_powermode_ac_lc_gtpath" value="lc_gt_ac_off" />
+  <parameter name="atx_pll_pma_width" value="64" />
+  <parameter
+     name="hssi_refclk_divider_core_clk_lvpecl"
+     value="core_clk_lvpecl_off" />
+  <parameter name="rcfg_mif_file_enable" value="0" />
+  <parameter name="enable_manual_configuration" value="1" />
+  <parameter name="l_counter" value="1" />
+  <parameter name="enable_8G_buffer_fnl" value="false" />
+  <parameter name="atx_pll_speed_grade" value="e2" />
+  <parameter name="hssi_refclk_divider_term_tristate" value="tristate_off" />
+  <parameter name="enable_pcie_clk" value="0" />
+  <parameter name="dbg_capability_reg_enable" value="0" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_iq_scratch1_src"
+     value="scratch1_power_down" />
+  <parameter name="hssi_pma_cgb_master_vccdreg_output" value="vccdreg_nominal" />
+  <parameter name="atx_pll_clk_vreg_boost_step_size" value="0" />
+  <parameter name="hssi_pma_lc_refclk_select_mux_silicon_rev" value="14nm4acr2eb" />
+  <parameter name="atx_pll_lf_ripplecap" value="lf_ripple_cap_0" />
+  <parameter name="dbg_stat_soft_logic_enable" value="0" />
+  <parameter name="atx_pll_lc_tank_voltage_coarse" value="vreg_setting_coarse0" />
+  <parameter name="atx_pll_mcgb_vreg_boost_step_size" value="0" />
+  <parameter name="atx_pll_vreg1_boost_step_size" value="0" />
+  <parameter name="atx_pll_f_max_tank_2" value="14400000000" />
+  <parameter name="atx_pll_f_max_tank_1" value="11400000000" />
+  <parameter name="atx_pll_f_max_tank_0" value="8800000000" />
+  <parameter name="hssi_pma_cgb_master_observe_cgb_clocks" value="observe_nothing" />
+  <parameter
+     name="pll_setting"
+     value="refclk 644.531250 m_cnt 80 n_cnt 8 l_cnt 1 k_cnt 1 l_cascade 0 l_cascade_predivider 1 outclk {12890.625 MHz}" />
+  <parameter name="lc_refclk_select" value="0" />
+  <parameter name="rcfg_debug" value="0" />
+  <parameter name="atx_pll_vccdreg_fb" value="vreg_fb31" />
+  <parameter name="atx_pll_prot_mode" value="basic_tx" />
+  <parameter name="atx_pll_dsm_mode" value="dsm_mode_integer" />
+  <parameter name="enable_fb_comp_bonding" value="0" />
+  <parameter name="atx_pll_lc_vreg1_boost_scratch" value="0" />
+  <parameter name="atx_pll_mcgb_vreg_boost_expected_voltage" value="0" />
+  <parameter name="atx_pll_lc_to_fpll_l_counter" value="lcounter_setting0" />
+  <parameter name="hssi_pma_cgb_master_input_select_gen3" value="not_used" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_lc_scratch3_src"
+     value="scratch3_src_lvpecl" />
+  <parameter
+     name="gui_parameter_list"
+     value="L cascade predivider/VCO divider(valid in cascade mode) ,L counter (valid in non-cascade mode),L cascade counter (valid in cascade mode),M counter,K counter (valid in fractional mode),N counter,PLL output frequency,vco_freq,datarate" />
+  <parameter name="atx_pll_fpll_refclk_selection" value="select_vco_output" />
+  <parameter
+     name="hssi_pma_lc_refclk_select_mux_inclk0_logical_to_physical_mapping"
+     value="ref_iqclk0" />
+  <parameter name="enable_pll_lock" value="1" />
+  <parameter name="select_manual_config" value="false" />
+  <parameter name="rcfg_jtag_enable" value="0" />
+  <parameter name="hssi_avmm2_if_hssiadapt_osc_clk_scg_en" value="disable" />
+  <parameter name="atx_pll_vccdreg_fw" value="vreg_fw5" />
+  <parameter name="atx_pll_f_max_vco_fractional" value="1" />
+  <parameter name="rcfg_enable_avmm_busy_port" value="0" />
+  <parameter name="dbg_user_identifier" value="0" />
+  <parameter name="hssi_avmm2_if_pldadapt_hip_mode" value="disable_hip" />
+  <parameter name="atx_pll_lf_resistance" value="lf_setting2" />
+  <parameter name="hssi_refclk_divider_silicon_rev" value="14nm4acr2eb" />
+  <parameter name="support_mode" value="user_mode" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/altera_std_synchronizer_nocut.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_resync.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_arbiter.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/s10_avmm_h.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/altera_xcvr_native_s10_functions_h.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_native_anlg_reset_seq.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_rcfg_arb.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_embedded_debug.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_avmm_csr.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/plain_files.txt"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/xcvr_atxpll_prod_altera_xcvr_atx_pll_s10_htile_1911_bcgy6la.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_rcfg_opt_logic_bcgy6la.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/altera_std_synchronizer_nocut.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_resync.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_arbiter.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/s10_avmm_h.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/altera_xcvr_native_s10_functions_h.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_native_anlg_reset_seq.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_rcfg_arb.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_embedded_debug.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_avmm_csr.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/plain_files.txt"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/xcvr_atxpll_prod_altera_xcvr_atx_pll_s10_htile_1911_bcgy6la.sv"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/xcvr_atxpll_prod/altera_xcvr_atx_pll_s10_htile_1911/synth/alt_xcvr_pll_rcfg_opt_logic_bcgy6la.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/alt_xcvr/altera_xcvr_pll/altera_xcvr_atx_pll_s10_htile/tcl/altera_xcvr_atx_pll_s10_htile_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="xcvr_atxpll_prod" as="xcvr_atx_pll_s10_htile_0" />
+  <messages>
+   <message level="Info" culprit="xcvr_atxpll_prod">"Generating: xcvr_atxpll_prod_altera_xcvr_atx_pll_s10_htile_1911_bcgy6la"</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./altera_std_synchronizer_nocut.v VERILOG PATH ../../../../primitives/altera_std_synchronizer/altera_std_synchronizer_nocut.v</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_resync.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_resync.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_arbiter.sv SYSTEM_VERILOG PATH ../../../../altera_xcvr_generic/ctrl/alt_xcvr_arbiter.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./s10_avmm_h.sv SYSTEM_VERILOG PATH ../../../altera_xcvr_native_phy/altera_xcvr_native_s10/source/s10_avmm_h.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./altera_xcvr_native_s10_functions_h.sv SYSTEM_VERILOG PATH ../../../altera_xcvr_native_phy/altera_xcvr_native_s10/source/altera_xcvr_native_s10_functions_h.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_native_anlg_reset_seq.sv SYSTEM_VERILOG PATH ../../../altera_xcvr_native_phy/altera_xcvr_native_s10/source/alt_xcvr_native_anlg_reset_seq.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_pll_rcfg_arb.sv SYSTEM_VERILOG PATH ../../common/alt_xcvr_pll_rcfg_arb.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_pll_embedded_debug.sv SYSTEM_VERILOG PATH ../../common/alt_xcvr_pll_embedded_debug.sv</message>
+   <message level="Info" culprit="xcvr_atx_pll_s10_htile_0">add_fileset_file ./alt_xcvr_pll_avmm_csr.sv SYSTEM_VERILOG PATH ../../common/alt_xcvr_pll_avmm_csr.sv</message>
+  </messages>
+ </entity>
+</deploy>

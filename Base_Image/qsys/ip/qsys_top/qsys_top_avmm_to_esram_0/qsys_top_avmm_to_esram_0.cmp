@@ -1,0 +1,29 @@
+	component qsys_top_avmm_to_esram_0 is
+		generic (
+			c_ADDR_BITS : integer := 16;
+			c_WORD_SIZE : integer := 32
+		);
+		port (
+			av_address      : in  std_logic_vector((((c_ADDR_BITS-1)-0)+1)-1 downto 0) := (others => 'X'); -- address
+			av_read         : in  std_logic                                            := 'X';             -- read
+			av_waitrequest  : out std_logic;                                                               -- waitrequest
+			av_write        : in  std_logic                                            := 'X';             -- write
+			av_readdata     : out std_logic_vector((((c_WORD_SIZE-1)-0)+1)-1 downto 0);                    -- readdata
+			av_writedata    : in  std_logic_vector((((c_WORD_SIZE-1)-0)+1)-1 downto 0) := (others => 'X'); -- writedata
+			data            : out std_logic_vector((((c_WORD_SIZE-1)-0)+1)-1 downto 0);                    -- s2c0_da_0
+			rdaddress       : out std_logic_vector((((c_ADDR_BITS-1)-0)+1)-1 downto 0);                    -- s2c0_adrb_0
+			rden_n          : out std_logic;                                                               -- s2c0_meb_n_0
+			sd_n            : out std_logic;                                                               -- s2c0_sd_n_0
+			wraddress       : out std_logic_vector((((c_ADDR_BITS-1)-0)+1)-1 downto 0);                    -- s2c0_adra_0
+			wren_n          : out std_logic;                                                               -- s2c0_mea_n_0
+			refclk_out      : out std_logic;                                                               -- clock
+			q               : in  std_logic_vector((((c_WORD_SIZE-1)-0)+1)-1 downto 0) := (others => 'X'); -- s2c0_qb_0
+			esram_clk_i     : in  std_logic                                            := 'X';             -- esram2f_clk
+			iopll_lock2core : in  std_logic                                            := 'X';             -- iopll_lock2core
+			iopll_lock      : out std_logic;                                                               -- writeresponsevalid_n
+			refclk          : in  std_logic                                            := 'X';             -- clk
+			esram_clk       : out std_logic;                                                               -- clk
+			esram_rst       : out std_logic                                                                -- reset
+		);
+	end component qsys_top_avmm_to_esram_0;
+

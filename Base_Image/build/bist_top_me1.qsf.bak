@@ -1,0 +1,1555 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2016  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions
+# and other software and tools, and its AMPP partner logic
+# functions, and any output files from any of the foregoing
+# (including device programming or simulation files), and any
+# associated documentation or information are expressly subject
+# to the terms and conditions of the Intel Program License
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel MegaCore Function License Agreement, or other
+# applicable license agreement, including, without limitation,
+# that your use is for the sole purpose of programming logic
+# devices manufactured by Intel and sold by Intel or its
+# authorized distributors.  Please refer to the applicable
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 17.0ir2.0 Build 116 12/14/2016 Patches 0.02ir2 SJ Pro Edition
+# Date created = 16:18:30  February 07, 2017
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		bist_top_me1_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults_pro.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+# -------------------
+# Global Assignments
+# -------------------
+set_global_assignment -name FAMILY "Stratix 10"
+set_global_assignment -name DEVICE 1SM21CHU2F53E2VG
+set_global_assignment -name TOP_LEVEL_ENTITY bist_top_me1
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "17.0IR2.0 SP0.02IR2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:18:30  FEBRUARY 07, 2017"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.3.0 Pro Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 100
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 2
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name AUTO_RESTART_CONFIGURATION OFF
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name ENABLE_CONFIGURATION_PINS OFF
+set_global_assignment -name ENABLE_BOOT_SEL_PIN OFF
+set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "AVST X16"
+set_global_assignment -name CONFIGURATION_VCCIO_LEVEL 1.8V
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name ENABLE_ED_CRC_CHECK ON
+set_global_assignment -name USE_CONF_DONE SDM_IO16
+set_global_assignment -name USE_INIT_DONE SDM_IO0
+set_global_assignment -name ACTIVE_SERIAL_CLOCK AS_FREQ_100MHZ
+set_global_assignment -name DEVICE_INITIALIZATION_CLOCK OSC_CLK_1_125MHZ
+set_global_assignment -name MINIMUM_SEU_INTERVAL 0
+set_global_assignment -name USE_PWRMGT_SCL SDM_IO14
+set_global_assignment -name USE_PWRMGT_SDA SDM_IO11
+set_global_assignment -name USE_PWRMGT_ALERT SDM_IO12
+set_global_assignment -name VID_OPERATION_MODE "PMBUS SLAVE"
+set_global_assignment -name PWRMGT_DEVICE_ADDRESS_IN_PMBUS_SLAVE_MODE 01
+set_global_assignment -name GENERATE_PR_RBF_FILE ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS 6
+set_global_assignment -name SEED 4
+set_global_assignment -name PRE_FLOW_SCRIPT_FILE "quartus_sh:scripts/pre_flow_qsys.tcl"
+set_instance_assignment -name PARTITION_COLOUR 4284932607 -to bist_top_me1 -entity bist_top_me1
+
+# ----------------
+# Pin Assignments
+# ----------------
+
+# LEDs
+set_instance_assignment -name USE_AS_3V_GPIO ON -to led_user_red[*] -entity bist_top_me1
+set_instance_assignment -name USE_AS_3V_GPIO ON -to led_user_grn[*] -entity bist_top_me1
+set_instance_assignment -name USE_AS_3V_GPIO ON -to led_qsfp[*] -entity bist_top_me1
+
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led_user_red[*] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led_user_grn[*] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to led_qsfp[*] -entity bist_top_me1
+
+# 1PPS
+set_instance_assignment -name IO_STANDARD "1.8 V" -to u1pps -entity bist_top_me1
+
+# General Clocks
+set_instance_assignment -name IO_STANDARD "1.8 V" -to config_clk -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to usr_refclk0 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to "usr_refclk0(n)" -entity bist_top_me1
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to usr_refclk0 -entity bist_top_me1
+
+set_instance_assignment -name IO_STANDARD LVDS -to usr_refclk1 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to "usr_refclk1(n)" -entity bist_top_me1
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to usr_refclk1 -entity bist_top_me1
+
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to config_clk -entity bist_top_me1
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to usr_refclk0 -entity bist_top_me1
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to usr_refclk1 -entity bist_top_me1
+set_instance_assignment -name GLOBAL_SIGNAL GLOBAL_CLOCK -to u22|stratix10_clkctrl_0|clksel_inst|clkout -entity bist_top_me1
+
+# ESRAM
+set_instance_assignment -name IO_STANDARD LVDS -to esram_0_refclk
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to esram_0_refclk -entity bist_top_me1
+
+set_instance_assignment -name IO_STANDARD LVDS -to esram_1_refclk
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to esram_1_refclk -entity bist_top_me1
+
+# HBM
+set_instance_assignment -name IO_STANDARD LVDS -to hbm_bottom_ref_clks_pll_ref_clk
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to hbm_bottom_ref_clks_pll_ref_clk -entity bist_top_me1
+
+set_instance_assignment -name IO_STANDARD LVDS -to hbm_top_ref_clks_pll_ref_clk
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to hbm_top_ref_clks_pll_ref_clk -entity bist_top_me1
+
+# PCIe
+set_instance_assignment -name USE_AS_3V_GPIO ON -to pcie_perstn -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to pcie_perstn -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD HCSL -to pcie_refclk -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to pcie_refclk -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "pcie_refclk(n)" -entity bist_top_me1
+
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[15] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[14] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[13] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[12] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[11] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[10] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[9] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[8] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[7] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[6] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[5] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[4] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_rx[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[15] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[14] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[13] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[12] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[11] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[10] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[9] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[8] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[7] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[6] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[5] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[4] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to pcie_tx[0] -entity bist_top_me1
+
+
+
+#my_change
+
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[0](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[0] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[1](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[1] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[2](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[2] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[3](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[3] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[4](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[4] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[5](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[5] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[6](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[6] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[7](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[7] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[8](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[8] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[9](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[9] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[10](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[10] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[11](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[11] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[12](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[12] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[13](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[13] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[14](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[14] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_tx[15](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_tx[15] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[0](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[0] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[1](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[1] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[2](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[2] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[3](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[3] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[4](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[4] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[5](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[5] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[6](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[6] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[7](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[7] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[8](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[8] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[9](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[9] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[10](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[10] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[11](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[11] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[12](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[12] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[13](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[13] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[14](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[14] -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "pcie_rx[15](n)" -entity bist_top_me1
+#set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to pcie_rx[15] -entity bist_top_me1
+
+# System Manager Interface
+set_location_assignment PIN_AU20 -to conf_d[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AV20 -to conf_d[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AT20 -to conf_d[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR20 -to conf_d[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR19 -to conf_d[4] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AT19 -to conf_d[5] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AW19 -to conf_d[6] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AV19 -to conf_d[7] -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_AV18 -to conf_c_out[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AW18 -to conf_c_out[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU18 -to conf_c_in[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AT18 -to conf_c_in[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BA20 -to conf_c_in[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AY20 -to conf_c_out[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BA19 -to conf_c_in[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AY19 -to conf_c_out[3] -tag "Interface Planner IO Location Assignment"
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to conf_c_in[*] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to conf_c_out[*] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to conf_d[*] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to soft_recfg_req_n -entity bist_top_me1
+
+# BMC SPI
+set_location_assignment PIN_BK15 -to spi_mosi
+set_location_assignment PIN_BF18 -to spi_nss
+set_location_assignment PIN_BF19 -to spi_sclk
+set_location_assignment PIN_BL15 -to spi_miso
+
+set_location_assignment PIN_BH20 -to bmc_irq
+
+set_location_assignment PIN_BH19 -to fpga_gpio_1
+set_location_assignment PIN_BG20 -to fpga_rst_n
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to spi_mosi -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to spi_nss -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to spi_sclk -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to spi_miso -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to bmc_irq -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_gpio_1 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to fpga_rst_n -entity bist_top_me1
+
+# DDR4 SDRAM #0
+set_instance_assignment -name IO_STANDARD LVDS -to mem0_refclk -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to "mem0_refclk(n)" -entity bist_top_me1
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to mem0_refclk -entity bist_top_me1
+
+# DDR4 SDRAM #1
+set_instance_assignment -name IO_STANDARD LVDS -to mem1_refclk -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to "mem1_refclk(n)" -entity bist_top_me1
+set_instance_assignment -name INPUT_TERMINATION DIFFERENTIAL -to mem1_refclk -entity bist_top_me1
+
+# XCVR
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_0[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_0[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_0[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_0[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_1[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_1[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_1[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_1[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_2[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_2[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_2[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_2[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_3[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_3[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_3[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_3[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_4[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_4[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_4[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_4[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_5[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_5[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_5[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_5[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_6[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_6[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_6[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_6[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_7[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_7[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_7[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to rx_serial_data_7[0] -entity bist_top_me1
+
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_0[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_0[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_0[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_0[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_1[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_1[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_1[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_1[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_2[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_2[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_2[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_2[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_3[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_3[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_3[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_3[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_4[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_4[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_4[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_4[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_5[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_5[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_5[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_5[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_6[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_6[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_6[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_6[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_7[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_7[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_7[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "HIGH SPEED DIFFERENTIAL I/O" -to tx_serial_data_7[0] -entity bist_top_me1
+
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_0[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_0[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_0[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_0[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_0[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_0[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_0[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_0[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_1[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_1[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_1[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_1[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_1[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_1[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_1[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_1[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_2[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_2[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_2[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_2[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_2[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_2[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_2[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_2[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_3[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_3[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_3[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_3[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_3[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_3[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_3[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_3[0](n)" -entity bist_top_me1
+
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_4[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_4[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_4[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_4[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_4[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_4[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_4[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_4[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_5[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_5[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_5[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_5[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_5[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_5[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_5[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_5[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_6[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_6[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_6[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_6[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_6[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_6[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_6[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_6[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_7[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_7[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_7[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_7[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_7[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_7[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to rx_serial_data_7[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "rx_serial_data_7[0](n)" -entity bist_top_me1
+
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_0[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_0[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_0[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_0[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_0[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_0[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_0[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_0[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_1[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_1[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_1[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_1[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_1[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_1[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_1[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_1[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_2[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_2[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_2[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_2[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_2[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_2[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_2[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_2[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_3[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_3[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_3[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_3[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_3[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_3[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_3[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_3[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_4[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_4[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_4[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_4[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_4[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_4[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_4[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_4[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_5[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_5[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_5[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_5[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_5[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_5[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_5[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_5[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_6[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_6[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_6[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_6[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_6[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_6[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_6[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_6[0](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_7[3] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_7[3](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_7[2] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_7[2](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_7[1] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_7[1](n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to tx_serial_data_7[0] -entity bist_top_me1
+set_instance_assignment -name XCVR_VCCR_VCCT_VOLTAGE 1_1V -to "tx_serial_data_7[0](n)" -entity bist_top_me1
+
+# XCVR Reference Clocks
+# QSFP #0
+set_location_assignment PIN_AU43 -to xcvr_refclk_0 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU42 -to "xcvr_refclk_0(n)" -tag "Interface Planner IO Location Assignment"
+# QSFP #1
+set_location_assignment PIN_AN43 -to xcvr_refclk_1 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AN42 -to "xcvr_refclk_1(n)" -tag "Interface Planner IO Location Assignment"
+# QSFP #2
+set_location_assignment PIN_AJ43 -to xcvr_refclk_2 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AJ42 -to "xcvr_refclk_2(n)" -tag "Interface Planner IO Location Assignment"
+# QSFP #3
+set_location_assignment PIN_N43 -to xcvr_refclk_3 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N42 -to "xcvr_refclk_3(n)" -tag "Interface Planner IO Location Assignment"
+# OCuLink #0
+set_location_assignment PIN_AW9 -to xcvr_refclk_4 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AW10 -to "xcvr_refclk_4(n)" -tag "Interface Planner IO Location Assignment"
+#set_location_assignment PIN_BA9 -to xcvr_refclk_5 -tag "Interface Planner IO Location Assignment"
+#set_location_assignment PIN_BA10 -to "xcvr_refclk_5(n)" -tag "Interface Planner IO Location Assignment"
+# OCuLink #1
+set_location_assignment PIN_AC9 -to xcvr_refclk_6 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC10 -to "xcvr_refclk_6(n)" -tag "Interface Planner IO Location Assignment"
+#set_location_assignment PIN_AE9 -to xcvr_refclk_7 -tag "Interface Planner IO Location Assignment"
+#set_location_assignment PIN_AE10 -to "xcvr_refclk_7(n)" -tag "Interface Planner IO Location Assignment"
+# OCuLink #3
+set_location_assignment PIN_R9 -to xcvr_refclk_8 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_R10 -to "xcvr_refclk_8(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L9 -to xcvr_refclk_9 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L10 -to "xcvr_refclk_9(n)" -tag "Interface Planner IO Location Assignment"
+# OCuLink #2
+set_location_assignment PIN_AL9 -to xcvr_refclk_10 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL10 -to "xcvr_refclk_10(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG9 -to xcvr_refclk_11 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG10 -to "xcvr_refclk_11(n)" -tag "Interface Planner IO Location Assignment"
+
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_0 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_1 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_2 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_3 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD HCSL -to xcvr_refclk_4 -entity bist_top_me1
+#set_instance_assignment -name IO_STANDARD HCSL -to xcvr_refclk_5 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD HCSL -to xcvr_refclk_6 -entity bist_top_me1
+#set_instance_assignment -name IO_STANDARD HCSL -to xcvr_refclk_7 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_8 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_9 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_10 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to xcvr_refclk_11 -entity bist_top_me1
+
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_0 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_0(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_1 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_1(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_2 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_2(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_3 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_3(n)" -entity bist_top_me1
+
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_4 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_4(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_6 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_6(n)" -entity bist_top_me1
+
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_8 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_8(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_9 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_9(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_10 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_10(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to xcvr_refclk_11 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "xcvr_refclk_11(n)" -entity bist_top_me1
+
+# Note: XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF implements on-chip termination and on-chip signal biasing.
+
+# XCVR Recovered Clock Inputs
+set_location_assignment PIN_AR43 -to rcvrd_refclk_0 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR42 -to "rcvrd_refclk_0(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL43 -to rcvrd_refclk_1 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL42 -to "rcvrd_refclk_1(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG43 -to rcvrd_refclk_2 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG42 -to "rcvrd_refclk_2(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L43 -to rcvrd_refclk_3 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L42 -to "rcvrd_refclk_3(n)" -tag "Interface Planner IO Location Assignment"
+set_instance_assignment -name IO_STANDARD LVDS -to rcvrd_refclk_0 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to rcvrd_refclk_1 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to rcvrd_refclk_2 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to rcvrd_refclk_3 -entity bist_top_me1
+
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to rcvrd_refclk_0 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "rcvrd_refclk_0(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to rcvrd_refclk_1 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "rcvrd_refclk_1(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to rcvrd_refclk_2 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "rcvrd_refclk_2(n)" -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to rcvrd_refclk_3 -entity bist_top_me1
+set_instance_assignment -name XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF -to "rcvrd_refclk_3(n)" -entity bist_top_me1
+# Note: XCVR_S10_REFCLK_TERM_TRISTATE TRISTATE_OFF implements on-chip termination and on-chip signal biasing.
+
+# XCVR Recovered Clock Outputs
+set_instance_assignment -name IO_STANDARD LVDS -to rx_clkout_0 -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD LVDS -to rx_clkout_1 -entity bist_top_me1
+
+#--------------------------------------
+# Floorplan to Assist Cooker Placement
+#--------------------------------------
+set_instance_assignment -name PLACE_REGION "X108 Y4 X111 Y39;X112 Y4 X302 Y291;X12 Y40 X111 Y291" -to u23
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u23
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u23
+set_instance_assignment -name REGION_NAME cooker_0 -to u23
+set_instance_assignment -name PLACE_REGION "X108 Y4 X111 Y39;X112 Y4 X302 Y291;X12 Y40 X111 Y291" -to u24
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u24
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u24
+set_instance_assignment -name REGION_NAME cooker_0 -to u24
+
+#-------------------------------------------
+# Floorplan to Assist Transceiver Placement
+#-------------------------------------------
+set_instance_assignment -name PLACE_REGION "X12 Y21 X38 Y291" -to u60
+set_instance_assignment -name PLACE_REGION "X12 Y21 X38 Y291" -to u61
+set_instance_assignment -name PLACE_REGION "X12 Y21 X38 Y291" -to u62
+set_instance_assignment -name PLACE_REGION "X12 Y21 X38 Y291" -to u63
+set_instance_assignment -name PLACE_REGION "X263 Y4 X302 Y291" -to u80
+set_instance_assignment -name PLACE_REGION "X263 Y4 X302 Y291" -to u81
+set_instance_assignment -name PLACE_REGION "X263 Y4 X302 Y291" -to u82
+set_instance_assignment -name PLACE_REGION "X263 Y4 X302 Y291" -to u83
+set_instance_assignment -name PLACE_REGION "X263 Y4 X302 Y291" -to u800
+set_instance_assignment -name PLACE_REGION "X263 Y4 X302 Y291" -to u820
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u60
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u61
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u62
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u63
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u80
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u81
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u82
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u83
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u800
+set_instance_assignment -name RESERVE_PLACE_REGION OFF -to u820
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u60
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u61
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u62
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u63
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u80
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u81
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u82
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u83
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u800
+set_instance_assignment -name CORE_ONLY_PLACE_REGION ON -to u820
+set_instance_assignment -name REGION_NAME xcvr_qsfp -to u60
+set_instance_assignment -name REGION_NAME xcvr_qsfp -to u61
+set_instance_assignment -name REGION_NAME xcvr_qsfp -to u62
+set_instance_assignment -name REGION_NAME xcvr_qsfp -to u63
+set_instance_assignment -name REGION_NAME xcvr_oculink -to u80
+set_instance_assignment -name REGION_NAME xcvr_oculink -to u81
+set_instance_assignment -name REGION_NAME xcvr_oculink -to u82
+set_instance_assignment -name REGION_NAME xcvr_oculink -to u83
+set_instance_assignment -name REGION_NAME xcvr_oculink -to u800
+set_instance_assignment -name REGION_NAME xcvr_oculink -to u820
+
+#-----------------------
+# IBIS Model Generation
+#-----------------------
+#set_global_assignment -name EDA_BOARD_DESIGN_SIGNAL_INTEGRITY_TOOL "IBIS (Signal Integrity)"
+#set_global_assignment -name EDA_OUTPUT_DATA_FORMAT IBIS -section_id eda_board_design_signal_integrity
+#set_global_assignment -name POWER_AUTO_COMPUTE_TJ OFF
+
+#------------------
+# RTL and IP files
+#------------------
+set_instance_assignment -name PARTITION_COLOUR 4294946767 -to auto_fab_0 -entity bist_top_me1
+set_location_assignment PIN_BE42 -to altera_reserved_tck -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU37 -to altera_reserved_tdi -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR36 -to altera_reserved_tdo -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BJ41 -to altera_reserved_tms -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BB20 -to config_clk -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AH39 -to led_qsfp[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AJ39 -to led_qsfp[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AK39 -to led_qsfp[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AM38 -to led_qsfp[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA39 -to led_user_grn[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL38 -to led_user_grn[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA38 -to led_user_red[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL39 -to led_user_red[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y39 -to pcie_perstn -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC43 -to pcie_refclk -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC42 -to "pcie_refclk(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC47 -to pcie_rx[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC46 -to "pcie_rx[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD45 -to pcie_rx[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD44 -to "pcie_rx[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA47 -to pcie_rx[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA46 -to "pcie_rx[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB45 -to pcie_rx[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB44 -to "pcie_rx[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W47 -to pcie_rx[4] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W46 -to "pcie_rx[4](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y45 -to pcie_rx[5] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y44 -to "pcie_rx[5](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_U47 -to pcie_rx[6] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_U46 -to "pcie_rx[6](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_V45 -to pcie_rx[7] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_V44 -to "pcie_rx[7](n)" -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_AE51 -to pcie_tx[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AE50 -to "pcie_tx[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD49 -to pcie_tx[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD48 -to "pcie_tx[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC51 -to pcie_tx[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC50 -to "pcie_tx[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB49 -to pcie_tx[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB48 -to "pcie_tx[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA51 -to pcie_tx[4] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA50 -to "pcie_tx[4](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y49 -to pcie_tx[5] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y48 -to "pcie_tx[5](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W51 -to pcie_tx[6] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W50 -to "pcie_tx[6](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_V49 -to pcie_tx[7] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_R47 -to pcie_rx[8] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_R46 -to "pcie_rx[8](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_T45 -to pcie_rx[9] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_T44 -to "pcie_rx[9](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N47 -to pcie_rx[10] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N46 -to "pcie_rx[10](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_P45 -to pcie_rx[11] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_P44 -to "pcie_rx[11](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L47 -to pcie_rx[12] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L46 -to "pcie_rx[12](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_M45 -to pcie_rx[13] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_M44 -to "pcie_rx[13](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_J47 -to pcie_rx[14] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_J46 -to "pcie_rx[14](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K45 -to pcie_rx[15] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K44 -to "pcie_rx[15](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_U51 -to pcie_tx[8] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_U50 -to "pcie_tx[8](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_T49 -to pcie_tx[9] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_T48 -to "pcie_tx[9](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_R51 -to pcie_tx[10] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_R50 -to "pcie_tx[10](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_P49 -to pcie_tx[11] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_P48 -to "pcie_tx[11](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N51 -to pcie_tx[12] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N50 -to "pcie_tx[12](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_M49 -to pcie_tx[13] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_M48 -to "pcie_tx[13](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L51 -to pcie_tx[14] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L50 -to "pcie_tx[14](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K49 -to pcie_tx[15] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K48 -to "pcie_tx[15](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_V48 -to "pcie_tx[7](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_E10 -to rx_clkout_0 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_E11 -to "rx_clkout_0(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_H13 -to rx_clkout_1 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_J13 -to "rx_clkout_1(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BB45 -to rx_serial_data_0[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BB44 -to "rx_serial_data_0[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC47 -to rx_serial_data_0[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC46 -to "rx_serial_data_0[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AY45 -to rx_serial_data_0[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AY44 -to "rx_serial_data_0[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AW47 -to rx_serial_data_0[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AW46 -to "rx_serial_data_0[3](n)" -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_AP45 -to rx_serial_data_1[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AP44 -to "rx_serial_data_1[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL47 -to rx_serial_data_1[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL46 -to "rx_serial_data_1[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AT45 -to rx_serial_data_1[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AT44 -to "rx_serial_data_1[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU47 -to rx_serial_data_1[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU46 -to "rx_serial_data_1[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AK45 -to rx_serial_data_2[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AK44 -to "rx_serial_data_2[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AM45 -to rx_serial_data_2[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AM44 -to "rx_serial_data_2[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AF45 -to rx_serial_data_2[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AF44 -to "rx_serial_data_2[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AH45 -to rx_serial_data_2[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AH44 -to "rx_serial_data_2[2](n)" -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_F45 -to rx_serial_data_3[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_F44 -to "rx_serial_data_3[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_H45 -to rx_serial_data_3[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_H44 -to "rx_serial_data_3[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_D45 -to rx_serial_data_3[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_D44 -to "rx_serial_data_3[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_B44 -to rx_serial_data_3[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_A44 -to "rx_serial_data_3[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_G51 -to tx_serial_data_3[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_G50 -to "tx_serial_data_3[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_J51 -to tx_serial_data_3[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_J50 -to "tx_serial_data_3[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_E51 -to tx_serial_data_3[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_D51 -to "tx_serial_data_3[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_C50 -to tx_serial_data_3[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_B50 -to "tx_serial_data_3[3](n)" -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_BH18 -to soft_recfg_req_n -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD49 -to tx_serial_data_0[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD48 -to "tx_serial_data_0[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC51 -to tx_serial_data_0[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC50 -to "tx_serial_data_0[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BA51 -to tx_serial_data_0[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BA50 -to "tx_serial_data_0[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AY49 -to tx_serial_data_0[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AY48 -to "tx_serial_data_0[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR51 -to tx_serial_data_1[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR50 -to "tx_serial_data_1[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AM49 -to tx_serial_data_1[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AM48 -to "tx_serial_data_1[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU51 -to tx_serial_data_1[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU50 -to "tx_serial_data_1[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AV49 -to tx_serial_data_1[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AV48 -to "tx_serial_data_1[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL51 -to tx_serial_data_2[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL50 -to "tx_serial_data_2[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AN51 -to tx_serial_data_2[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AN50 -to "tx_serial_data_2[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG51 -to tx_serial_data_2[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG50 -to "tx_serial_data_2[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AJ51 -to tx_serial_data_2[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AJ50 -to "tx_serial_data_2[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AV13 -to u1pps -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BE17 -to usr_refclk0 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD17 -to "usr_refclk0(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_A24 -to usr_refclk1 -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_B23 -to "usr_refclk1(n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AY39 -to ~CONF_DONE~ -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BK41 -to ~INIT_DONE~ -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD42 -to ~PWRMGT_ALERT~ -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BA38 -to ~PWRMGT_SCL~ -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AW38 -to ~PWRMGT_SDA~ -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_BH7 -to rx_serial_data_4[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BH8 -to "rx_serial_data_4[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BJ5 -to rx_serial_data_4[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BJ6 -to "rx_serial_data_4[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BG5 -to rx_serial_data_4[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BG6 -to "rx_serial_data_4[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BF7 -to rx_serial_data_4[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BF8 -to "rx_serial_data_4[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BE5 -to rx_serial_data_5[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BE6 -to "rx_serial_data_5[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD7 -to rx_serial_data_5[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD8 -to "rx_serial_data_5[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BB7 -to rx_serial_data_5[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BB8 -to "rx_serial_data_5[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC5 -to rx_serial_data_5[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC6 -to "rx_serial_data_5[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AE5 -to rx_serial_data_6[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AE6 -to "rx_serial_data_6[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD7 -to rx_serial_data_6[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD8 -to "rx_serial_data_6[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC5 -to rx_serial_data_6[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC6 -to "rx_serial_data_6[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB7 -to rx_serial_data_6[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB8 -to "rx_serial_data_6[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA5 -to rx_serial_data_7[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA6 -to "rx_serial_data_7[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y7 -to rx_serial_data_7[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y8 -to "rx_serial_data_7[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W5 -to rx_serial_data_7[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W6 -to "rx_serial_data_7[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_V7 -to rx_serial_data_7[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_V8 -to "rx_serial_data_7[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BL5 -to tx_serial_data_4[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BL6 -to "tx_serial_data_4[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BK3 -to tx_serial_data_4[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BK4 -to "tx_serial_data_4[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BH3 -to tx_serial_data_4[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BH4 -to "tx_serial_data_4[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BG1 -to tx_serial_data_4[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BG2 -to "tx_serial_data_4[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BF3 -to tx_serial_data_5[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BF4 -to "tx_serial_data_5[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BE1 -to tx_serial_data_5[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BE2 -to "tx_serial_data_5[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD3 -to tx_serial_data_5[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BD4 -to "tx_serial_data_5[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC1 -to tx_serial_data_5[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_BC2 -to "tx_serial_data_5[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AF3 -to tx_serial_data_6[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AF4 -to "tx_serial_data_6[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AE1 -to tx_serial_data_6[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AE2 -to "tx_serial_data_6[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD3 -to tx_serial_data_6[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AD4 -to "tx_serial_data_6[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC1 -to tx_serial_data_6[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AC2 -to "tx_serial_data_6[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB3 -to tx_serial_data_7[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AB4 -to "tx_serial_data_7[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA1 -to tx_serial_data_7[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AA2 -to "tx_serial_data_7[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y3 -to tx_serial_data_7[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_Y4 -to "tx_serial_data_7[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W1 -to tx_serial_data_7[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_W2 -to "tx_serial_data_7[3](n)" -tag "Interface Planner IO Location Assignment"
+
+
+set_location_assignment PIN_N5 -to rx_serial_data_8[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N6 -to "rx_serial_data_8[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_M7 -to rx_serial_data_8[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_M8 -to "rx_serial_data_8[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K7 -to rx_serial_data_8[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K8 -to "rx_serial_data_8[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_J5 -to rx_serial_data_8[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_J6 -to "rx_serial_data_8[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_G5 -to rx_serial_data_9[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_G6 -to "rx_serial_data_9[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_F7 -to rx_serial_data_9[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_F8 -to "rx_serial_data_9[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_D7 -to rx_serial_data_9[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_D8 -to "rx_serial_data_9[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_C5 -to rx_serial_data_9[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_C6 -to "rx_serial_data_9[3](n)" -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_AU5 -to rx_serial_data_10[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU6 -to "rx_serial_data_10[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AT7 -to rx_serial_data_10[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AT8 -to "rx_serial_data_10[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AP7 -to rx_serial_data_10[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AP8 -to "rx_serial_data_10[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AN5 -to rx_serial_data_10[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AN6 -to "rx_serial_data_10[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL5 -to rx_serial_data_11[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL6 -to "rx_serial_data_11[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AK7 -to rx_serial_data_11[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AK8 -to "rx_serial_data_11[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AH7 -to rx_serial_data_11[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AH8 -to "rx_serial_data_11[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG5 -to rx_serial_data_11[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AG6 -to "rx_serial_data_11[3](n)" -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_P3 -to tx_serial_data_8[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_P4 -to "tx_serial_data_8[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N1 -to tx_serial_data_8[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_N2 -to "tx_serial_data_8[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L1 -to tx_serial_data_8[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_L2 -to "tx_serial_data_8[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K3 -to tx_serial_data_8[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_K4 -to "tx_serial_data_8[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_H3 -to tx_serial_data_9[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_H4 -to "tx_serial_data_9[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_G1 -to tx_serial_data_9[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_G2 -to "tx_serial_data_9[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_E1 -to tx_serial_data_9[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_E2 -to "tx_serial_data_9[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_D3 -to tx_serial_data_9[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_D4 -to "tx_serial_data_9[3](n)" -tag "Interface Planner IO Location Assignment"
+
+set_location_assignment PIN_AV3 -to tx_serial_data_10[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AV4 -to "tx_serial_data_10[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU1 -to tx_serial_data_10[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AU2 -to "tx_serial_data_10[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR1 -to tx_serial_data_10[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AR2 -to "tx_serial_data_10[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AP3 -to tx_serial_data_10[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AP4 -to "tx_serial_data_10[3](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AM3 -to tx_serial_data_11[0] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AM4 -to "tx_serial_data_11[0](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL1 -to tx_serial_data_11[1] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AL2 -to "tx_serial_data_11[1](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AJ1 -to tx_serial_data_11[2] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AJ2 -to "tx_serial_data_11[2](n)" -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AH3 -to tx_serial_data_11[3] -tag "Interface Planner IO Location Assignment"
+set_location_assignment PIN_AH4 -to "tx_serial_data_11[3](n)" -tag "Interface Planner IO Location Assignment"
+
+# ==================
+#  DDR4 Bank 0 Pins
+# ==================
+set_location_assignment PIN_BL34 -to mem0_a[0]
+set_location_assignment PIN_BK34 -to mem0_a[1]
+set_location_assignment PIN_BJ34 -to mem0_a[2]
+set_location_assignment PIN_BH34 -to mem0_a[3]
+set_location_assignment PIN_BH33 -to mem0_a[4]
+set_location_assignment PIN_BJ33 -to mem0_a[5]
+set_location_assignment PIN_BK35 -to mem0_a[6]
+set_location_assignment PIN_BL35 -to mem0_a[7]
+set_location_assignment PIN_BD33 -to mem0_a[8]
+set_location_assignment PIN_BC33 -to mem0_a[9]
+set_location_assignment PIN_BG33 -to mem0_a[10]
+set_location_assignment PIN_BF33 -to mem0_a[11]
+set_location_assignment PIN_BB33 -to mem0_a[12]
+set_location_assignment PIN_BB32 -to mem0_a[13]
+set_location_assignment PIN_BA32 -to mem0_a[14]
+set_location_assignment PIN_AW32 -to mem0_a[15]
+set_location_assignment PIN_AY32 -to mem0_a[16]
+set_location_assignment PIN_AV34 -to mem0_act_n
+set_location_assignment PIN_BC31 -to mem0_alert_n
+set_location_assignment PIN_BE32 -to mem0_ba[1]
+set_location_assignment PIN_BD32 -to mem0_bg[0]
+set_location_assignment PIN_BF34 -to mem0_ck
+set_location_assignment PIN_BE34 -to mem0_ck_n
+set_location_assignment PIN_BD34 -to mem0_cke[0]
+#set_location_assignment PIN_BC34 -to mem0_cke[1]
+set_location_assignment PIN_AW34 -to mem0_cs_n[0]
+#set_location_assignment PIN_BG35 -to mem0_cs_n[1]
+set_location_assignment PIN_BE24 -to mem0_dq[0]
+set_location_assignment PIN_BF24 -to mem0_dq[1]
+set_location_assignment PIN_BH24 -to mem0_dq[2]
+set_location_assignment PIN_BH25 -to mem0_dq[3]
+set_location_assignment PIN_BL23 -to mem0_dq[4]
+set_location_assignment PIN_BL22 -to mem0_dq[5]
+set_location_assignment PIN_BJ23 -to mem0_dq[6]
+set_location_assignment PIN_BH23 -to mem0_dq[7]
+set_location_assignment PIN_AW28 -to mem0_dq[8]
+set_location_assignment PIN_AW27 -to mem0_dq[9]
+set_location_assignment PIN_AY27 -to mem0_dq[10]
+set_location_assignment PIN_BA27 -to mem0_dq[11]
+set_location_assignment PIN_BE26 -to mem0_dq[12]
+set_location_assignment PIN_BE25 -to mem0_dq[13]
+set_location_assignment PIN_BB26 -to mem0_dq[14]
+set_location_assignment PIN_BB27 -to mem0_dq[15]
+set_location_assignment PIN_BE27 -to mem0_dq[16]
+set_location_assignment PIN_BF27 -to mem0_dq[17]
+set_location_assignment PIN_BG26 -to mem0_dq[18]
+set_location_assignment PIN_BG27 -to mem0_dq[19]
+set_location_assignment PIN_BL25 -to mem0_dq[20]
+set_location_assignment PIN_BL24 -to mem0_dq[21]
+set_location_assignment PIN_BJ26 -to mem0_dq[22]
+set_location_assignment PIN_BH26 -to mem0_dq[23]
+set_location_assignment PIN_BC28 -to mem0_dq[24]
+set_location_assignment PIN_BB28 -to mem0_dq[25]
+set_location_assignment PIN_BD28 -to mem0_dq[26]
+set_location_assignment PIN_BD27 -to mem0_dq[27]
+set_location_assignment PIN_BL28 -to mem0_dq[28]
+set_location_assignment PIN_BL27 -to mem0_dq[29]
+set_location_assignment PIN_BG28 -to mem0_dq[30]
+set_location_assignment PIN_BF28 -to mem0_dq[31]
+set_location_assignment PIN_BK30 -to mem0_dq[32]
+set_location_assignment PIN_BL30 -to mem0_dq[33]
+set_location_assignment PIN_BK29 -to mem0_dq[34]
+set_location_assignment PIN_BL29 -to mem0_dq[35]
+set_location_assignment PIN_BD29 -to mem0_dq[36]
+set_location_assignment PIN_BC29 -to mem0_dq[37]
+set_location_assignment PIN_BJ29 -to mem0_dq[38]
+set_location_assignment PIN_BH29 -to mem0_dq[39]
+set_location_assignment PIN_AV30 -to mem0_dq[40]
+set_location_assignment PIN_AV29 -to mem0_dq[41]
+set_location_assignment PIN_AW29 -to mem0_dq[42]
+set_location_assignment PIN_AY29 -to mem0_dq[43]
+set_location_assignment PIN_BF30 -to mem0_dq[44]
+set_location_assignment PIN_BE30 -to mem0_dq[45]
+set_location_assignment PIN_AY30 -to mem0_dq[46]
+set_location_assignment PIN_BA30 -to mem0_dq[47]
+set_location_assignment PIN_BJ39 -to mem0_dq[48]
+set_location_assignment PIN_BH39 -to mem0_dq[49]
+set_location_assignment PIN_BF39 -to mem0_dq[50]
+set_location_assignment PIN_BE39 -to mem0_dq[51]
+set_location_assignment PIN_BE40 -to mem0_dq[52]
+set_location_assignment PIN_BF40 -to mem0_dq[53]
+set_location_assignment PIN_BK40 -to mem0_dq[54]
+set_location_assignment PIN_BL40 -to mem0_dq[55]
+set_location_assignment PIN_BL37 -to mem0_dq[56]
+set_location_assignment PIN_BL38 -to mem0_dq[57]
+set_location_assignment PIN_BJ37 -to mem0_dq[58]
+set_location_assignment PIN_BK37 -to mem0_dq[59]
+set_location_assignment PIN_BC39 -to mem0_dq[60]
+set_location_assignment PIN_BD39 -to mem0_dq[61]
+set_location_assignment PIN_BF38 -to mem0_dq[62]
+set_location_assignment PIN_BG38 -to mem0_dq[63]
+set_location_assignment PIN_BC36 -to mem0_dq[64]
+set_location_assignment PIN_BB36 -to mem0_dq[65]
+set_location_assignment PIN_AY36 -to mem0_dq[66]
+set_location_assignment PIN_AW36 -to mem0_dq[67]
+set_location_assignment PIN_BD37 -to mem0_dq[68]
+set_location_assignment PIN_BE37 -to mem0_dq[69]
+set_location_assignment PIN_AW37 -to mem0_dq[70]
+set_location_assignment PIN_AY37 -to mem0_dq[71]
+set_location_assignment PIN_BF23 -to mem0_dqs[0]
+set_location_assignment PIN_BG23 -to mem0_dqs_n[0]
+set_location_assignment PIN_BJ22 -to mem0_dqs[1]
+set_location_assignment PIN_BK22 -to mem0_dqs_n[1]
+set_location_assignment PIN_BC26 -to mem0_dqs[2]
+set_location_assignment PIN_BD26 -to mem0_dqs_n[2]
+set_location_assignment PIN_BG25 -to mem0_dqs[3]
+set_location_assignment PIN_BF25 -to mem0_dqs_n[3]
+set_location_assignment PIN_BK26 -to mem0_dqs[4]
+set_location_assignment PIN_BK25 -to mem0_dqs_n[4]
+set_location_assignment PIN_BK24 -to mem0_dqs[5]
+set_location_assignment PIN_BJ24 -to mem0_dqs_n[5]
+set_location_assignment PIN_BJ28 -to mem0_dqs[6]
+set_location_assignment PIN_BH28 -to mem0_dqs_n[6]
+set_location_assignment PIN_BK27 -to mem0_dqs[7]
+set_location_assignment PIN_BJ27 -to mem0_dqs_n[7]
+set_location_assignment PIN_BF29 -to mem0_dqs[8]
+set_location_assignment PIN_BE29 -to mem0_dqs_n[8]
+set_location_assignment PIN_BA28 -to mem0_dqs[9]
+set_location_assignment PIN_BA29 -to mem0_dqs_n[9]
+set_location_assignment PIN_BB30 -to mem0_dqs[10]
+set_location_assignment PIN_BC30 -to mem0_dqs_n[10]
+set_location_assignment PIN_BH30 -to mem0_dqs[11]
+set_location_assignment PIN_BG30 -to mem0_dqs_n[11]
+set_location_assignment PIN_BK39 -to mem0_dqs[12]
+set_location_assignment PIN_BL39 -to mem0_dqs_n[12]
+set_location_assignment PIN_BG40 -to mem0_dqs[13]
+set_location_assignment PIN_BH40 -to mem0_dqs_n[13]
+set_location_assignment PIN_BH38 -to mem0_dqs[14]
+set_location_assignment PIN_BJ38 -to mem0_dqs_n[14]
+set_location_assignment PIN_BC38 -to mem0_dqs[15]
+set_location_assignment PIN_BD38 -to mem0_dqs_n[15]
+set_location_assignment PIN_BA37 -to mem0_dqs[16]
+set_location_assignment PIN_BB37 -to mem0_dqs_n[16]
+set_location_assignment PIN_BG37 -to mem0_dqs[17]
+set_location_assignment PIN_BF37 -to mem0_dqs_n[17]
+set_location_assignment PIN_BA34 -to mem0_odt[0]
+#set_location_assignment PIN_AY34 -to mem0_odt[1]
+set_location_assignment PIN_BH35 -to mem0_par
+set_location_assignment PIN_AW33 -to mem0_reset_n
+set_location_assignment PIN_AV33 -to mem0_bg[1]
+set_location_assignment PIN_BA33 -to mem0_oct_rzqin
+set_location_assignment PIN_AW31 -to mem0_refclk
+set_location_assignment PIN_AY31 -to "mem0_refclk(n)"
+set_location_assignment PIN_BF32 -to mem0_ba[0]
+
+# ==================
+#  DDR4 Bank 1 Pins
+# ==================
+set_location_assignment PIN_H34 -to mem1_a[0]
+set_location_assignment PIN_J34 -to mem1_a[1]
+set_location_assignment PIN_G35 -to mem1_a[2]
+set_location_assignment PIN_H35 -to mem1_a[3]
+set_location_assignment PIN_L35 -to mem1_a[4]
+set_location_assignment PIN_K35 -to mem1_a[5]
+set_location_assignment PIN_L34 -to mem1_a[6]
+set_location_assignment PIN_K34 -to mem1_a[7]
+set_location_assignment PIN_N34 -to mem1_a[8]
+set_location_assignment PIN_P34 -to mem1_a[9]
+set_location_assignment PIN_M35 -to mem1_a[10]
+set_location_assignment PIN_N35 -to mem1_a[11]
+set_location_assignment PIN_B40 -to mem1_a[12]
+set_location_assignment PIN_C39 -to mem1_a[13]
+set_location_assignment PIN_D39 -to mem1_a[14]
+set_location_assignment PIN_D38 -to mem1_a[15]
+set_location_assignment PIN_C38 -to mem1_a[16]
+set_location_assignment PIN_E35 -to mem1_act_n
+set_location_assignment PIN_P36 -to mem1_alert_n
+set_location_assignment PIN_F37 -to mem1_ba[1]
+set_location_assignment PIN_G37 -to mem1_bg[0]
+set_location_assignment PIN_B37 -to mem1_ck
+set_location_assignment PIN_B38 -to mem1_ck_n
+set_location_assignment PIN_B36 -to mem1_cke[0]
+#set_location_assignment PIN_A37 -to mem1_cke[1]
+set_location_assignment PIN_E36 -to mem1_cs_n[0]
+#set_location_assignment PIN_A38 -to mem1_cs_n[1]
+set_location_assignment PIN_H29 -to mem1_dq[0]
+set_location_assignment PIN_J29 -to mem1_dq[1]
+set_location_assignment PIN_M30 -to mem1_dq[2]
+set_location_assignment PIN_N30 -to mem1_dq[3]
+set_location_assignment PIN_N29 -to mem1_dq[4]
+set_location_assignment PIN_P29 -to mem1_dq[5]
+set_location_assignment PIN_K30 -to mem1_dq[6]
+set_location_assignment PIN_L30 -to mem1_dq[7]
+set_location_assignment PIN_A28 -to mem1_dq[8]
+set_location_assignment PIN_A29 -to mem1_dq[9]
+set_location_assignment PIN_C28 -to mem1_dq[10]
+set_location_assignment PIN_B28 -to mem1_dq[11]
+set_location_assignment PIN_E30 -to mem1_dq[12]
+set_location_assignment PIN_F30 -to mem1_dq[13]
+set_location_assignment PIN_C29 -to mem1_dq[14]
+set_location_assignment PIN_D29 -to mem1_dq[15]
+set_location_assignment PIN_N33 -to mem1_dq[16]
+set_location_assignment PIN_P33 -to mem1_dq[17]
+set_location_assignment PIN_L33 -to mem1_dq[18]
+set_location_assignment PIN_M33 -to mem1_dq[19]
+set_location_assignment PIN_P31 -to mem1_dq[20]
+set_location_assignment PIN_R31 -to mem1_dq[21]
+set_location_assignment PIN_T33 -to mem1_dq[22]
+set_location_assignment PIN_T32 -to mem1_dq[23]
+set_location_assignment PIN_C34 -to mem1_dq[24]
+set_location_assignment PIN_C35 -to mem1_dq[25]
+set_location_assignment PIN_D34 -to mem1_dq[26]
+set_location_assignment PIN_E34 -to mem1_dq[27]
+set_location_assignment PIN_M32 -to mem1_dq[28]
+set_location_assignment PIN_L32 -to mem1_dq[29]
+set_location_assignment PIN_H33 -to mem1_dq[30]
+set_location_assignment PIN_J33 -to mem1_dq[31]
+set_location_assignment PIN_J31 -to mem1_dq[32]
+set_location_assignment PIN_K31 -to mem1_dq[33]
+set_location_assignment PIN_B33 -to mem1_dq[34]
+set_location_assignment PIN_B32 -to mem1_dq[35]
+set_location_assignment PIN_F32 -to mem1_dq[36]
+set_location_assignment PIN_G32 -to mem1_dq[37]
+set_location_assignment PIN_D33 -to mem1_dq[38]
+set_location_assignment PIN_C33 -to mem1_dq[39]
+set_location_assignment PIN_B30 -to mem1_dq[40]
+set_location_assignment PIN_A30 -to mem1_dq[41]
+set_location_assignment PIN_C30 -to mem1_dq[42]
+set_location_assignment PIN_C31 -to mem1_dq[43]
+set_location_assignment PIN_A33 -to mem1_dq[44]
+set_location_assignment PIN_A34 -to mem1_dq[45]
+set_location_assignment PIN_D31 -to mem1_dq[46]
+set_location_assignment PIN_E31 -to mem1_dq[47]
+set_location_assignment PIN_E39 -to mem1_dq[48]
+set_location_assignment PIN_F40 -to mem1_dq[49]
+set_location_assignment PIN_F38 -to mem1_dq[50]
+set_location_assignment PIN_F39 -to mem1_dq[51]
+set_location_assignment PIN_C41 -to mem1_dq[52]
+set_location_assignment PIN_C40 -to mem1_dq[53]
+set_location_assignment PIN_D42 -to mem1_dq[54]
+set_location_assignment PIN_D41 -to mem1_dq[55]
+set_location_assignment PIN_R37 -to mem1_dq[56]
+set_location_assignment PIN_P37 -to mem1_dq[57]
+set_location_assignment PIN_P38 -to mem1_dq[58]
+set_location_assignment PIN_N38 -to mem1_dq[59]
+set_location_assignment PIN_J37 -to mem1_dq[60]
+set_location_assignment PIN_K37 -to mem1_dq[61]
+set_location_assignment PIN_L37 -to mem1_dq[62]
+set_location_assignment PIN_M37 -to mem1_dq[63]
+set_location_assignment PIN_H41 -to mem1_dq[64]
+set_location_assignment PIN_G41 -to mem1_dq[65]
+set_location_assignment PIN_G42 -to mem1_dq[66]
+set_location_assignment PIN_H42 -to mem1_dq[67]
+set_location_assignment PIN_K39 -to mem1_dq[68]
+set_location_assignment PIN_J39 -to mem1_dq[69]
+set_location_assignment PIN_H40 -to mem1_dq[70]
+set_location_assignment PIN_G40 -to mem1_dq[71]
+set_location_assignment PIN_K29 -to mem1_dqs[0]
+set_location_assignment PIN_L29 -to mem1_dqs_n[0]
+set_location_assignment PIN_R30 -to mem1_dqs[1]
+set_location_assignment PIN_R29 -to mem1_dqs_n[1]
+set_location_assignment PIN_E29 -to mem1_dqs[2]
+set_location_assignment PIN_F29 -to mem1_dqs_n[2]
+set_location_assignment PIN_G30 -to mem1_dqs[3]
+set_location_assignment PIN_H30 -to mem1_dqs_n[3]
+set_location_assignment PIN_M31 -to mem1_dqs[4]
+set_location_assignment PIN_N31 -to mem1_dqs_n[4]
+set_location_assignment PIN_P32 -to mem1_dqs[5]
+set_location_assignment PIN_R32 -to mem1_dqs_n[5]
+set_location_assignment PIN_G33 -to mem1_dqs[6]
+set_location_assignment PIN_F33 -to mem1_dqs_n[6]
+set_location_assignment PIN_K32 -to mem1_dqs[7]
+set_location_assignment PIN_J32 -to mem1_dqs_n[7]
+set_location_assignment PIN_D32 -to mem1_dqs[8]
+set_location_assignment PIN_E32 -to mem1_dqs_n[8]
+set_location_assignment PIN_G31 -to mem1_dqs[9]
+set_location_assignment PIN_H31 -to mem1_dqs_n[9]
+set_location_assignment PIN_B31 -to mem1_dqs[10]
+set_location_assignment PIN_A32 -to mem1_dqs_n[10]
+set_location_assignment PIN_A35 -to mem1_dqs[11]
+set_location_assignment PIN_B35 -to mem1_dqs_n[11]
+set_location_assignment PIN_E41 -to mem1_dqs[12]
+set_location_assignment PIN_E40 -to mem1_dqs_n[12]
+set_location_assignment PIN_C42 -to mem1_dqs[13]
+set_location_assignment PIN_B42 -to mem1_dqs_n[13]
+set_location_assignment PIN_H38 -to mem1_dqs[14]
+set_location_assignment PIN_J38 -to mem1_dqs_n[14]
+set_location_assignment PIN_H39 -to mem1_dqs[15]
+set_location_assignment PIN_G38 -to mem1_dqs_n[15]
+set_location_assignment PIN_E42 -to mem1_dqs[16]
+set_location_assignment PIN_F42 -to mem1_dqs_n[16]
+set_location_assignment PIN_L38 -to mem1_dqs[17]
+set_location_assignment PIN_L39 -to mem1_dqs_n[17]
+set_location_assignment PIN_C36 -to mem1_odt[0]
+#set_location_assignment PIN_D36 -to mem1_odt[1]
+set_location_assignment PIN_A39 -to mem1_par
+set_location_assignment PIN_F35 -to mem1_reset_n
+set_location_assignment PIN_F34 -to mem1_bg[1]
+set_location_assignment PIN_A40 -to mem1_oct_rzqin
+set_location_assignment PIN_A42 -to mem1_refclk
+set_location_assignment PIN_B41 -to "mem1_refclk(n)"
+set_location_assignment PIN_D37 -to mem1_ba[0]
+
+
+set_location_assignment PIN_AU31 -to esram_0_refclk 
+set_location_assignment PIN_AU32 -to "esram_0_refclk(n)"
+set_location_assignment PIN_V31 -to esram_1_refclk 
+set_location_assignment PIN_U31 -to "esram_1_refclk(n)"
+
+set_location_assignment PIN_AR26 -to hbm_bottom_ref_clks_pll_ref_clk 
+set_location_assignment PIN_AP26 -to "hbm_bottom_ref_clks_pll_ref_clk(n)"
+
+set_location_assignment PIN_P27 -to hbm_top_ref_clks_pll_ref_clk
+set_location_assignment PIN_R27 -to "hbm_top_ref_clks_pll_ref_clk(n)"
+
+
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio[0]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio[1]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio[2]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio[3]
+
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[4] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[5] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[6] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[7] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[8] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[9] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[10] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[11] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[12] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[13] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[14] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio[15] -entity bist_top_me1
+
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio[0]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio[1]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio[2]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio[3]
+
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio[0] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio[1] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio[2] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio[3] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[4] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[5] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[6] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[7] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[8] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[9] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[10] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[11] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[12] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[13] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[14] -entity bist_top_me1
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio[15] -entity bist_top_me1
+
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio_dir[0]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio_dir[1]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio_dir[2]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc0_gpio_dir[3]
+
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio_dir[0] 
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio_dir[1] 
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio_dir[2] 
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc0_gpio_dir[3] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[4] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[5] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[6] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[7] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[8] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[9] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[10] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[11] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[12] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[13] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[14] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc0_gpio_dir[15] 
+
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio_dir[0]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio_dir[1]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio_dir[2]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc1_gpio_dir[3]
+
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio_dir[0] 
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio_dir[1] 
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio_dir[2] 
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc1_gpio_dir[3] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[4] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[5] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[6] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[7] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[8] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[9] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[10] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[11] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[12] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[13] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[14] 
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc1_gpio_dir[15] 
+
+set_instance_assignment -name USE_AS_3V_GPIO ON -to opci_buff_in_sel[*]
+set_instance_assignment -name USE_AS_3V_GPIO ON -to oc_perst_n[*]
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to oc_buff_en_n[*]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to opci_buff_in_sel[*]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to oc_perst_n[*]
+
+set_location_assignment PIN_BL10 -to oc0_gpio[0]
+set_location_assignment PIN_BH10 -to oc0_gpio[1]
+set_location_assignment PIN_BG10 -to oc0_gpio[2]
+set_location_assignment PIN_BF10 -to oc0_gpio[3]
+set_location_assignment PIN_AT15 -to oc0_gpio[4]
+set_location_assignment PIN_AR15 -to oc0_gpio[5]
+set_location_assignment PIN_AV15 -to oc0_gpio[6]
+set_location_assignment PIN_AU15 -to oc0_gpio[7]
+set_location_assignment PIN_AW14 -to oc0_gpio[8]
+set_location_assignment PIN_AV14 -to oc0_gpio[9]
+set_location_assignment PIN_AY14 -to oc0_gpio[10]
+set_location_assignment PIN_BA14 -to oc0_gpio[11]
+set_location_assignment PIN_BB15 -to oc0_gpio[12]
+set_location_assignment PIN_BA15 -to oc0_gpio[13]
+set_location_assignment PIN_BC14 -to oc0_gpio[14]
+set_location_assignment PIN_BC15 -to oc0_gpio[15]
+
+set_location_assignment PIN_AG13 -to oc1_gpio[0]
+set_location_assignment PIN_AL13 -to oc1_gpio[1]
+set_location_assignment PIN_AM13 -to oc1_gpio[2]
+set_location_assignment PIN_AN13 -to oc1_gpio[3]
+set_location_assignment PIN_C16 -to oc1_gpio[4]
+set_location_assignment PIN_D16 -to oc1_gpio[5]
+set_location_assignment PIN_B15 -to oc1_gpio[6]
+set_location_assignment PIN_B16 -to oc1_gpio[7]
+set_location_assignment PIN_C14 -to oc1_gpio[8]
+set_location_assignment PIN_C15 -to oc1_gpio[9]
+set_location_assignment PIN_A14 -to oc1_gpio[10]
+set_location_assignment PIN_A15 -to oc1_gpio[11]
+set_location_assignment PIN_E15 -to oc1_gpio[12]
+set_location_assignment PIN_F15 -to oc1_gpio[13]
+set_location_assignment PIN_H15 -to oc1_gpio[14]
+set_location_assignment PIN_G15 -to oc1_gpio[15]
+
+set_location_assignment PIN_BE10 -to oc0_gpio_dir[0]
+set_location_assignment PIN_BD10 -to oc0_gpio_dir[1]
+set_location_assignment PIN_BC10 -to oc0_gpio_dir[2]
+set_location_assignment PIN_AP39 -to oc0_gpio_dir[3]
+set_location_assignment PIN_BF14 -to oc0_gpio_dir[4]
+set_location_assignment PIN_BF13 -to oc0_gpio_dir[5]
+set_location_assignment PIN_BH13 -to oc0_gpio_dir[6]
+set_location_assignment PIN_BG13 -to oc0_gpio_dir[7]
+set_location_assignment PIN_BJ13 -to oc0_gpio_dir[8]
+set_location_assignment PIN_BJ12 -to oc0_gpio_dir[9]
+set_location_assignment PIN_BJ14 -to oc0_gpio_dir[10]
+set_location_assignment PIN_BK14 -to oc0_gpio_dir[11]
+set_location_assignment PIN_BL14 -to oc0_gpio_dir[12]
+set_location_assignment PIN_BL13 -to oc0_gpio_dir[13]
+set_location_assignment PIN_AU17 -to oc0_gpio_dir[14]
+set_location_assignment PIN_AU16 -to oc0_gpio_dir[15]
+
+set_location_assignment PIN_AH13 -to oc1_gpio_dir[0]
+set_location_assignment PIN_AP13 -to oc1_gpio_dir[1]
+set_location_assignment PIN_AF13 -to oc1_gpio_dir[2]
+set_location_assignment PIN_AC38 -to oc1_gpio_dir[3]
+set_location_assignment PIN_J16 -to oc1_gpio_dir[4]
+set_location_assignment PIN_K16 -to oc1_gpio_dir[5]
+set_location_assignment PIN_L15 -to oc1_gpio_dir[6]
+set_location_assignment PIN_K15 -to oc1_gpio_dir[7]
+set_location_assignment PIN_M15 -to oc1_gpio_dir[8]
+set_location_assignment PIN_N15 -to oc1_gpio_dir[9]
+set_location_assignment PIN_M16 -to oc1_gpio_dir[10]
+set_location_assignment PIN_N16 -to oc1_gpio_dir[11]
+set_location_assignment PIN_P16 -to oc1_gpio_dir[12]
+set_location_assignment PIN_R16 -to oc1_gpio_dir[13]
+set_location_assignment PIN_A13 -to oc1_gpio_dir[14]
+set_location_assignment PIN_A12 -to oc1_gpio_dir[15]
+
+set_location_assignment PIN_AW17 -to oc_buff_en_n[2]
+set_location_assignment PIN_AY17 -to oc_buff_en_n[3]
+set_location_assignment PIN_AW16 -to oc_buff_en_n[4]
+set_location_assignment PIN_B13 -to oc_buff_en_n[5]
+set_location_assignment PIN_C13 -to oc_buff_en_n[6]
+set_location_assignment PIN_B12 -to oc_buff_en_n[7]
+
+set_location_assignment PIN_AC39 -to opci_buff_in_sel[2]
+set_location_assignment PIN_AN39 -to opci_buff_in_sel[3]
+
+set_location_assignment PIN_AJ13 -to oc_perst_n[2]
+set_location_assignment PIN_BK10 -to oc_perst_n[3]
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to uart_tx
+set_instance_assignment -name IO_STANDARD "1.8 V" -to uart_rx
+
+set_location_assignment PIN_BD12 -to uart_tx
+set_location_assignment PIN_BE12 -to uart_rx
+
+set_instance_assignment -name USE_AS_3V_GPIO ON -to test[*]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to test[*]
+
+set_location_assignment PIN_AB38 -to test[0]
+set_location_assignment PIN_AD39 -to test[1]
+
+set_location_assignment PIN_BB18 -to uib_cattrip[0]
+set_location_assignment PIN_BD18 -to uib_cattrip[1]
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to qsfp_i2c[*]
+
+set_location_assignment PIN_BJ17 -to qsfp_i2c[0]  # sda
+set_location_assignment PIN_BJ18 -to qsfp_i2c[1]  # scl
+set_location_assignment PIN_BK17 -to qsfp_i2c[2]
+set_location_assignment PIN_BK16 -to qsfp_i2c[3]
+
+set_instance_assignment -name IO_STANDARD "1.8 V" -to qsfp_irq_n[*]
+
+set_location_assignment PIN_H19 -to qsfp_irq_n[0]
+set_location_assignment PIN_H18 -to qsfp_irq_n[1]
+set_location_assignment PIN_A22 -to qsfp_irq_n[2]
+set_location_assignment PIN_C23 -to qsfp_irq_n[3]
+
+set_global_assignment -name QSYS_FILE ../qsys/qsys_top.qsys
+set_global_assignment -name VHDL_FILE ../ip/common_cores/cooker/rtl/sreg_cook_test.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/cooker/rtl/bram_cook_test.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/cooker/rtl/dsp_cook_test.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/general_fifo/rtl/general_fifo.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/heartbeat/rtl/heartbeat_50m.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/clock_gen/rtl/clock_gen.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/clock_gen/rtl/clock_gen_fast.vhd
+set_global_assignment -name VHDL_FILE ../rtl/pwr_on_rst_init_dist.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/retime/rtl/bretime_async_rst.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/clock_test/rtl/counter32.vhd
+set_global_assignment -name VHDL_FILE ../rtl/clock_test.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/ram/rtl/altera_dprw_ram.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/prbs/rtl/wide_prbs_gen.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/prbs/rtl/prbs_gen.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/prbs/rtl/prbs_checker.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/prbs/rtl/bit_checker.vhd
+set_global_assignment -name VHDL_FILE ../ip/common_cores/uart_edge/rtl/uart_edge.vhd
+set_global_assignment -name IP_FILE ../ip/s10_temperature.ip
+set_global_assignment -name IP_FILE ../ip/s10_voltage.ip
+set_global_assignment -name IP_FILE ../ip/s10_clock_mux.ip
+set_global_assignment -name IP_FILE ../ip/s10_chip_id.ip
+set_global_assignment -name VHDL_FILE ../rtl/s10_auto_adc.vhd
+set_global_assignment -name VHDL_FILE ../rtl/s10_chip_id_wrap.vhd
+set_global_assignment -name VHDL_FILE ../rtl/pkg_svn_revision.vhd
+set_global_assignment -name VHDL_FILE ../rtl/pkg_user_registers.vhd
+set_global_assignment -name VHDL_FILE ../rtl/user_registers.vhd
+set_global_assignment -name VHDL_FILE ../rtl/cooker_wrapper.vhd
+set_global_assignment -name VHDL_FILE ../rtl/memory_bist_with_parity.vhd
+set_global_assignment -name VHDL_FILE ../rtl/memory_bist_wrapper.vhd
+set_global_assignment -name VHDL_FILE ../rtl/memory_peek_poke.vhd
+set_global_assignment -name VHDL_FILE ../rtl/ddr4_sdram_if.vhd
+set_global_assignment -name VHDL_FILE ../rtl/err_count_64.vhd
+set_global_assignment -name VHDL_FILE ../rtl/xcvr_bist_100g.vhd
+set_global_assignment -name VHDL_FILE ../rtl/xcvr_bist.vhd
+set_global_assignment -name VERILOG_FILE ../rtl/reset_filter.v
+set_global_assignment -name VHDL_FILE ../rtl/bist_top_me1.vhd
+set_global_assignment -name SDC_FILE bist_top_me1.sdc
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_clock_bridge_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_clk_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_clk_1.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_mm_clock_crossing_bridge_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_master_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/rst_pcie_user_bridge.ip
+set_global_assignment -name IP_FILE ../ip/mem0.ip
+set_global_assignment -name IP_FILE ../ip/mem1.ip
+set_global_assignment -name IP_FILE ../ip/pipe_mm_bridge_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/system_manager/system_manager_clk_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/system_manager/system_manager_clk_2.ip
+set_global_assignment -name IP_FILE ../qsys/ip/system_manager/system_manager_flash_memory_buffer.ip
+set_global_assignment -name IP_FILE ../qsys/ip/system_manager/system_manager_if.ip
+set_global_assignment -name IP_FILE ../qsys/ip/system_manager/system_manager_reg_bridge0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/system_manager/system_manager_mm_bridge_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/system_manager/system_manager_iopll_0.ip
+set_global_assignment -name QSYS_FILE ../qsys/system_manager.qsys
+set_global_assignment -name IP_FILE ../ip/xcvr_phy_prod.ip
+set_global_assignment -name IP_FILE ../ip/xcvr_atxpll_prod.ip
+set_global_assignment -name IP_FILE ../ip/xcvr_rst_tx_prod.ip
+set_global_assignment -name IP_FILE ../ip/xcvr_rst_rx_prod.ip
+set_global_assignment -name IP_FILE ../ip/l_tile_xcvr_rst_tx.ip
+set_global_assignment -name IP_FILE ../ip/l_tile_xcvr_rst_rx.ip
+set_global_assignment -name IP_FILE ../ip/pll_cooker.ip
+set_global_assignment -name IP_FILE ../ip/l_tile_xcvr_fpll_prod.ip
+set_global_assignment -name IP_FILE ../ip/l_tile_xcvr_phy_prod.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_spi_slave_to_avmm_master_bridge.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/ocmem.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/spi_pb_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/BMC_to_PCIe_IRQ_Generator_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/PCIe_to_BMC_IRQ_Generator_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/system_arbiter_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_esram/esram_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_esram/esram_7.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_av_esram_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_av_esram_1.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_mm_ccb_1.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_mm_ccb_2.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/hbm_bottom_example_design.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/tg_top0_1.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/top_core_clk_iopll.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/tg_top0_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/hbm_top_example_design.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/tg_bottom0_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/tg_bottom0_1.ip
+set_global_assignment -name IP_FILE ../qsys/ip/av_hbm/hbm_example_design/ip/ed_synth/bottom_core_clk_iopll.ip
+set_global_assignment -name QSYS_FILE ../qsys/ip/av_hbm/hbm_example_design/ed_synth.qsys
+set_global_assignment -name IP_FILE ../ip/s10_reset_release.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_avmm_bridge_512_0.ip
+set_global_assignment -name IP_FILE ../qsys/ip/qsys_top/qsys_top_mm_bridge_0.ip
+set_global_assignment -name QSYS_FILE ../qsys/dr_interface.qsys
+set_global_assignment -name IP_FILE ../qsys/ip/dr_interface/dr_clk_config.ip
+set_global_assignment -name IP_FILE ../qsys/ip/dr_interface/dr_clk_pcie_user.ip
+set_global_assignment -name IP_FILE ../qsys/ip/dr_interface/dr_mm_bridge_1.ip
+set_global_assignment -name IP_FILE ../qsys/ip/dr_interface/dr_mm_clock_crossing_bridge.ip
+

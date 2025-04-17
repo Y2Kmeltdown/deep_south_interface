@@ -1,0 +1,6 @@
+	component s10_reset_release is
+		port (
+			ninit_done : out std_logic   -- ninit_done
+		);
+	end component s10_reset_release;
+

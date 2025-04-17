@@ -1,0 +1,20 @@
+Core: hbm_bottom_example_design_altera_abstract_uib_191_b3v3bdi - Instance: u30|av_hbm_0|av_hbm_0|i_ed_synth|hbm_bottom_example_design|hbm_0_example_design_0|uib
+Path, Setup Margin, Hold Margin
+"HBM/UIB (2 Slow vid2 100C Model)",1.308,0.042
+"HBM/UIB Min Pulse (2 Slow vid2 100C Model)",0.403,--
+"HBM/UIB Recovery/Removal (2 Slow vid2 100C Model)",999.9,999.9
+"HBM/UIB (2 Slow vid2 0C Model)",1.298,0.042
+"HBM/UIB Min Pulse (2 Slow vid2 0C Model)",0.391,--
+"HBM/UIB Recovery/Removal (2 Slow vid2 0C Model)",999.9,999.9
+"HBM/UIB (Slow 900mV 100C Model)",1.03,0.056
+"HBM/UIB Min Pulse (Slow 900mV 100C Model)",0.379,--
+"HBM/UIB Recovery/Removal (Slow 900mV 100C Model)",999.9,999.9
+"HBM/UIB (Slow 900mV 0C Model)",1.086,0.053
+"HBM/UIB Min Pulse (Slow 900mV 0C Model)",0.351,--
+"HBM/UIB Recovery/Removal (Slow 900mV 0C Model)",999.9,999.9
+"HBM/UIB (Fast 900mV 100C Model)",1.312,0.025
+"HBM/UIB Min Pulse (Fast 900mV 100C Model)",0.411,--
+"HBM/UIB Recovery/Removal (Fast 900mV 100C Model)",999.9,999.9
+"HBM/UIB (Fast 900mV 0C Model)",1.566,0.025
+"HBM/UIB Min Pulse (Fast 900mV 0C Model)",0.41,--
+"HBM/UIB Recovery/Removal (Fast 900mV 0C Model)",999.9,999.9

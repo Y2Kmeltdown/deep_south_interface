@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2024.04.18.14:50:57"
+ outputDirectory="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="rsp" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="32" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyAllowance" value="0" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="rsp_valid" direction="output" role="valid" width="1" />
+   <port name="rsp_data" direction="output" role="data" width="32" />
+   <port name="rsp_channel" direction="output" role="channel" width="4" />
+   <port
+       name="rsp_startofpacket"
+       direction="output"
+       role="startofpacket"
+       width="1" />
+   <port
+       name="rsp_endofpacket"
+       direction="output"
+       role="endofpacket"
+       width="1" />
+  </interface>
+  <interface name="cmd" kind="avalon_streaming" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="16" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyAllowance" value="0" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="cmd_valid" direction="input" role="valid" width="1" />
+   <port name="cmd_ready" direction="output" role="ready" width="1" />
+   <port name="cmd_data" direction="input" role="data" width="16" />
+  </interface>
+ </perimeter>
+ <entity kind="s10_voltage" version="1.0" name="s10_voltage">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/synth/s10_voltage.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/synth/s10_voltage.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_voltage_sensor/altera_s10_voltage_sensor_hw.tcl" />
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_mailbox_pro_client_lite/altera_s10_mailbox_pro_client_lite_hw.tcl" />
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="s10_voltage">"Generating: s10_voltage"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: s10_voltage_altera_s10_voltage_sensor_1911_lilv2cy"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: s10_voltage_altera_s10_mailbox_pro_client_lite_191_5diurza"</message>
+   <message level="Info" culprit="config_stream_ep">"Generating: config_stream_ep"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: config_stream_ep"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_s10_voltage_sensor"
+   version="19.1.1"
+   name="s10_voltage_altera_s10_voltage_sensor_1911_lilv2cy">
+  <parameter name="CMD_WIDTH" value="16" />
+  <parameter name="COMMAND_CODE" value="24" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="LENGTH" value="1" />
+  <parameter name="ID" value="0" />
+  <parameter name="CLIENT" value="0" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_s10_voltage_sensor_1911/synth/s10_voltage_altera_s10_voltage_sensor_1911_lilv2cy.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_s10_voltage_sensor_1911/synth/s10_voltage_altera_s10_voltage_sensor_1911_lilv2cy.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_voltage_sensor/altera_s10_voltage_sensor_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_mailbox_pro_client_lite/altera_s10_mailbox_pro_client_lite_hw.tcl" />
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="s10_voltage" as="s10_voltage_sensor_0" />
+  <messages>
+   <message level="Info" culprit="s10_voltage">"Generating: s10_voltage_altera_s10_voltage_sensor_1911_lilv2cy"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: s10_voltage_altera_s10_mailbox_pro_client_lite_191_5diurza"</message>
+   <message level="Info" culprit="config_stream_ep">"Generating: config_stream_ep"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: config_stream_ep"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_s10_mailbox_pro_client_lite"
+   version="19.1"
+   name="s10_voltage_altera_s10_mailbox_pro_client_lite_191_5diurza">
+  <parameter name="CMD_ARG_0" value="0" />
+  <parameter name="LENGTH_INFO" value="1" />
+  <parameter name="HAS_OFFLOAD" value="0" />
+  <parameter
+     name="CMD_INFO"
+     value="32&apos;b00000000000000000001000000011000 32&apos;h00000000" />
+  <parameter name="LENGTH_0" value="1" />
+  <parameter name="CHANNEL_0" value="0" />
+  <parameter name="DEBUG" value="0" />
+  <parameter name="ID_0" value="0" />
+  <parameter name="CMD_WIDTH" value="16" />
+  <parameter name="COMMAND_CODE_0" value="24" />
+  <parameter name="HEADER_0" value="00000000000000000001000000011000" />
+  <parameter name="NUMB_ARG" value="1" />
+  <parameter name="ENABLE_0" value="1" />
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_s10_mailbox_pro_client_lite_191/synth/s10_voltage_altera_s10_mailbox_pro_client_lite_191_5diurza.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_s10_mailbox_pro_client_lite_191/synth/s10_voltage_altera_s10_mailbox_pro_client_lite_191_5diurza.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_mailbox_pro_client_lite/altera_s10_mailbox_pro_client_lite_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="s10_voltage_altera_s10_voltage_sensor_1911_lilv2cy"
+     as="programable_mailbox_client_inst" />
+  <messages>
+   <message level="Info" culprit="s10_voltage">"Generating: s10_voltage_altera_s10_mailbox_pro_client_lite_191_5diurza"</message>
+   <message level="Info" culprit="config_stream_ep">"Generating: config_stream_ep"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: config_stream_ep"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_s10_mailbox_pro_client_lite_altera_config_stream_endpoint"
+   version="19.1"
+   name="config_stream_ep">
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_s10_mailbox_pro_client_lite_191/synth/config_stream_ep.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_s10_mailbox_pro_client_lite_191/synth/config_stream_ep.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles/>
+  <childSourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="s10_voltage_altera_s10_mailbox_pro_client_lite_191_5diurza"
+     as="config_stream_ep" />
+  <messages>
+   <message level="Info" culprit="s10_voltage">"Generating: config_stream_ep"</message>
+   <message level="Info" culprit="s10_voltage">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_config_stream_endpoint"
+   version="19.1"
+   name="altera_config_stream_endpoint_wrapper">
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_config_stream_endpoint_191/synth/altera_config_stream_endpoint_wrapper.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_voltage/altera_config_stream_endpoint_191/synth/altera_config_stream_endpoint_wrapper.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="config_stream_ep" as="config_stream_ep" />
+  <messages>
+   <message level="Info" culprit="s10_voltage">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+</deploy>

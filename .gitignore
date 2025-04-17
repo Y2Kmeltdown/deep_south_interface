@@ -1,6 +1,5 @@
-build
+/build
 .vscode
-scripts
 src/test.c
-Minimum_BIST/output_files
+Base_Image/build/output_files
 Minimum_BIST.zip

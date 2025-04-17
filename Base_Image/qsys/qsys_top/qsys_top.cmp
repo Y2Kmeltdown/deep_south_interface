@@ -1,0 +1,555 @@
+	component qsys_top is
+		port (
+			bmc_to_pcie_irq_generator_0_ext_irq_interface_irq_in                  : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
+			pcie_irq_irq                                                          : out   std_logic;                                        -- irq
+			pcie_to_bmc_irq_generator_0_ext_irq_interface_irq_in                  : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
+			bmc_irq_irq                                                           : out   std_logic;                                        -- irq
+			esram_0_iopll_lock_writeresponsevalid_n                               : out   std_logic;                                        -- writeresponsevalid_n
+			esram_0_refclk_clk                                                    : in    std_logic                     := 'X';             -- clk
+			pcie_user_clk_clk                                                     : out   std_logic;                                        -- clk
+			processor_clock_crossing_bridge_s0_clk_clk                            : in    std_logic                     := 'X';             -- clk
+			processor_clock_crossing_bridge_s0_reset_reset                        : in    std_logic                     := 'X';             -- reset
+			processor_clock_crossing_bridge_s0_waitrequest                        : out   std_logic;                                        -- waitrequest
+			processor_clock_crossing_bridge_s0_readdata                           : out   std_logic_vector(31 downto 0);                    -- readdata
+			processor_clock_crossing_bridge_s0_readdatavalid                      : out   std_logic;                                        -- readdatavalid
+			processor_clock_crossing_bridge_s0_burstcount                         : in    std_logic_vector(0 downto 0)  := (others => 'X'); -- burstcount
+			processor_clock_crossing_bridge_s0_writedata                          : in    std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			processor_clock_crossing_bridge_s0_address                            : in    std_logic_vector(17 downto 0) := (others => 'X'); -- address
+			processor_clock_crossing_bridge_s0_write                              : in    std_logic                     := 'X';             -- write
+			processor_clock_crossing_bridge_s0_read                               : in    std_logic                     := 'X';             -- read
+			processor_clock_crossing_bridge_s0_byteenable                         : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- byteenable
+			processor_clock_crossing_bridge_s0_debugaccess                        : in    std_logic                     := 'X';             -- debugaccess
+			config_clk_clk                                                        : in    std_logic                     := 'X';             -- clk
+			config_rstn_reset_n                                                   : in    std_logic                     := 'X';             -- reset_n
+			avmm_master_waitrequest                                               : in    std_logic                     := 'X';             -- waitrequest
+			avmm_master_readdata                                                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- readdata
+			avmm_master_readdatavalid                                             : in    std_logic                     := 'X';             -- readdatavalid
+			avmm_master_burstcount                                                : out   std_logic_vector(0 downto 0);                     -- burstcount
+			avmm_master_writedata                                                 : out   std_logic_vector(31 downto 0);                    -- writedata
+			avmm_master_address                                                   : out   std_logic_vector(11 downto 0);                    -- address
+			avmm_master_write                                                     : out   std_logic;                                        -- write
+			avmm_master_read                                                      : out   std_logic;                                        -- read
+			avmm_master_byteenable                                                : out   std_logic_vector(3 downto 0);                     -- byteenable
+			avmm_master_debugaccess                                               : out   std_logic;                                        -- debugaccess
+			pcie_refclk_clk                                                       : in    std_logic                     := 'X';             -- clk
+			pcie_npor_npor                                                        : in    std_logic                     := 'X';             -- npor
+			pcie_npor_pin_perst                                                   : in    std_logic                     := 'X';             -- pin_perst
+			qsys_top_pcie_s10_hip_avmm_gen3x16_ninit_done_ninit_done              : in    std_logic                     := 'X';             -- ninit_done
+			qsys_top_pcie_s10_hip_avmm_gen3x16_flr_ctrl_flr_pf_done               : in    std_logic                     := 'X';             -- flr_pf_done
+			qsys_top_pcie_s10_hip_avmm_gen3x16_flr_ctrl_flr_pf_active             : out   std_logic;                                        -- flr_pf_active
+			pcie_hip_ctrl_simu_mode_pipe                                          : in    std_logic                     := 'X';             -- simu_mode_pipe
+			pcie_hip_ctrl_test_in                                                 : in    std_logic_vector(66 downto 0) := (others => 'X'); -- test_in
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_sim_pipe_pclk_in          : in    std_logic                     := 'X';             -- sim_pipe_pclk_in
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_sim_pipe_rate             : out   std_logic_vector(1 downto 0);                     -- sim_pipe_rate
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_sim_ltssmstate            : out   std_logic_vector(5 downto 0);                     -- sim_ltssmstate
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata0                   : out   std_logic_vector(31 downto 0);                    -- txdata0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata1                   : out   std_logic_vector(31 downto 0);                    -- txdata1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata2                   : out   std_logic_vector(31 downto 0);                    -- txdata2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata3                   : out   std_logic_vector(31 downto 0);                    -- txdata3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata4                   : out   std_logic_vector(31 downto 0);                    -- txdata4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata5                   : out   std_logic_vector(31 downto 0);                    -- txdata5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata6                   : out   std_logic_vector(31 downto 0);                    -- txdata6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata7                   : out   std_logic_vector(31 downto 0);                    -- txdata7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata8                   : out   std_logic_vector(31 downto 0);                    -- txdata8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata9                   : out   std_logic_vector(31 downto 0);                    -- txdata9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata10                  : out   std_logic_vector(31 downto 0);                    -- txdata10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata11                  : out   std_logic_vector(31 downto 0);                    -- txdata11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata12                  : out   std_logic_vector(31 downto 0);                    -- txdata12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata13                  : out   std_logic_vector(31 downto 0);                    -- txdata13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata14                  : out   std_logic_vector(31 downto 0);                    -- txdata14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdata15                  : out   std_logic_vector(31 downto 0);                    -- txdata15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak0                  : out   std_logic_vector(3 downto 0);                     -- txdatak0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak1                  : out   std_logic_vector(3 downto 0);                     -- txdatak1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak2                  : out   std_logic_vector(3 downto 0);                     -- txdatak2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak3                  : out   std_logic_vector(3 downto 0);                     -- txdatak3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak4                  : out   std_logic_vector(3 downto 0);                     -- txdatak4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak5                  : out   std_logic_vector(3 downto 0);                     -- txdatak5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak6                  : out   std_logic_vector(3 downto 0);                     -- txdatak6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak7                  : out   std_logic_vector(3 downto 0);                     -- txdatak7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak8                  : out   std_logic_vector(3 downto 0);                     -- txdatak8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak9                  : out   std_logic_vector(3 downto 0);                     -- txdatak9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak10                 : out   std_logic_vector(3 downto 0);                     -- txdatak10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak11                 : out   std_logic_vector(3 downto 0);                     -- txdatak11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak12                 : out   std_logic_vector(3 downto 0);                     -- txdatak12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak13                 : out   std_logic_vector(3 downto 0);                     -- txdatak13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak14                 : out   std_logic_vector(3 downto 0);                     -- txdatak14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdatak15                 : out   std_logic_vector(3 downto 0);                     -- txdatak15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl0                  : out   std_logic;                                        -- txcompl0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl1                  : out   std_logic;                                        -- txcompl1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl2                  : out   std_logic;                                        -- txcompl2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl3                  : out   std_logic;                                        -- txcompl3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl4                  : out   std_logic;                                        -- txcompl4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl5                  : out   std_logic;                                        -- txcompl5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl6                  : out   std_logic;                                        -- txcompl6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl7                  : out   std_logic;                                        -- txcompl7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl8                  : out   std_logic;                                        -- txcompl8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl9                  : out   std_logic;                                        -- txcompl9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl10                 : out   std_logic;                                        -- txcompl10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl11                 : out   std_logic;                                        -- txcompl11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl12                 : out   std_logic;                                        -- txcompl12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl13                 : out   std_logic;                                        -- txcompl13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl14                 : out   std_logic;                                        -- txcompl14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txcompl15                 : out   std_logic;                                        -- txcompl15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle0               : out   std_logic;                                        -- txelecidle0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle1               : out   std_logic;                                        -- txelecidle1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle2               : out   std_logic;                                        -- txelecidle2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle3               : out   std_logic;                                        -- txelecidle3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle4               : out   std_logic;                                        -- txelecidle4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle5               : out   std_logic;                                        -- txelecidle5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle6               : out   std_logic;                                        -- txelecidle6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle7               : out   std_logic;                                        -- txelecidle7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle8               : out   std_logic;                                        -- txelecidle8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle9               : out   std_logic;                                        -- txelecidle9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle10              : out   std_logic;                                        -- txelecidle10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle11              : out   std_logic;                                        -- txelecidle11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle12              : out   std_logic;                                        -- txelecidle12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle13              : out   std_logic;                                        -- txelecidle13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle14              : out   std_logic;                                        -- txelecidle14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txelecidle15              : out   std_logic;                                        -- txelecidle15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx0               : out   std_logic;                                        -- txdetectrx0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx1               : out   std_logic;                                        -- txdetectrx1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx2               : out   std_logic;                                        -- txdetectrx2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx3               : out   std_logic;                                        -- txdetectrx3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx4               : out   std_logic;                                        -- txdetectrx4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx5               : out   std_logic;                                        -- txdetectrx5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx6               : out   std_logic;                                        -- txdetectrx6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx7               : out   std_logic;                                        -- txdetectrx7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx8               : out   std_logic;                                        -- txdetectrx8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx9               : out   std_logic;                                        -- txdetectrx9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx10              : out   std_logic;                                        -- txdetectrx10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx11              : out   std_logic;                                        -- txdetectrx11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx12              : out   std_logic;                                        -- txdetectrx12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx13              : out   std_logic;                                        -- txdetectrx13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx14              : out   std_logic;                                        -- txdetectrx14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdetectrx15              : out   std_logic;                                        -- txdetectrx15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown0                : out   std_logic_vector(1 downto 0);                     -- powerdown0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown1                : out   std_logic_vector(1 downto 0);                     -- powerdown1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown2                : out   std_logic_vector(1 downto 0);                     -- powerdown2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown3                : out   std_logic_vector(1 downto 0);                     -- powerdown3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown4                : out   std_logic_vector(1 downto 0);                     -- powerdown4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown5                : out   std_logic_vector(1 downto 0);                     -- powerdown5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown6                : out   std_logic_vector(1 downto 0);                     -- powerdown6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown7                : out   std_logic_vector(1 downto 0);                     -- powerdown7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown8                : out   std_logic_vector(1 downto 0);                     -- powerdown8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown9                : out   std_logic_vector(1 downto 0);                     -- powerdown9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown10               : out   std_logic_vector(1 downto 0);                     -- powerdown10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown11               : out   std_logic_vector(1 downto 0);                     -- powerdown11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown12               : out   std_logic_vector(1 downto 0);                     -- powerdown12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown13               : out   std_logic_vector(1 downto 0);                     -- powerdown13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown14               : out   std_logic_vector(1 downto 0);                     -- powerdown14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_powerdown15               : out   std_logic_vector(1 downto 0);                     -- powerdown15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin0                 : out   std_logic_vector(2 downto 0);                     -- txmargin0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin1                 : out   std_logic_vector(2 downto 0);                     -- txmargin1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin2                 : out   std_logic_vector(2 downto 0);                     -- txmargin2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin3                 : out   std_logic_vector(2 downto 0);                     -- txmargin3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin4                 : out   std_logic_vector(2 downto 0);                     -- txmargin4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin5                 : out   std_logic_vector(2 downto 0);                     -- txmargin5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin6                 : out   std_logic_vector(2 downto 0);                     -- txmargin6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin7                 : out   std_logic_vector(2 downto 0);                     -- txmargin7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin8                 : out   std_logic_vector(2 downto 0);                     -- txmargin8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin9                 : out   std_logic_vector(2 downto 0);                     -- txmargin9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin10                : out   std_logic_vector(2 downto 0);                     -- txmargin10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin11                : out   std_logic_vector(2 downto 0);                     -- txmargin11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin12                : out   std_logic_vector(2 downto 0);                     -- txmargin12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin13                : out   std_logic_vector(2 downto 0);                     -- txmargin13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin14                : out   std_logic_vector(2 downto 0);                     -- txmargin14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txmargin15                : out   std_logic_vector(2 downto 0);                     -- txmargin15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph0                 : out   std_logic;                                        -- txdeemph0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph1                 : out   std_logic;                                        -- txdeemph1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph2                 : out   std_logic;                                        -- txdeemph2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph3                 : out   std_logic;                                        -- txdeemph3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph4                 : out   std_logic;                                        -- txdeemph4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph5                 : out   std_logic;                                        -- txdeemph5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph6                 : out   std_logic;                                        -- txdeemph6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph7                 : out   std_logic;                                        -- txdeemph7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph8                 : out   std_logic;                                        -- txdeemph8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph9                 : out   std_logic;                                        -- txdeemph9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph10                : out   std_logic;                                        -- txdeemph10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph11                : out   std_logic;                                        -- txdeemph11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph12                : out   std_logic;                                        -- txdeemph12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph13                : out   std_logic;                                        -- txdeemph13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph14                : out   std_logic;                                        -- txdeemph14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdeemph15                : out   std_logic;                                        -- txdeemph15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing0                  : out   std_logic;                                        -- txswing0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing1                  : out   std_logic;                                        -- txswing1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing2                  : out   std_logic;                                        -- txswing2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing3                  : out   std_logic;                                        -- txswing3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing4                  : out   std_logic;                                        -- txswing4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing5                  : out   std_logic;                                        -- txswing5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing6                  : out   std_logic;                                        -- txswing6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing7                  : out   std_logic;                                        -- txswing7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing8                  : out   std_logic;                                        -- txswing8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing9                  : out   std_logic;                                        -- txswing9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing10                 : out   std_logic;                                        -- txswing10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing11                 : out   std_logic;                                        -- txswing11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing12                 : out   std_logic;                                        -- txswing12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing13                 : out   std_logic;                                        -- txswing13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing14                 : out   std_logic;                                        -- txswing14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txswing15                 : out   std_logic;                                        -- txswing15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd0                 : out   std_logic_vector(1 downto 0);                     -- txsynchd0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd1                 : out   std_logic_vector(1 downto 0);                     -- txsynchd1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd2                 : out   std_logic_vector(1 downto 0);                     -- txsynchd2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd3                 : out   std_logic_vector(1 downto 0);                     -- txsynchd3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd4                 : out   std_logic_vector(1 downto 0);                     -- txsynchd4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd5                 : out   std_logic_vector(1 downto 0);                     -- txsynchd5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd6                 : out   std_logic_vector(1 downto 0);                     -- txsynchd6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd7                 : out   std_logic_vector(1 downto 0);                     -- txsynchd7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd8                 : out   std_logic_vector(1 downto 0);                     -- txsynchd8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd9                 : out   std_logic_vector(1 downto 0);                     -- txsynchd9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd10                : out   std_logic_vector(1 downto 0);                     -- txsynchd10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd11                : out   std_logic_vector(1 downto 0);                     -- txsynchd11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd12                : out   std_logic_vector(1 downto 0);                     -- txsynchd12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd13                : out   std_logic_vector(1 downto 0);                     -- txsynchd13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd14                : out   std_logic_vector(1 downto 0);                     -- txsynchd14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txsynchd15                : out   std_logic_vector(1 downto 0);                     -- txsynchd15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst0                  : out   std_logic;                                        -- txblkst0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst1                  : out   std_logic;                                        -- txblkst1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst2                  : out   std_logic;                                        -- txblkst2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst3                  : out   std_logic;                                        -- txblkst3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst4                  : out   std_logic;                                        -- txblkst4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst5                  : out   std_logic;                                        -- txblkst5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst6                  : out   std_logic;                                        -- txblkst6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst7                  : out   std_logic;                                        -- txblkst7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst8                  : out   std_logic;                                        -- txblkst8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst9                  : out   std_logic;                                        -- txblkst9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst10                 : out   std_logic;                                        -- txblkst10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst11                 : out   std_logic;                                        -- txblkst11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst12                 : out   std_logic;                                        -- txblkst12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst13                 : out   std_logic;                                        -- txblkst13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst14                 : out   std_logic;                                        -- txblkst14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txblkst15                 : out   std_logic;                                        -- txblkst15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip0               : out   std_logic;                                        -- txdataskip0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip1               : out   std_logic;                                        -- txdataskip1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip2               : out   std_logic;                                        -- txdataskip2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip3               : out   std_logic;                                        -- txdataskip3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip4               : out   std_logic;                                        -- txdataskip4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip5               : out   std_logic;                                        -- txdataskip5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip6               : out   std_logic;                                        -- txdataskip6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip7               : out   std_logic;                                        -- txdataskip7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip8               : out   std_logic;                                        -- txdataskip8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip9               : out   std_logic;                                        -- txdataskip9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip10              : out   std_logic;                                        -- txdataskip10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip11              : out   std_logic;                                        -- txdataskip11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip12              : out   std_logic;                                        -- txdataskip12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip13              : out   std_logic;                                        -- txdataskip13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip14              : out   std_logic;                                        -- txdataskip14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_txdataskip15              : out   std_logic;                                        -- txdataskip15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate0                     : out   std_logic_vector(1 downto 0);                     -- rate0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate1                     : out   std_logic_vector(1 downto 0);                     -- rate1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate2                     : out   std_logic_vector(1 downto 0);                     -- rate2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate3                     : out   std_logic_vector(1 downto 0);                     -- rate3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate4                     : out   std_logic_vector(1 downto 0);                     -- rate4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate5                     : out   std_logic_vector(1 downto 0);                     -- rate5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate6                     : out   std_logic_vector(1 downto 0);                     -- rate6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate7                     : out   std_logic_vector(1 downto 0);                     -- rate7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate8                     : out   std_logic_vector(1 downto 0);                     -- rate8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate9                     : out   std_logic_vector(1 downto 0);                     -- rate9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate10                    : out   std_logic_vector(1 downto 0);                     -- rate10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate11                    : out   std_logic_vector(1 downto 0);                     -- rate11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate12                    : out   std_logic_vector(1 downto 0);                     -- rate12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate13                    : out   std_logic_vector(1 downto 0);                     -- rate13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate14                    : out   std_logic_vector(1 downto 0);                     -- rate14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rate15                    : out   std_logic_vector(1 downto 0);                     -- rate15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity0               : out   std_logic;                                        -- rxpolarity0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity1               : out   std_logic;                                        -- rxpolarity1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity2               : out   std_logic;                                        -- rxpolarity2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity3               : out   std_logic;                                        -- rxpolarity3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity4               : out   std_logic;                                        -- rxpolarity4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity5               : out   std_logic;                                        -- rxpolarity5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity6               : out   std_logic;                                        -- rxpolarity6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity7               : out   std_logic;                                        -- rxpolarity7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity8               : out   std_logic;                                        -- rxpolarity8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity9               : out   std_logic;                                        -- rxpolarity9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity10              : out   std_logic;                                        -- rxpolarity10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity11              : out   std_logic;                                        -- rxpolarity11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity12              : out   std_logic;                                        -- rxpolarity12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity13              : out   std_logic;                                        -- rxpolarity13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity14              : out   std_logic;                                        -- rxpolarity14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxpolarity15              : out   std_logic;                                        -- rxpolarity15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset0          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset1          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset2          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset3          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset4          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset5          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset6          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset7          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset8          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset9          : out   std_logic_vector(2 downto 0);                     -- currentrxpreset9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset10         : out   std_logic_vector(2 downto 0);                     -- currentrxpreset10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset11         : out   std_logic_vector(2 downto 0);                     -- currentrxpreset11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset12         : out   std_logic_vector(2 downto 0);                     -- currentrxpreset12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset13         : out   std_logic_vector(2 downto 0);                     -- currentrxpreset13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset14         : out   std_logic_vector(2 downto 0);                     -- currentrxpreset14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentrxpreset15         : out   std_logic_vector(2 downto 0);                     -- currentrxpreset15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff0             : out   std_logic_vector(17 downto 0);                    -- currentcoeff0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff1             : out   std_logic_vector(17 downto 0);                    -- currentcoeff1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff2             : out   std_logic_vector(17 downto 0);                    -- currentcoeff2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff3             : out   std_logic_vector(17 downto 0);                    -- currentcoeff3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff4             : out   std_logic_vector(17 downto 0);                    -- currentcoeff4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff5             : out   std_logic_vector(17 downto 0);                    -- currentcoeff5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff6             : out   std_logic_vector(17 downto 0);                    -- currentcoeff6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff7             : out   std_logic_vector(17 downto 0);                    -- currentcoeff7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff8             : out   std_logic_vector(17 downto 0);                    -- currentcoeff8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff9             : out   std_logic_vector(17 downto 0);                    -- currentcoeff9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff10            : out   std_logic_vector(17 downto 0);                    -- currentcoeff10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff11            : out   std_logic_vector(17 downto 0);                    -- currentcoeff11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff12            : out   std_logic_vector(17 downto 0);                    -- currentcoeff12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff13            : out   std_logic_vector(17 downto 0);                    -- currentcoeff13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff14            : out   std_logic_vector(17 downto 0);                    -- currentcoeff14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_currentcoeff15            : out   std_logic_vector(17 downto 0);                    -- currentcoeff15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval0                 : out   std_logic;                                        -- rxeqeval0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval1                 : out   std_logic;                                        -- rxeqeval1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval2                 : out   std_logic;                                        -- rxeqeval2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval3                 : out   std_logic;                                        -- rxeqeval3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval4                 : out   std_logic;                                        -- rxeqeval4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval5                 : out   std_logic;                                        -- rxeqeval5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval6                 : out   std_logic;                                        -- rxeqeval6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval7                 : out   std_logic;                                        -- rxeqeval7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval8                 : out   std_logic;                                        -- rxeqeval8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval9                 : out   std_logic;                                        -- rxeqeval9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval10                : out   std_logic;                                        -- rxeqeval10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval11                : out   std_logic;                                        -- rxeqeval11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval12                : out   std_logic;                                        -- rxeqeval12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval13                : out   std_logic;                                        -- rxeqeval13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval14                : out   std_logic;                                        -- rxeqeval14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqeval15                : out   std_logic;                                        -- rxeqeval15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress0           : out   std_logic;                                        -- rxeqinprogress0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress1           : out   std_logic;                                        -- rxeqinprogress1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress2           : out   std_logic;                                        -- rxeqinprogress2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress3           : out   std_logic;                                        -- rxeqinprogress3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress4           : out   std_logic;                                        -- rxeqinprogress4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress5           : out   std_logic;                                        -- rxeqinprogress5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress6           : out   std_logic;                                        -- rxeqinprogress6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress7           : out   std_logic;                                        -- rxeqinprogress7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress8           : out   std_logic;                                        -- rxeqinprogress8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress9           : out   std_logic;                                        -- rxeqinprogress9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress10          : out   std_logic;                                        -- rxeqinprogress10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress11          : out   std_logic;                                        -- rxeqinprogress11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress12          : out   std_logic;                                        -- rxeqinprogress12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress13          : out   std_logic;                                        -- rxeqinprogress13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress14          : out   std_logic;                                        -- rxeqinprogress14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxeqinprogress15          : out   std_logic;                                        -- rxeqinprogress15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq0               : out   std_logic;                                        -- invalidreq0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq1               : out   std_logic;                                        -- invalidreq1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq2               : out   std_logic;                                        -- invalidreq2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq3               : out   std_logic;                                        -- invalidreq3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq4               : out   std_logic;                                        -- invalidreq4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq5               : out   std_logic;                                        -- invalidreq5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq6               : out   std_logic;                                        -- invalidreq6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq7               : out   std_logic;                                        -- invalidreq7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq8               : out   std_logic;                                        -- invalidreq8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq9               : out   std_logic;                                        -- invalidreq9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq10              : out   std_logic;                                        -- invalidreq10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq11              : out   std_logic;                                        -- invalidreq11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq12              : out   std_logic;                                        -- invalidreq12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq13              : out   std_logic;                                        -- invalidreq13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq14              : out   std_logic;                                        -- invalidreq14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_invalidreq15              : out   std_logic;                                        -- invalidreq15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata0                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata1                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata2                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata3                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata4                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata5                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata6                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata7                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata8                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata9                   : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata10                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata11                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata12                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata13                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata14                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdata15                  : in    std_logic_vector(31 downto 0) := (others => 'X'); -- rxdata15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak0                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak1                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak2                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak3                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak4                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak5                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak6                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak7                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak8                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak9                  : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak10                 : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak11                 : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak12                 : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak13                 : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak14                 : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdatak15                 : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- rxdatak15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus0                : in    std_logic                     := 'X';             -- phystatus0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus1                : in    std_logic                     := 'X';             -- phystatus1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus2                : in    std_logic                     := 'X';             -- phystatus2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus3                : in    std_logic                     := 'X';             -- phystatus3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus4                : in    std_logic                     := 'X';             -- phystatus4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus5                : in    std_logic                     := 'X';             -- phystatus5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus6                : in    std_logic                     := 'X';             -- phystatus6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus7                : in    std_logic                     := 'X';             -- phystatus7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus8                : in    std_logic                     := 'X';             -- phystatus8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus9                : in    std_logic                     := 'X';             -- phystatus9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus10               : in    std_logic                     := 'X';             -- phystatus10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus11               : in    std_logic                     := 'X';             -- phystatus11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus12               : in    std_logic                     := 'X';             -- phystatus12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus13               : in    std_logic                     := 'X';             -- phystatus13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus14               : in    std_logic                     := 'X';             -- phystatus14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_phystatus15               : in    std_logic                     := 'X';             -- phystatus15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid0                  : in    std_logic                     := 'X';             -- rxvalid0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid1                  : in    std_logic                     := 'X';             -- rxvalid1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid2                  : in    std_logic                     := 'X';             -- rxvalid2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid3                  : in    std_logic                     := 'X';             -- rxvalid3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid4                  : in    std_logic                     := 'X';             -- rxvalid4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid5                  : in    std_logic                     := 'X';             -- rxvalid5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid6                  : in    std_logic                     := 'X';             -- rxvalid6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid7                  : in    std_logic                     := 'X';             -- rxvalid7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid8                  : in    std_logic                     := 'X';             -- rxvalid8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid9                  : in    std_logic                     := 'X';             -- rxvalid9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid10                 : in    std_logic                     := 'X';             -- rxvalid10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid11                 : in    std_logic                     := 'X';             -- rxvalid11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid12                 : in    std_logic                     := 'X';             -- rxvalid12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid13                 : in    std_logic                     := 'X';             -- rxvalid13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid14                 : in    std_logic                     := 'X';             -- rxvalid14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxvalid15                 : in    std_logic                     := 'X';             -- rxvalid15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus0                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus1                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus2                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus3                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus4                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus5                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus6                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus7                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus8                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus9                 : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus10                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus11                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus12                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus13                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus14                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxstatus15                : in    std_logic_vector(2 downto 0)  := (others => 'X'); -- rxstatus15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle0               : in    std_logic                     := 'X';             -- rxelecidle0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle1               : in    std_logic                     := 'X';             -- rxelecidle1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle2               : in    std_logic                     := 'X';             -- rxelecidle2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle3               : in    std_logic                     := 'X';             -- rxelecidle3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle4               : in    std_logic                     := 'X';             -- rxelecidle4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle5               : in    std_logic                     := 'X';             -- rxelecidle5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle6               : in    std_logic                     := 'X';             -- rxelecidle6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle7               : in    std_logic                     := 'X';             -- rxelecidle7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle8               : in    std_logic                     := 'X';             -- rxelecidle8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle9               : in    std_logic                     := 'X';             -- rxelecidle9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle10              : in    std_logic                     := 'X';             -- rxelecidle10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle11              : in    std_logic                     := 'X';             -- rxelecidle11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle12              : in    std_logic                     := 'X';             -- rxelecidle12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle13              : in    std_logic                     := 'X';             -- rxelecidle13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle14              : in    std_logic                     := 'X';             -- rxelecidle14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxelecidle15              : in    std_logic                     := 'X';             -- rxelecidle15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd0                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd1                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd2                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd3                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd4                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd5                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd6                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd7                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd8                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd9                 : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd10                : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd11                : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd12                : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd13                : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd14                : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxsynchd15                : in    std_logic_vector(1 downto 0)  := (others => 'X'); -- rxsynchd15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst0                  : in    std_logic                     := 'X';             -- rxblkst0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst1                  : in    std_logic                     := 'X';             -- rxblkst1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst2                  : in    std_logic                     := 'X';             -- rxblkst2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst3                  : in    std_logic                     := 'X';             -- rxblkst3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst4                  : in    std_logic                     := 'X';             -- rxblkst4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst5                  : in    std_logic                     := 'X';             -- rxblkst5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst6                  : in    std_logic                     := 'X';             -- rxblkst6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst7                  : in    std_logic                     := 'X';             -- rxblkst7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst8                  : in    std_logic                     := 'X';             -- rxblkst8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst9                  : in    std_logic                     := 'X';             -- rxblkst9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst10                 : in    std_logic                     := 'X';             -- rxblkst10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst11                 : in    std_logic                     := 'X';             -- rxblkst11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst12                 : in    std_logic                     := 'X';             -- rxblkst12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst13                 : in    std_logic                     := 'X';             -- rxblkst13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst14                 : in    std_logic                     := 'X';             -- rxblkst14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxblkst15                 : in    std_logic                     := 'X';             -- rxblkst15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip0               : in    std_logic                     := 'X';             -- rxdataskip0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip1               : in    std_logic                     := 'X';             -- rxdataskip1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip2               : in    std_logic                     := 'X';             -- rxdataskip2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip3               : in    std_logic                     := 'X';             -- rxdataskip3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip4               : in    std_logic                     := 'X';             -- rxdataskip4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip5               : in    std_logic                     := 'X';             -- rxdataskip5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip6               : in    std_logic                     := 'X';             -- rxdataskip6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip7               : in    std_logic                     := 'X';             -- rxdataskip7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip8               : in    std_logic                     := 'X';             -- rxdataskip8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip9               : in    std_logic                     := 'X';             -- rxdataskip9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip10              : in    std_logic                     := 'X';             -- rxdataskip10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip11              : in    std_logic                     := 'X';             -- rxdataskip11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip12              : in    std_logic                     := 'X';             -- rxdataskip12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip13              : in    std_logic                     := 'X';             -- rxdataskip13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip14              : in    std_logic                     := 'X';             -- rxdataskip14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_rxdataskip15              : in    std_logic                     := 'X';             -- rxdataskip15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback0              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback0
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback1              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback1
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback2              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback2
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback3              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback3
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback4              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback4
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback5              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback5
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback6              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback6
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback7              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback7
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback8              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback8
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback9              : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback9
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback10             : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback10
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback11             : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback11
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback12             : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback12
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback13             : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback13
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback14             : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback14
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_dirfeedback15             : in    std_logic_vector(5 downto 0)  := (others => 'X'); -- dirfeedback15
+			qsys_top_pcie_s10_hip_avmm_gen3x16_hip_pipe_sim_pipe_mask_tx_pll_lock : in    std_logic                     := 'X';             -- sim_pipe_mask_tx_pll_lock
+			pcie_serial_rx_in0                                                    : in    std_logic                     := 'X';             -- rx_in0
+			pcie_serial_rx_in1                                                    : in    std_logic                     := 'X';             -- rx_in1
+			pcie_serial_rx_in2                                                    : in    std_logic                     := 'X';             -- rx_in2
+			pcie_serial_rx_in3                                                    : in    std_logic                     := 'X';             -- rx_in3
+			pcie_serial_rx_in4                                                    : in    std_logic                     := 'X';             -- rx_in4
+			pcie_serial_rx_in5                                                    : in    std_logic                     := 'X';             -- rx_in5
+			pcie_serial_rx_in6                                                    : in    std_logic                     := 'X';             -- rx_in6
+			pcie_serial_rx_in7                                                    : in    std_logic                     := 'X';             -- rx_in7
+			pcie_serial_rx_in8                                                    : in    std_logic                     := 'X';             -- rx_in8
+			pcie_serial_rx_in9                                                    : in    std_logic                     := 'X';             -- rx_in9
+			pcie_serial_rx_in10                                                   : in    std_logic                     := 'X';             -- rx_in10
+			pcie_serial_rx_in11                                                   : in    std_logic                     := 'X';             -- rx_in11
+			pcie_serial_rx_in12                                                   : in    std_logic                     := 'X';             -- rx_in12
+			pcie_serial_rx_in13                                                   : in    std_logic                     := 'X';             -- rx_in13
+			pcie_serial_rx_in14                                                   : in    std_logic                     := 'X';             -- rx_in14
+			pcie_serial_rx_in15                                                   : in    std_logic                     := 'X';             -- rx_in15
+			pcie_serial_tx_out0                                                   : out   std_logic;                                        -- tx_out0
+			pcie_serial_tx_out1                                                   : out   std_logic;                                        -- tx_out1
+			pcie_serial_tx_out2                                                   : out   std_logic;                                        -- tx_out2
+			pcie_serial_tx_out3                                                   : out   std_logic;                                        -- tx_out3
+			pcie_serial_tx_out4                                                   : out   std_logic;                                        -- tx_out4
+			pcie_serial_tx_out5                                                   : out   std_logic;                                        -- tx_out5
+			pcie_serial_tx_out6                                                   : out   std_logic;                                        -- tx_out6
+			pcie_serial_tx_out7                                                   : out   std_logic;                                        -- tx_out7
+			pcie_serial_tx_out8                                                   : out   std_logic;                                        -- tx_out8
+			pcie_serial_tx_out9                                                   : out   std_logic;                                        -- tx_out9
+			pcie_serial_tx_out10                                                  : out   std_logic;                                        -- tx_out10
+			pcie_serial_tx_out11                                                  : out   std_logic;                                        -- tx_out11
+			pcie_serial_tx_out12                                                  : out   std_logic;                                        -- tx_out12
+			pcie_serial_tx_out13                                                  : out   std_logic;                                        -- tx_out13
+			pcie_serial_tx_out14                                                  : out   std_logic;                                        -- tx_out14
+			pcie_serial_tx_out15                                                  : out   std_logic;                                        -- tx_out15
+			spi_mosi_to_the_spislave_inst_for_spichain                            : in    std_logic                     := 'X';             -- mosi_to_the_spislave_inst_for_spichain
+			spi_nss_to_the_spislave_inst_for_spichain                             : in    std_logic                     := 'X';             -- nss_to_the_spislave_inst_for_spichain
+			spi_sclk_to_the_spislave_inst_for_spichain                            : in    std_logic                     := 'X';             -- sclk_to_the_spislave_inst_for_spichain
+			spi_miso_to_and_from_the_spislave_inst_for_spichain                   : inout std_logic                     := 'X';             -- miso_to_and_from_the_spislave_inst_for_spichain
+			pcie_user_rst_reset                                                   : out   std_logic;                                        -- reset
+			system_arbiter_0_hps_gp_if_gp_out                                     : in    std_logic_vector(31 downto 0) := (others => 'X'); -- gp_out
+			system_arbiter_0_hps_gp_if_gp_in                                      : out   std_logic_vector(31 downto 0);                    -- gp_in
+			conf_d_conf_d                                                         : inout std_logic_vector(7 downto 0)  := (others => 'X'); -- conf_d
+			soft_recfg_req_n_soft_reconfigure_req_n                               : out   std_logic;                                        -- soft_reconfigure_req_n
+			conf_c_out_conf_c_out                                                 : out   std_logic_vector(3 downto 0);                     -- conf_c_out
+			conf_c_in_conf_c_in                                                   : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- conf_c_in
+		);
+	end component qsys_top;
+

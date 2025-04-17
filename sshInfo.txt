@@ -10,3 +10,6 @@ sudo docker exec -it admin-rdp ipmitool -I lanplus -H 172.0.3.123 -U root -P Dee
 
 FORCE POWER CYCLE
 sudo docker exec -it admin-rdp ipmitool -I lanplus -H 172.0.3.123 -U root -P DeepSouth chassis power cycle
+
+Get Memory Log Files
+scp -oProxyJump=damien.rice@137.154.50.2 damien.rice@xcs-node-23:Memory.log Logs/

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2024.04.18.14:50:46"
+ outputDirectory="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="output" kind="avalon_streaming" start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="64" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="prSafe" value="false" />
+   <property name="readyAllowance" value="0" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="data_valid" direction="output" role="valid" width="1" />
+   <port name="chip_id" direction="output" role="data" width="64" />
+  </interface>
+  <interface name="readid" kind="conduit" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="readid" direction="input" role="readid" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="s10_chip_id" version="1.0" name="s10_chip_id">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/synth/s10_chip_id.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/synth/s10_chip_id.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_chip_id/altera_s10_chip_id_hw.tcl" />
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_chip_id/altera_s10_chip_id_controller/altera_s10_chip_id_controller_hw.tcl" />
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="s10_chip_id">"Generating: s10_chip_id"</message>
+   <message level="Info" culprit="s10_chip_id">"Generating: s10_chip_id_altera_s10_chip_id_1911_iexnkcy"</message>
+   <message level="Info" culprit="s10_chip_id">"Generating: altera_s10_chip_id_controller"</message>
+   <message level="Info" culprit="s10_chip_id">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_s10_chip_id"
+   version="19.1.1"
+   name="s10_chip_id_altera_s10_chip_id_1911_iexnkcy">
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="DEBUG" value="0" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/altera_s10_chip_id_1911/synth/s10_chip_id_altera_s10_chip_id_1911_iexnkcy.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/altera_s10_chip_id_1911/synth/s10_chip_id_altera_s10_chip_id_1911_iexnkcy.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_chip_id/altera_s10_chip_id_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_chip_id/altera_s10_chip_id_controller/altera_s10_chip_id_controller_hw.tcl" />
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </childSourceFiles>
+  <instantiator instantiator="s10_chip_id" as="s10_chip_id_0" />
+  <messages>
+   <message level="Info" culprit="s10_chip_id">"Generating: s10_chip_id_altera_s10_chip_id_1911_iexnkcy"</message>
+   <message level="Info" culprit="s10_chip_id">"Generating: altera_s10_chip_id_controller"</message>
+   <message level="Info" culprit="s10_chip_id">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_s10_chip_id_controller"
+   version="19.1.0"
+   name="altera_s10_chip_id_controller">
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/altera_s10_chip_id_controller_1910/synth/altera_s10_chip_id_controller.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/altera_s10_chip_id_controller_1910/synth/altera_s10_chip_id_controller.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/pgm/altera_s10_chip_id/altera_s10_chip_id_controller/altera_s10_chip_id_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="s10_chip_id_altera_s10_chip_id_1911_iexnkcy"
+     as="chip_id_controller_inst" />
+  <messages>
+   <message level="Info" culprit="s10_chip_id">"Generating: altera_s10_chip_id_controller"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_config_stream_endpoint"
+   version="19.1"
+   name="altera_config_stream_endpoint_wrapper">
+  <generatedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/altera_config_stream_endpoint_191/synth/altera_config_stream_endpoint_wrapper.sv"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/usr/share/bittware/520nmx/cots/firmware/bist_top_me3_svn2527_basic/ip/s10_chip_id/altera_config_stream_endpoint_191/synth/altera_config_stream_endpoint_wrapper.sv"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/19.4/ip/altera/sld/core/endpoint_wrappers/altera_config_stream_endpoint_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="s10_chip_id_altera_s10_chip_id_1911_iexnkcy"
+     as="cf_str_ep_chip_id_inst" />
+  <messages>
+   <message level="Info" culprit="s10_chip_id">"Generating: altera_config_stream_endpoint_wrapper"</message>
+  </messages>
+ </entity>
+</deploy>

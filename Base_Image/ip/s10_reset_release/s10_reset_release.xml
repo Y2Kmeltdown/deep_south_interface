@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.03.03.19:59:49"
+ outputDirectory="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_reset_release/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="ninit_done" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="ninit_done" direction="output" role="ninit_done" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="s10_reset_release" version="1.0" name="s10_reset_release">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_reset_release/synth/s10_reset_release.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_reset_release/synth/s10_reset_release.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_reset_release.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="s10_reset_release">"Generating: s10_reset_release"</message>
+   <message level="Info" culprit="s10_reset_release">"Generating: altera_s10_user_rst_clkgate"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_s10_user_rst_clkgate"
+   version="19.2.0"
+   name="altera_s10_user_rst_clkgate">
+  <parameter name="outputType" value="Conduit Interface" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_reset_release/altera_s10_user_rst_clkgate_1920/synth/altera_s10_user_rst_clkgate.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/Quartus_Projects/bist_top_me3_svn2527_basic_20_3/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_reset_release/altera_s10_user_rst_clkgate_1920/synth/altera_s10_user_rst_clkgate.sv"
+       attributes="TOP_LEVEL_FILE" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/pgm/altera_s10_user_rst_clkgate/altera_s10_user_rst_clkgate_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="s10_reset_release" as="s10_user_rst_clkgate_0" />
+  <messages>
+   <message level="Info" culprit="s10_reset_release">"Generating: altera_s10_user_rst_clkgate"</message>
+  </messages>
+ </entity>
+</deploy>

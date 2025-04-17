@@ -1,0 +1,10 @@
+	component s10_chip_id is
+		port (
+			clk        : in  std_logic                     := 'X'; -- clk
+			reset      : in  std_logic                     := 'X'; -- reset
+			data_valid : out std_logic;                            -- valid
+			chip_id    : out std_logic_vector(63 downto 0);        -- data
+			readid     : in  std_logic                     := 'X'  -- readid
+		);
+	end component s10_chip_id;
+

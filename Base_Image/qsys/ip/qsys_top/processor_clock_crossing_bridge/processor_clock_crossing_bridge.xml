@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.04.16.22:44:26"
+ outputDirectory="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_M0_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_M0_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_M0_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_S0_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_S0_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_S0_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_M0_ADDRESS_MAP"
+     type="AddressMap"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_M0_ADDRESS_WIDTH"
+     type="AddressWidthType"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="m0_clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="m0_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="m0_reset" kind="reset" start="0">
+   <property name="associatedClock" value="m0_clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="m0_reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="s0_clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="s0_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="s0_reset" kind="reset" start="0">
+   <property name="associatedClock" value="s0_clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="s0_reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="s0" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="262144" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="s0_clk" />
+   <property name="associatedReset" value="s0_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="processor_clock_crossing_bridge.m0" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="64" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="0" />
+   <property name="readWaitTime" value="0" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="s0_waitrequest" direction="output" role="waitrequest" width="1" />
+   <port name="s0_readdata" direction="output" role="readdata" width="32" />
+   <port
+       name="s0_readdatavalid"
+       direction="output"
+       role="readdatavalid"
+       width="1" />
+   <port name="s0_burstcount" direction="input" role="burstcount" width="1" />
+   <port name="s0_writedata" direction="input" role="writedata" width="32" />
+   <port name="s0_address" direction="input" role="address" width="18" />
+   <port name="s0_write" direction="input" role="write" width="1" />
+   <port name="s0_read" direction="input" role="read" width="1" />
+   <port name="s0_byteenable" direction="input" role="byteenable" width="4" />
+   <port name="s0_debugaccess" direction="input" role="debugaccess" width="1" />
+  </interface>
+  <interface name="m0" kind="avalon" start="1">
+   <property name="adaptsTo" value="" />
+   <property name="addressGroup" value="0" />
+   <property name="addressUnits" value="SYMBOLS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="m0_clk" />
+   <property name="associatedReset" value="m0_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="dBSBigEndian" value="false" />
+   <property name="doStreamReads" value="false" />
+   <property name="doStreamWrites" value="false" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isAsynchronous" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isReadable" value="false" />
+   <property name="isWriteable" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maxAddressWidth" value="32" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="m0_waitrequest" direction="input" role="waitrequest" width="1" />
+   <port name="m0_readdata" direction="input" role="readdata" width="32" />
+   <port
+       name="m0_readdatavalid"
+       direction="input"
+       role="readdatavalid"
+       width="1" />
+   <port name="m0_burstcount" direction="output" role="burstcount" width="1" />
+   <port name="m0_writedata" direction="output" role="writedata" width="32" />
+   <port name="m0_address" direction="output" role="address" width="18" />
+   <port name="m0_write" direction="output" role="write" width="1" />
+   <port name="m0_read" direction="output" role="read" width="1" />
+   <port name="m0_byteenable" direction="output" role="byteenable" width="4" />
+   <port name="m0_debugaccess" direction="output" role="debugaccess" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="processor_clock_crossing_bridge"
+   version="1.0"
+   name="processor_clock_crossing_bridge">
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_M0_ADDRESS_MAP" value="" />
+  <parameter name="AUTO_S0_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_M0_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_M0_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="AUTO_S0_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_S0_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_M0_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_M0_ADDRESS_WIDTH" value="-1" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/synth/processor_clock_crossing_bridge.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/synth/processor_clock_crossing_bridge.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/merlin/altera_avalon_mm_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_hw.tcl" />
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/sopc_builder_ip/altera_avalon_dc_fifo/altera_avalon_dc_fifo_hw.tcl" />
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/sopc_builder_ip/altera_avalon_dc_fifo/altera_avalon_dc_fifo_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_1920_fdcxukq"</message>
+   <message level="Info" culprit="my_altera_avalon_dc_fifo_cmd_fifo">"Generating: my_altera_avalon_dc_fifo_cmd_fifo"</message>
+   <message level="Info" culprit="my_altera_avalon_dc_fifo_rsp_fifo">"Generating: my_altera_avalon_dc_fifo_rsp_fifo"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_2w3unsi"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_qtw4p6a"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_avalon_mm_clock_crossing_bridge"
+   version="19.2.0"
+   name="processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_1920_fdcxukq">
+  <parameter name="MAX_BURST_SIZE" value="1" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_1920/synth/processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_1920_fdcxukq.v"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_1920/synth/processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_1920_fdcxukq.v"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/merlin/altera_avalon_mm_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/sopc_builder_ip/altera_avalon_dc_fifo/altera_avalon_dc_fifo_hw.tcl" />
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/sopc_builder_ip/altera_avalon_dc_fifo/altera_avalon_dc_fifo_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="processor_clock_crossing_bridge"
+     as="processor_clock_crossing_bridge" />
+  <messages>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_1920_fdcxukq"</message>
+   <message level="Info" culprit="my_altera_avalon_dc_fifo_cmd_fifo">"Generating: my_altera_avalon_dc_fifo_cmd_fifo"</message>
+   <message level="Info" culprit="my_altera_avalon_dc_fifo_rsp_fifo">"Generating: my_altera_avalon_dc_fifo_rsp_fifo"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_2w3unsi"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_qtw4p6a"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo"
+   version="19.2.0"
+   name="processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_2w3unsi">
+  <parameter name="FIFO_DEPTH" value="32" />
+  <parameter name="USE_PACKETS" value="0" />
+  <parameter name="USE_OUT_FILL_LEVEL" value="0" />
+  <parameter name="EXPLICIT_MAXCHANNEL" value="0" />
+  <parameter name="USE_SPACE_AVAIL_IF" value="0" />
+  <parameter name="CHANNEL_WIDTH" value="0" />
+  <parameter name="ENABLE_EXPLICIT_MAXCHANNEL" value="false" />
+  <parameter name="SYMBOLS_PER_BEAT" value="1" />
+  <parameter name="BITS_PER_SYMBOL" value="58" />
+  <parameter name="ERROR_WIDTH" value="0" />
+  <parameter name="RD_SYNC_DEPTH" value="2" />
+  <parameter name="USE_IN_FILL_LEVEL" value="0" />
+  <parameter name="WR_SYNC_DEPTH" value="2" />
+  <parameter name="SYNC_RESET" value="0" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_1920/synth/processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_2w3unsi.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_1920/synth/processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_2w3unsi.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles/>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/sopc_builder_ip/altera_avalon_dc_fifo/altera_avalon_dc_fifo_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_1920_fdcxukq"
+     as="my_altera_avalon_dc_fifo_cmd_fifo" />
+  <messages>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_2w3unsi"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo"
+   version="19.2.0"
+   name="processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_qtw4p6a">
+  <parameter name="FIFO_DEPTH" value="32" />
+  <parameter name="USE_PACKETS" value="0" />
+  <parameter name="USE_OUT_FILL_LEVEL" value="0" />
+  <parameter name="EXPLICIT_MAXCHANNEL" value="0" />
+  <parameter name="USE_SPACE_AVAIL_IF" value="1" />
+  <parameter name="CHANNEL_WIDTH" value="0" />
+  <parameter name="ENABLE_EXPLICIT_MAXCHANNEL" value="false" />
+  <parameter name="SYMBOLS_PER_BEAT" value="1" />
+  <parameter name="BITS_PER_SYMBOL" value="32" />
+  <parameter name="ERROR_WIDTH" value="0" />
+  <parameter name="RD_SYNC_DEPTH" value="3" />
+  <parameter name="USE_IN_FILL_LEVEL" value="0" />
+  <parameter name="WR_SYNC_DEPTH" value="3" />
+  <parameter name="SYNC_RESET" value="0" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_1920/synth/processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_qtw4p6a.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_mm_clock_crossing_bridge_1920/synth/processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_qtw4p6a.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles/>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/sopc_builder_ip/altera_avalon_dc_fifo/altera_avalon_dc_fifo_hw.tcl" />
+  </childSourceFiles>
+  <instantiator
+     instantiator="processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_1920_fdcxukq"
+     as="my_altera_avalon_dc_fifo_rsp_fifo" />
+  <messages>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_qtw4p6a"</message>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y"</message>
+  </messages>
+ </entity>
+ <entity
+   kind="altera_avalon_dc_fifo"
+   version="19.4.0"
+   name="processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y">
+  <parameter name="EXPLICIT_MAXCHANNEL" value="0" />
+  <parameter name="SYNC_RESET" value="0" />
+  <parameter name="ENABLE_EXPLICIT_MAXCHANNEL" value="false" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/altera_dcfifo_synchronizer_bundle.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/altera_std_synchronizer_nocut.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y.sdc"
+       attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/altera_dcfifo_synchronizer_bundle.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/altera_std_synchronizer_nocut.v"
+       attributes="" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/processor_clock_crossing_bridge/altera_avalon_dc_fifo_1940/synth/processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y.sdc"
+       attributes="NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/intelFPGA_pro/20.3/ip/altera/sopc_builder_ip/altera_avalon_dc_fifo/altera_avalon_dc_fifo_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator
+     instantiator="processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_2w3unsi"
+     as="my_altera_avalon_dc_fifo_cmd_fifo" />
+  <instantiator
+     instantiator="processor_clock_crossing_bridge_altera_avalon_mm_clock_crossing_bridge_altera_avalon_dc_fifo_1920_qtw4p6a"
+     as="my_altera_avalon_dc_fifo_rsp_fifo" />
+  <messages>
+   <message level="Info" culprit="processor_clock_crossing_bridge">"Generating: processor_clock_crossing_bridge_altera_avalon_dc_fifo_1940_j7a573y"</message>
+  </messages>
+ </entity>
+</deploy>

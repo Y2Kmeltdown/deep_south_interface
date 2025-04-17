@@ -1,0 +1,53 @@
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_TOOL_NAME "QsysPrimePro"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_TOOL_VERSION "20.3"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_TOOL_ENV "QsysPrimePro"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_TOOL_VENDOR_NAME "Intel Corporation"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_TOP_LEVEL_COMPONENT_NAME "stratix10_clkctrl"
+set_global_assignment -library "s10_clock_mux" -name SOPCINFO_FILE [file join $::quartus(qip_path) "s10_clock_mux.sopcinfo"]
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name SLD_INFO "QSYS_NAME s10_clock_mux HAS_SOPCINFO 1 GENERATION_ID 0"
+set_global_assignment -library "s10_clock_mux" -name MISC_FILE [file join $::quartus(qip_path) "s10_clock_mux.cmp"]
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_TARGETED_DEVICE_FAMILY "Stratix 10"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_GENERATED_DEVICE_FAMILY "{Stratix 10}"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "s10_clock_mux" -name MISC_FILE [file join $::quartus(qip_path) "../s10_clock_mux.ip"]
+
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_NAME "czEwX2Nsb2NrX211eF9zdHJhdGl4MTBfY2xrY3RybF8yMDAwX2dvb3FuMnE="
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_DISPLAY_NAME "Q2xvY2sgQ29udHJvbCBJbnRlbCBGUEdBIElQ"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_VERSION "MjAuMC4w"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_DESCRIPTION "PGh0bWw+QWxsb3dzIHNpZ25hbHMgdG8gdXNlIHRoZSBjbG9jayBuZXR3b3JrIGluIHRoZSBkZXZpY2UuPC9odG1sPg=="
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_PARAMETER "TlVNX0NMT0NLUw==::Mg==::TnVtYmVyIG9mIENsb2NrIElucHV0cw=="
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_PARAMETER "RU5BQkxF::ZmFsc2U=::Q2xvY2sgRW5hYmxl"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_PARAMETER "Q0xPQ0tfRElWSURFUg==::ZmFsc2U=::Q2xvY2sgRGl2aWRlcg=="
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_GROUP "QmFzaWMgRnVuY3Rpb25zL0Nsb2NrczsgUExMcyBhbmQgUmVzZXRz"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuYWx0ZXJhLmNvbS9kb2N1bWVudGF0aW9uL21jbjE0NDA1Njk2Njg2MzAuaHRtbA=="
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_COMPONENT_DOCUMENTATION_LINK "aHR0cHM6Ly93d3cuYWx0ZXJhLmNvbS9kb2N1bWVudGF0aW9uL2RxeDE1MTcyOTkzNjgyMTAuaHRtbA=="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_NAME "czEwX2Nsb2NrX211eA=="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_DISPLAY_NAME "c3lzdGVt"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MA==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::U3RyYXRpeCAxMA==::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::MVNNMjFDSFUyRjUzRTJWRw==::QXV0byBERVZJQ0U="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Mg==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19JTkNMSzBYX0NMT0NLX1JBVEU=::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19JTkNMSzBYX0NMT0NLX0RPTUFJTg==::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19JTkNMSzBYX1JFU0VUX0RPTUFJTg==::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19JTkNMSzFYX0NMT0NLX1JBVEU=::LTE=::QXV0byBDTE9DS19SQVRF"
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19JTkNMSzFYX0NMT0NLX0RPTUFJTg==::LTE=::QXV0byBDTE9DS19ET01BSU4="
+set_global_assignment -entity "s10_clock_mux" -library "s10_clock_mux" -name IP_COMPONENT_PARAMETER "QVVUT19JTkNMSzFYX1JFU0VUX0RPTUFJTg==::LTE=::QXV0byBSRVNFVF9ET01BSU4="
+
+
+set_global_assignment -library "stratix10_clkctrl_2000" -name VERILOG_FILE [file join $::quartus(qip_path) "stratix10_clkctrl_2000/synth/s10_clock_mux_stratix10_clkctrl_2000_gooqn2q.v"]
+set_global_assignment -library "s10_clock_mux" -name VERILOG_FILE [file join $::quartus(qip_path) "synth/s10_clock_mux.v"]
+
+
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_TOOL_NAME "stratix10_clkctrl"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_TOOL_VERSION "20.0.0"
+set_global_assignment -entity "s10_clock_mux_stratix10_clkctrl_2000_gooqn2q" -library "stratix10_clkctrl_2000" -name IP_TOOL_ENV "QsysPrimePro"
+

@@ -1,0 +1,4865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EnsembleReport
+ name="l_tile_xcvr_fpll_prod"
+ kind="l_tile_xcvr_fpll_prod"
+ version="1.0"
+ fabric="QSYS">
+ <!-- Format version 20.3 158 (Future versions may contain additional information.) -->
+ <!-- 2025.03.03.19:35:08 -->
+ <!-- A collection of modules and connections -->
+ <parameter name="AUTO_GENERATION_ID">
+  <type>java.lang.Integer</type>
+  <value>0</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>GENERATION_ID</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_UNIQUE_ID">
+  <type>java.lang.String</type>
+  <value></value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>UNIQUE_ID</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE_FAMILY">
+  <type>java.lang.String</type>
+  <value>Stratix 10</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE">
+  <type>java.lang.String</type>
+  <value>1SM21CHU2F53E2VG</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_DEVICE_SPEEDGRADE">
+  <type>java.lang.String</type>
+  <value>2</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_SPEEDGRADE</sysinfo_type>
+ </parameter>
+ <parameter name="AUTO_PLL_REFCLK0_CLOCK_RATE">
+  <type>java.lang.Long</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>CLOCK_RATE</sysinfo_type>
+  <sysinfo_arg>pll_refclk0</sysinfo_arg>
+ </parameter>
+ <parameter name="AUTO_PLL_REFCLK0_CLOCK_DOMAIN">
+  <type>java.lang.Integer</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>CLOCK_DOMAIN</sysinfo_type>
+  <sysinfo_arg>pll_refclk0</sysinfo_arg>
+ </parameter>
+ <parameter name="AUTO_PLL_REFCLK0_RESET_DOMAIN">
+  <type>java.lang.Integer</type>
+  <value>-1</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>RESET_DOMAIN</sysinfo_type>
+  <sysinfo_arg>pll_refclk0</sysinfo_arg>
+ </parameter>
+ <parameter name="deviceFamily">
+  <type>java.lang.String</type>
+  <value>Stratix 10</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>false</visible>
+  <valid>true</valid>
+  <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+ </parameter>
+ <parameter name="generateLegacySim">
+  <type>boolean</type>
+  <value>false</value>
+  <derived>false</derived>
+  <enabled>true</enabled>
+  <visible>true</visible>
+  <valid>true</valid>
+ </parameter>
+ <module
+   name="xcvr_fpll_s10_htile_0"
+   kind="altera_xcvr_fpll_s10_htile"
+   version="19.1.2"
+   entity="l_tile_xcvr_fpll_prod_altera_xcvr_fpll_s10_htile_1912_febr6bi"
+   library="altera_xcvr_fpll_s10_htile_1912"
+   path="xcvr_fpll_s10_htile_0"
+   hpath="xcvr_fpll_s10_htile_0"
+   className="altera_xcvr_fpll_s10_htile">
+  <!-- Describes a single module. Module parameters are
+the requested settings for a module instance. -->
+  <parameter name="rcfg_debug">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_multi_profile">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_advanced_avmm_options">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_jtag_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_separate_avmm_busy">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_enable_avmm_busy_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_capability_reg_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_user_identifier">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_csr_soft_logic_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_embedded_debug_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_capability_reg_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_user_identifier">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_stat_soft_logic_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="dbg_ctrl_soft_logic_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_file_prefix">
+   <type>java.lang.String</type>
+   <value>altera_xcvr_fpll_s10</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_files_as_common_package">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sv_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_h_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_txt_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_mif_file_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_multi_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_rcfg_emb_strm_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_emb_strm_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_reduced_files_enable">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_cnt">
+   <type>int</type>
+   <value>2</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_select">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data0">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data1">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data2">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data3">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data4">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data5">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data6">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_profile_data7">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data0">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data1">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data2">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data3">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data4">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data5">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data6">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_profile_data7">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_params">
+   <type>[Ljava.lang.String;</type>
+   <value>rcfg_debug,rcfg_enable,rcfg_jtag_enable,rcfg_separate_avmm_busy,rcfg_enable_avmm_busy_port,set_capability_reg_enable,set_user_identifier,set_csr_soft_logic_enable,set_x1_core_clock,set_x2_core_clock,set_x4_core_clock,set_primary_use,enable_pld_fpll_cal_busy_port,support_mode,set_prot_mode,set_bw_sel,set_refclk_cnt,set_refclk_index,set_enable_hclk_out,enable_hip_cal_done_port,enable_mcgb_hip_cal_done_port,set_hip_cal_en,set_output_clock_frequency,set_manual_output_clock_frequency,set_enable_fractional,set_auto_reference_clock_frequency,set_manual_reference_clock_frequency,set_fref_clock_frequency,select_manual_config,set_manual_m_counter,set_manual_ref_clk_div,set_manual_l_counter,set_manual_c_counter,set_manual_k_counter,enable_mcgb,mcgb_div,enable_hfreq_clk,enable_mcgb_pcie_clksw,enable_mcgb_reset,mcgb_aux_clkin_cnt,enable_bonding_clks,enable_fb_comp_bonding,pma_width,enable_pld_mcgb_cal_busy_port</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_labels">
+   <type>[Ljava.lang.String;</type>
+   <value>rcfg_debug,Enable dynamic reconfiguration,Enable Native PHY Debug Master Endpoint,Separate reconfig_waitrequest from the status of AVMM arbitration with PreSICE,Enable avmm_busy port,Enable capability registers,Set user-defined IP identifier,Enable control and status registers,Enable /1 output clock,Enable /2 output clock,Enable /4 output clock,FPLL Mode,enable_pld_fpll_cal_busy_port,Support mode,Protocol mode,Bandwidth,Number of PLL reference clocks,Selected reference clock source,Enable PCIe clock output port,Enable calibration status ports for HIP,Enable MCGB calibration status ports for HIP,Enable PCIe hard IP calibration,PLL output frequency,PLL output frequency,Enable fractional mode,PLL integer mode reference clock frequency,PLL reference clock frequency,PLL fractional mode reference clock frequency,Configure counters manually,Multiply factor (M-Counter),Divide factor (N-Counter),Divide factor (L-Counter),Divide factor (C-Counter),Fractional multiply factor (K),Include Master Clock Generation Block,Clock division factor,Enable x24 non-bonded high-speed clock output port,Enable PCIe clock switch interface,Enable mcgb_rst and mcgb_rst_stat ports,Number of auxiliary MCGB clock input ports.,Enable bonding clock output ports,Enable feedback compensation bonding,PMA interface width,enable_pld_mcgb_cal_busy_port</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals0">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals1">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals2">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals3">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals4">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals5">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals6">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_param_vals7">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_params">
+   <type>[Ljava.lang.String;</type>
+   <value>enable_multi_profile,dbg_embedded_debug_enable,dbg_capability_reg_enable,dbg_user_identifier,dbg_stat_soft_logic_enable,dbg_ctrl_soft_logic_enable,is_sdi</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals0">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals1">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals2">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals3">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals4">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals5">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals6">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="rcfg_sdc_derived_param_vals7">
+   <type>[Ljava.lang.String;</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_clk_sel_override">
+   <type>java.lang.String</type>
+   <value>normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_clk_sel_override_value">
+   <type>java.lang.String</type>
+   <value>select_clk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq0_scratch0_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch0_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq0_scratch1_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch1_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq0_scratch2_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch2_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq0_scratch3_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch3_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq0_scratch4_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch4_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq1_scratch0_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch0_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq1_scratch1_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch1_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq1_scratch2_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch2_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq1_scratch3_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch3_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_fpll_iq1_scratch4_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch4_power_down</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_0_scratch0_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch0_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_0_scratch1_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch1_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_0_scratch2_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch2_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_0_scratch3_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch3_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_0_scratch4_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch4_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_1_scratch0_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch0_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_1_scratch1_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch1_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_1_scratch2_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch2_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_1_scratch3_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch3_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_pm_cmu_fpll_atom_pll_clkin_1_scratch4_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch4_src_vss</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_powerdown_mode">
+   <type>java.lang.String</type>
+   <value>powerup</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_sup_mode">
+   <type>java.lang.String</type>
+   <value>user_mode</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_pll_clkin_0_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_src_ref_clk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_pll_clkin_1_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_src_ref_clk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_xpm_pll_so_pll_auto_clk_sw_en">
+   <type>java.lang.String</type>
+   <value>pll_auto_clk_sw_disabled</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_xpm_pll_so_pll_clk_loss_edge">
+   <type>java.lang.String</type>
+   <value>pll_clk_loss_rising_edge</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_xpm_pll_so_pll_clk_loss_sw_en">
+   <type>java.lang.String</type>
+   <value>pll_clk_loss_sw_byps</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_xpm_pll_so_pll_clk_sw_dly">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_xpm_pll_so_pll_manu_clk_sw_en">
+   <type>java.lang.String</type>
+   <value>pll_manu_clk_sw_disabled</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_xpm_clkin_fpll_xpm_pll_so_pll_sw_refclk_src">
+   <type>java.lang.String</type>
+   <value>pll_sw_refclk_src_clk_0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_xpm_iqref_mux0_iqclk_sel">
+   <type>java.lang.String</type>
+   <value>iqtxrxclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_xpm_iqref_mux1_iqclk_sel">
+   <type>java.lang.String</type>
+   <value>iqtxrxclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_silicon_rev">
+   <type>java.lang.String</type>
+   <value>14nm4acr2eb</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_refclk_select0">
+   <type>java.lang.String</type>
+   <value>ref_iqclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_select_mux_refclk_select1">
+   <type>java.lang.String</type>
+   <value>ref_iqclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux0_inclk0_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>ref_iqclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux0_inclk1_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux0_inclk2_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux0_inclk3_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux0_inclk4_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux1_inclk0_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>ref_iqclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux1_inclk1_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux1_inclk2_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux1_inclk3_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter
+     name="cmu_fpll_refclk_select_mux_mux1_inclk4_logical_to_physical_mapping">
+   <type>java.lang.String</type>
+   <value>power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pcs_arbiter_ctrl">
+   <type>java.lang.String</type>
+   <value>avmm2_arbiter_uc_sel</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_hssiadapt_avmm_clk_dcg_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_hssiadapt_avmm_clk_scg_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pldadapt_avmm_clk_scg_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pcs_cal_done">
+   <type>java.lang.String</type>
+   <value>avmm2_cal_done_deassert</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pcs_cal_reserved">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pcs_calibration_feature_en">
+   <type>java.lang.String</type>
+   <value>avmm2_pcs_calibration_en</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pldadapt_gate_dis">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pcs_hip_cal_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_hssiadapt_osc_clk_scg_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pldadapt_osc_clk_scg_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_hssiadapt_avmm_osc_clock_setting">
+   <type>java.lang.String</type>
+   <value>osc_clk_div_by1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pldadapt_avmm_osc_clock_setting">
+   <type>java.lang.String</type>
+   <value>osc_clk_div_by1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_hssiadapt_avmm_testbus_sel">
+   <type>java.lang.String</type>
+   <value>avmm1_transfer_testbus</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pldadapt_avmm_testbus_sel">
+   <type>java.lang.String</type>
+   <value>avmm1_transfer_testbus</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_func_mode">
+   <type>java.lang.String</type>
+   <value>c3adpt_pmadir</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_hssiadapt_hip_mode">
+   <type>java.lang.String</type>
+   <value>disable_hip</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_pldadapt_hip_mode">
+   <type>java.lang.String</type>
+   <value>disable_hip</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_topology">
+   <type>java.lang.String</type>
+   <value>disabled_block</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_silicon_rev">
+   <type>java.lang.String</type>
+   <value>14nm4acr2eb</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_avmm2_if_calibration_type">
+   <type>java.lang.String</type>
+   <value>one_time</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_analog_mode">
+   <type>java.lang.String</type>
+   <value>analog_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_bandwidth_range_high">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_bandwidth_range_low">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_bonding">
+   <type>java.lang.String</type>
+   <value>bond_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_bw_mode">
+   <type>java.lang.String</type>
+   <value>mid_bw</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cali_ref_off">
+   <type>java.lang.String</type>
+   <value>ref_on</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cali_vco_off">
+   <type>java.lang.String</type>
+   <value>vco_on</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cgb_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_chgpmp_testmode">
+   <type>java.lang.String</type>
+   <value>cp_normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_datarate_bps">
+   <type>java.lang.String</type>
+   <value>12500000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_device_variant">
+   <type>java.lang.String</type>
+   <value>device_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_enable_hclk">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_0">
+   <type>java.lang.String</type>
+   <value>3861860000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_1">
+   <type>java.lang.String</type>
+   <value>4287223000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_2">
+   <type>java.lang.String</type>
+   <value>4688476000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_3">
+   <type>java.lang.String</type>
+   <value>5072700000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_4">
+   <type>java.lang.String</type>
+   <value>5423191000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_5">
+   <type>java.lang.String</type>
+   <value>5762211000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_6">
+   <type>java.lang.String</type>
+   <value>6075045000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_7">
+   <type>java.lang.String</type>
+   <value>6374148000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_8">
+   <type>java.lang.String</type>
+   <value>14025000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_band_9">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_div_two_bypass">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_pfd">
+   <type>java.lang.String</type>
+   <value>350000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_pfd_bonded">
+   <type>java.lang.String</type>
+   <value>600000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_pfd_fractional">
+   <type>java.lang.String</type>
+   <value>800000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_pfd_integer">
+   <type>java.lang.String</type>
+   <value>800000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_vco">
+   <type>java.lang.String</type>
+   <value>14150000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_max_vco_fractional">
+   <type>java.lang.String</type>
+   <value>14025000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_0">
+   <type>java.lang.String</type>
+   <value>7000000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_1">
+   <type>java.lang.String</type>
+   <value>3861860000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_2">
+   <type>java.lang.String</type>
+   <value>4287223000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_3">
+   <type>java.lang.String</type>
+   <value>4688476000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_4">
+   <type>java.lang.String</type>
+   <value>5072700000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_5">
+   <type>java.lang.String</type>
+   <value>5423191000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_6">
+   <type>java.lang.String</type>
+   <value>5762211000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_7">
+   <type>java.lang.String</type>
+   <value>6075045000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_8">
+   <type>java.lang.String</type>
+   <value>6374148000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_band_9">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_pfd">
+   <type>java.lang.String</type>
+   <value>50000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_min_vco">
+   <type>java.lang.String</type>
+   <value>7000000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c0">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c0_hz">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c1">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c1_hz">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c2">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c2_hz">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c3">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_f_out_c3_hz">
+   <type>java.lang.String</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_feedback">
+   <type>java.lang.String</type>
+   <value>normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cal_reserved">
+   <type>java.lang.String</type>
+   <value>fpll_cal_reserved_off</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cal_status">
+   <type>java.lang.String</type>
+   <value>fpll_cal_status_off</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cal_test_sel">
+   <type>java.lang.String</type>
+   <value>sel_cal_out_7_to_0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_calibration">
+   <type>java.lang.String</type>
+   <value>fpll_cal_enable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cas_out_enable">
+   <type>java.lang.String</type>
+   <value>fpll_cas_out_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cmu_rstn_value">
+   <type>java.lang.String</type>
+   <value>cmu_normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dyn_reconfig">
+   <type>java.lang.String</type>
+   <value>fpll_dyn_reconfig_off</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_hclk_out_enable">
+   <type>java.lang.String</type>
+   <value>fpll_hclk_out_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq0_scratch0_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch0_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq0_scratch1_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch1_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq0_scratch2_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch2_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq0_scratch3_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch3_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq0_scratch4_src">
+   <type>java.lang.String</type>
+   <value>iq0_scratch4_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq1_scratch0_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch0_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq1_scratch1_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch1_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq1_scratch2_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch2_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq1_scratch3_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch3_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iq1_scratch4_src">
+   <type>java.lang.String</type>
+   <value>iq1_scratch4_power_down</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iqtxrxclk_out_enable">
+   <type>java.lang.String</type>
+   <value>fpll_iqtxrxclk_out_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lpf_rstn_value">
+   <type>java.lang.String</type>
+   <value>lpf_normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ppm_clk0_src">
+   <type>java.lang.String</type>
+   <value>ppm_clk0_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ppm_clk1_src">
+   <type>java.lang.String</type>
+   <value>ppm_clk1_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_rstn_override">
+   <type>java.lang.String</type>
+   <value>user_reset_normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_initial_settings">
+   <type>java.lang.String</type>
+   <value>true</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_input_tolerance">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_is_otn">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_is_pa_core">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_is_sdi">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_l_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_m_counter">
+   <type>int</type>
+   <value>125</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_m_counter_c0">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_m_counter_c1">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_m_counter_c2">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_m_counter_c3">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_max_fractional_percentage">
+   <type>int</type>
+   <value>99</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_min_fractional_percentage">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_n_counter">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_optimal">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_out_freq">
+   <type>java.lang.String</type>
+   <value>6250000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_out_freq_hz">
+   <type>java.lang.String</type>
+   <value>6250000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_output_tolerance">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pfd_freq">
+   <type>java.lang.String</type>
+   <value>50000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_phase_shift_c0">
+   <type>java.lang.String</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_phase_shift_c1">
+   <type>java.lang.String</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_phase_shift_c2">
+   <type>java.lang.String</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_phase_shift_c3">
+   <type>java.lang.String</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_0_scratch0_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch0_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_0_scratch1_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch1_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_0_scratch2_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch2_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_0_scratch3_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch3_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_0_scratch4_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_0_scratch4_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_1_scratch0_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch0_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_1_scratch1_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch1_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_1_scratch2_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch2_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_1_scratch3_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch3_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_clkin_1_scratch4_src">
+   <type>java.lang.String</type>
+   <value>pll_clkin_1_scratch4_src_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_0_dyn_high_bits">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_0_dyn_low_bits">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_0_fix">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_0_fix_high">
+   <type>java.lang.String</type>
+   <value>pll_vco_freq_band_0_fix_high_1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_1_dyn_high_bits">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_1_dyn_low_bits">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_1_fix">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_vco_freq_band_1_fix_high">
+   <type>java.lang.String</type>
+   <value>pll_vco_freq_band_1_fix_high_1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pma_width">
+   <type>int</type>
+   <value>64</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_power_mode">
+   <type>java.lang.String</type>
+   <value>high_perf</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_power_rail_et">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powerdown_mode">
+   <type>java.lang.String</type>
+   <value>powerup</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_ac_ccnt0">
+   <type>java.lang.String</type>
+   <value>fpll_ccnt0_ac_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_ac_ccnt1">
+   <type>java.lang.String</type>
+   <value>fpll_ccnt1_ac_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_ac_ccnt2">
+   <type>java.lang.String</type>
+   <value>fpll_ccnt2_ac_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_ac_ccnt3">
+   <type>java.lang.String</type>
+   <value>fpll_ccnt3_ac_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_dc_ccnt0">
+   <type>java.lang.String</type>
+   <value>powerdown_fpll_ccnt0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_dc_ccnt1">
+   <type>java.lang.String</type>
+   <value>powerdown_fpll_ccnt1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_dc_ccnt2">
+   <type>java.lang.String</type>
+   <value>powerdown_fpll_ccnt2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_dc_ccnt3">
+   <type>java.lang.String</type>
+   <value>powerdown_fpll_ccnt3</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_primary_use">
+   <type>java.lang.String</type>
+   <value>tx</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_prot_mode">
+   <type>java.lang.String</type>
+   <value>basic_tx</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk">
+   <type>java.lang.String</type>
+   <value>100000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_set_input_freq_range">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_side">
+   <type>java.lang.String</type>
+   <value>side_unknown</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_bcm_silicon_rev">
+   <type>java.lang.String</type>
+   <value>rev_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_speed_grade">
+   <type>java.lang.String</type>
+   <value>speed_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_sup_mode">
+   <type>java.lang.String</type>
+   <value>user_mode</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_top_or_bottom">
+   <type>java.lang.String</type>
+   <value>top_or_bot_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_freq">
+   <type>java.lang.String</type>
+   <value>12500000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_freq_hz">
+   <type>java.lang.String</type>
+   <value>12500000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_pllcout_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_cnt_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_cnt_min_tco">
+   <type>java.lang.String</type>
+   <value>cnt_bypass_dly</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_m_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_test_clk</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_m_cnt_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_m_cnt_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_coarse_dly">
+   <type>java.lang.String</type>
+   <value>pll_coarse_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c0_fine_dly">
+   <type>java.lang.String</type>
+   <value>pll_fine_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_pllcout_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_cnt_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_cnt_min_tco">
+   <type>java.lang.String</type>
+   <value>cnt_bypass_dly</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_m_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_test_clk</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_m_cnt_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_m_cnt_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_coarse_dly">
+   <type>java.lang.String</type>
+   <value>pll_coarse_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c1_fine_dly">
+   <type>java.lang.String</type>
+   <value>pll_fine_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_pllcout_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_cnt_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_cnt_min_tco">
+   <type>java.lang.String</type>
+   <value>cnt_bypass_dly</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_m_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_test_clk</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_m_cnt_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_m_cnt_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_coarse_dly">
+   <type>java.lang.String</type>
+   <value>pll_coarse_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c2_fine_dly">
+   <type>java.lang.String</type>
+   <value>pll_fine_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_pllcout_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_cnt_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_cnt_min_tco">
+   <type>java.lang.String</type>
+   <value>cnt_bypass_dly</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_m_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_test_clk</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_m_cnt_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_m_cnt_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_coarse_dly">
+   <type>java.lang.String</type>
+   <value>pll_coarse_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_c3_fine_dly">
+   <type>java.lang.String</type>
+   <value>pll_fine_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cal_vco_count_length">
+   <type>java.lang.String</type>
+   <value>sel_8b_count</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lckdet_sel">
+   <type>java.lang.String</type>
+   <value>lckdet_sel_analog</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_refclk_source">
+   <type>java.lang.String</type>
+   <value>normal_refclk</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_div_by_2_sel">
+   <type>java.lang.String</type>
+   <value>bypass_divide_by_2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pfd_delay_compensation">
+   <type>java.lang.String</type>
+   <value>normal_delay</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pfd_pulse_width">
+   <type>java.lang.String</type>
+   <value>pulse_width_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_power_rail_er">
+   <type>int</type>
+   <value>1120</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_ac_lcnt">
+   <type>java.lang.String</type>
+   <value>fpll_lcnt_ac_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_ac_vco">
+   <type>java.lang.String</type>
+   <value>fpll_vco_ac_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_dc_lcnt">
+   <type>java.lang.String</type>
+   <value>powerdown_fpll_lcnt</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_powermode_dc_vco">
+   <type>java.lang.String</type>
+   <value>powerdown_fpll_vco</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ppmdtct_lock_thresld">
+   <type>java.lang.String</type>
+   <value>ppmdtct_lock_0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ppmdtct_noclk_thresld">
+   <type>java.lang.String</type>
+   <value>ppmdtct_noclk_0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ppmdtct_pll_sel">
+   <type>java.lang.String</type>
+   <value>ppmdtct_sel_fpll</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vccdreg_fb">
+   <type>java.lang.String</type>
+   <value>vreg_fb0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vccdreg_fw">
+   <type>java.lang.String</type>
+   <value>vreg_fw0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vreg0_atbsel">
+   <type>java.lang.String</type>
+   <value>atb_disabled</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vreg1_atbsel">
+   <type>java.lang.String</type>
+   <value>atb_disabled1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_atb_atb">
+   <type>java.lang.String</type>
+   <value>atb_selectdisable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_fb_cmp_buf_dly">
+   <type>java.lang.String</type>
+   <value>pll_cmp_buf_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_fb_fbclk_mux_1">
+   <type>java.lang.String</type>
+   <value>pll_fbclk_mux_1_glb</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_fb_fbclk_mux_2">
+   <type>java.lang.String</type>
+   <value>pll_fbclk_mux_2_m_cnt</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_iqfb_mux_iqclk_sel">
+   <type>java.lang.String</type>
+   <value>iqtxrxclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_chgpmp_compensation">
+   <type>java.lang.String</type>
+   <value>cp_mode_enable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_chgpmp_current_setting">
+   <type>java.lang.String</type>
+   <value>cp_current_setting25</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_cp_current_boost">
+   <type>java.lang.String</type>
+   <value>normal_setting</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lf_3rd_pole_freq">
+   <type>java.lang.String</type>
+   <value>lf_3rd_pole_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lf_cbig">
+   <type>java.lang.String</type>
+   <value>lf_cbig_setting4</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lf_order">
+   <type>java.lang.String</type>
+   <value>lf_2nd_order</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lf_resistance">
+   <type>java.lang.String</type>
+   <value>lf_res_setting3</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lf_ripplecap">
+   <type>java.lang.String</type>
+   <value>lf_no_ripple</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph0_en">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph0_en</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph0_value">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph0_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph1_en">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph1_dis_en</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph1_value">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph1_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph2_en">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph2_en</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph2_value">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph2_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph3_en">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph3_dis_en</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_ph3_value">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph3_vss</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dsm_mode">
+   <type>java.lang.String</type>
+   <value>dsm_mode_integer</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_dsm_out_sel">
+   <type>java.lang.String</type>
+   <value>pll_dsm_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_ecn_bypass">
+   <type>java.lang.String</type>
+   <value>pll_ecn_bypass_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_ecn_test_en">
+   <type>java.lang.String</type>
+   <value>pll_ecn_test_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_fractional_division">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_fractional_value_ready">
+   <type>java.lang.String</type>
+   <value>pll_k_ready</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lcnt_l_cnt_bypass">
+   <type>java.lang.String</type>
+   <value>lcnt_normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_l_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lcnt_l_cnt_enable">
+   <type>java.lang.String</type>
+   <value>lcnt_en</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lockf_lock_fltr_cfg">
+   <type>int</type>
+   <value>25</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lockf_lock_fltr_test">
+   <type>java.lang.String</type>
+   <value>pll_lock_fltr_nrm</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_lockf_unlock_fltr_cfg">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_mcnt_cnt_div">
+   <type>int</type>
+   <value>125</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_mcnt_cnt_min_tco">
+   <type>java.lang.String</type>
+   <value>cnt_bypass_dly</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_mcnt_m_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_ph_mux_clk</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_mcnt_m_cnt_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_mcnt_m_cnt_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_mcnt_coarse_dly">
+   <type>java.lang.String</type>
+   <value>pll_coarse_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_mcnt_fine_dly">
+   <type>java.lang.String</type>
+   <value>pll_fine_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ncnt_ncnt_divide">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ncnt_coarse_dly">
+   <type>java.lang.String</type>
+   <value>pll_coarse_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ncnt_fine_dly">
+   <type>java.lang.String</type>
+   <value>pll_fine_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ref_ref_buf_dly">
+   <type>java.lang.String</type>
+   <value>pll_ref_buf_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_testmux_tclk_mux_en">
+   <type>java.lang.String</type>
+   <value>pll_tclk_mux_disabled</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_testmux_tclk_sel">
+   <type>java.lang.String</type>
+   <value>pll_tclk_m_src</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dprio_base_addr">
+   <type>int</type>
+   <value>256</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dprio_broadcast_en">
+   <type>java.lang.String</type>
+   <value>dprio_dprio_broadcast_en_csr_ctrl_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dprio_cvp_inter_sel">
+   <type>java.lang.String</type>
+   <value>dprio_cvp_inter_sel_csr_ctrl_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dprio_force_inter_sel">
+   <type>java.lang.String</type>
+   <value>dprio_force_inter_sel_csr_ctrl_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dprio_power_iso_en">
+   <type>java.lang.String</type>
+   <value>dprio_power_iso_en_csr_ctrl_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_dprio_status_select">
+   <type>java.lang.String</type>
+   <value>dprio_normal_status</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_extra_csr">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ctrl_nreset_prgmnvrt">
+   <type>java.lang.String</type>
+   <value>nreset_noninv</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ctrl_ctrl_override_setting">
+   <type>java.lang.String</type>
+   <value>pll_ctrl_enable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ctrl_enable">
+   <type>java.lang.String</type>
+   <value>pll_enabled</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ctrl_slf_rst">
+   <type>java.lang.String</type>
+   <value>pll_slf_rst_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ctrl_test_enable">
+   <type>java.lang.String</type>
+   <value>pll_testen_off</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ctrl_plniotri_override">
+   <type>java.lang.String</type>
+   <value>plniotri_ctrl_disable</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_ctrl_vccr_pd">
+   <type>java.lang.String</type>
+   <value>vccd_powerup</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_silicon_rev">
+   <type>java.lang.String</type>
+   <value>14nm4acr2eb</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_pll_op_mode">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_bw_sel">
+   <type>java.lang.String</type>
+   <value>auto</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_compensation_mode">
+   <type>java.lang.String</type>
+   <value>direct</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_duty_cycle_0">
+   <type>int</type>
+   <value>50</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_duty_cycle_1">
+   <type>int</type>
+   <value>50</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_duty_cycle_2">
+   <type>int</type>
+   <value>50</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_duty_cycle_3">
+   <type>int</type>
+   <value>50</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_hssi_output_clock_frequency">
+   <type>java.lang.String</type>
+   <value>6250000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_is_cascaded_pll">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_output_clock_frequency_0">
+   <type>java.lang.String</type>
+   <value>6250000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_output_clock_frequency_1">
+   <type>java.lang.String</type>
+   <value>6250000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_output_clock_frequency_2">
+   <type>java.lang.String</type>
+   <value>6250000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_output_clock_frequency_3">
+   <type>java.lang.String</type>
+   <value>6250000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_reference_clock_frequency">
+   <type>java.lang.String</type>
+   <value>100000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="cmu_fpll_vco_frequency">
+   <type>java.lang.String</type>
+   <value>12500000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_advanced_options">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_hip_options">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_manual_configuration">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_debug_options">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generate_docs">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generate_add_hdl_instance_example">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="device_family">
+   <type>java.lang.String</type>
+   <value>Stratix 10</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_FAMILY</sysinfo_type>
+  </parameter>
+  <parameter name="device">
+   <type>java.lang.String</type>
+   <value>1SM21CHU2F53E2VG</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE</sysinfo_type>
+  </parameter>
+  <parameter name="base_device">
+   <type>java.lang.String</type>
+   <value>Unknown</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="device_die_types">
+   <type>[Ljava.lang.String;</type>
+   <value>HSSI_CRETE2E,MAIN_ND4H,UIB_HBM</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_DIE_TYPES</sysinfo_type>
+  </parameter>
+  <parameter name="device_die_revisions">
+   <type>[Ljava.lang.String;</type>
+   <value>HSSI_CRETE2E_REVB,MAIN_ND4H_REVB,UIB_HBM_REVB</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+   <sysinfo_type>DEVICE_DIE_REVISIONS</sysinfo_type>
+  </parameter>
+  <parameter name="set_x1_core_clock">
+   <type>boolean</type>
+   <value>true</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_x2_core_clock">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_x4_core_clock">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_clk_divider">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_primary_use">
+   <type>java.lang.String</type>
+   <value>2</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="test_mode">
+   <type>java.lang.String</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_pld_fpll_cal_busy_port">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="usr_enable_vco_bypass">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_debug_ports_parameters">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="support_mode">
+   <type>java.lang.String</type>
+   <value>user_mode</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="message_level">
+   <type>java.lang.String</type>
+   <value>error</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pma_speedgrade">
+   <type>java.lang.String</type>
+   <value>e2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="core_speedgrade">
+   <type>java.lang.String</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="device_revision">
+   <type>java.lang.String</type>
+   <value>14nm4acr2eb</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="powerdown_mode">
+   <type>java.lang.String</type>
+   <value>powerup</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_prot_mode">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="prot_mode_fnl">
+   <type>java.lang.String</type>
+   <value>basic_tx</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_bw_sel">
+   <type>java.lang.String</type>
+   <value>medium</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_refclk_cnt">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_refclk_index">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="silicon_rev">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_fb_select">
+   <type>java.lang.String</type>
+   <value>normal</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="compensation_mode_derived">
+   <type>java.lang.String</type>
+   <value>direct</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_enable_hclk_out">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_hip_cal_done_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb_hip_cal_done_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_hip_cal_en">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hip_cal_en">
+   <type>java.lang.String</type>
+   <value>disable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_output_clock_frequency">
+   <type>double</type>
+   <value>6250.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="output_datarate">
+   <type>double</type>
+   <value>12500.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="output_clock_frequency">
+   <type>double</type>
+   <value>6250.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_output_clock_frequency">
+   <type>double</type>
+   <value>2500.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="vco_freq_derived">
+   <type>double</type>
+   <value>12500.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pfd_freq_derived">
+   <type>double</type>
+   <value>50.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_enable_fractional">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_atx_fpll_cascade_option">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="is_otn">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="is_sdi">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_auto_reference_clock_frequency">
+   <type>double</type>
+   <value>100.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="final_reference_clock_frequency">
+   <type>double</type>
+   <value>100.0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_reference_clock_frequency">
+   <type>double</type>
+   <value>100.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="reference_clock_frequency_fnl">
+   <type>double</type>
+   <value>100.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_fref_clock_frequency">
+   <type>double</type>
+   <value>100.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_initial_phase_shift_units">
+   <type>java.lang.String</type>
+   <value>degrees</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_initial_phase_shift">
+   <type>double</type>
+   <value>0.0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_enable_dps">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_dps">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="direct_dps">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_dps_ini">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c0">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c1">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c2">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c3">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c0_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c1_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c2_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c3_enable">
+   <type>java.lang.String</type>
+   <value>pllcout_disable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c1_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_ph_mux_clk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c2_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_ph_mux_clk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c3_cnt_in_src">
+   <type>java.lang.String</type>
+   <value>m_cnt_in_src_ph_mux_clk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c0_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c1_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c2_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c3_ph_mux_prst">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c0_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c1_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c2_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_c3_prst">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="core_phase_shift_0">
+   <type>double</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="core_phase_shift_1">
+   <type>double</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="core_phase_shift_2">
+   <type>double</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="core_phase_shift_3">
+   <type>double</type>
+   <value>0.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="f_out_c0">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="f_out_c0_hz">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="f_out_c1">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="f_out_c1_hz">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="f_out_c2">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="f_out_c2_hz">
+   <type>java.lang.String</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_coarse_dly">
+   <type>java.lang.String</type>
+   <value>pll_coarse_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_fine_dly">
+   <type>java.lang.String</type>
+   <value>pll_fine_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_ref_buf_dly">
+   <type>java.lang.String</type>
+   <value>pll_ref_buf_dly_setting0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_fb_comp_bonding_fnl">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_dsm_mode">
+   <type>java.lang.String</type>
+   <value>dsm_mode_integer</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="feedback_clock_frequency_fnl">
+   <type>double</type>
+   <value>156.25</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="select_manual_config">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_m_counter">
+   <type>int</type>
+   <value>125</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_m_counter">
+   <type>int</type>
+   <value>50</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="fnl_m_counter">
+   <type>int</type>
+   <value>125</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_ref_clk_div">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_ref_clk_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="fnl_ref_clk_div">
+   <type>int</type>
+   <value>2</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_l_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_l_counter">
+   <type>int</type>
+   <value>2</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="fnl_l_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_c_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_c_counter">
+   <type>int</type>
+   <value>4</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="fnl_c_counter">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_k_counter">
+   <type>long</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_manual_k_counter">
+   <type>long</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="fnl_k_counter">
+   <type>long</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="auto_list">
+   <type>java.lang.String</type>
+   <value>50.000000 {vco 12500.000000 pfd 50.000000 m 125 n 1 l 1 c 1 k 1} 50.403226 {vco 12500.000000 pfd 50.403226 m 124 n 1 l 1 c 1 k 1} 50.813008 {vco 12500.000000 pfd 50.813008 m 123 n 1 l 1 c 1 k 1} 51.229508 {vco 12500.000000 pfd 51.229508 m 122 n 1 l 1 c 1 k 1} 51.652893 {vco 12500.000000 pfd 51.652893 m 121 n 1 l 1 c 1 k 1} 52.083333 {vco 12500.000000 pfd 52.083333 m 120 n 1 l 1 c 1 k 1} 52.521008 {vco 12500.000000 pfd 52.521008 m 119 n 1 l 1 c 1 k 1} 52.966102 {vco 12500.000000 pfd 52.966102 m 118 n 1 l 1 c 1 k 1} 53.418803 {vco 12500.000000 pfd 53.418803 m 117 n 1 l 1 c 1 k 1} 53.879310 {vco 12500.000000 pfd 53.879310 m 116 n 1 l 1 c 1 k 1} 54.347826 {vco 12500.000000 pfd 54.347826 m 115 n 1 l 1 c 1 k 1} 54.824561 {vco 12500.000000 pfd 54.824561 m 114 n 1 l 1 c 1 k 1} 55.309735 {vco 12500.000000 pfd 55.309735 m 113 n 1 l 1 c 1 k 1} 55.803571 {vco 12500.000000 pfd 55.803571 m 112 n 1 l 1 c 1 k 1} 56.306306 {vco 12500.000000 pfd 56.306306 m 111 n 1 l 1 c 1 k 1} 56.818182 {vco 12500.000000 pfd 56.818182 m 110 n 1 l 1 c 1 k 1} 57.339450 {vco 12500.000000 pfd 57.339450 m 109 n 1 l 1 c 1 k 1} 57.870370 {vco 12500.000000 pfd 57.870370 m 108 n 1 l 1 c 1 k 1} 58.411215 {vco 12500.000000 pfd 58.411215 m 107 n 1 l 1 c 1 k 1} 58.962264 {vco 12500.000000 pfd 58.962264 m 106 n 1 l 1 c 1 k 1} 59.523810 {vco 12500.000000 pfd 59.523810 m 105 n 1 l 1 c 1 k 1} 60.096154 {vco 12500.000000 pfd 60.096154 m 104 n 1 l 1 c 1 k 1} 60.679612 {vco 12500.000000 pfd 60.679612 m 103 n 1 l 1 c 1 k 1} 61.274510 {vco 12500.000000 pfd 61.274510 m 102 n 1 l 1 c 1 k 1} 61.881188 {vco 12500.000000 pfd 61.881188 m 101 n 1 l 1 c 1 k 1} 62.500000 {vco 12500.000000 pfd 62.500000 m 100 n 1 l 1 c 1 k 1} 63.131313 {vco 12500.000000 pfd 63.131313 m 99 n 1 l 1 c 1 k 1} 63.775510 {vco 12500.000000 pfd 63.775510 m 98 n 1 l 1 c 1 k 1} 64.432990 {vco 12500.000000 pfd 64.432990 m 97 n 1 l 1 c 1 k 1} 65.104167 {vco 12500.000000 pfd 65.104167 m 96 n 1 l 1 c 1 k 1} 65.789474 {vco 12500.000000 pfd 65.789474 m 95 n 1 l 1 c 1 k 1} 66.489362 {vco 12500.000000 pfd 66.489362 m 94 n 1 l 1 c 1 k 1} 67.204301 {vco 12500.000000 pfd 67.204301 m 93 n 1 l 1 c 1 k 1} 67.934783 {vco 12500.000000 pfd 67.934783 m 92 n 1 l 1 c 1 k 1} 68.681319 {vco 12500.000000 pfd 68.681319 m 91 n 1 l 1 c 1 k 1} 69.444444 {vco 12500.000000 pfd 69.444444 m 90 n 1 l 1 c 1 k 1} 70.224719 {vco 12500.000000 pfd 70.224719 m 89 n 1 l 1 c 1 k 1} 71.022727 {vco 12500.000000 pfd 71.022727 m 88 n 1 l 1 c 1 k 1} 71.839080 {vco 12500.000000 pfd 71.839080 m 87 n 1 l 1 c 1 k 1} 72.674419 {vco 12500.000000 pfd 72.674419 m 86 n 1 l 1 c 1 k 1} 73.529412 {vco 12500.000000 pfd 73.529412 m 85 n 1 l 1 c 1 k 1} 74.404762 {vco 12500.000000 pfd 74.404762 m 84 n 1 l 1 c 1 k 1} 75.301205 {vco 12500.000000 pfd 75.301205 m 83 n 1 l 1 c 1 k 1} 76.219512 {vco 12500.000000 pfd 76.219512 m 82 n 1 l 1 c 1 k 1} 77.160494 {vco 12500.000000 pfd 77.160494 m 81 n 1 l 1 c 1 k 1} 78.125000 {vco 12500.000000 pfd 78.125000 m 80 n 1 l 1 c 1 k 1} 79.113924 {vco 12500.000000 pfd 79.113924 m 79 n 1 l 1 c 1 k 1} 80.128205 {vco 12500.000000 pfd 80.128205 m 78 n 1 l 1 c 1 k 1} 81.168831 {vco 12500.000000 pfd 81.168831 m 77 n 1 l 1 c 1 k 1} 82.236842 {vco 12500.000000 pfd 82.236842 m 76 n 1 l 1 c 1 k 1} 83.333333 {vco 12500.000000 pfd 83.333333 m 75 n 1 l 1 c 1 k 1} 84.459459 {vco 12500.000000 pfd 84.459459 m 74 n 1 l 1 c 1 k 1} 85.616438 {vco 12500.000000 pfd 85.616438 m 73 n 1 l 1 c 1 k 1} 86.805556 {vco 12500.000000 pfd 86.805556 m 72 n 1 l 1 c 1 k 1} 88.028169 {vco 12500.000000 pfd 88.028169 m 71 n 1 l 1 c 1 k 1} 89.285714 {vco 12500.000000 pfd 89.285714 m 70 n 1 l 1 c 1 k 1} 90.579710 {vco 12500.000000 pfd 90.579710 m 69 n 1 l 1 c 1 k 1} 91.911765 {vco 12500.000000 pfd 91.911765 m 68 n 1 l 1 c 1 k 1} 93.283582 {vco 12500.000000 pfd 93.283582 m 67 n 1 l 1 c 1 k 1} 94.696970 {vco 12500.000000 pfd 94.696970 m 66 n 1 l 1 c 1 k 1} 96.153846 {vco 12500.000000 pfd 96.153846 m 65 n 1 l 1 c 1 k 1} 97.656250 {vco 12500.000000 pfd 97.656250 m 64 n 1 l 1 c 1 k 1} 99.206349 {vco 12500.000000 pfd 99.206349 m 63 n 1 l 1 c 1 k 1} 100.000000 {vco 12500.000000 pfd 50.000000 m 125 n 2 l 1 c 1 k 1} 100.806452 {vco 12500.000000 pfd 100.806452 m 62 n 1 l 1 c 1 k 1} 101.626016 {vco 12500.000000 pfd 50.813008 m 123 n 2 l 1 c 1 k 1} 102.459016 {vco 12500.000000 pfd 102.459016 m 61 n 1 l 1 c 1 k 1} 103.305785 {vco 12500.000000 pfd 51.652893 m 121 n 2 l 1 c 1 k 1} 104.166667 {vco 12500.000000 pfd 104.166667 m 60 n 1 l 1 c 1 k 1} 105.042017 {vco 12500.000000 pfd 52.521008 m 119 n 2 l 1 c 1 k 1} 105.932203 {vco 12500.000000 pfd 105.932203 m 59 n 1 l 1 c 1 k 1} 106.837607 {vco 12500.000000 pfd 53.418803 m 117 n 2 l 1 c 1 k 1} 107.758621 {vco 12500.000000 pfd 107.758621 m 58 n 1 l 1 c 1 k 1} 108.695652 {vco 12500.000000 pfd 54.347826 m 115 n 2 l 1 c 1 k 1} 109.649123 {vco 12500.000000 pfd 109.649123 m 57 n 1 l 1 c 1 k 1} 110.619469 {vco 12500.000000 pfd 55.309735 m 113 n 2 l 1 c 1 k 1} 111.607143 {vco 12500.000000 pfd 111.607143 m 56 n 1 l 1 c 1 k 1} 112.612613 {vco 12500.000000 pfd 56.306306 m 111 n 2 l 1 c 1 k 1} 113.636364 {vco 12500.000000 pfd 113.636364 m 55 n 1 l 1 c 1 k 1} 114.678899 {vco 12500.000000 pfd 57.339450 m 109 n 2 l 1 c 1 k 1} 115.740741 {vco 12500.000000 pfd 115.740741 m 54 n 1 l 1 c 1 k 1} 116.822430 {vco 12500.000000 pfd 58.411215 m 107 n 2 l 1 c 1 k 1} 117.924528 {vco 12500.000000 pfd 117.924528 m 53 n 1 l 1 c 1 k 1} 119.047619 {vco 12500.000000 pfd 59.523810 m 105 n 2 l 1 c 1 k 1} 120.192308 {vco 12500.000000 pfd 120.192308 m 52 n 1 l 1 c 1 k 1} 121.359223 {vco 12500.000000 pfd 60.679612 m 103 n 2 l 1 c 1 k 1} 122.549020 {vco 12500.000000 pfd 122.549020 m 51 n 1 l 1 c 1 k 1} 123.762376 {vco 12500.000000 pfd 61.881188 m 101 n 2 l 1 c 1 k 1} 125.000000 {vco 12500.000000 pfd 125.000000 m 50 n 1 l 1 c 1 k 1} 126.262626 {vco 12500.000000 pfd 63.131313 m 99 n 2 l 1 c 1 k 1} 127.551020 {vco 12500.000000 pfd 127.551020 m 49 n 1 l 1 c 1 k 1} 128.865979 {vco 12500.000000 pfd 64.432990 m 97 n 2 l 1 c 1 k 1} 130.208333 {vco 12500.000000 pfd 130.208333 m 48 n 1 l 1 c 1 k 1} 131.578947 {vco 12500.000000 pfd 65.789474 m 95 n 2 l 1 c 1 k 1} 132.978723 {vco 12500.000000 pfd 132.978723 m 47 n 1 l 1 c 1 k 1} 134.408602 {vco 12500.000000 pfd 67.204301 m 93 n 2 l 1 c 1 k 1} 135.869565 {vco 12500.000000 pfd 135.869565 m 46 n 1 l 1 c 1 k 1} 137.362637 {vco 12500.000000 pfd 68.681319 m 91 n 2 l 1 c 1 k 1} 138.888889 {vco 12500.000000 pfd 138.888889 m 45 n 1 l 1 c 1 k 1} 140.449438 {vco 12500.000000 pfd 70.224719 m 89 n 2 l 1 c 1 k 1} 142.045455 {vco 12500.000000 pfd 142.045455 m 44 n 1 l 1 c 1 k 1} 143.678161 {vco 12500.000000 pfd 71.839080 m 87 n 2 l 1 c 1 k 1} 145.348837 {vco 12500.000000 pfd 145.348837 m 43 n 1 l 1 c 1 k 1} 147.058824 {vco 12500.000000 pfd 73.529412 m 85 n 2 l 1 c 1 k 1} 148.809524 {vco 12500.000000 pfd 148.809524 m 42 n 1 l 1 c 1 k 1} 150.000000 {vco 12500.000000 pfd 50.000000 m 125 n 3 l 1 c 1 k 1} 150.602410 {vco 12500.000000 pfd 75.301205 m 83 n 2 l 1 c 1 k 1} 151.209677 {vco 12500.000000 pfd 50.403226 m 124 n 3 l 1 c 1 k 1} 152.439024 {vco 12500.000000 pfd 152.439024 m 41 n 1 l 1 c 1 k 1} 153.688525 {vco 12500.000000 pfd 51.229508 m 122 n 3 l 1 c 1 k 1} 154.320988 {vco 12500.000000 pfd 77.160494 m 81 n 2 l 1 c 1 k 1} 154.958678 {vco 12500.000000 pfd 51.652893 m 121 n 3 l 1 c 1 k 1} 156.250000 {vco 12500.000000 pfd 156.250000 m 40 n 1 l 1 c 1 k 1} 157.563025 {vco 12500.000000 pfd 52.521008 m 119 n 3 l 1 c 1 k 1} 158.227848 {vco 12500.000000 pfd 79.113924 m 79 n 2 l 1 c 1 k 1} 158.898305 {vco 12500.000000 pfd 52.966102 m 118 n 3 l 1 c 1 k 1} 160.256410 {vco 12500.000000 pfd 160.256410 m 39 n 1 l 1 c 1 k 1} 161.637931 {vco 12500.000000 pfd 53.879310 m 116 n 3 l 1 c 1 k 1} 162.337662 {vco 12500.000000 pfd 81.168831 m 77 n 2 l 1 c 1 k 1} 163.043478 {vco 12500.000000 pfd 54.347826 m 115 n 3 l 1 c 1 k 1} 164.473684 {vco 12500.000000 pfd 164.473684 m 38 n 1 l 1 c 1 k 1} 165.929204 {vco 12500.000000 pfd 55.309735 m 113 n 3 l 1 c 1 k 1} 166.666667 {vco 12500.000000 pfd 83.333333 m 75 n 2 l 1 c 1 k 1} 167.410714 {vco 12500.000000 pfd 55.803571 m 112 n 3 l 1 c 1 k 1} 168.918919 {vco 12500.000000 pfd 168.918919 m 37 n 1 l 1 c 1 k 1} 170.454545 {vco 12500.000000 pfd 56.818182 m 110 n 3 l 1 c 1 k 1} 171.232877 {vco 12500.000000 pfd 85.616438 m 73 n 2 l 1 c 1 k 1} 172.018349 {vco 12500.000000 pfd 57.339450 m 109 n 3 l 1 c 1 k 1} 173.611111 {vco 12500.000000 pfd 173.611111 m 36 n 1 l 1 c 1 k 1} 175.233645 {vco 12500.000000 pfd 58.411215 m 107 n 3 l 1 c 1 k 1} 176.056338 {vco 12500.000000 pfd 88.028169 m 71 n 2 l 1 c 1 k 1} 176.886792 {vco 12500.000000 pfd 58.962264 m 106 n 3 l 1 c 1 k 1} 178.571429 {vco 12500.000000 pfd 178.571429 m 35 n 1 l 1 c 1 k 1} 180.288462 {vco 12500.000000 pfd 60.096154 m 104 n 3 l 1 c 1 k 1} 181.159420 {vco 12500.000000 pfd 90.579710 m 69 n 2 l 1 c 1 k 1} 182.038835 {vco 12500.000000 pfd 60.679612 m 103 n 3 l 1 c 1 k 1} 183.823529 {vco 12500.000000 pfd 183.823529 m 34 n 1 l 1 c 1 k 1} 185.643564 {vco 12500.000000 pfd 61.881188 m 101 n 3 l 1 c 1 k 1} 186.567164 {vco 12500.000000 pfd 93.283582 m 67 n 2 l 1 c 1 k 1} 187.500000 {vco 12500.000000 pfd 62.500000 m 100 n 3 l 1 c 1 k 1} 189.393939 {vco 12500.000000 pfd 189.393939 m 33 n 1 l 1 c 1 k 1} 191.326531 {vco 12500.000000 pfd 63.775510 m 98 n 3 l 1 c 1 k 1} 192.307692 {vco 12500.000000 pfd 96.153846 m 65 n 2 l 1 c 1 k 1} 193.298969 {vco 12500.000000 pfd 64.432990 m 97 n 3 l 1 c 1 k 1} 195.312500 {vco 12500.000000 pfd 195.312500 m 32 n 1 l 1 c 1 k 1} 197.368421 {vco 12500.000000 pfd 65.789474 m 95 n 3 l 1 c 1 k 1} 198.412698 {vco 12500.000000 pfd 99.206349 m 63 n 2 l 1 c 1 k 1} 199.468085 {vco 12500.000000 pfd 66.489362 m 94 n 3 l 1 c 1 k 1} 200.000000 {vco 12500.000000 pfd 50.000000 m 125 n 4 l 1 c 1 k 1} 201.612903 {vco 12500.000000 pfd 201.612903 m 31 n 1 l 1 c 1 k 1} 203.252033 {vco 12500.000000 pfd 50.813008 m 123 n 4 l 1 c 1 k 1} 203.804348 {vco 12500.000000 pfd 67.934783 m 92 n 3 l 1 c 1 k 1} 204.918033 {vco 12500.000000 pfd 102.459016 m 61 n 2 l 1 c 1 k 1} 206.043956 {vco 12500.000000 pfd 68.681319 m 91 n 3 l 1 c 1 k 1} 206.611570 {vco 12500.000000 pfd 51.652893 m 121 n 4 l 1 c 1 k 1} 208.333333 {vco 12500.000000 pfd 208.333333 m 30 n 1 l 1 c 1 k 1} 210.084034 {vco 12500.000000 pfd 52.521008 m 119 n 4 l 1 c 1 k 1} 210.674157 {vco 12500.000000 pfd 70.224719 m 89 n 3 l 1 c 1 k 1} 211.864407 {vco 12500.000000 pfd 105.932203 m 59 n 2 l 1 c 1 k 1} 213.068182 {vco 12500.000000 pfd 71.022727 m 88 n 3 l 1 c 1 k 1} 213.675214 {vco 12500.000000 pfd 53.418803 m 117 n 4 l 1 c 1 k 1} 215.517241 {vco 12500.000000 pfd 215.517241 m 29 n 1 l 1 c 1 k 1} 217.391304 {vco 12500.000000 pfd 54.347826 m 115 n 4 l 1 c 1 k 1} 218.023256 {vco 12500.000000 pfd 72.674419 m 86 n 3 l 1 c 1 k 1} 219.298246 {vco 12500.000000 pfd 109.649123 m 57 n 2 l 1 c 1 k 1} 220.588235 {vco 12500.000000 pfd 73.529412 m 85 n 3 l 1 c 1 k 1} 221.238938 {vco 12500.000000 pfd 55.309735 m 113 n 4 l 1 c 1 k 1} 223.214286 {vco 12500.000000 pfd 223.214286 m 28 n 1 l 1 c 1 k 1} 225.225225 {vco 12500.000000 pfd 56.306306 m 111 n 4 l 1 c 1 k 1} 225.903614 {vco 12500.000000 pfd 75.301205 m 83 n 3 l 1 c 1 k 1} 227.272727 {vco 12500.000000 pfd 113.636364 m 55 n 2 l 1 c 1 k 1} 228.658537 {vco 12500.000000 pfd 76.219512 m 82 n 3 l 1 c 1 k 1} 229.357798 {vco 12500.000000 pfd 57.339450 m 109 n 4 l 1 c 1 k 1} 231.481481 {vco 12500.000000 pfd 231.481481 m 27 n 1 l 1 c 1 k 1} 233.644860 {vco 12500.000000 pfd 58.411215 m 107 n 4 l 1 c 1 k 1} 234.375000 {vco 12500.000000 pfd 78.125000 m 80 n 3 l 1 c 1 k 1} 235.849057 {vco 12500.000000 pfd 117.924528 m 53 n 2 l 1 c 1 k 1} 237.341772 {vco 12500.000000 pfd 79.113924 m 79 n 3 l 1 c 1 k 1} 238.095238 {vco 12500.000000 pfd 59.523810 m 105 n 4 l 1 c 1 k 1} 240.384615 {vco 12500.000000 pfd 240.384615 m 26 n 1 l 1 c 1 k 1} 242.718447 {vco 12500.000000 pfd 60.679612 m 103 n 4 l 1 c 1 k 1} 243.506494 {vco 12500.000000 pfd 81.168831 m 77 n 3 l 1 c 1 k 1} 245.098039 {vco 12500.000000 pfd 122.549020 m 51 n 2 l 1 c 1 k 1} 246.710526 {vco 12500.000000 pfd 82.236842 m 76 n 3 l 1 c 1 k 1} 247.524752 {vco 12500.000000 pfd 61.881188 m 101 n 4 l 1 c 1 k 1} 250.000000 {vco 12500.000000 pfd 250.000000 m 25 n 1 l 1 c 1 k 1} 252.016129 {vco 12500.000000 pfd 50.403226 m 124 n 5 l 1 c 1 k 1} 252.525253 {vco 12500.000000 pfd 63.131313 m 99 n 4 l 1 c 1 k 1} 253.378378 {vco 12500.000000 pfd 84.459459 m 74 n 3 l 1 c 1 k 1} 254.065041 {vco 12500.000000 pfd 50.813008 m 123 n 5 l 1 c 1 k 1} 255.102041 {vco 12500.000000 pfd 127.551020 m 49 n 2 l 1 c 1 k 1} 256.147541 {vco 12500.000000 pfd 51.229508 m 122 n 5 l 1 c 1 k 1} 256.849315 {vco 12500.000000 pfd 85.616438 m 73 n 3 l 1 c 1 k 1} 257.731959 {vco 12500.000000 pfd 64.432990 m 97 n 4 l 1 c 1 k 1} 258.264463 {vco 12500.000000 pfd 51.652893 m 121 n 5 l 1 c 1 k 1} 260.416667 {vco 12500.000000 pfd 260.416667 m 24 n 1 l 1 c 1 k 1} 262.605042 {vco 12500.000000 pfd 52.521008 m 119 n 5 l 1 c 1 k 1} 263.157895 {vco 12500.000000 pfd 65.789474 m 95 n 4 l 1 c 1 k 1} 264.084507 {vco 12500.000000 pfd 88.028169 m 71 n 3 l 1 c 1 k 1} 264.830508 {vco 12500.000000 pfd 52.966102 m 118 n 5 l 1 c 1 k 1} 265.957447 {vco 12500.000000 pfd 132.978723 m 47 n 2 l 1 c 1 k 1} 267.094017 {vco 12500.000000 pfd 53.418803 m 117 n 5 l 1 c 1 k 1} 267.857143 {vco 12500.000000 pfd 89.285714 m 70 n 3 l 1 c 1 k 1} 268.817204 {vco 12500.000000 pfd 67.204301 m 93 n 4 l 1 c 1 k 1} 269.396552 {vco 12500.000000 pfd 53.879310 m 116 n 5 l 1 c 1 k 1} 271.739130 {vco 12500.000000 pfd 271.739130 m 23 n 1 l 1 c 1 k 1} 274.122807 {vco 12500.000000 pfd 54.824561 m 114 n 5 l 1 c 1 k 1} 274.725275 {vco 12500.000000 pfd 68.681319 m 91 n 4 l 1 c 1 k 1} 275.735294 {vco 12500.000000 pfd 91.911765 m 68 n 3 l 1 c 1 k 1} 276.548673 {vco 12500.000000 pfd 55.309735 m 113 n 5 l 1 c 1 k 1} 277.777778 {vco 12500.000000 pfd 138.888889 m 45 n 2 l 1 c 1 k 1} 279.017857 {vco 12500.000000 pfd 55.803571 m 112 n 5 l 1 c 1 k 1} 279.850746 {vco 12500.000000 pfd 93.283582 m 67 n 3 l 1 c 1 k 1} 280.898876 {vco 12500.000000 pfd 70.224719 m 89 n 4 l 1 c 1 k 1} 281.531532 {vco 12500.000000 pfd 56.306306 m 111 n 5 l 1 c 1 k 1} 284.090909 {vco 12500.000000 pfd 284.090909 m 22 n 1 l 1 c 1 k 1} 286.697248 {vco 12500.000000 pfd 57.339450 m 109 n 5 l 1 c 1 k 1} 287.356322 {vco 12500.000000 pfd 71.839080 m 87 n 4 l 1 c 1 k 1} 288.461538 {vco 12500.000000 pfd 96.153846 m 65 n 3 l 1 c 1 k 1} 289.351852 {vco 12500.000000 pfd 57.870370 m 108 n 5 l 1 c 1 k 1} 290.697674 {vco 12500.000000 pfd 145.348837 m 43 n 2 l 1 c 1 k 1} 292.056075 {vco 12500.000000 pfd 58.411215 m 107 n 5 l 1 c 1 k 1} 292.968750 {vco 12500.000000 pfd 97.656250 m 64 n 3 l 1 c 1 k 1} 294.117647 {vco 12500.000000 pfd 73.529412 m 85 n 4 l 1 c 1 k 1} 294.811321 {vco 12500.000000 pfd 58.962264 m 106 n 5 l 1 c 1 k 1} 297.619048 {vco 12500.000000 pfd 297.619048 m 21 n 1 l 1 c 1 k 1} 300.000000 {vco 12500.000000 pfd 50.000000 m 125 n 6 l 1 c 1 k 1} 300.480769 {vco 12500.000000 pfd 60.096154 m 104 n 5 l 1 c 1 k 1} 301.204819 {vco 12500.000000 pfd 75.301205 m 83 n 4 l 1 c 1 k 1} 302.419355 {vco 12500.000000 pfd 100.806452 m 62 n 3 l 1 c 1 k 1} 303.398058 {vco 12500.000000 pfd 60.679612 m 103 n 5 l 1 c 1 k 1} 304.878049 {vco 12500.000000 pfd 152.439024 m 41 n 2 l 1 c 1 k 1} 306.372549 {vco 12500.000000 pfd 61.274510 m 102 n 5 l 1 c 1 k 1} 307.377049 {vco 12500.000000 pfd 102.459016 m 61 n 3 l 1 c 1 k 1} 308.641975 {vco 12500.000000 pfd 77.160494 m 81 n 4 l 1 c 1 k 1} 309.405941 {vco 12500.000000 pfd 61.881188 m 101 n 5 l 1 c 1 k 1} 309.917355 {vco 12500.000000 pfd 51.652893 m 121 n 6 l 1 c 1 k 1} 312.500000 {vco 12500.000000 pfd 312.500000 m 20 n 1 l 1 c 1 k 1} 315.126050 {vco 12500.000000 pfd 52.521008 m 119 n 6 l 1 c 1 k 1} 315.656566 {vco 12500.000000 pfd 63.131313 m 99 n 5 l 1 c 1 k 1} 316.455696 {vco 12500.000000 pfd 79.113924 m 79 n 4 l 1 c 1 k 1} 317.796610 {vco 12500.000000 pfd 105.932203 m 59 n 3 l 1 c 1 k 1} 318.877551 {vco 12500.000000 pfd 63.775510 m 98 n 5 l 1 c 1 k 1} 320.512821 {vco 12500.000000 pfd 160.256410 m 39 n 2 l 1 c 1 k 1} 322.164948 {vco 12500.000000 pfd 64.432990 m 97 n 5 l 1 c 1 k 1} 323.275862 {vco 12500.000000 pfd 107.758621 m 58 n 3 l 1 c 1 k 1} 324.675325 {vco 12500.000000 pfd 81.168831 m 77 n 4 l 1 c 1 k 1} 325.520833 {vco 12500.000000 pfd 65.104167 m 96 n 5 l 1 c 1 k 1} 326.086957 {vco 12500.000000 pfd 54.347826 m 115 n 6 l 1 c 1 k 1} 328.947368 {vco 12500.000000 pfd 328.947368 m 19 n 1 l 1 c 1 k 1} 331.858407 {vco 12500.000000 pfd 55.309735 m 113 n 6 l 1 c 1 k 1} 332.446809 {vco 12500.000000 pfd 66.489362 m 94 n 5 l 1 c 1 k 1} 333.333333 {vco 12500.000000 pfd 83.333333 m 75 n 4 l 1 c 1 k 1} 334.821429 {vco 12500.000000 pfd 111.607143 m 56 n 3 l 1 c 1 k 1} 336.021505 {vco 12500.000000 pfd 67.204301 m 93 n 5 l 1 c 1 k 1} 337.837838 {vco 12500.000000 pfd 168.918919 m 37 n 2 l 1 c 1 k 1} 339.673913 {vco 12500.000000 pfd 67.934783 m 92 n 5 l 1 c 1 k 1} 340.909091 {vco 12500.000000 pfd 113.636364 m 55 n 3 l 1 c 1 k 1} 342.465753 {vco 12500.000000 pfd 85.616438 m 73 n 4 l 1 c 1 k 1} 343.406593 {vco 12500.000000 pfd 68.681319 m 91 n 5 l 1 c 1 k 1} 344.036697 {vco 12500.000000 pfd 57.339450 m 109 n 6 l 1 c 1 k 1} 347.222222 {vco 12500.000000 pfd 347.222222 m 18 n 1 l 1 c 1 k 1} 350.000000 {vco 12500.000000 pfd 50.000000 m 125 n 7 l 1 c 1 k 1} 350.467290 {vco 12500.000000 pfd 58.411215 m 107 n 6 l 1 c 1 k 1} 351.123596 {vco 12500.000000 pfd 70.224719 m 89 n 5 l 1 c 1 k 1} 352.112676 {vco 12500.000000 pfd 88.028169 m 71 n 4 l 1 c 1 k 1} 352.822581 {vco 12500.000000 pfd 50.403226 m 124 n 7 l 1 c 1 k 1} 353.773585 {vco 12500.000000 pfd 117.924528 m 53 n 3 l 1 c 1 k 1} 355.113636 {vco 12500.000000 pfd 71.022727 m 88 n 5 l 1 c 1 k 1} 355.691057 {vco 12500.000000 pfd 50.813008 m 123 n 7 l 1 c 1 k 1} 357.142857 {vco 12500.000000 pfd 178.571429 m 35 n 2 l 1 c 1 k 1} 358.606557 {vco 12500.000000 pfd 51.229508 m 122 n 7 l 1 c 1 k 1} 359.195402 {vco 12500.000000 pfd 71.839080 m 87 n 5 l 1 c 1 k 1} 360.576923 {vco 12500.000000 pfd 120.192308 m 52 n 3 l 1 c 1 k 1} 361.570248 {vco 12500.000000 pfd 51.652893 m 121 n 7 l 1 c 1 k 1} 362.318841 {vco 12500.000000 pfd 90.579710 m 69 n 4 l 1 c 1 k 1} 363.372093 {vco 12500.000000 pfd 72.674419 m 86 n 5 l 1 c 1 k 1} 364.077670 {vco 12500.000000 pfd 60.679612 m 103 n 6 l 1 c 1 k 1} 364.583333 {vco 12500.000000 pfd 52.083333 m 120 n 7 l 1 c 1 k 1} 367.647059 {vco 12500.000000 pfd 183.823529 m 34 n 2 l 1 c 1 k 1} 370.762712 {vco 12500.000000 pfd 52.966102 m 118 n 7 l 1 c 1 k 1} 371.287129 {vco 12500.000000 pfd 61.881188 m 101 n 6 l 1 c 1 k 1} 372.023810 {vco 12500.000000 pfd 74.404762 m 84 n 5 l 1 c 1 k 1} 373.134328 {vco 12500.000000 pfd 93.283582 m 67 n 4 l 1 c 1 k 1} 373.931624 {vco 12500.000000 pfd 53.418803 m 117 n 7 l 1 c 1 k 1} 375.000000 {vco 12500.000000 pfd 125.000000 m 50 n 3 l 1 c 1 k 1} 376.506024 {vco 12500.000000 pfd 75.301205 m 83 n 5 l 1 c 1 k 1} 377.155172 {vco 12500.000000 pfd 53.879310 m 116 n 7 l 1 c 1 k 1} 378.787879 {vco 12500.000000 pfd 189.393939 m 33 n 2 l 1 c 1 k 1} 380.434783 {vco 12500.000000 pfd 54.347826 m 115 n 7 l 1 c 1 k 1} 381.097561 {vco 12500.000000 pfd 76.219512 m 82 n 5 l 1 c 1 k 1} 382.653061 {vco 12500.000000 pfd 127.551020 m 49 n 3 l 1 c 1 k 1} 383.771930 {vco 12500.000000 pfd 54.824561 m 114 n 7 l 1 c 1 k 1} 384.615385 {vco 12500.000000 pfd 96.153846 m 65 n 4 l 1 c 1 k 1} 385.802469 {vco 12500.000000 pfd 77.160494 m 81 n 5 l 1 c 1 k 1} 386.597938 {vco 12500.000000 pfd 64.432990 m 97 n 6 l 1 c 1 k 1} 387.168142 {vco 12500.000000 pfd 55.309735 m 113 n 7 l 1 c 1 k 1} 390.625000 {vco 12500.000000 pfd 195.312500 m 32 n 2 l 1 c 1 k 1} 394.144144 {vco 12500.000000 pfd 56.306306 m 111 n 7 l 1 c 1 k 1} 394.736842 {vco 12500.000000 pfd 65.789474 m 95 n 6 l 1 c 1 k 1} 395.569620 {vco 12500.000000 pfd 79.113924 m 79 n 5 l 1 c 1 k 1} 396.825397 {vco 12500.000000 pfd 99.206349 m 63 n 4 l 1 c 1 k 1} 397.727273 {vco 12500.000000 pfd 56.818182 m 110 n 7 l 1 c 1 k 1} 398.936170 {vco 12500.000000 pfd 132.978723 m 47 n 3 l 1 c 1 k 1} 400.000000 {vco 12500.000000 pfd 50.000000 m 125 n 8 l 1 c 1 k 1} 400.641026 {vco 12500.000000 pfd 80.128205 m 78 n 5 l 1 c 1 k 1} 401.376147 {vco 12500.000000 pfd 57.339450 m 109 n 7 l 1 c 1 k 1} 403.225806 {vco 12500.000000 pfd 201.612903 m 31 n 2 l 1 c 1 k 1} 405.092593 {vco 12500.000000 pfd 57.870370 m 108 n 7 l 1 c 1 k 1} 405.844156 {vco 12500.000000 pfd 81.168831 m 77 n 5 l 1 c 1 k 1} 406.504065 {vco 12500.000000 pfd 50.813008 m 123 n 8 l 1 c 1 k 1} 407.608696 {vco 12500.000000 pfd 135.869565 m 46 n 3 l 1 c 1 k 1} 408.878505 {vco 12500.000000 pfd 58.411215 m 107 n 7 l 1 c 1 k 1} 409.836066 {vco 12500.000000 pfd 102.459016 m 61 n 4 l 1 c 1 k 1} 411.184211 {vco 12500.000000 pfd 82.236842 m 76 n 5 l 1 c 1 k 1} 412.087912 {vco 12500.000000 pfd 68.681319 m 91 n 6 l 1 c 1 k 1} 412.735849 {vco 12500.000000 pfd 58.962264 m 106 n 7 l 1 c 1 k 1} 413.223140 {vco 12500.000000 pfd 51.652893 m 121 n 8 l 1 c 1 k 1} 416.666667 {vco 12500.000000 pfd 208.333333 m 30 n 2 l 1 c 1 k 1} 420.168067 {vco 12500.000000 pfd 52.521008 m 119 n 8 l 1 c 1 k 1} 420.673077 {vco 12500.000000 pfd 60.096154 m 104 n 7 l 1 c 1 k 1} 421.348315 {vco 12500.000000 pfd 70.224719 m 89 n 6 l 1 c 1 k 1} 422.297297 {vco 12500.000000 pfd 84.459459 m 74 n 5 l 1 c 1 k 1} 423.728814 {vco 12500.000000 pfd 105.932203 m 59 n 4 l 1 c 1 k 1} 424.757282 {vco 12500.000000 pfd 60.679612 m 103 n 7 l 1 c 1 k 1} 426.136364 {vco 12500.000000 pfd 142.045455 m 44 n 3 l 1 c 1 k 1} 427.350427 {vco 12500.000000 pfd 53.418803 m 117 n 8 l 1 c 1 k 1} 428.082192 {vco 12500.000000 pfd 85.616438 m 73 n 5 l 1 c 1 k 1} 428.921569 {vco 12500.000000 pfd 61.274510 m 102 n 7 l 1 c 1 k 1} 431.034483 {vco 12500.000000 pfd 215.517241 m 29 n 2 l 1 c 1 k 1} 433.168317 {vco 12500.000000 pfd 61.881188 m 101 n 7 l 1 c 1 k 1} 434.027778 {vco 12500.000000 pfd 86.805556 m 72 n 5 l 1 c 1 k 1} 434.782609 {vco 12500.000000 pfd 54.347826 m 115 n 8 l 1 c 1 k 1} 436.046512 {vco 12500.000000 pfd 145.348837 m 43 n 3 l 1 c 1 k 1} 437.500000 {vco 12500.000000 pfd 62.500000 m 100 n 7 l 1 c 1 k 1} 438.596491 {vco 12500.000000 pfd 109.649123 m 57 n 4 l 1 c 1 k 1} 440.140845 {vco 12500.000000 pfd 88.028169 m 71 n 5 l 1 c 1 k 1} 441.176471 {vco 12500.000000 pfd 73.529412 m 85 n 6 l 1 c 1 k 1} 441.919192 {vco 12500.000000 pfd 63.131313 m 99 n 7 l 1 c 1 k 1} 442.477876 {vco 12500.000000 pfd 55.309735 m 113 n 8 l 1 c 1 k 1} 446.428571 {vco 12500.000000 pfd 223.214286 m 28 n 2 l 1 c 1 k 1} 450.000000 {vco 12500.000000 pfd 50.000000 m 125 n 9 l 1 c 1 k 1} 450.450450 {vco 12500.000000 pfd 56.306306 m 111 n 8 l 1 c 1 k 1} 451.030928 {vco 12500.000000 pfd 64.432990 m 97 n 7 l 1 c 1 k 1} 451.807229 {vco 12500.000000 pfd 75.301205 m 83 n 6 l 1 c 1 k 1} 452.898551 {vco 12500.000000 pfd 90.579710 m 69 n 5 l 1 c 1 k 1} 453.629032 {vco 12500.000000 pfd 50.403226 m 124 n 9 l 1 c 1 k 1} 454.545455 {vco 12500.000000 pfd 113.636364 m 55 n 4 l 1 c 1 k 1} 455.729167 {vco 12500.000000 pfd 65.104167 m 96 n 7 l 1 c 1 k 1} 457.317073 {vco 12500.000000 pfd 152.439024 m 41 n 3 l 1 c 1 k 1} 458.715596 {vco 12500.000000 pfd 57.339450 m 109 n 8 l 1 c 1 k 1} 459.558824 {vco 12500.000000 pfd 91.911765 m 68 n 5 l 1 c 1 k 1} 460.526316 {vco 12500.000000 pfd 65.789474 m 95 n 7 l 1 c 1 k 1} 461.065574 {vco 12500.000000 pfd 51.229508 m 122 n 9 l 1 c 1 k 1} 462.962963 {vco 12500.000000 pfd 231.481481 m 27 n 2 l 1 c 1 k 1} 464.876033 {vco 12500.000000 pfd 51.652893 m 121 n 9 l 1 c 1 k 1} 465.425532 {vco 12500.000000 pfd 66.489362 m 94 n 7 l 1 c 1 k 1} 466.417910 {vco 12500.000000 pfd 93.283582 m 67 n 5 l 1 c 1 k 1} 467.289720 {vco 12500.000000 pfd 58.411215 m 107 n 8 l 1 c 1 k 1} 468.750000 {vco 12500.000000 pfd 156.250000 m 40 n 3 l 1 c 1 k 1} 470.430108 {vco 12500.000000 pfd 67.204301 m 93 n 7 l 1 c 1 k 1} 471.698113 {vco 12500.000000 pfd 117.924528 m 53 n 4 l 1 c 1 k 1} 472.689076 {vco 12500.000000 pfd 52.521008 m 119 n 9 l 1 c 1 k 1} 473.484848 {vco 12500.000000 pfd 94.696970 m 66 n 5 l 1 c 1 k 1} 474.683544 {vco 12500.000000 pfd 79.113924 m 79 n 6 l 1 c 1 k 1} 475.543478 {vco 12500.000000 pfd 67.934783 m 92 n 7 l 1 c 1 k 1} 476.190476 {vco 12500.000000 pfd 59.523810 m 105 n 8 l 1 c 1 k 1} 476.694915 {vco 12500.000000 pfd 52.966102 m 118 n 9 l 1 c 1 k 1} 480.769231 {vco 12500.000000 pfd 240.384615 m 26 n 2 l 1 c 1 k 1} 484.913793 {vco 12500.000000 pfd 53.879310 m 116 n 9 l 1 c 1 k 1} 485.436893 {vco 12500.000000 pfd 60.679612 m 103 n 8 l 1 c 1 k 1} 486.111111 {vco 12500.000000 pfd 69.444444 m 90 n 7 l 1 c 1 k 1} 487.012987 {vco 12500.000000 pfd 81.168831 m 77 n 6 l 1 c 1 k 1} 488.281250 {vco 12500.000000 pfd 97.656250 m 64 n 5 l 1 c 1 k 1} 489.130435 {vco 12500.000000 pfd 54.347826 m 115 n 9 l 1 c 1 k 1} 490.196078 {vco 12500.000000 pfd 122.549020 m 51 n 4 l 1 c 1 k 1} 491.573034 {vco 12500.000000 pfd 70.224719 m 89 n 7 l 1 c 1 k 1} 493.421053 {vco 12500.000000 pfd 164.473684 m 38 n 3 l 1 c 1 k 1} 495.049505 {vco 12500.000000 pfd 61.881188 m 101 n 8 l 1 c 1 k 1} 496.031746 {vco 12500.000000 pfd 99.206349 m 63 n 5 l 1 c 1 k 1} 497.159091 {vco 12500.000000 pfd 71.022727 m 88 n 7 l 1 c 1 k 1} 497.787611 {vco 12500.000000 pfd 55.309735 m 113 n 9 l 1 c 1 k 1} 500.000000 {vco 12500.000000 pfd 250.000000 m 25 n 2 l 1 c 1 k 1} 502.232143 {vco 12500.000000 pfd 55.803571 m 112 n 9 l 1 c 1 k 1} 502.873563 {vco 12500.000000 pfd 71.839080 m 87 n 7 l 1 c 1 k 1} 504.032258 {vco 12500.000000 pfd 100.806452 m 62 n 5 l 1 c 1 k 1} 505.050505 {vco 12500.000000 pfd 63.131313 m 99 n 8 l 1 c 1 k 1} 506.756757 {vco 12500.000000 pfd 168.918919 m 37 n 3 l 1 c 1 k 1} 508.130081 {vco 12500.000000 pfd 50.813008 m 123 n 10 l 1 c 1 k 1} 508.720930 {vco 12500.000000 pfd 72.674419 m 86 n 7 l 1 c 1 k 1} 510.204082 {vco 12500.000000 pfd 127.551020 m 49 n 4 l 1 c 1 k 1} 511.363636 {vco 12500.000000 pfd 56.818182 m 110 n 9 l 1 c 1 k 1} 512.295082 {vco 12500.000000 pfd 102.459016 m 61 n 5 l 1 c 1 k 1} 513.698630 {vco 12500.000000 pfd 85.616438 m 73 n 6 l 1 c 1 k 1} 514.705882 {vco 12500.000000 pfd 73.529412 m 85 n 7 l 1 c 1 k 1} 515.463918 {vco 12500.000000 pfd 64.432990 m 97 n 8 l 1 c 1 k 1} 516.055046 {vco 12500.000000 pfd 57.339450 m 109 n 9 l 1 c 1 k 1} 516.528926 {vco 12500.000000 pfd 51.652893 m 121 n 10 l 1 c 1 k 1} 520.833333 {vco 12500.000000 pfd 260.416667 m 24 n 2 l 1 c 1 k 1} 525.210084 {vco 12500.000000 pfd 52.521008 m 119 n 10 l 1 c 1 k 1} 525.700935 {vco 12500.000000 pfd 58.411215 m 107 n 9 l 1 c 1 k 1} 526.315789 {vco 12500.000000 pfd 65.789474 m 95 n 8 l 1 c 1 k 1} 527.108434 {vco 12500.000000 pfd 75.301205 m 83 n 7 l 1 c 1 k 1} 528.169014 {vco 12500.000000 pfd 88.028169 m 71 n 6 l 1 c 1 k 1} 529.661017 {vco 12500.000000 pfd 105.932203 m 59 n 5 l 1 c 1 k 1} 530.660377 {vco 12500.000000 pfd 58.962264 m 106 n 9 l 1 c 1 k 1} 531.914894 {vco 12500.000000 pfd 132.978723 m 47 n 4 l 1 c 1 k 1} 533.536585 {vco 12500.000000 pfd 76.219512 m 82 n 7 l 1 c 1 k 1} 534.188034 {vco 12500.000000 pfd 53.418803 m 117 n 10 l 1 c 1 k 1} 535.714286 {vco 12500.000000 pfd 178.571429 m 35 n 3 l 1 c 1 k 1} 537.634409 {vco 12500.000000 pfd 67.204301 m 93 n 8 l 1 c 1 k 1} 538.793103 {vco 12500.000000 pfd 107.758621 m 58 n 5 l 1 c 1 k 1} 540.123457 {vco 12500.000000 pfd 77.160494 m 81 n 7 l 1 c 1 k 1} 540.865385 {vco 12500.000000 pfd 60.096154 m 104 n 9 l 1 c 1 k 1} 543.478261 {vco 12500.000000 pfd 271.739130 m 23 n 2 l 1 c 1 k 1} 546.116505 {vco 12500.000000 pfd 60.679612 m 103 n 9 l 1 c 1 k 1} 546.875000 {vco 12500.000000 pfd 78.125000 m 80 n 7 l 1 c 1 k 1} 548.245614 {vco 12500.000000 pfd 109.649123 m 57 n 5 l 1 c 1 k 1} 549.450549 {vco 12500.000000 pfd 68.681319 m 91 n 8 l 1 c 1 k 1} 550.000000 {vco 12500.000000 pfd 50.000000 m 125 n 11 l 1 c 1 k 1} 551.470588 {vco 12500.000000 pfd 183.823529 m 34 n 3 l 1 c 1 k 1} 553.097345 {vco 12500.000000 pfd 55.309735 m 113 n 10 l 1 c 1 k 1} 553.797468 {vco 12500.000000 pfd 79.113924 m 79 n 7 l 1 c 1 k 1} 554.435484 {vco 12500.000000 pfd 50.403226 m 124 n 11 l 1 c 1 k 1} 555.555556 {vco 12500.000000 pfd 138.888889 m 45 n 4 l 1 c 1 k 1} 556.930693 {vco 12500.000000 pfd 61.881188 m 101 n 9 l 1 c 1 k 1} 558.035714 {vco 12500.000000 pfd 111.607143 m 56 n 5 l 1 c 1 k 1} 558.943089 {vco 12500.000000 pfd 50.813008 m 123 n 11 l 1 c 1 k 1} 559.701493 {vco 12500.000000 pfd 93.283582 m 67 n 6 l 1 c 1 k 1} 560.897436 {vco 12500.000000 pfd 80.128205 m 78 n 7 l 1 c 1 k 1} 561.797753 {vco 12500.000000 pfd 70.224719 m 89 n 8 l 1 c 1 k 1} 562.500000 {vco 12500.000000 pfd 62.500000 m 100 n 9 l 1 c 1 k 1} 563.063063 {vco 12500.000000 pfd 56.306306 m 111 n 10 l 1 c 1 k 1} 563.524590 {vco 12500.000000 pfd 51.229508 m 122 n 11 l 1 c 1 k 1} 568.181818 {vco 12500.000000 pfd 284.090909 m 22 n 2 l 1 c 1 k 1} 572.916667 {vco 12500.000000 pfd 52.083333 m 120 n 11 l 1 c 1 k 1} 573.394495 {vco 12500.000000 pfd 57.339450 m 109 n 10 l 1 c 1 k 1} 573.979592 {vco 12500.000000 pfd 63.775510 m 98 n 9 l 1 c 1 k 1} 574.712644 {vco 12500.000000 pfd 71.839080 m 87 n 8 l 1 c 1 k 1} 575.657895 {vco 12500.000000 pfd 82.236842 m 76 n 7 l 1 c 1 k 1} 576.923077 {vco 12500.000000 pfd 96.153846 m 65 n 6 l 1 c 1 k 1} 577.731092 {vco 12500.000000 pfd 52.521008 m 119 n 11 l 1 c 1 k 1} 578.703704 {vco 12500.000000 pfd 115.740741 m 54 n 5 l 1 c 1 k 1} 579.896907 {vco 12500.000000 pfd 64.432990 m 97 n 9 l 1 c 1 k 1} 581.395349 {vco 12500.000000 pfd 145.348837 m 43 n 4 l 1 c 1 k 1} 582.627119 {vco 12500.000000 pfd 52.966102 m 118 n 11 l 1 c 1 k 1} 583.333333 {vco 12500.000000 pfd 83.333333 m 75 n 7 l 1 c 1 k 1} 584.112150 {vco 12500.000000 pfd 58.411215 m 107 n 10 l 1 c 1 k 1} 585.937500 {vco 12500.000000 pfd 195.312500 m 32 n 3 l 1 c 1 k 1} 587.606838 {vco 12500.000000 pfd 53.418803 m 117 n 11 l 1 c 1 k 1} 588.235294 {vco 12500.000000 pfd 73.529412 m 85 n 8 l 1 c 1 k 1} 589.622642 {vco 12500.000000 pfd 117.924528 m 53 n 5 l 1 c 1 k 1} 591.216216 {vco 12500.000000 pfd 84.459459 m 74 n 7 l 1 c 1 k 1} 592.105263 {vco 12500.000000 pfd 65.789474 m 95 n 9 l 1 c 1 k 1} 592.672414 {vco 12500.000000 pfd 53.879310 m 116 n 11 l 1 c 1 k 1} 595.238095 {vco 12500.000000 pfd 297.619048 m 21 n 2 l 1 c 1 k 1} 597.826087 {vco 12500.000000 pfd 54.347826 m 115 n 11 l 1 c 1 k 1} 598.404255 {vco 12500.000000 pfd 66.489362 m 94 n 9 l 1 c 1 k 1} 599.315068 {vco 12500.000000 pfd 85.616438 m 73 n 7 l 1 c 1 k 1} 600.000000 {vco 12500.000000 pfd 50.000000 m 125 n 12 l 1 c 1 k 1} 600.961538 {vco 12500.000000 pfd 120.192308 m 52 n 5 l 1 c 1 k 1} 602.409639 {vco 12500.000000 pfd 75.301205 m 83 n 8 l 1 c 1 k 1} 603.070175 {vco 12500.000000 pfd 54.824561 m 114 n 11 l 1 c 1 k 1} 604.838710 {vco 12500.000000 pfd 201.612903 m 31 n 3 l 1 c 1 k 1} 606.796117 {vco 12500.000000 pfd 60.679612 m 103 n 10 l 1 c 1 k 1} 607.638889 {vco 12500.000000 pfd 86.805556 m 72 n 7 l 1 c 1 k 1} 608.407080 {vco 12500.000000 pfd 55.309735 m 113 n 11 l 1 c 1 k 1} 609.756098 {vco 12500.000000 pfd 152.439024 m 41 n 4 l 1 c 1 k 1} 611.413043 {vco 12500.000000 pfd 67.934783 m 92 n 9 l 1 c 1 k 1} 612.745098 {vco 12500.000000 pfd 122.549020 m 51 n 5 l 1 c 1 k 1} 613.839286 {vco 12500.000000 pfd 55.803571 m 112 n 11 l 1 c 1 k 1} 614.754098 {vco 12500.000000 pfd 102.459016 m 61 n 6 l 1 c 1 k 1} 616.197183 {vco 12500.000000 pfd 88.028169 m 71 n 7 l 1 c 1 k 1} 617.283951 {vco 12500.000000 pfd 77.160494 m 81 n 8 l 1 c 1 k 1} 618.131868 {vco 12500.000000 pfd 68.681319 m 91 n 9 l 1 c 1 k 1} 618.811881 {vco 12500.000000 pfd 61.881188 m 101 n 10 l 1 c 1 k 1} 619.369369 {vco 12500.000000 pfd 56.306306 m 111 n 11 l 1 c 1 k 1} 619.834711 {vco 12500.000000 pfd 51.652893 m 121 n 12 l 1 c 1 k 1} 625.000000 {vco 12500.000000 pfd 312.500000 m 20 n 2 l 1 c 1 k 1} 630.252101 {vco 12500.000000 pfd 52.521008 m 119 n 12 l 1 c 1 k 1} 630.733945 {vco 12500.000000 pfd 57.339450 m 109 n 11 l 1 c 1 k 1} 631.313131 {vco 12500.000000 pfd 63.131313 m 99 n 10 l 1 c 1 k 1} 632.022472 {vco 12500.000000 pfd 70.224719 m 89 n 9 l 1 c 1 k 1} 632.911392 {vco 12500.000000 pfd 79.113924 m 79 n 8 l 1 c 1 k 1} 634.057971 {vco 12500.000000 pfd 90.579710 m 69 n 7 l 1 c 1 k 1} 635.593220 {vco 12500.000000 pfd 105.932203 m 59 n 6 l 1 c 1 k 1} 636.574074 {vco 12500.000000 pfd 57.870370 m 108 n 11 l 1 c 1 k 1} 637.755102 {vco 12500.000000 pfd 127.551020 m 49 n 5 l 1 c 1 k 1} 639.204545 {vco 12500.000000 pfd 71.022727 m 88 n 9 l 1 c 1 k 1} 641.025641 {vco 12500.000000 pfd 160.256410 m 39 n 4 l 1 c 1 k 1} 642.523364 {vco 12500.000000 pfd 58.411215 m 107 n 11 l 1 c 1 k 1} 643.382353 {vco 12500.000000 pfd 91.911765 m 68 n 7 l 1 c 1 k 1} 644.329897 {vco 12500.000000 pfd 64.432990 m 97 n 10 l 1 c 1 k 1} 646.551724 {vco 12500.000000 pfd 215.517241 m 29 n 3 l 1 c 1 k 1} 648.584906 {vco 12500.000000 pfd 58.962264 m 106 n 11 l 1 c 1 k 1} 649.350649 {vco 12500.000000 pfd 81.168831 m 77 n 8 l 1 c 1 k 1} 650.000000 {vco 12500.000000 pfd 50.000000 m 125 n 13 l 1 c 1 k 1} 651.041667 {vco 12500.000000 pfd 130.208333 m 48 n 5 l 1 c 1 k 1} 652.173913 {vco 12500.000000 pfd 54.347826 m 115 n 12 l 1 c 1 k 1} 652.985075 {vco 12500.000000 pfd 93.283582 m 67 n 7 l 1 c 1 k 1} 654.069767 {vco 12500.000000 pfd 72.674419 m 86 n 9 l 1 c 1 k 1} 654.761905 {vco 12500.000000 pfd 59.523810 m 105 n 11 l 1 c 1 k 1} 655.241935 {vco 12500.000000 pfd 50.403226 m 124 n 13 l 1 c 1 k 1} 657.894737 {vco 12500.000000 pfd 328.947368 m 19 n 2 l 1 c 1 k 1} 660.569106 {vco 12500.000000 pfd 50.813008 m 123 n 13 l 1 c 1 k 1} 661.057692 {vco 12500.000000 pfd 60.096154 m 104 n 11 l 1 c 1 k 1} 661.764706 {vco 12500.000000 pfd 73.529412 m 85 n 9 l 1 c 1 k 1} 662.878788 {vco 12500.000000 pfd 94.696970 m 66 n 7 l 1 c 1 k 1} 663.716814 {vco 12500.000000 pfd 55.309735 m 113 n 12 l 1 c 1 k 1} 664.893617 {vco 12500.000000 pfd 132.978723 m 47 n 5 l 1 c 1 k 1} 665.983607 {vco 12500.000000 pfd 51.229508 m 122 n 13 l 1 c 1 k 1} 666.666667 {vco 12500.000000 pfd 83.333333 m 75 n 8 l 1 c 1 k 1} 667.475728 {vco 12500.000000 pfd 60.679612 m 103 n 11 l 1 c 1 k 1} 669.642857 {vco 12500.000000 pfd 223.214286 m 28 n 3 l 1 c 1 k 1} 671.487603 {vco 12500.000000 pfd 51.652893 m 121 n 13 l 1 c 1 k 1} 672.043011 {vco 12500.000000 pfd 67.204301 m 93 n 10 l 1 c 1 k 1} 673.076923 {vco 12500.000000 pfd 96.153846 m 65 n 7 l 1 c 1 k 1} 674.019608 {vco 12500.000000 pfd 61.274510 m 102 n 11 l 1 c 1 k 1} 675.675676 {vco 12500.000000 pfd 168.918919 m 37 n 4 l 1 c 1 k 1} 677.083333 {vco 12500.000000 pfd 52.083333 m 120 n 13 l 1 c 1 k 1} 677.710843 {vco 12500.000000 pfd 75.301205 m 83 n 9 l 1 c 1 k 1} 679.347826 {vco 12500.000000 pfd 135.869565 m 46 n 5 l 1 c 1 k 1} 680.693069 {vco 12500.000000 pfd 61.881188 m 101 n 11 l 1 c 1 k 1} 681.818182 {vco 12500.000000 pfd 113.636364 m 55 n 6 l 1 c 1 k 1} 682.773109 {vco 12500.000000 pfd 52.521008 m 119 n 13 l 1 c 1 k 1} 683.593750 {vco 12500.000000 pfd 97.656250 m 64 n 7 l 1 c 1 k 1} 684.931507 {vco 12500.000000 pfd 85.616438 m 73 n 8 l 1 c 1 k 1} 685.975610 {vco 12500.000000 pfd 76.219512 m 82 n 9 l 1 c 1 k 1} 686.813187 {vco 12500.000000 pfd 68.681319 m 91 n 10 l 1 c 1 k 1} 687.500000 {vco 12500.000000 pfd 62.500000 m 100 n 11 l 1 c 1 k 1} 688.073394 {vco 12500.000000 pfd 57.339450 m 109 n 12 l 1 c 1 k 1} 688.559322 {vco 12500.000000 pfd 52.966102 m 118 n 13 l 1 c 1 k 1} 694.444444 {vco 12500.000000 pfd 347.222222 m 18 n 2 l 1 c 1 k 1} 700.000000 {vco 12500.000000 pfd 50.000000 m 125 n 14 l 1 c 1 k 1} 700.431034 {vco 12500.000000 pfd 53.879310 m 116 n 13 l 1 c 1 k 1} 700.934579 {vco 12500.000000 pfd 58.411215 m 107 n 12 l 1 c 1 k 1} 701.530612 {vco 12500.000000 pfd 63.775510 m 98 n 11 l 1 c 1 k 1} 702.247191 {vco 12500.000000 pfd 70.224719 m 89 n 10 l 1 c 1 k 1} 703.125000 {vco 12500.000000 pfd 78.125000 m 80 n 9 l 1 c 1 k 1} 704.225352 {vco 12500.000000 pfd 88.028169 m 71 n 8 l 1 c 1 k 1} 705.645161 {vco 12500.000000 pfd 100.806452 m 62 n 7 l 1 c 1 k 1} 706.521739 {vco 12500.000000 pfd 54.347826 m 115 n 13 l 1 c 1 k 1} 707.547170 {vco 12500.000000 pfd 117.924528 m 53 n 6 l 1 c 1 k 1} 708.762887 {vco 12500.000000 pfd 64.432990 m 97 n 11 l 1 c 1 k 1} 710.227273 {vco 12500.000000 pfd 142.045455 m 44 n 5 l 1 c 1 k 1} 711.382114 {vco 12500.000000 pfd 50.813008 m 123 n 14 l 1 c 1 k 1} 712.025316 {vco 12500.000000 pfd 79.113924 m 79 n 9 l 1 c 1 k 1} 712.719298 {vco 12500.000000 pfd 54.824561 m 114 n 13 l 1 c 1 k 1} 714.285714 {vco 12500.000000 pfd 178.571429 m 35 n 4 l 1 c 1 k 1} 716.145833 {vco 12500.000000 pfd 65.104167 m 96 n 11 l 1 c 1 k 1} 717.213115 {vco 12500.000000 pfd 102.459016 m 61 n 7 l 1 c 1 k 1} 718.390805 {vco 12500.000000 pfd 71.839080 m 87 n 10 l 1 c 1 k 1} 719.026549 {vco 12500.000000 pfd 55.309735 m 113 n 13 l 1 c 1 k 1} 721.153846 {vco 12500.000000 pfd 240.384615 m 26 n 3 l 1 c 1 k 1} 723.140496 {vco 12500.000000 pfd 51.652893 m 121 n 14 l 1 c 1 k 1} 723.684211 {vco 12500.000000 pfd 65.789474 m 95 n 11 l 1 c 1 k 1} 724.637681 {vco 12500.000000 pfd 90.579710 m 69 n 8 l 1 c 1 k 1} 725.446429 {vco 12500.000000 pfd 55.803571 m 112 n 13 l 1 c 1 k 1} 726.744186 {vco 12500.000000 pfd 145.348837 m 43 n 5 l 1 c 1 k 1} 728.155340 {vco 12500.000000 pfd 60.679612 m 103 n 12 l 1 c 1 k 1} 729.166667 {vco 12500.000000 pfd 104.166667 m 60 n 7 l 1 c 1 k 1} 730.519481 {vco 12500.000000 pfd 81.168831 m 77 n 9 l 1 c 1 k 1} 731.382979 {vco 12500.000000 pfd 66.489362 m 94 n 11 l 1 c 1 k 1} 731.981982 {vco 12500.000000 pfd 56.306306 m 111 n 13 l 1 c 1 k 1} 735.294118 {vco 12500.000000 pfd 183.823529 m 34 n 4 l 1 c 1 k 1} 738.636364 {vco 12500.000000 pfd 56.818182 m 110 n 13 l 1 c 1 k 1} 739.247312 {vco 12500.000000 pfd 67.204301 m 93 n 11 l 1 c 1 k 1} 740.131579 {vco 12500.000000 pfd 82.236842 m 76 n 9 l 1 c 1 k 1} 741.525424 {vco 12500.000000 pfd 105.932203 m 59 n 7 l 1 c 1 k 1} 742.574257 {vco 12500.000000 pfd 61.881188 m 101 n 12 l 1 c 1 k 1} 744.047619 {vco 12500.000000 pfd 148.809524 m 42 n 5 l 1 c 1 k 1} 745.412844 {vco 12500.000000 pfd 57.339450 m 109 n 13 l 1 c 1 k 1} 746.268657 {vco 12500.000000 pfd 93.283582 m 67 n 8 l 1 c 1 k 1} 747.282609 {vco 12500.000000 pfd 67.934783 m 92 n 11 l 1 c 1 k 1} 747.863248 {vco 12500.000000 pfd 53.418803 m 117 n 14 l 1 c 1 k 1} 750.000000 {vco 12500.000000 pfd 250.000000 m 25 n 3 l 1 c 1 k 1} 752.314815 {vco 12500.000000 pfd 57.870370 m 108 n 13 l 1 c 1 k 1} 753.012048 {vco 12500.000000 pfd 75.301205 m 83 n 10 l 1 c 1 k 1} 754.310345 {vco 12500.000000 pfd 107.758621 m 58 n 7 l 1 c 1 k 1} 755.494505 {vco 12500.000000 pfd 68.681319 m 91 n 11 l 1 c 1 k 1} 756.048387 {vco 12500.000000 pfd 50.403226 m 124 n 15 l 1 c 1 k 1} 757.575758 {vco 12500.000000 pfd 189.393939 m 33 n 4 l 1 c 1 k 1} 759.345794 {vco 12500.000000 pfd 58.411215 m 107 n 13 l 1 c 1 k 1} 760.135135 {vco 12500.000000 pfd 84.459459 m 74 n 9 l 1 c 1 k 1} 760.869565 {vco 12500.000000 pfd 54.347826 m 115 n 14 l 1 c 1 k 1} 762.195122 {vco 12500.000000 pfd 152.439024 m 41 n 5 l 1 c 1 k 1} 763.888889 {vco 12500.000000 pfd 69.444444 m 90 n 11 l 1 c 1 k 1} 765.306122 {vco 12500.000000 pfd 127.551020 m 49 n 6 l 1 c 1 k 1} 766.509434 {vco 12500.000000 pfd 58.962264 m 106 n 13 l 1 c 1 k 1} 767.543860 {vco 12500.000000 pfd 109.649123 m 57 n 7 l 1 c 1 k 1} 768.442623 {vco 12500.000000 pfd 51.229508 m 122 n 15 l 1 c 1 k 1} 769.230769 {vco 12500.000000 pfd 96.153846 m 65 n 8 l 1 c 1 k 1} 770.547945 {vco 12500.000000 pfd 85.616438 m 73 n 9 l 1 c 1 k 1} 771.604938 {vco 12500.000000 pfd 77.160494 m 81 n 10 l 1 c 1 k 1} 772.471910 {vco 12500.000000 pfd 70.224719 m 89 n 11 l 1 c 1 k 1} 773.195876 {vco 12500.000000 pfd 64.432990 m 97 n 12 l 1 c 1 k 1} 773.809524 {vco 12500.000000 pfd 59.523810 m 105 n 13 l 1 c 1 k 1} 774.336283 {vco 12500.000000 pfd 55.309735 m 113 n 14 l 1 c 1 k 1} 774.793388 {vco 12500.000000 pfd 51.652893 m 121 n 15 l 1 c 1 k 1} 781.250000 {vco 12500.000000 pfd 260.416667 m 24 n 3 l 1 c 1 k 1} 787.815126 {vco 12500.000000 pfd 52.521008 m 119 n 15 l 1 c 1 k 1} 788.288288 {vco 12500.000000 pfd 56.306306 m 111 n 14 l 1 c 1 k 1} 788.834951 {vco 12500.000000 pfd 60.679612 m 103 n 13 l 1 c 1 k 1} 789.473684 {vco 12500.000000 pfd 65.789474 m 95 n 12 l 1 c 1 k 1} 790.229885 {vco 12500.000000 pfd 71.839080 m 87 n 11 l 1 c 1 k 1} 791.139241 {vco 12500.000000 pfd 79.113924 m 79 n 10 l 1 c 1 k 1} 792.253521 {vco 12500.000000 pfd 88.028169 m 71 n 9 l 1 c 1 k 1} 793.650794 {vco 12500.000000 pfd 99.206349 m 63 n 8 l 1 c 1 k 1} 794.491525 {vco 12500.000000 pfd 52.966102 m 118 n 15 l 1 c 1 k 1} 795.454545 {vco 12500.000000 pfd 113.636364 m 55 n 7 l 1 c 1 k 1} 796.568627 {vco 12500.000000 pfd 61.274510 m 102 n 13 l 1 c 1 k 1} 797.872340 {vco 12500.000000 pfd 132.978723 m 47 n 6 l 1 c 1 k 1} 799.418605 {vco 12500.000000 pfd 72.674419 m 86 n 11 l 1 c 1 k 1} 800.000000 {vco 12500.000000 pfd 50.000000 m 125 n 16 l 1 c 1 k 1}</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="manual_list">
+   <type>java.lang.String</type>
+   <value></value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pll_setting">
+   <type>java.lang.String</type>
+   <value>refclk 100.000000 m_cnt 125 n_cnt 2 l_cnt 1 c_cnt 1 k_cnt 1 vco_freq 12500.000000 pfd_freq 50.000000</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="iqclk_mux_sel">
+   <type>java.lang.String</type>
+   <value>iqtxrxclk0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_altera_xcvr_fpll_s10_calibration_en">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="calibration_en">
+   <type>java.lang.String</type>
+   <value>enable</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="outclk_en">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_pcie_hip_connectivity">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_power_mode">
+   <type>java.lang.String</type>
+   <value>1_1V</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_analog_resets">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="in_pcie_hip_mode">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="vco_ph0_en">
+   <type>java.lang.String</type>
+   <value>pll_vco_ph0_en</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="lc_refclk_select">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_div">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_div_fnl">
+   <type>int</type>
+   <value>1</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_hfreq_clk">
+   <type>int</type>
+   <value>1</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb_pcie_clksw">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb_reset">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_aux_clkin_cnt">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_in_clk_freq">
+   <type>double</type>
+   <value>6250.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_out_datarate">
+   <type>double</type>
+   <value>12500.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_bonding_clks">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_fb_comp_bonding">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mcgb_enable_iqtxrxclk">
+   <type>java.lang.String</type>
+   <value>disable_iqtxrxclk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="pma_width">
+   <type>int</type>
+   <value>64</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_mcgb_debug_ports_parameters">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="enable_pld_mcgb_cal_busy_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>false</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="check_output_ports_mcgb">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="is_protocol_PCIe">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mapped_output_clock_frequency">
+   <type>java.lang.String</type>
+   <value>6250.0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mapped_primary_pll_buffer">
+   <type>java.lang.String</type>
+   <value>N/A</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="mapped_hip_cal_done_port">
+   <type>int</type>
+   <value>0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_prot_mode">
+   <type>java.lang.String</type>
+   <value>basic_tx</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_silicon_rev">
+   <type>java.lang.String</type>
+   <value>14nm4acr2eb</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_x1_div_m_sel">
+   <type>java.lang.String</type>
+   <value>divbypass</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_cgb_enable_iqtxrxclk">
+   <type>java.lang.String</type>
+   <value>disable_iqtxrxclk</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_ser_mode">
+   <type>java.lang.String</type>
+   <value>sixty_four_bit</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_datarate_bps">
+   <type>java.lang.String</type>
+   <value>12500000000</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_cgb_power_down">
+   <type>java.lang.String</type>
+   <value>normal_cgb</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_observe_cgb_clocks">
+   <type>java.lang.String</type>
+   <value>observe_nothing</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_tx_ucontrol_reset_pcie">
+   <type>java.lang.String</type>
+   <value>pcscorehip_controls_mcgb</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_vccdreg_output">
+   <type>java.lang.String</type>
+   <value>vccdreg_nominal</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_input_select">
+   <type>java.lang.String</type>
+   <value>fpll_top</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="hssi_pma_cgb_master_input_select_gen3">
+   <type>java.lang.String</type>
+   <value>not_used</value>
+   <derived>true</derived>
+   <enabled>false</enabled>
+   <visible>false</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_parameter_list">
+   <type>[Ljava.lang.String;</type>
+   <value>L-Counter,M-Counter,N-Counter,C-Counter,K-Counter,PLL output datarate,PLL output frequency,VCO frequency,PFD frequency,C0 Counter Output Frequency,C0 Counter Output Frequency in Hz,C1 Counter Output Frequency,C1 Counter Output Frequency in Hz</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_parameter_values">
+   <type>[Ljava.lang.String;</type>
+   <value>1,125,2,1,0,12500.0,6250.0,12500.0,50.0,0,0,0,0</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="set_display_units">
+   <type>[Ljava.lang.String;</type>
+   <value>,,,,,Mbps,MHz,MHz,MHz,ps,ps,ps,ps</value>
+   <derived>true</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="deviceFamily">
+   <type>java.lang.String</type>
+   <value>UNKNOWN</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <parameter name="generateLegacySim">
+   <type>boolean</type>
+   <value>false</value>
+   <derived>false</derived>
+   <enabled>true</enabled>
+   <visible>true</visible>
+   <valid>true</valid>
+  </parameter>
+  <interface name="pll_refclk0" kind="clock_sink" version="20.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>input</value>
+   </assignment>
+   <parameter name="externallyDriven">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="ptfSchematicName">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>clock</type>
+   <isStart>false</isStart>
+   <port>
+    <name>pll_refclk0</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="tx_serial_clk" kind="hssi_serial_clock_source" version="20.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="clockRate">
+    <type>long</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>hssi_serial_clock</type>
+   <isStart>true</isStart>
+   <port>
+    <name>tx_serial_clk</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+  <interface name="pll_locked" kind="conduit_end" version="20.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>pll_locked</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>pll_locked</role>
+   </port>
+  </interface>
+  <interface name="pll_cal_busy" kind="conduit_end" version="20.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="associatedClock">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="associatedReset">
+    <type>java.lang.String</type>
+    <value></value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="prSafe">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>false</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>conduit</type>
+   <isStart>false</isStart>
+   <port>
+    <name>pll_cal_busy</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>pll_cal_busy</role>
+   </port>
+  </interface>
+  <interface name="mcgb_serial_clk" kind="hssi_serial_clock_source" version="20.3">
+   <!-- The connection points exposed by a module instance for the
+particular module parameters. Connection points and their
+parameters are a RESULT of the module parameters. -->
+   <assignment>
+    <name>ui.blockdiagram.direction</name>
+    <value>output</value>
+   </assignment>
+   <parameter name="clockRate">
+    <type>long</type>
+    <value>0</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="deviceFamily">
+    <type>java.lang.String</type>
+    <value>UNKNOWN</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <parameter name="generateLegacySim">
+    <type>boolean</type>
+    <value>false</value>
+    <derived>false</derived>
+    <enabled>true</enabled>
+    <visible>true</visible>
+    <valid>true</valid>
+   </parameter>
+   <type>hssi_serial_clock</type>
+   <isStart>true</isStart>
+   <port>
+    <name>mcgb_serial_clk</name>
+    <direction>Output</direction>
+    <width>1</width>
+    <role>clk</role>
+   </port>
+  </interface>
+ </module>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>altera_xcvr_fpll_s10_htile</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>L-Tile/H-Tile fPLL Intel Stratix 10 FPGA IP</displayName>
+  <version>19.1.2</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>clock_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Clock Input</displayName>
+  <version>20.3</version>
+ </plugin>
+ <plugin>
+  <instanceCount>2</instanceCount>
+  <name>hssi_serial_clock_source</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>HSSI Serial Clock Output</displayName>
+  <version>20.3</version>
+ </plugin>
+ <plugin>
+  <instanceCount>2</instanceCount>
+  <name>conduit_end</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Conduit</displayName>
+  <version>20.3</version>
+ </plugin>
+ <reportVersion>20.3 158</reportVersion>
+ <uniqueIdentifier></uniqueIdentifier>
+</EnsembleReport>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="emif_s10_0"
+ megafunction_name="ALTERA_EMIF_S10"
+ intended_family="Stratix 10"
+ specifies="all_ports">
+ <global>
+  <pin name="local_reset_req" direction="input" scope="external" />
+  <pin name="local_reset_done" direction="output" scope="external" />
+  <pin name="pll_ref_clk" direction="input" scope="external" />
+  <pin name="oct_rzqin" direction="input" scope="external" />
+  <pin name="mem_ck" direction="output" scope="external" />
+  <pin name="mem_ck_n" direction="output" scope="external" />
+  <pin name="mem_a[16..0]" direction="output" scope="external" />
+  <pin name="mem_act_n" direction="output" scope="external" />
+  <pin name="mem_ba[1..0]" direction="output" scope="external" />
+  <pin name="mem_bg[1..0]" direction="output" scope="external" />
+  <pin name="mem_cke" direction="output" scope="external" />
+  <pin name="mem_cs_n" direction="output" scope="external" />
+  <pin name="mem_odt" direction="output" scope="external" />
+  <pin name="mem_reset_n" direction="output" scope="external" />
+  <pin name="mem_par" direction="output" scope="external" />
+  <pin name="mem_alert_n" direction="input" scope="external" />
+  <pin name="mem_dqs[17..0]" direction="bidir" scope="external" />
+  <pin name="mem_dqs_n[17..0]" direction="bidir" scope="external" />
+  <pin name="mem_dq[71..0]" direction="bidir" scope="external" />
+  <pin name="local_cal_success" direction="output" scope="external" />
+  <pin name="local_cal_fail" direction="output" scope="external" />
+  <pin name="emif_usr_reset_n" direction="output" scope="external" />
+  <pin name="emif_usr_clk" direction="output" scope="external" />
+  <pin name="amm_ready_0" direction="output" scope="external" />
+  <pin name="amm_read_0" direction="input" scope="external" />
+  <pin name="amm_write_0" direction="input" scope="external" />
+  <pin name="amm_address_0[27..0]" direction="input" scope="external" />
+  <pin name="amm_readdata_0[575..0]" direction="output" scope="external" />
+  <pin name="amm_writedata_0[575..0]" direction="input" scope="external" />
+  <pin name="amm_burstcount_0[6..0]" direction="input" scope="external" />
+  <pin name="amm_readdatavalid_0" direction="output" scope="external" />
+ </global>
+</pinplan>

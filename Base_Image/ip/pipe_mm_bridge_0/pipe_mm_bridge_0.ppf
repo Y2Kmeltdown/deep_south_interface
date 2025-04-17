@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="pipe_mm_bridge_0"
+ megafunction_name="ALTERA_AVALON_MM_BRIDGE"
+ specifies="all_ports">
+ <global>
+  <pin name="clk" direction="input" scope="external" />
+  <pin name="reset" direction="input" scope="external" />
+  <pin name="s0_waitrequest" direction="output" scope="external" />
+  <pin name="s0_readdata[575..0]" direction="output" scope="external" />
+  <pin name="s0_readdatavalid" direction="output" scope="external" />
+  <pin name="s0_burstcount[6..0]" direction="input" scope="external" />
+  <pin name="s0_writedata[575..0]" direction="input" scope="external" />
+  <pin name="s0_address[27..0]" direction="input" scope="external" />
+  <pin name="s0_write" direction="input" scope="external" />
+  <pin name="s0_read" direction="input" scope="external" />
+  <pin name="s0_byteenable[71..0]" direction="input" scope="external" />
+  <pin name="s0_debugaccess" direction="input" scope="external" />
+  <pin name="m0_waitrequest" direction="input" scope="external" />
+  <pin name="m0_readdata[575..0]" direction="input" scope="external" />
+  <pin name="m0_readdatavalid" direction="input" scope="external" />
+  <pin name="m0_burstcount[6..0]" direction="output" scope="external" />
+  <pin name="m0_writedata[575..0]" direction="output" scope="external" />
+  <pin name="m0_address[27..0]" direction="output" scope="external" />
+  <pin name="m0_write" direction="output" scope="external" />
+  <pin name="m0_read" direction="output" scope="external" />
+  <pin name="m0_byteenable[71..0]" direction="output" scope="external" />
+  <pin name="m0_debugaccess" direction="output" scope="external" />
+ </global>
+</pinplan>

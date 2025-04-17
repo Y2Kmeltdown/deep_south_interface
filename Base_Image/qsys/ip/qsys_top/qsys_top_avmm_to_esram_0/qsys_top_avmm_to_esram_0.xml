@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.04.16.22:44:27"
+ outputDirectory="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REFCLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REFCLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_REFCLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="av" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="262144" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="esram_clk" />
+   <property name="associatedReset" value="esram_rst" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumReadLatency" value="1" />
+   <property name="minimumResponseLatency" value="1" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="prSafe" value="false" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="waitrequestAllowance" value="0" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="av_address" direction="input" role="address" width="16" />
+   <port name="av_read" direction="input" role="read" width="1" />
+   <port name="av_waitrequest" direction="output" role="waitrequest" width="1" />
+   <port name="av_write" direction="input" role="write" width="1" />
+   <port name="av_readdata" direction="output" role="readdata" width="32" />
+   <port name="av_writedata" direction="input" role="writedata" width="32" />
+  </interface>
+  <interface name="ram_input" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="data" direction="output" role="s2c0_da_0" width="32" />
+   <port name="rdaddress" direction="output" role="s2c0_adrb_0" width="16" />
+   <port name="rden_n" direction="output" role="s2c0_meb_n_0" width="1" />
+   <port name="sd_n" direction="output" role="s2c0_sd_n_0" width="1" />
+   <port name="wraddress" direction="output" role="s2c0_adra_0" width="16" />
+   <port name="wren_n" direction="output" role="s2c0_mea_n_0" width="1" />
+   <port name="refclk_out" direction="output" role="clock" width="1" />
+  </interface>
+  <interface name="ram_output" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="q" direction="input" role="s2c0_qb_0" width="32" />
+   <port name="esram_clk_i" direction="input" role="esram2f_clk" width="1" />
+   <port
+       name="iopll_lock2core"
+       direction="input"
+       role="iopll_lock2core"
+       width="1" />
+  </interface>
+  <interface name="iopll_lock" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port
+       name="iopll_lock"
+       direction="output"
+       role="writeresponsevalid_n"
+       width="1" />
+  </interface>
+  <interface name="refclk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="refclk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="esram_clk" kind="clock" start="1">
+   <property name="associatedDirectClock" value="" />
+   <property name="clockRate" value="0" />
+   <property name="clockRateKnown" value="false" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="esram_clk" direction="output" role="clk" width="1" />
+  </interface>
+  <interface name="esram_rst" kind="reset" start="1">
+   <property name="associatedClock" value="refclk" />
+   <property name="associatedDirectReset" value="" />
+   <property name="associatedResetSinks" value="none" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="esram_rst" direction="output" role="reset" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   kind="qsys_top_avmm_to_esram_0"
+   version="1.0"
+   name="qsys_top_avmm_to_esram_0">
+  <parameter name="AUTO_REFCLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_REFCLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_REFCLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0/synth/qsys_top_avmm_to_esram_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0/synth/qsys_top_avmm_to_esram_0.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/avmm_to_esram_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="qsys_top_avmm_to_esram_0">"Generating: qsys_top_avmm_to_esram_0"</message>
+   <message level="Info" culprit="qsys_top_avmm_to_esram_0">"Generating: av_esram"</message>
+  </messages>
+ </entity>
+ <entity kind="avmm_to_esram" version="1.0" name="av_esram">
+  <generatedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0/avmm_to_esram_10/synth/av_esram.v"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0/avmm_to_esram_10/synth/bretime.vhd"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0/avmm_to_esram_10/synth/av_esram.v"
+       attributes="TOP_LEVEL_FILE" />
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/ip/qsys_top/qsys_top_avmm_to_esram_0/avmm_to_esram_10/synth/bretime.vhd"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/stratix10/Documents/deep_south_interface/Base_Image/qsys/avmm_to_esram_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="qsys_top_avmm_to_esram_0" as="avmm_to_esram_0" />
+  <messages>
+   <message level="Info" culprit="qsys_top_avmm_to_esram_0">"Generating: av_esram"</message>
+  </messages>
+ </entity>
+</deploy>

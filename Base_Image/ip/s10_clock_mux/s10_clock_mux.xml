@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2024.06.13.15:08:20"
+ outputDirectory="/home/deepsouth/Downloads/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_clock_mux/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Stratix 10"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="1SM21CHU2F53E2VG"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="2"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INCLK0X_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INCLK0X_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INCLK0X_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INCLK1X_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INCLK1X_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_INCLK1X_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="inclk0x" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="inclk0x" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="inclk1x" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="inclk1x" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="clkselect" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <property name="prSafe" value="false" />
+   <port name="clkselect" direction="input" role="export" width="1" />
+  </interface>
+  <interface name="outclk" kind="clock" start="1">
+   <property name="associatedDirectClock" value="" />
+   <property name="clockRate" value="0" />
+   <property name="clockRateKnown" value="false" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="outclk" direction="output" role="clk" width="1" />
+  </interface>
+ </perimeter>
+ <entity kind="s10_clock_mux" version="1.0" name="s10_clock_mux">
+  <parameter name="AUTO_INCLK1X_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="0" />
+  <parameter name="AUTO_DEVICE" value="1SM21CHU2F53E2VG" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Stratix 10" />
+  <parameter name="AUTO_INCLK0X_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_INCLK0X_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="2" />
+  <parameter name="AUTO_INCLK0X_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_INCLK1X_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_INCLK1X_RESET_DOMAIN" value="-1" />
+  <generatedFiles>
+   <file
+       path="/home/deepsouth/Downloads/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_clock_mux/synth/s10_clock_mux.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/deepsouth/Downloads/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_clock_mux/synth/s10_clock_mux.v"
+       attributes="CONTAINS_INLINE_CONFIGURATION" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/Downloads/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_clock_mux.ip" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/20.3/ip/altera/megafunctions/stratix10_clkctrl/stratix10_clkctrl_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Info" culprit="s10_clock_mux">"Generating: s10_clock_mux"</message>
+   <message level="Info" culprit="s10_clock_mux">"Generating: s10_clock_mux_stratix10_clkctrl_2000_gooqn2q"</message>
+   <message level="Info" culprit="stratix10_clkctrl_0">Generating top-level entity s10_clock_mux_stratix10_clkctrl_2000_gooqn2q.</message>
+   <message level="Info" culprit="stratix10_clkctrl_0">Verilog entity generation was successful</message>
+  </messages>
+ </entity>
+ <entity
+   kind="stratix10_clkctrl"
+   version="20.0.0"
+   name="s10_clock_mux_stratix10_clkctrl_2000_gooqn2q">
+  <parameter name="GLITCH_FREE_SWITCHOVER" value="false" />
+  <parameter name="NUM_CLOCKS" value="2" />
+  <parameter name="CLOCK_DIVIDER_OUTPUTS" value="1" />
+  <parameter name="device_family" value="Stratix 10" />
+  <parameter name="ENABLE_TYPE" value="2" />
+  <parameter name="ENABLE" value="false" />
+  <parameter name="ENABLE_REGISTER_TYPE" value="1" />
+  <parameter name="CLOCK_DIVIDER" value="false" />
+  <generatedFiles>
+   <file
+       path="/home/deepsouth/Downloads/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_clock_mux/stratix10_clkctrl_2000/synth/s10_clock_mux_stratix10_clkctrl_2000_gooqn2q.v"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/deepsouth/Downloads/bist_top_me3_svn2527_basic_20_3_NW/ip/s10_clock_mux/stratix10_clkctrl_2000/synth/s10_clock_mux_stratix10_clkctrl_2000_gooqn2q.v"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/deepsouth/intelFPGA_pro/20.3/ip/altera/megafunctions/stratix10_clkctrl/stratix10_clkctrl_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="s10_clock_mux" as="stratix10_clkctrl_0" />
+  <messages>
+   <message level="Info" culprit="s10_clock_mux">"Generating: s10_clock_mux_stratix10_clkctrl_2000_gooqn2q"</message>
+   <message level="Info" culprit="stratix10_clkctrl_0">Generating top-level entity s10_clock_mux_stratix10_clkctrl_2000_gooqn2q.</message>
+   <message level="Info" culprit="stratix10_clkctrl_0">Verilog entity generation was successful</message>
+  </messages>
+ </entity>
+</deploy>
