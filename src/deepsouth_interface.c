@@ -6,8 +6,10 @@
 #include "nalla520nmxlib.h"
 #include "520nmx_bist_bar0_mmap.h"
 
-#define ESRAM_START_ADDRESS 0x40000
-#define ESRAM_END_ADDRESS 0x80000
+//#define ESRAM_START_ADDRESS 0x40000
+//#define ESRAM_END_ADDRESS 0x80000
+#define ESRAM_START_ADDRESS 0x6000
+#define ESRAM_END_ADDRESS 0x8000
 /*
 #define NALLA_OPEN_520nmx_MAINTENANCE      (0x00000001)
 #define NALLA_OPEN_520nmx_MONITOR          (0x00000002)
@@ -27,10 +29,18 @@ FILE *fptr;
 int main(int argc, char* argv[])
 {
     int i;
-    hbar = NALLA_520nmx_Open(1,NALLA_OPEN_520nmx_BAR_CSR);
+    int cardnum;
+    if (argc == 2){
+        cardnum = atoi(argv[1]);
+    }
+    else{
+        cardnum = 1;
+    }
+    printf("Opening 520n-mx card %d\n",cardnum);
+    hbar = NALLA_520nmx_Open(cardnum,NALLA_OPEN_520nmx_BAR_CSR);
     if(hbar == NULL)
 	{
-		printf("Error opening card %d.\n", 1);
+		printf("Error opening card %d.\n", cardnum);
 		return 1;
 	}
 
@@ -80,7 +90,7 @@ int main(int argc, char* argv[])
     fptr = fopen("memory.log", "w");
     for(i=0; i<dword_buffer_size; i++)
 	{
-        fprintf(fptr, "The data in memory is %d\n", readbuffer[i]);
+        fprintf(fptr, "The data in memory at location %d is %d | Expected %d\n", i+ESRAM_START_ADDRESS ,readbuffer[i], i);
         //printf("The data in memory is %d\n", readbuffer[i]);
 	}
     fclose(fptr);
