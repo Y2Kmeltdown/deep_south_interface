@@ -7,6 +7,7 @@ pad_number() {
 if [ $# -eq 0 ]
   then
     echo "No arguments supplied"
+    echo "Usage: $0 <filename> <node ID 1-23>"
 else
     if test -f $1; then
         base_name=$(basename $1)

@@ -13,9 +13,9 @@ else
             base_name=$(basename $1)
             if (($3 >= 1 && $3 <= 23)); then
                 node=$(pad_number $3)
-                echo "ssh -J damien.rice@137.154.50.2 damien.rice@xcs-node-23 "./deepsouth_testing/$base_name $2"" 
+                echo "ssh -J damien.rice@137.154.50.2 damien.rice@xcs-node-$node "./deepsouth_testing/$base_name $2"" 
             
-                ssh -J damien.rice@137.154.50.2 damien.rice@xcs-node-23 "./deepsouth_testing/$base_name $2"
+                ssh -J damien.rice@137.154.50.2 damien.rice@xcs-node-$node "./deepsouth_testing/$base_name $2"
             else
                 echo "Argument 3 must be a node between 1 and 23"
             fi

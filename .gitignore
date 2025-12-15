@@ -2,4 +2,5 @@
 .vscode
 src/test.c
 Base_Image/build/output_files
+Base_Image/build/tmp-clearbox
 Minimum_BIST.zip

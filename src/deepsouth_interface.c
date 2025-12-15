@@ -6,10 +6,19 @@
 #include "nalla520nmxlib.h"
 #include "520nmx_bist_bar0_mmap.h"
 
-//#define ESRAM_START_ADDRESS 0x40000
-//#define ESRAM_END_ADDRESS 0x80000
-#define ESRAM_START_ADDRESS 0x6000
-#define ESRAM_END_ADDRESS 0x8000
+//#define ESRAM_START_ADDRESS 0x10000
+//#define ESRAM_END_ADDRESS 0x10800
+//#define ESRAM_START_ADDRESS 0x10800
+//#define ESRAM_END_ADDRESS 0x11000
+//#define ESRAM_START_ADDRESS 0x10E00
+//#define ESRAM_END_ADDRESS 0x11000
+//#define ESRAM_START_ADDRESS 0x11000
+//#define ESRAM_END_ADDRESS 0x12000
+
+#define ESRAM_START_ADDRESS 0x10000
+#define ESRAM_END_ADDRESS 0x14000
+
+
 /*
 #define NALLA_OPEN_520nmx_MAINTENANCE      (0x00000001)
 #define NALLA_OPEN_520nmx_MONITOR          (0x00000002)
@@ -47,9 +56,8 @@ int main(int argc, char* argv[])
     uint32_t *writebuffer;
     uint32_t *readbuffer;
    
-    int buffer_size = ESRAM_END_ADDRESS - ESRAM_START_ADDRESS;
-    //int buffer_size = 0x80000 - 0x40000;
-    int dword_buffer_size = buffer_size /4;
+    int dword_buffer_size = ESRAM_END_ADDRESS - ESRAM_START_ADDRESS;
+    printf("dword_buffer = %d\n",dword_buffer_size);
     writebuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
     readbuffer = (uint32_t*)calloc(dword_buffer_size, sizeof(uint32_t));
     // Set up count data
@@ -59,7 +67,7 @@ int main(int argc, char* argv[])
 	}
 
     int numbyteswritten=0, numbytesread=0, numbytes=0;
-    numbytes = buffer_size;
+    numbytes = dword_buffer_size*4;
     clock_t begin_writing = clock();
     numbyteswritten = NALLA_520nmx_Write(hbar, writebuffer, ESRAM_START_ADDRESS, numbytes, NALLA_MMAP_WRITE);
     if(numbyteswritten != numbytes)
@@ -90,7 +98,7 @@ int main(int argc, char* argv[])
     fptr = fopen("memory.log", "w");
     for(i=0; i<dword_buffer_size; i++)
 	{
-        fprintf(fptr, "The data in memory at location %d is %d | Expected %d\n", i+ESRAM_START_ADDRESS ,readbuffer[i], i);
+        fprintf(fptr, "The data on Card %i in memory location %x is %d | Expected %d\n", cardnum, i+ESRAM_START_ADDRESS ,readbuffer[i], i);
         //printf("The data in memory is %d\n", readbuffer[i]);
 	}
     fclose(fptr);
