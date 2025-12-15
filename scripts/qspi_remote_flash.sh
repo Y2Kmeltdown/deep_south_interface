@@ -26,8 +26,14 @@ if [ -f "$filename" ]; then
             echo "ssh -J damien.rice@137.154.50.2 damien.rice@xcs-node-$node "qspi_flashprog -c $fpga_ID -p deepsouth_testing/$base_name"" 
             
             ssh -J damien.rice@137.154.50.2 damien.rice@xcs-node-$node "qspi_flashprog -c $fpga_ID -p deepsouth_testing/$base_name"
+            if [ $? -eq 0 ]; then
+                echo "520n-mx Flash successful!"
+                echo "Please power cycle node for new flash image to take affect."
+            else
+                echo "520n-mx Flash failed. Exit code: $?"
+                exit 1 # Exit the script with a failure code
+            fi
 
-            echo "Flash Complete if successful please power cycle node for new flash image to take affect."
         else
             echo "Error: FPGA ID must be in range of 0-3"
         fi

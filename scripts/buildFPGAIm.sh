@@ -13,7 +13,14 @@ filename="$1"
 if [ -f "$filename" ]; then
   projectName="${filename%.*}"
   quartus_sh --flow compile $projectName
-    
+  if [ $? -eq 0 ]; then
+    echo "Quartus compilation successful!"
+  else
+    echo "Quartus compilation failed. Exit code: $?"
+    exit 1 # Exit the script with a failure code
+  fi
 else
   echo "'$filename' does not exist or is not a regular file."
+  exit 1 # Exit the script with a failure code
 fi
+exit 0

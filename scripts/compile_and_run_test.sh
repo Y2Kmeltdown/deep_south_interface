@@ -13,6 +13,3 @@ else
         echo "Argument 2 must be a node between 0 and 3"
     fi
 fi
-
-
-
