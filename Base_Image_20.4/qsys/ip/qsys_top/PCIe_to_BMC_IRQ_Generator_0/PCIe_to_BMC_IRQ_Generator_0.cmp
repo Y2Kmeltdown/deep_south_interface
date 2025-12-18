@@ -1,0 +1,14 @@
+	component PCIe_to_BMC_IRQ_Generator_0 is
+		port (
+			address    : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- address
+			chipselect : in  std_logic                     := 'X';             -- chipselect
+			write_n    : in  std_logic                     := 'X';             -- write_n
+			writedata  : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			readdata   : out std_logic_vector(31 downto 0);                    -- readdata
+			clk        : in  std_logic                     := 'X';             -- clk
+			reset_n    : in  std_logic                     := 'X';             -- reset_n
+			irq_in     : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- irq_in
+			irq        : out std_logic                                         -- irq
+		);
+	end component PCIe_to_BMC_IRQ_Generator_0;
+

@@ -1,6 +1,7 @@
 /build
 .vscode
 src/test.c
-Base_Image/build/output_files
-Base_Image/build/tmp-clearbox
+Base_Image_20.4/build/output_files
+Base_Image_20.4/build/tmp-clearbox
+Base_Image_20.4/build/qdb
 Minimum_BIST.zip

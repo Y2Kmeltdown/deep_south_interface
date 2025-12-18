@@ -1,0 +1,20 @@
+Core: qsys_top_hbm_0_altera_abstract_uib_191_bkp7vva - Instance: u30|hbm_0|hbm_0|uib
+Path, Setup Margin, Hold Margin
+"HBM/UIB (2 Slow vid2 100C Model)",-3.766,0.027
+"HBM/UIB Min Pulse (2 Slow vid2 100C Model)",0.403,--
+"HBM/UIB Recovery/Removal (2 Slow vid2 100C Model)",-3.875,0.197
+"HBM/UIB (2 Slow vid2 0C Model)",-3.745,0.032
+"HBM/UIB Min Pulse (2 Slow vid2 0C Model)",0.391,--
+"HBM/UIB Recovery/Removal (2 Slow vid2 0C Model)",-3.881,0.266
+"HBM/UIB (Slow 900mV 100C Model)",-4.356,0.042
+"HBM/UIB Min Pulse (Slow 900mV 100C Model)",0.379,--
+"HBM/UIB Recovery/Removal (Slow 900mV 100C Model)",-4.495,0.313
+"HBM/UIB (Slow 900mV 0C Model)",-4.177,0.044
+"HBM/UIB Min Pulse (Slow 900mV 0C Model)",0.351,--
+"HBM/UIB Recovery/Removal (Slow 900mV 0C Model)",-4.349,0.204
+"HBM/UIB (Fast 900mV 100C Model)",-4.262,0.012
+"HBM/UIB Min Pulse (Fast 900mV 100C Model)",0.411,--
+"HBM/UIB Recovery/Removal (Fast 900mV 100C Model)",-4.173,0.484
+"HBM/UIB (Fast 900mV 0C Model)",-3.71,0.017
+"HBM/UIB Min Pulse (Fast 900mV 0C Model)",0.41,--
+"HBM/UIB Recovery/Removal (Fast 900mV 0C Model)",-3.426,0.386

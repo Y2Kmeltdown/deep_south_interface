@@ -1,0 +1,9 @@
+	component s10_reset_release is
+		generic (
+			DEVICE_FAMILY : string := "Stratix 10"
+		);
+		port (
+			ninit_done : out std_logic   -- ninit_done
+		);
+	end component s10_reset_release;
+

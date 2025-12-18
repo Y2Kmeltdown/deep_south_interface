@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="altera_iopll_191/sim/esram_altera_iopll_191_sjjhuna.vo"
+   type="VERILOG"
+   library="altera_iopll_191" />
+ <file
+   path="altera_iopll_191/sim/stratix10_altera_iopll.v"
+   type="VERILOG"
+   library="altera_iopll_191" />
+ <file
+   path="esram_191/sim/iopll.vhd"
+   type="VHDL"
+   library="esram_191"
+   hasInlineConfiguration="true" />
+ <file
+   path="esram_191/sim/esram_esram_191_bykom6q.sv"
+   type="SYSTEM_VERILOG"
+   library="esram_191" />
+ <file
+   path="esram_191/sim/stratix10_esram_sdc_parameters.tcl"
+   type="TCL_ENTITY"
+   library="esram_191" />
+ <file
+   path="esram_191/sim/stratix10_esram.sdc"
+   type="SDC_ENTITY"
+   library="esram_191" />
+ <file
+   path="sim/esram.vhd"
+   type="VHDL"
+   library="esram"
+   hasInlineConfiguration="true" />
+ <topLevel name="esram.esram" />
+ <deviceFamily name="stratix10" />
+</simPackage>

@@ -1,0 +1,9 @@
+	component s10_clock_mux is
+		port (
+			inclk0x   : in  std_logic := 'X'; -- clk
+			inclk1x   : in  std_logic := 'X'; -- clk
+			clkselect : in  std_logic := 'X'; -- export
+			outclk    : out std_logic         -- clk
+		);
+	end component s10_clock_mux;
+

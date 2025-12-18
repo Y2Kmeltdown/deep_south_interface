@@ -1,0 +1,47 @@
+	ed_synth u0 (
+		.bottom_core_clk_iopll_reset_reset       (_connected_to_bottom_core_clk_iopll_reset_reset_),       //   input,  width = 1,  bottom_core_clk_iopll_reset.reset
+		.bottom_core_clk_iopll_refclk_clk        (_connected_to_bottom_core_clk_iopll_refclk_clk_),        //   input,  width = 1, bottom_core_clk_iopll_refclk.clk
+		.bottom_pll_ref_clk_clk                  (_connected_to_bottom_pll_ref_clk_clk_),                  //   input,  width = 1,           bottom_pll_ref_clk.clk
+		.bottom_wmcrst_n_in_reset_n              (_connected_to_bottom_wmcrst_n_in_reset_n_),              //   input,  width = 1,           bottom_wmcrst_n_in.reset_n
+		.bottom_only_reset_in_reset              (_connected_to_bottom_only_reset_in_reset_),              //   input,  width = 1,         bottom_only_reset_in.reset
+		.bottom_m2u_bridge_cattrip               (_connected_to_bottom_m2u_bridge_cattrip_),               //   input,  width = 1,            bottom_m2u_bridge.cattrip
+		.bottom_m2u_bridge_temp                  (_connected_to_bottom_m2u_bridge_temp_),                  //   input,  width = 3,                             .temp
+		.bottom_m2u_bridge_wso                   (_connected_to_bottom_m2u_bridge_wso_),                   //   input,  width = 8,                             .wso
+		.bottom_m2u_bridge_reset_n               (_connected_to_bottom_m2u_bridge_reset_n_),               //  output,  width = 1,                             .reset_n
+		.bottom_m2u_bridge_wrst_n                (_connected_to_bottom_m2u_bridge_wrst_n_),                //  output,  width = 1,                             .wrst_n
+		.bottom_m2u_bridge_wrck                  (_connected_to_bottom_m2u_bridge_wrck_),                  //  output,  width = 1,                             .wrck
+		.bottom_m2u_bridge_shiftwr               (_connected_to_bottom_m2u_bridge_shiftwr_),               //  output,  width = 1,                             .shiftwr
+		.bottom_m2u_bridge_capturewr             (_connected_to_bottom_m2u_bridge_capturewr_),             //  output,  width = 1,                             .capturewr
+		.bottom_m2u_bridge_updatewr              (_connected_to_bottom_m2u_bridge_updatewr_),              //  output,  width = 1,                             .updatewr
+		.bottom_m2u_bridge_selectwir             (_connected_to_bottom_m2u_bridge_selectwir_),             //  output,  width = 1,                             .selectwir
+		.bottom_m2u_bridge_wsi                   (_connected_to_bottom_m2u_bridge_wsi_),                   //  output,  width = 1,                             .wsi
+		.top_pll_ref_clk_clk                     (_connected_to_top_pll_ref_clk_clk_),                     //   input,  width = 1,              top_pll_ref_clk.clk
+		.top_wmcrst_n_in_reset_n                 (_connected_to_top_wmcrst_n_in_reset_n_),                 //   input,  width = 1,              top_wmcrst_n_in.reset_n
+		.top_only_reset_in_reset                 (_connected_to_top_only_reset_in_reset_),                 //   input,  width = 1,            top_only_reset_in.reset
+		.top_m2u_bridge_cattrip                  (_connected_to_top_m2u_bridge_cattrip_),                  //   input,  width = 1,               top_m2u_bridge.cattrip
+		.top_m2u_bridge_temp                     (_connected_to_top_m2u_bridge_temp_),                     //   input,  width = 3,                             .temp
+		.top_m2u_bridge_wso                      (_connected_to_top_m2u_bridge_wso_),                      //   input,  width = 8,                             .wso
+		.top_m2u_bridge_reset_n                  (_connected_to_top_m2u_bridge_reset_n_),                  //  output,  width = 1,                             .reset_n
+		.top_m2u_bridge_wrst_n                   (_connected_to_top_m2u_bridge_wrst_n_),                   //  output,  width = 1,                             .wrst_n
+		.top_m2u_bridge_wrck                     (_connected_to_top_m2u_bridge_wrck_),                     //  output,  width = 1,                             .wrck
+		.top_m2u_bridge_shiftwr                  (_connected_to_top_m2u_bridge_shiftwr_),                  //  output,  width = 1,                             .shiftwr
+		.top_m2u_bridge_capturewr                (_connected_to_top_m2u_bridge_capturewr_),                //  output,  width = 1,                             .capturewr
+		.top_m2u_bridge_updatewr                 (_connected_to_top_m2u_bridge_updatewr_),                 //  output,  width = 1,                             .updatewr
+		.top_m2u_bridge_selectwir                (_connected_to_top_m2u_bridge_selectwir_),                //  output,  width = 1,                             .selectwir
+		.top_m2u_bridge_wsi                      (_connected_to_top_m2u_bridge_wsi_),                      //  output,  width = 1,                             .wsi
+		.tg_bottom0_0_status_traffic_gen_pass    (_connected_to_tg_bottom0_0_status_traffic_gen_pass_),    //  output,  width = 1,          tg_bottom0_0_status.traffic_gen_pass
+		.tg_bottom0_0_status_traffic_gen_fail    (_connected_to_tg_bottom0_0_status_traffic_gen_fail_),    //  output,  width = 1,                             .traffic_gen_fail
+		.tg_bottom0_0_status_traffic_gen_timeout (_connected_to_tg_bottom0_0_status_traffic_gen_timeout_), //  output,  width = 1,                             .traffic_gen_timeout
+		.tg_bottom0_1_status_traffic_gen_pass    (_connected_to_tg_bottom0_1_status_traffic_gen_pass_),    //  output,  width = 1,          tg_bottom0_1_status.traffic_gen_pass
+		.tg_bottom0_1_status_traffic_gen_fail    (_connected_to_tg_bottom0_1_status_traffic_gen_fail_),    //  output,  width = 1,                             .traffic_gen_fail
+		.tg_bottom0_1_status_traffic_gen_timeout (_connected_to_tg_bottom0_1_status_traffic_gen_timeout_), //  output,  width = 1,                             .traffic_gen_timeout
+		.tg_top0_0_status_traffic_gen_pass       (_connected_to_tg_top0_0_status_traffic_gen_pass_),       //  output,  width = 1,             tg_top0_0_status.traffic_gen_pass
+		.tg_top0_0_status_traffic_gen_fail       (_connected_to_tg_top0_0_status_traffic_gen_fail_),       //  output,  width = 1,                             .traffic_gen_fail
+		.tg_top0_0_status_traffic_gen_timeout    (_connected_to_tg_top0_0_status_traffic_gen_timeout_),    //  output,  width = 1,                             .traffic_gen_timeout
+		.tg_top0_1_status_traffic_gen_pass       (_connected_to_tg_top0_1_status_traffic_gen_pass_),       //  output,  width = 1,             tg_top0_1_status.traffic_gen_pass
+		.tg_top0_1_status_traffic_gen_fail       (_connected_to_tg_top0_1_status_traffic_gen_fail_),       //  output,  width = 1,                             .traffic_gen_fail
+		.tg_top0_1_status_traffic_gen_timeout    (_connected_to_tg_top0_1_status_traffic_gen_timeout_),    //  output,  width = 1,                             .traffic_gen_timeout
+		.top_core_clk_iopll_reset_reset          (_connected_to_top_core_clk_iopll_reset_reset_),          //   input,  width = 1,     top_core_clk_iopll_reset.reset
+		.top_core_clk_iopll_ref_clk_clk          (_connected_to_top_core_clk_iopll_ref_clk_clk_)           //   input,  width = 1,   top_core_clk_iopll_ref_clk.clk
+	);
+

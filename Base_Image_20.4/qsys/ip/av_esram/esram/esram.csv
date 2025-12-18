@@ -1,0 +1,25 @@
+# system info esram on 2019.05.22.16:53:19
+system_info:
+name,value
+DEVICE,1SM21CHU2F53E2VG
+DEVICE_FAMILY,Stratix 10
+GENERATION_ID,0
+#
+#
+# Files generated for esram on 2019.05.22.16:53:19
+files:
+filepath,kind,attributes,module,is_top
+sim/esram.vhd,VHDL,CONTAINS_INLINE_CONFIGURATION,esram,true
+esram_191/sim/esram_esram_191_bykom6q.sv,SYSTEM_VERILOG,,esram_esram_191_bykom6q,false
+esram_191/sim/stratix10_esram_sdc_parameters.tcl,TCL_ENTITY,,esram_esram_191_bykom6q,false
+esram_191/sim/stratix10_esram.sdc,SDC_ENTITY,NO_AUTO_INSTANCE_DISCOVERY NO_SDC_PROMOTION,esram_esram_191_bykom6q,false
+esram_191/sim/iopll.vhd,VHDL,CONTAINS_INLINE_CONFIGURATION,iopll,false
+altera_iopll_191/sim/esram_altera_iopll_191_sjjhuna.vo,VERILOG,,esram_altera_iopll_191_sjjhuna,false
+altera_iopll_191/sim/stratix10_altera_iopll.v,VERILOG,,esram_altera_iopll_191_sjjhuna,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+esram.esram_0,esram_esram_191_bykom6q
+esram.esram_0.iopll,iopll
+esram.esram_0.iopll.iopll,esram_altera_iopll_191_sjjhuna

@@ -1,0 +1,39 @@
+	component qsys_top_av_hbm_0 is
+		port (
+			clk                              : in  std_logic                     := 'X';             -- clk
+			rst                              : in  std_logic                     := 'X';             -- reset
+			av_address                       : in  std_logic_vector(0 downto 0)  := (others => 'X'); -- address
+			av_read                          : in  std_logic                     := 'X';             -- read
+			av_waitrequest                   : out std_logic;                                        -- waitrequest
+			av_write                         : in  std_logic                     := 'X';             -- write
+			av_readdata                      : out std_logic_vector(31 downto 0);                    -- readdata
+			av_writedata                     : in  std_logic_vector(31 downto 0) := (others => 'X'); -- writedata
+			bottom_core_clk_iopll_refclk_clk : in  std_logic                     := 'X';             -- iopll_ref_clk
+			bottom_pll_ref_clk_clk           : in  std_logic                     := 'X';             -- pll_ref_clk
+			top_core_clk_iopll_ref_clk_clk   : in  std_logic                     := 'X';             -- iopll_ref_clk
+			top_pll_ref_clk_clk              : in  std_logic                     := 'X';             -- pll_ref_clk
+			bottom_m2u_bridge_cattrip        : in  std_logic                     := 'X';             -- cattrip
+			bottom_m2u_bridge_temp           : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- temp
+			bottom_m2u_bridge_wso            : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- wso
+			bottom_m2u_bridge_reset_n        : out std_logic;                                        -- reset
+			bottom_m2u_bridge_wrst_n         : out std_logic;                                        -- wrst
+			bottom_m2u_bridge_wrck           : out std_logic;                                        -- wrck
+			bottom_m2u_bridge_shiftwr        : out std_logic;                                        -- shiftwr
+			bottom_m2u_bridge_capturewr      : out std_logic;                                        -- capturewr
+			bottom_m2u_bridge_updatewr       : out std_logic;                                        -- updatewr
+			bottom_m2u_bridge_selectwir      : out std_logic;                                        -- selectwir
+			bottom_m2u_bridge_wsi            : out std_logic;                                        -- wsi
+			top_m2u_bridge_cattrip           : in  std_logic                     := 'X';             -- cattrip
+			top_m2u_bridge_temp              : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- temp
+			top_m2u_bridge_wso               : in  std_logic_vector(7 downto 0)  := (others => 'X'); -- wso
+			top_m2u_bridge_reset_n           : out std_logic;                                        -- reset
+			top_m2u_bridge_wrst_n            : out std_logic;                                        -- wrst
+			top_m2u_bridge_wrck              : out std_logic;                                        -- wrck
+			top_m2u_bridge_shiftwr           : out std_logic;                                        -- shiftwr
+			top_m2u_bridge_capturewr         : out std_logic;                                        -- capturewr
+			top_m2u_bridge_updatewr          : out std_logic;                                        -- updatewr
+			top_m2u_bridge_selectwir         : out std_logic;                                        -- selectwir
+			top_m2u_bridge_wsi               : out std_logic                                         -- wsi
+		);
+	end component qsys_top_av_hbm_0;
+

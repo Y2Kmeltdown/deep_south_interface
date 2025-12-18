@@ -1,0 +1,532 @@
+	component qsys_top_avmm_bridge_512_0 is
+		port (
+			refclk                    : in  std_logic                      := 'X';             -- clk
+			coreclkout_hip            : out std_logic;                                         -- clk
+			npor                      : in  std_logic                      := 'X';             -- npor
+			pin_perst                 : in  std_logic                      := 'X';             -- pin_perst
+			app_nreset_status         : out std_logic;                                         -- reset_n
+			ninit_done                : in  std_logic                      := 'X';             -- ninit_done
+			bam_pfnum_o               : out std_logic_vector(1 downto 0);                      -- pfnum
+			bam_bar_o                 : out std_logic_vector(2 downto 0);                      -- barnum
+			bam_waitrequest_i         : in  std_logic                      := 'X';             -- waitrequest
+			bam_address_o             : out std_logic_vector(19 downto 0);                     -- address
+			bam_byteenable_o          : out std_logic_vector(63 downto 0);                     -- byteenable
+			bam_read_o                : out std_logic;                                         -- read
+			bam_readdata_i            : in  std_logic_vector(511 downto 0) := (others => 'X'); -- readdata
+			bam_readdatavalid_i       : in  std_logic                      := 'X';             -- readdatavalid
+			bam_write_o               : out std_logic;                                         -- write
+			bam_writedata_o           : out std_logic_vector(511 downto 0);                    -- writedata
+			bam_burstcount_o          : out std_logic_vector(3 downto 0);                      -- burstcount
+			bam_response_i            : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- response
+			bam_writeresponsevalid_i  : in  std_logic                      := 'X';             -- writeresponsevalid
+			flr_pf_done_i             : in  std_logic                      := 'X';             -- flr_pf_done
+			flr_pf_active_o           : out std_logic;                                         -- flr_pf_active
+			bus_master_enable_o       : out std_logic_vector(3 downto 0);                      -- bus_master_enable
+			simu_mode_pipe            : in  std_logic                      := 'X';             -- simu_mode_pipe
+			test_in                   : in  std_logic_vector(66 downto 0)  := (others => 'X'); -- test_in
+			sim_pipe_pclk_in          : in  std_logic                      := 'X';             -- sim_pipe_pclk_in
+			sim_pipe_rate             : out std_logic_vector(1 downto 0);                      -- sim_pipe_rate
+			sim_ltssmstate            : out std_logic_vector(5 downto 0);                      -- sim_ltssmstate
+			txdata0                   : out std_logic_vector(31 downto 0);                     -- txdata0
+			txdata1                   : out std_logic_vector(31 downto 0);                     -- txdata1
+			txdata2                   : out std_logic_vector(31 downto 0);                     -- txdata2
+			txdata3                   : out std_logic_vector(31 downto 0);                     -- txdata3
+			txdata4                   : out std_logic_vector(31 downto 0);                     -- txdata4
+			txdata5                   : out std_logic_vector(31 downto 0);                     -- txdata5
+			txdata6                   : out std_logic_vector(31 downto 0);                     -- txdata6
+			txdata7                   : out std_logic_vector(31 downto 0);                     -- txdata7
+			txdata8                   : out std_logic_vector(31 downto 0);                     -- txdata8
+			txdata9                   : out std_logic_vector(31 downto 0);                     -- txdata9
+			txdata10                  : out std_logic_vector(31 downto 0);                     -- txdata10
+			txdata11                  : out std_logic_vector(31 downto 0);                     -- txdata11
+			txdata12                  : out std_logic_vector(31 downto 0);                     -- txdata12
+			txdata13                  : out std_logic_vector(31 downto 0);                     -- txdata13
+			txdata14                  : out std_logic_vector(31 downto 0);                     -- txdata14
+			txdata15                  : out std_logic_vector(31 downto 0);                     -- txdata15
+			txdatak0                  : out std_logic_vector(3 downto 0);                      -- txdatak0
+			txdatak1                  : out std_logic_vector(3 downto 0);                      -- txdatak1
+			txdatak2                  : out std_logic_vector(3 downto 0);                      -- txdatak2
+			txdatak3                  : out std_logic_vector(3 downto 0);                      -- txdatak3
+			txdatak4                  : out std_logic_vector(3 downto 0);                      -- txdatak4
+			txdatak5                  : out std_logic_vector(3 downto 0);                      -- txdatak5
+			txdatak6                  : out std_logic_vector(3 downto 0);                      -- txdatak6
+			txdatak7                  : out std_logic_vector(3 downto 0);                      -- txdatak7
+			txdatak8                  : out std_logic_vector(3 downto 0);                      -- txdatak8
+			txdatak9                  : out std_logic_vector(3 downto 0);                      -- txdatak9
+			txdatak10                 : out std_logic_vector(3 downto 0);                      -- txdatak10
+			txdatak11                 : out std_logic_vector(3 downto 0);                      -- txdatak11
+			txdatak12                 : out std_logic_vector(3 downto 0);                      -- txdatak12
+			txdatak13                 : out std_logic_vector(3 downto 0);                      -- txdatak13
+			txdatak14                 : out std_logic_vector(3 downto 0);                      -- txdatak14
+			txdatak15                 : out std_logic_vector(3 downto 0);                      -- txdatak15
+			txcompl0                  : out std_logic;                                         -- txcompl0
+			txcompl1                  : out std_logic;                                         -- txcompl1
+			txcompl2                  : out std_logic;                                         -- txcompl2
+			txcompl3                  : out std_logic;                                         -- txcompl3
+			txcompl4                  : out std_logic;                                         -- txcompl4
+			txcompl5                  : out std_logic;                                         -- txcompl5
+			txcompl6                  : out std_logic;                                         -- txcompl6
+			txcompl7                  : out std_logic;                                         -- txcompl7
+			txcompl8                  : out std_logic;                                         -- txcompl8
+			txcompl9                  : out std_logic;                                         -- txcompl9
+			txcompl10                 : out std_logic;                                         -- txcompl10
+			txcompl11                 : out std_logic;                                         -- txcompl11
+			txcompl12                 : out std_logic;                                         -- txcompl12
+			txcompl13                 : out std_logic;                                         -- txcompl13
+			txcompl14                 : out std_logic;                                         -- txcompl14
+			txcompl15                 : out std_logic;                                         -- txcompl15
+			txelecidle0               : out std_logic;                                         -- txelecidle0
+			txelecidle1               : out std_logic;                                         -- txelecidle1
+			txelecidle2               : out std_logic;                                         -- txelecidle2
+			txelecidle3               : out std_logic;                                         -- txelecidle3
+			txelecidle4               : out std_logic;                                         -- txelecidle4
+			txelecidle5               : out std_logic;                                         -- txelecidle5
+			txelecidle6               : out std_logic;                                         -- txelecidle6
+			txelecidle7               : out std_logic;                                         -- txelecidle7
+			txelecidle8               : out std_logic;                                         -- txelecidle8
+			txelecidle9               : out std_logic;                                         -- txelecidle9
+			txelecidle10              : out std_logic;                                         -- txelecidle10
+			txelecidle11              : out std_logic;                                         -- txelecidle11
+			txelecidle12              : out std_logic;                                         -- txelecidle12
+			txelecidle13              : out std_logic;                                         -- txelecidle13
+			txelecidle14              : out std_logic;                                         -- txelecidle14
+			txelecidle15              : out std_logic;                                         -- txelecidle15
+			txdetectrx0               : out std_logic;                                         -- txdetectrx0
+			txdetectrx1               : out std_logic;                                         -- txdetectrx1
+			txdetectrx2               : out std_logic;                                         -- txdetectrx2
+			txdetectrx3               : out std_logic;                                         -- txdetectrx3
+			txdetectrx4               : out std_logic;                                         -- txdetectrx4
+			txdetectrx5               : out std_logic;                                         -- txdetectrx5
+			txdetectrx6               : out std_logic;                                         -- txdetectrx6
+			txdetectrx7               : out std_logic;                                         -- txdetectrx7
+			txdetectrx8               : out std_logic;                                         -- txdetectrx8
+			txdetectrx9               : out std_logic;                                         -- txdetectrx9
+			txdetectrx10              : out std_logic;                                         -- txdetectrx10
+			txdetectrx11              : out std_logic;                                         -- txdetectrx11
+			txdetectrx12              : out std_logic;                                         -- txdetectrx12
+			txdetectrx13              : out std_logic;                                         -- txdetectrx13
+			txdetectrx14              : out std_logic;                                         -- txdetectrx14
+			txdetectrx15              : out std_logic;                                         -- txdetectrx15
+			powerdown0                : out std_logic_vector(1 downto 0);                      -- powerdown0
+			powerdown1                : out std_logic_vector(1 downto 0);                      -- powerdown1
+			powerdown2                : out std_logic_vector(1 downto 0);                      -- powerdown2
+			powerdown3                : out std_logic_vector(1 downto 0);                      -- powerdown3
+			powerdown4                : out std_logic_vector(1 downto 0);                      -- powerdown4
+			powerdown5                : out std_logic_vector(1 downto 0);                      -- powerdown5
+			powerdown6                : out std_logic_vector(1 downto 0);                      -- powerdown6
+			powerdown7                : out std_logic_vector(1 downto 0);                      -- powerdown7
+			powerdown8                : out std_logic_vector(1 downto 0);                      -- powerdown8
+			powerdown9                : out std_logic_vector(1 downto 0);                      -- powerdown9
+			powerdown10               : out std_logic_vector(1 downto 0);                      -- powerdown10
+			powerdown11               : out std_logic_vector(1 downto 0);                      -- powerdown11
+			powerdown12               : out std_logic_vector(1 downto 0);                      -- powerdown12
+			powerdown13               : out std_logic_vector(1 downto 0);                      -- powerdown13
+			powerdown14               : out std_logic_vector(1 downto 0);                      -- powerdown14
+			powerdown15               : out std_logic_vector(1 downto 0);                      -- powerdown15
+			txmargin0                 : out std_logic_vector(2 downto 0);                      -- txmargin0
+			txmargin1                 : out std_logic_vector(2 downto 0);                      -- txmargin1
+			txmargin2                 : out std_logic_vector(2 downto 0);                      -- txmargin2
+			txmargin3                 : out std_logic_vector(2 downto 0);                      -- txmargin3
+			txmargin4                 : out std_logic_vector(2 downto 0);                      -- txmargin4
+			txmargin5                 : out std_logic_vector(2 downto 0);                      -- txmargin5
+			txmargin6                 : out std_logic_vector(2 downto 0);                      -- txmargin6
+			txmargin7                 : out std_logic_vector(2 downto 0);                      -- txmargin7
+			txmargin8                 : out std_logic_vector(2 downto 0);                      -- txmargin8
+			txmargin9                 : out std_logic_vector(2 downto 0);                      -- txmargin9
+			txmargin10                : out std_logic_vector(2 downto 0);                      -- txmargin10
+			txmargin11                : out std_logic_vector(2 downto 0);                      -- txmargin11
+			txmargin12                : out std_logic_vector(2 downto 0);                      -- txmargin12
+			txmargin13                : out std_logic_vector(2 downto 0);                      -- txmargin13
+			txmargin14                : out std_logic_vector(2 downto 0);                      -- txmargin14
+			txmargin15                : out std_logic_vector(2 downto 0);                      -- txmargin15
+			txdeemph0                 : out std_logic;                                         -- txdeemph0
+			txdeemph1                 : out std_logic;                                         -- txdeemph1
+			txdeemph2                 : out std_logic;                                         -- txdeemph2
+			txdeemph3                 : out std_logic;                                         -- txdeemph3
+			txdeemph4                 : out std_logic;                                         -- txdeemph4
+			txdeemph5                 : out std_logic;                                         -- txdeemph5
+			txdeemph6                 : out std_logic;                                         -- txdeemph6
+			txdeemph7                 : out std_logic;                                         -- txdeemph7
+			txdeemph8                 : out std_logic;                                         -- txdeemph8
+			txdeemph9                 : out std_logic;                                         -- txdeemph9
+			txdeemph10                : out std_logic;                                         -- txdeemph10
+			txdeemph11                : out std_logic;                                         -- txdeemph11
+			txdeemph12                : out std_logic;                                         -- txdeemph12
+			txdeemph13                : out std_logic;                                         -- txdeemph13
+			txdeemph14                : out std_logic;                                         -- txdeemph14
+			txdeemph15                : out std_logic;                                         -- txdeemph15
+			txswing0                  : out std_logic;                                         -- txswing0
+			txswing1                  : out std_logic;                                         -- txswing1
+			txswing2                  : out std_logic;                                         -- txswing2
+			txswing3                  : out std_logic;                                         -- txswing3
+			txswing4                  : out std_logic;                                         -- txswing4
+			txswing5                  : out std_logic;                                         -- txswing5
+			txswing6                  : out std_logic;                                         -- txswing6
+			txswing7                  : out std_logic;                                         -- txswing7
+			txswing8                  : out std_logic;                                         -- txswing8
+			txswing9                  : out std_logic;                                         -- txswing9
+			txswing10                 : out std_logic;                                         -- txswing10
+			txswing11                 : out std_logic;                                         -- txswing11
+			txswing12                 : out std_logic;                                         -- txswing12
+			txswing13                 : out std_logic;                                         -- txswing13
+			txswing14                 : out std_logic;                                         -- txswing14
+			txswing15                 : out std_logic;                                         -- txswing15
+			txsynchd0                 : out std_logic_vector(1 downto 0);                      -- txsynchd0
+			txsynchd1                 : out std_logic_vector(1 downto 0);                      -- txsynchd1
+			txsynchd2                 : out std_logic_vector(1 downto 0);                      -- txsynchd2
+			txsynchd3                 : out std_logic_vector(1 downto 0);                      -- txsynchd3
+			txsynchd4                 : out std_logic_vector(1 downto 0);                      -- txsynchd4
+			txsynchd5                 : out std_logic_vector(1 downto 0);                      -- txsynchd5
+			txsynchd6                 : out std_logic_vector(1 downto 0);                      -- txsynchd6
+			txsynchd7                 : out std_logic_vector(1 downto 0);                      -- txsynchd7
+			txsynchd8                 : out std_logic_vector(1 downto 0);                      -- txsynchd8
+			txsynchd9                 : out std_logic_vector(1 downto 0);                      -- txsynchd9
+			txsynchd10                : out std_logic_vector(1 downto 0);                      -- txsynchd10
+			txsynchd11                : out std_logic_vector(1 downto 0);                      -- txsynchd11
+			txsynchd12                : out std_logic_vector(1 downto 0);                      -- txsynchd12
+			txsynchd13                : out std_logic_vector(1 downto 0);                      -- txsynchd13
+			txsynchd14                : out std_logic_vector(1 downto 0);                      -- txsynchd14
+			txsynchd15                : out std_logic_vector(1 downto 0);                      -- txsynchd15
+			txblkst0                  : out std_logic;                                         -- txblkst0
+			txblkst1                  : out std_logic;                                         -- txblkst1
+			txblkst2                  : out std_logic;                                         -- txblkst2
+			txblkst3                  : out std_logic;                                         -- txblkst3
+			txblkst4                  : out std_logic;                                         -- txblkst4
+			txblkst5                  : out std_logic;                                         -- txblkst5
+			txblkst6                  : out std_logic;                                         -- txblkst6
+			txblkst7                  : out std_logic;                                         -- txblkst7
+			txblkst8                  : out std_logic;                                         -- txblkst8
+			txblkst9                  : out std_logic;                                         -- txblkst9
+			txblkst10                 : out std_logic;                                         -- txblkst10
+			txblkst11                 : out std_logic;                                         -- txblkst11
+			txblkst12                 : out std_logic;                                         -- txblkst12
+			txblkst13                 : out std_logic;                                         -- txblkst13
+			txblkst14                 : out std_logic;                                         -- txblkst14
+			txblkst15                 : out std_logic;                                         -- txblkst15
+			txdataskip0               : out std_logic;                                         -- txdataskip0
+			txdataskip1               : out std_logic;                                         -- txdataskip1
+			txdataskip2               : out std_logic;                                         -- txdataskip2
+			txdataskip3               : out std_logic;                                         -- txdataskip3
+			txdataskip4               : out std_logic;                                         -- txdataskip4
+			txdataskip5               : out std_logic;                                         -- txdataskip5
+			txdataskip6               : out std_logic;                                         -- txdataskip6
+			txdataskip7               : out std_logic;                                         -- txdataskip7
+			txdataskip8               : out std_logic;                                         -- txdataskip8
+			txdataskip9               : out std_logic;                                         -- txdataskip9
+			txdataskip10              : out std_logic;                                         -- txdataskip10
+			txdataskip11              : out std_logic;                                         -- txdataskip11
+			txdataskip12              : out std_logic;                                         -- txdataskip12
+			txdataskip13              : out std_logic;                                         -- txdataskip13
+			txdataskip14              : out std_logic;                                         -- txdataskip14
+			txdataskip15              : out std_logic;                                         -- txdataskip15
+			rate0                     : out std_logic_vector(1 downto 0);                      -- rate0
+			rate1                     : out std_logic_vector(1 downto 0);                      -- rate1
+			rate2                     : out std_logic_vector(1 downto 0);                      -- rate2
+			rate3                     : out std_logic_vector(1 downto 0);                      -- rate3
+			rate4                     : out std_logic_vector(1 downto 0);                      -- rate4
+			rate5                     : out std_logic_vector(1 downto 0);                      -- rate5
+			rate6                     : out std_logic_vector(1 downto 0);                      -- rate6
+			rate7                     : out std_logic_vector(1 downto 0);                      -- rate7
+			rate8                     : out std_logic_vector(1 downto 0);                      -- rate8
+			rate9                     : out std_logic_vector(1 downto 0);                      -- rate9
+			rate10                    : out std_logic_vector(1 downto 0);                      -- rate10
+			rate11                    : out std_logic_vector(1 downto 0);                      -- rate11
+			rate12                    : out std_logic_vector(1 downto 0);                      -- rate12
+			rate13                    : out std_logic_vector(1 downto 0);                      -- rate13
+			rate14                    : out std_logic_vector(1 downto 0);                      -- rate14
+			rate15                    : out std_logic_vector(1 downto 0);                      -- rate15
+			rxpolarity0               : out std_logic;                                         -- rxpolarity0
+			rxpolarity1               : out std_logic;                                         -- rxpolarity1
+			rxpolarity2               : out std_logic;                                         -- rxpolarity2
+			rxpolarity3               : out std_logic;                                         -- rxpolarity3
+			rxpolarity4               : out std_logic;                                         -- rxpolarity4
+			rxpolarity5               : out std_logic;                                         -- rxpolarity5
+			rxpolarity6               : out std_logic;                                         -- rxpolarity6
+			rxpolarity7               : out std_logic;                                         -- rxpolarity7
+			rxpolarity8               : out std_logic;                                         -- rxpolarity8
+			rxpolarity9               : out std_logic;                                         -- rxpolarity9
+			rxpolarity10              : out std_logic;                                         -- rxpolarity10
+			rxpolarity11              : out std_logic;                                         -- rxpolarity11
+			rxpolarity12              : out std_logic;                                         -- rxpolarity12
+			rxpolarity13              : out std_logic;                                         -- rxpolarity13
+			rxpolarity14              : out std_logic;                                         -- rxpolarity14
+			rxpolarity15              : out std_logic;                                         -- rxpolarity15
+			currentrxpreset0          : out std_logic_vector(2 downto 0);                      -- currentrxpreset0
+			currentrxpreset1          : out std_logic_vector(2 downto 0);                      -- currentrxpreset1
+			currentrxpreset2          : out std_logic_vector(2 downto 0);                      -- currentrxpreset2
+			currentrxpreset3          : out std_logic_vector(2 downto 0);                      -- currentrxpreset3
+			currentrxpreset4          : out std_logic_vector(2 downto 0);                      -- currentrxpreset4
+			currentrxpreset5          : out std_logic_vector(2 downto 0);                      -- currentrxpreset5
+			currentrxpreset6          : out std_logic_vector(2 downto 0);                      -- currentrxpreset6
+			currentrxpreset7          : out std_logic_vector(2 downto 0);                      -- currentrxpreset7
+			currentrxpreset8          : out std_logic_vector(2 downto 0);                      -- currentrxpreset8
+			currentrxpreset9          : out std_logic_vector(2 downto 0);                      -- currentrxpreset9
+			currentrxpreset10         : out std_logic_vector(2 downto 0);                      -- currentrxpreset10
+			currentrxpreset11         : out std_logic_vector(2 downto 0);                      -- currentrxpreset11
+			currentrxpreset12         : out std_logic_vector(2 downto 0);                      -- currentrxpreset12
+			currentrxpreset13         : out std_logic_vector(2 downto 0);                      -- currentrxpreset13
+			currentrxpreset14         : out std_logic_vector(2 downto 0);                      -- currentrxpreset14
+			currentrxpreset15         : out std_logic_vector(2 downto 0);                      -- currentrxpreset15
+			currentcoeff0             : out std_logic_vector(17 downto 0);                     -- currentcoeff0
+			currentcoeff1             : out std_logic_vector(17 downto 0);                     -- currentcoeff1
+			currentcoeff2             : out std_logic_vector(17 downto 0);                     -- currentcoeff2
+			currentcoeff3             : out std_logic_vector(17 downto 0);                     -- currentcoeff3
+			currentcoeff4             : out std_logic_vector(17 downto 0);                     -- currentcoeff4
+			currentcoeff5             : out std_logic_vector(17 downto 0);                     -- currentcoeff5
+			currentcoeff6             : out std_logic_vector(17 downto 0);                     -- currentcoeff6
+			currentcoeff7             : out std_logic_vector(17 downto 0);                     -- currentcoeff7
+			currentcoeff8             : out std_logic_vector(17 downto 0);                     -- currentcoeff8
+			currentcoeff9             : out std_logic_vector(17 downto 0);                     -- currentcoeff9
+			currentcoeff10            : out std_logic_vector(17 downto 0);                     -- currentcoeff10
+			currentcoeff11            : out std_logic_vector(17 downto 0);                     -- currentcoeff11
+			currentcoeff12            : out std_logic_vector(17 downto 0);                     -- currentcoeff12
+			currentcoeff13            : out std_logic_vector(17 downto 0);                     -- currentcoeff13
+			currentcoeff14            : out std_logic_vector(17 downto 0);                     -- currentcoeff14
+			currentcoeff15            : out std_logic_vector(17 downto 0);                     -- currentcoeff15
+			rxeqeval0                 : out std_logic;                                         -- rxeqeval0
+			rxeqeval1                 : out std_logic;                                         -- rxeqeval1
+			rxeqeval2                 : out std_logic;                                         -- rxeqeval2
+			rxeqeval3                 : out std_logic;                                         -- rxeqeval3
+			rxeqeval4                 : out std_logic;                                         -- rxeqeval4
+			rxeqeval5                 : out std_logic;                                         -- rxeqeval5
+			rxeqeval6                 : out std_logic;                                         -- rxeqeval6
+			rxeqeval7                 : out std_logic;                                         -- rxeqeval7
+			rxeqeval8                 : out std_logic;                                         -- rxeqeval8
+			rxeqeval9                 : out std_logic;                                         -- rxeqeval9
+			rxeqeval10                : out std_logic;                                         -- rxeqeval10
+			rxeqeval11                : out std_logic;                                         -- rxeqeval11
+			rxeqeval12                : out std_logic;                                         -- rxeqeval12
+			rxeqeval13                : out std_logic;                                         -- rxeqeval13
+			rxeqeval14                : out std_logic;                                         -- rxeqeval14
+			rxeqeval15                : out std_logic;                                         -- rxeqeval15
+			rxeqinprogress0           : out std_logic;                                         -- rxeqinprogress0
+			rxeqinprogress1           : out std_logic;                                         -- rxeqinprogress1
+			rxeqinprogress2           : out std_logic;                                         -- rxeqinprogress2
+			rxeqinprogress3           : out std_logic;                                         -- rxeqinprogress3
+			rxeqinprogress4           : out std_logic;                                         -- rxeqinprogress4
+			rxeqinprogress5           : out std_logic;                                         -- rxeqinprogress5
+			rxeqinprogress6           : out std_logic;                                         -- rxeqinprogress6
+			rxeqinprogress7           : out std_logic;                                         -- rxeqinprogress7
+			rxeqinprogress8           : out std_logic;                                         -- rxeqinprogress8
+			rxeqinprogress9           : out std_logic;                                         -- rxeqinprogress9
+			rxeqinprogress10          : out std_logic;                                         -- rxeqinprogress10
+			rxeqinprogress11          : out std_logic;                                         -- rxeqinprogress11
+			rxeqinprogress12          : out std_logic;                                         -- rxeqinprogress12
+			rxeqinprogress13          : out std_logic;                                         -- rxeqinprogress13
+			rxeqinprogress14          : out std_logic;                                         -- rxeqinprogress14
+			rxeqinprogress15          : out std_logic;                                         -- rxeqinprogress15
+			invalidreq0               : out std_logic;                                         -- invalidreq0
+			invalidreq1               : out std_logic;                                         -- invalidreq1
+			invalidreq2               : out std_logic;                                         -- invalidreq2
+			invalidreq3               : out std_logic;                                         -- invalidreq3
+			invalidreq4               : out std_logic;                                         -- invalidreq4
+			invalidreq5               : out std_logic;                                         -- invalidreq5
+			invalidreq6               : out std_logic;                                         -- invalidreq6
+			invalidreq7               : out std_logic;                                         -- invalidreq7
+			invalidreq8               : out std_logic;                                         -- invalidreq8
+			invalidreq9               : out std_logic;                                         -- invalidreq9
+			invalidreq10              : out std_logic;                                         -- invalidreq10
+			invalidreq11              : out std_logic;                                         -- invalidreq11
+			invalidreq12              : out std_logic;                                         -- invalidreq12
+			invalidreq13              : out std_logic;                                         -- invalidreq13
+			invalidreq14              : out std_logic;                                         -- invalidreq14
+			invalidreq15              : out std_logic;                                         -- invalidreq15
+			rxdata0                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata0
+			rxdata1                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata1
+			rxdata2                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata2
+			rxdata3                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata3
+			rxdata4                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata4
+			rxdata5                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata5
+			rxdata6                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata6
+			rxdata7                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata7
+			rxdata8                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata8
+			rxdata9                   : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata9
+			rxdata10                  : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata10
+			rxdata11                  : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata11
+			rxdata12                  : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata12
+			rxdata13                  : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata13
+			rxdata14                  : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata14
+			rxdata15                  : in  std_logic_vector(31 downto 0)  := (others => 'X'); -- rxdata15
+			rxdatak0                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak0
+			rxdatak1                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak1
+			rxdatak2                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak2
+			rxdatak3                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak3
+			rxdatak4                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak4
+			rxdatak5                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak5
+			rxdatak6                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak6
+			rxdatak7                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak7
+			rxdatak8                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak8
+			rxdatak9                  : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak9
+			rxdatak10                 : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak10
+			rxdatak11                 : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak11
+			rxdatak12                 : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak12
+			rxdatak13                 : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak13
+			rxdatak14                 : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak14
+			rxdatak15                 : in  std_logic_vector(3 downto 0)   := (others => 'X'); -- rxdatak15
+			phystatus0                : in  std_logic                      := 'X';             -- phystatus0
+			phystatus1                : in  std_logic                      := 'X';             -- phystatus1
+			phystatus2                : in  std_logic                      := 'X';             -- phystatus2
+			phystatus3                : in  std_logic                      := 'X';             -- phystatus3
+			phystatus4                : in  std_logic                      := 'X';             -- phystatus4
+			phystatus5                : in  std_logic                      := 'X';             -- phystatus5
+			phystatus6                : in  std_logic                      := 'X';             -- phystatus6
+			phystatus7                : in  std_logic                      := 'X';             -- phystatus7
+			phystatus8                : in  std_logic                      := 'X';             -- phystatus8
+			phystatus9                : in  std_logic                      := 'X';             -- phystatus9
+			phystatus10               : in  std_logic                      := 'X';             -- phystatus10
+			phystatus11               : in  std_logic                      := 'X';             -- phystatus11
+			phystatus12               : in  std_logic                      := 'X';             -- phystatus12
+			phystatus13               : in  std_logic                      := 'X';             -- phystatus13
+			phystatus14               : in  std_logic                      := 'X';             -- phystatus14
+			phystatus15               : in  std_logic                      := 'X';             -- phystatus15
+			rxvalid0                  : in  std_logic                      := 'X';             -- rxvalid0
+			rxvalid1                  : in  std_logic                      := 'X';             -- rxvalid1
+			rxvalid2                  : in  std_logic                      := 'X';             -- rxvalid2
+			rxvalid3                  : in  std_logic                      := 'X';             -- rxvalid3
+			rxvalid4                  : in  std_logic                      := 'X';             -- rxvalid4
+			rxvalid5                  : in  std_logic                      := 'X';             -- rxvalid5
+			rxvalid6                  : in  std_logic                      := 'X';             -- rxvalid6
+			rxvalid7                  : in  std_logic                      := 'X';             -- rxvalid7
+			rxvalid8                  : in  std_logic                      := 'X';             -- rxvalid8
+			rxvalid9                  : in  std_logic                      := 'X';             -- rxvalid9
+			rxvalid10                 : in  std_logic                      := 'X';             -- rxvalid10
+			rxvalid11                 : in  std_logic                      := 'X';             -- rxvalid11
+			rxvalid12                 : in  std_logic                      := 'X';             -- rxvalid12
+			rxvalid13                 : in  std_logic                      := 'X';             -- rxvalid13
+			rxvalid14                 : in  std_logic                      := 'X';             -- rxvalid14
+			rxvalid15                 : in  std_logic                      := 'X';             -- rxvalid15
+			rxstatus0                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus0
+			rxstatus1                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus1
+			rxstatus2                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus2
+			rxstatus3                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus3
+			rxstatus4                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus4
+			rxstatus5                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus5
+			rxstatus6                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus6
+			rxstatus7                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus7
+			rxstatus8                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus8
+			rxstatus9                 : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus9
+			rxstatus10                : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus10
+			rxstatus11                : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus11
+			rxstatus12                : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus12
+			rxstatus13                : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus13
+			rxstatus14                : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus14
+			rxstatus15                : in  std_logic_vector(2 downto 0)   := (others => 'X'); -- rxstatus15
+			rxelecidle0               : in  std_logic                      := 'X';             -- rxelecidle0
+			rxelecidle1               : in  std_logic                      := 'X';             -- rxelecidle1
+			rxelecidle2               : in  std_logic                      := 'X';             -- rxelecidle2
+			rxelecidle3               : in  std_logic                      := 'X';             -- rxelecidle3
+			rxelecidle4               : in  std_logic                      := 'X';             -- rxelecidle4
+			rxelecidle5               : in  std_logic                      := 'X';             -- rxelecidle5
+			rxelecidle6               : in  std_logic                      := 'X';             -- rxelecidle6
+			rxelecidle7               : in  std_logic                      := 'X';             -- rxelecidle7
+			rxelecidle8               : in  std_logic                      := 'X';             -- rxelecidle8
+			rxelecidle9               : in  std_logic                      := 'X';             -- rxelecidle9
+			rxelecidle10              : in  std_logic                      := 'X';             -- rxelecidle10
+			rxelecidle11              : in  std_logic                      := 'X';             -- rxelecidle11
+			rxelecidle12              : in  std_logic                      := 'X';             -- rxelecidle12
+			rxelecidle13              : in  std_logic                      := 'X';             -- rxelecidle13
+			rxelecidle14              : in  std_logic                      := 'X';             -- rxelecidle14
+			rxelecidle15              : in  std_logic                      := 'X';             -- rxelecidle15
+			rxsynchd0                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd0
+			rxsynchd1                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd1
+			rxsynchd2                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd2
+			rxsynchd3                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd3
+			rxsynchd4                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd4
+			rxsynchd5                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd5
+			rxsynchd6                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd6
+			rxsynchd7                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd7
+			rxsynchd8                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd8
+			rxsynchd9                 : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd9
+			rxsynchd10                : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd10
+			rxsynchd11                : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd11
+			rxsynchd12                : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd12
+			rxsynchd13                : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd13
+			rxsynchd14                : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd14
+			rxsynchd15                : in  std_logic_vector(1 downto 0)   := (others => 'X'); -- rxsynchd15
+			rxblkst0                  : in  std_logic                      := 'X';             -- rxblkst0
+			rxblkst1                  : in  std_logic                      := 'X';             -- rxblkst1
+			rxblkst2                  : in  std_logic                      := 'X';             -- rxblkst2
+			rxblkst3                  : in  std_logic                      := 'X';             -- rxblkst3
+			rxblkst4                  : in  std_logic                      := 'X';             -- rxblkst4
+			rxblkst5                  : in  std_logic                      := 'X';             -- rxblkst5
+			rxblkst6                  : in  std_logic                      := 'X';             -- rxblkst6
+			rxblkst7                  : in  std_logic                      := 'X';             -- rxblkst7
+			rxblkst8                  : in  std_logic                      := 'X';             -- rxblkst8
+			rxblkst9                  : in  std_logic                      := 'X';             -- rxblkst9
+			rxblkst10                 : in  std_logic                      := 'X';             -- rxblkst10
+			rxblkst11                 : in  std_logic                      := 'X';             -- rxblkst11
+			rxblkst12                 : in  std_logic                      := 'X';             -- rxblkst12
+			rxblkst13                 : in  std_logic                      := 'X';             -- rxblkst13
+			rxblkst14                 : in  std_logic                      := 'X';             -- rxblkst14
+			rxblkst15                 : in  std_logic                      := 'X';             -- rxblkst15
+			rxdataskip0               : in  std_logic                      := 'X';             -- rxdataskip0
+			rxdataskip1               : in  std_logic                      := 'X';             -- rxdataskip1
+			rxdataskip2               : in  std_logic                      := 'X';             -- rxdataskip2
+			rxdataskip3               : in  std_logic                      := 'X';             -- rxdataskip3
+			rxdataskip4               : in  std_logic                      := 'X';             -- rxdataskip4
+			rxdataskip5               : in  std_logic                      := 'X';             -- rxdataskip5
+			rxdataskip6               : in  std_logic                      := 'X';             -- rxdataskip6
+			rxdataskip7               : in  std_logic                      := 'X';             -- rxdataskip7
+			rxdataskip8               : in  std_logic                      := 'X';             -- rxdataskip8
+			rxdataskip9               : in  std_logic                      := 'X';             -- rxdataskip9
+			rxdataskip10              : in  std_logic                      := 'X';             -- rxdataskip10
+			rxdataskip11              : in  std_logic                      := 'X';             -- rxdataskip11
+			rxdataskip12              : in  std_logic                      := 'X';             -- rxdataskip12
+			rxdataskip13              : in  std_logic                      := 'X';             -- rxdataskip13
+			rxdataskip14              : in  std_logic                      := 'X';             -- rxdataskip14
+			rxdataskip15              : in  std_logic                      := 'X';             -- rxdataskip15
+			dirfeedback0              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback0
+			dirfeedback1              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback1
+			dirfeedback2              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback2
+			dirfeedback3              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback3
+			dirfeedback4              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback4
+			dirfeedback5              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback5
+			dirfeedback6              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback6
+			dirfeedback7              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback7
+			dirfeedback8              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback8
+			dirfeedback9              : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback9
+			dirfeedback10             : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback10
+			dirfeedback11             : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback11
+			dirfeedback12             : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback12
+			dirfeedback13             : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback13
+			dirfeedback14             : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback14
+			dirfeedback15             : in  std_logic_vector(5 downto 0)   := (others => 'X'); -- dirfeedback15
+			sim_pipe_mask_tx_pll_lock : in  std_logic                      := 'X';             -- sim_pipe_mask_tx_pll_lock
+			rx_in0                    : in  std_logic                      := 'X';             -- rx_in0
+			rx_in1                    : in  std_logic                      := 'X';             -- rx_in1
+			rx_in2                    : in  std_logic                      := 'X';             -- rx_in2
+			rx_in3                    : in  std_logic                      := 'X';             -- rx_in3
+			rx_in4                    : in  std_logic                      := 'X';             -- rx_in4
+			rx_in5                    : in  std_logic                      := 'X';             -- rx_in5
+			rx_in6                    : in  std_logic                      := 'X';             -- rx_in6
+			rx_in7                    : in  std_logic                      := 'X';             -- rx_in7
+			rx_in8                    : in  std_logic                      := 'X';             -- rx_in8
+			rx_in9                    : in  std_logic                      := 'X';             -- rx_in9
+			rx_in10                   : in  std_logic                      := 'X';             -- rx_in10
+			rx_in11                   : in  std_logic                      := 'X';             -- rx_in11
+			rx_in12                   : in  std_logic                      := 'X';             -- rx_in12
+			rx_in13                   : in  std_logic                      := 'X';             -- rx_in13
+			rx_in14                   : in  std_logic                      := 'X';             -- rx_in14
+			rx_in15                   : in  std_logic                      := 'X';             -- rx_in15
+			tx_out0                   : out std_logic;                                         -- tx_out0
+			tx_out1                   : out std_logic;                                         -- tx_out1
+			tx_out2                   : out std_logic;                                         -- tx_out2
+			tx_out3                   : out std_logic;                                         -- tx_out3
+			tx_out4                   : out std_logic;                                         -- tx_out4
+			tx_out5                   : out std_logic;                                         -- tx_out5
+			tx_out6                   : out std_logic;                                         -- tx_out6
+			tx_out7                   : out std_logic;                                         -- tx_out7
+			tx_out8                   : out std_logic;                                         -- tx_out8
+			tx_out9                   : out std_logic;                                         -- tx_out9
+			tx_out10                  : out std_logic;                                         -- tx_out10
+			tx_out11                  : out std_logic;                                         -- tx_out11
+			tx_out12                  : out std_logic;                                         -- tx_out12
+			tx_out13                  : out std_logic;                                         -- tx_out13
+			tx_out14                  : out std_logic;                                         -- tx_out14
+			tx_out15                  : out std_logic;                                         -- tx_out15
+			tl_cfg_func_o             : out std_logic_vector(1 downto 0);                      -- tl_cfg_func
+			tl_cfg_add_o              : out std_logic_vector(3 downto 0);                      -- tl_cfg_add
+			tl_cfg_ctl_o              : out std_logic_vector(31 downto 0)                      -- tl_cfg_ctl
+		);
+	end component qsys_top_avmm_bridge_512_0;
+

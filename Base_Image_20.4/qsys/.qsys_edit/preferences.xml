@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <window width="2560" height="1312" x="0" y="44" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="511" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Library,Project,Existing IP Variants" />
+ <generation path="" use_parallel_ip_generation="0" clear_previous="1" />
+ <hdlexample language="VERILOG" />
+</preferences>

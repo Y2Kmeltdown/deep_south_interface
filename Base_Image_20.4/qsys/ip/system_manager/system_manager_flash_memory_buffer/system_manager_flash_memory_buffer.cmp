@@ -1,0 +1,22 @@
+	component system_manager_flash_memory_buffer is
+		port (
+			address     : in  std_logic_vector(8 downto 0)  := (others => 'X'); -- address
+			clken       : in  std_logic                     := 'X';             -- clken
+			chipselect  : in  std_logic                     := 'X';             -- chipselect
+			write       : in  std_logic                     := 'X';             -- write
+			readdata    : out std_logic_vector(15 downto 0);                    -- readdata
+			writedata   : in  std_logic_vector(15 downto 0) := (others => 'X'); -- writedata
+			byteenable  : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- byteenable
+			address2    : in  std_logic_vector(8 downto 0)  := (others => 'X'); -- address
+			chipselect2 : in  std_logic                     := 'X';             -- chipselect
+			clken2      : in  std_logic                     := 'X';             -- clken
+			write2      : in  std_logic                     := 'X';             -- write
+			readdata2   : out std_logic_vector(15 downto 0);                    -- readdata
+			writedata2  : in  std_logic_vector(15 downto 0) := (others => 'X'); -- writedata
+			byteenable2 : in  std_logic_vector(1 downto 0)  := (others => 'X'); -- byteenable
+			clk         : in  std_logic                     := 'X';             -- clk
+			reset       : in  std_logic                     := 'X';             -- reset
+			reset_req   : in  std_logic                     := 'X'              -- reset_req
+		);
+	end component system_manager_flash_memory_buffer;
+
